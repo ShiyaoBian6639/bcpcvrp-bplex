@@ -1,0 +1,25 @@
+debug: loaded solution ../xltw/benchmarks/VRPTW/Solomon/R104.sol cost 9715
+node     0 d0   lb   9629.154 lp   9629.154 glb      0.000 ub - open 0 lp 2003/5888 rows 100 it 211 17.0s
+* incumbent 10081 from dive (29.5s)
+node    18 d9   lb   9775.051 lp   9775.051 glb   9629.154 ub 10081 open 9 lp 2043/9892 rows 116 it 6 49.0s
+* incumbent 9793 from node LP (54.7s)
+node    36 d7   lb   9741.792 lp   9741.792 glb   9638.343 ub 9793 open 17 lp 2004/11758 rows 139 it 21 97.7s
+node    54 d8   lb   9728.524 lp   9728.524 glb   9649.936 ub 9793 open 25 lp 2000/13489 rows 150 it 10 160.3s
+node    72 d7   lb   9718.169 lp   9718.169 glb   9661.523 ub 9793 open 33 lp 2053/14377 rows 169 it 6 216.9s
+node    90 d7   lb   9702.592 lp   9702.592 glb   9666.590 ub 9793 open 41 lp 2008/15440 rows 194 it 23 278.8s
+times: pricing 270.3 master 5.2 cuts 0.7 rmip 3.6 dive 12.5 branch 0.0 switch 0.0 enum 7.7 (label 7.7 in 4 tries, mip 0.0 in 0 solves, 0 nodes closed) total 300.1
+split: cg iters 1147; pricing setup 0.0 pool 1.9/1147 s0 7.7/698 s1 23.2/532 exact 237.5/314 scan 0.0/0; cuts rccsep 0.6/77 (6 with cuts) src 0.0 rows 0.0
+probes: 0  solve 0.0 (0 iters avg)  purged 22651 repriced 9031 lp cols 2000 pool 15588
+RESULT R104 status time_limit lb 9667 ub 9793 published 9715 nodes 53 depth 13 cols 15588 rows 195 rootlp 9629.154 rootlb 9629.154 kmin 8 kmax 25 fleetcap 0 time 300.10s root 17.00s 
+Route #1: 53
+Route #2: 94 95 97 87 13
+Route #3: 72 75 56 23 67 39 55 4 25 54
+Route #4: 92 98 14 44 38 86 16 61 85 91 100 37
+Route #5: 27 69 76 79 29 24 68 80 12 26
+Route #6: 10 63 90 32 66 65 71 20 30 70
+Route #7: 31 88 62 11 64 49 36 47 19 7
+Route #8: 42 43 15 57 2 41 22 74 73 21 40 58
+Route #9: 1 50 33 81 51 9 35 34 78 3 77 28
+Route #10: 6 96 59 93 99 84 5 60 89
+Route #11: 18 83 17 45 8 46 48 82 52
+Cost 979.3

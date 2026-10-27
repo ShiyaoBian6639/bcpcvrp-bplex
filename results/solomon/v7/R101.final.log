@@ -1,0 +1,30 @@
+debug: loaded solution ../xltw/benchmarks/VRPTW/Solomon/R101.sol cost 16377
+node     0 d0   lb  16340.000 lp  16340.000 glb      0.000 ub - open 0 lp 1781/1781 rows 10 it 42 0.4s
+* incumbent 16377 from dive (0.5s)
+node     9 d4   lb  16360.000 lp  16360.000 glb  16352.000 ub 16377 open 1 lp 2022/2175 rows 32 it 7 7.1s
+node    19 d7   lb  16378.500 lp  16378.500 glb  16369.000 ub 16377 open 1 lp 2000/2196 rows 33 it 1 12.2s
+times: pricing 0.8 master 0.1 cuts 0.0 rmip 0.7 dive 0.1 branch 0.0 switch 0.0 enum 10.4 (label 10.4 in 4 tries, mip 0.0 in 2 solves, 2 nodes closed) total 12.2
+split: cg iters 94; pricing setup 0.0 pool 0.0/94 s0 0.6/93 s1 0.2/73 exact 0.0/26 scan 0.0/0; cuts rccsep 0.0/17 (0 with cuts) src 0.0 rows 0.0
+probes: 0  solve 0.0 (0 iters avg)  purged 197 repriced 1 lp cols 2000 pool 2196
+RESULT R101 status optimal lb 16377 ub 16377 published 16377 nodes 21 depth 7 cols 2196 rows 22 rootlp 16340.000 rootlb 16340.000 kmin 8 kmax 25 fleetcap 0 time 12.18s root 0.43s MATCHES published optimum
+Route #1: 39 23 67 55 25
+Route #2: 31 88 7
+Route #3: 40 53 26
+Route #4: 2 21 73 41 56 4
+Route #5: 28 29 78 34 35 77
+Route #6: 63 64 49 48
+Route #7: 36 47 19 8 46 17
+Route #8: 27 69 30 51 20 32 70
+Route #9: 62 11 90 10
+Route #10: 52 6
+Route #11: 59 99 94 96
+Route #12: 65 71 9 66 1
+Route #13: 12 76 79 3 54 24 80
+Route #14: 92 42 15 87 57 97
+Route #15: 14 44 38 43 13
+Route #16: 95 98 16 86 91 100
+Route #17: 72 75 22 74 58
+Route #18: 45 82 18 84 60 89
+Route #19: 5 83 61 85 37 93
+Route #20: 33 81 50 68
+Cost 1637.7

@@ -1,0 +1,39 @@
+debug: loaded solution ../xltw/benchmarks/VRPTW/Solomon/RC102.sol cost 14574
+node     0 d0   lb  14385.248 lp  14385.248 glb      0.000 ub - open 0 lp 2014/4586 rows 115 it 184 5.5s
+* incumbent 15680 from dive (8.2s)
+node    18 d9   lb  14712.917 lp  14712.917 glb  14385.248 ub 15680 open 9 lp 2034/7071 rows 123 it 47 19.9s
+* incumbent 14937 from node LP (22.4s)
+node    36 d5   lb  14677.249 lp  14677.249 glb  14385.320 ub 14937 open 17 lp 2028/8945 rows 148 it 15 28.9s
+node    54 d5   lb  14611.705 lp  14611.705 glb  14406.920 ub 14937 open 25 lp 2007/10298 rows 162 it 22 45.4s
+node    74 d15  lb  14917.419 lp  14917.419 glb  14406.920 ub 14937 open 35 lp 2000/11566 rows 172 it 1 51.6s
+node    92 d10  lb  14763.000 lp  14763.000 glb  14435.334 ub 14937 open 43 lp 2048/12533 rows 192 it 16 60.4s
+* incumbent 14763 from node LP (60.4s)
+* incumbent 14715 from node LP (66.8s)
+node   108 d4   lb  14552.633 lp  14552.633 glb  14472.698 ub 14715 open 49 lp 2000/13288 rows 208 it 10 68.0s
+* incumbent 14682 from node LP (70.6s)
+* incumbent 14608 from node LP (76.0s)
+node   124 d6   lb  14513.413 lp  14513.413 glb  14493.128 ub 14608 open 55 lp 2007/13910 rows 220 it 12 77.1s
+node   138 d10  lb  14640.282 lp  14654.282 glb  14518.201 ub 14608 open 59 lp 2009/14207 rows 232 it 12 86.3s
+node   150 d8   lb  14603.609 lp  14603.609 glb  14547.436 ub 14608 open 61 lp 2029/14631 rows 238 it 18 93.5s
+node   164 d8   lb  14590.547 lp  14590.547 glb  14557.003 ub 14608 open 65 lp 2018/14979 rows 251 it 13 100.3s
+node   111 d6   lb  14570.750 lp  14570.750 glb  14568.975 ub 14608 open 65 lp 2000/15261 rows 255 it 20 110.3s
+* incumbent 14574 from node LP (111.3s)
+times: pricing 69.0 master 11.4 cuts 0.9 rmip 7.0 dive 2.7 branch 0.1 switch 0.0 enum 21.0 (label 21.0 in 7 tries, mip 0.0 in 0 solves, 0 nodes closed) total 112.4
+split: cg iters 2071; pricing setup 0.0 pool 10.8/2071 s0 8.5/1103 s1 18.9/1019 exact 30.5/428 scan 0.0/0; cuts rccsep 0.8/146 (25 with cuts) src 0.0 rows 0.1
+probes: 0  solve 0.0 (0 iters avg)  purged 33955 repriced 20459 lp cols 2003 pool 15391
+RESULT RC102 status optimal lb 14574 ub 14574 published 14574 nodes 113 depth 16 cols 15391 rows 252 rootlp 14385.248 rootlb 14385.248 kmin 9 kmax 25 fleetcap 0 time 112.45s root 5.49s MATCHES published optimum
+Route #1: 90
+Route #2: 14 47 11 15 16 9 10 13 17 12
+Route #3: 96 71 67 84 56 66
+Route #4: 98 73 79 78 60 100 70
+Route #5: 65 99 87 59 97 75 58
+Route #6: 33 28 27 26 31 34 50 93 94 80
+Route #7: 19 23 48 18 21 25 77
+Route #8: 85 63 76 51 22 49 20 24 83
+Route #9: 92 95 62 29 30 32 89
+Route #10: 69 88 53 55 68
+Route #11: 1 3 45 5 8 7 6 46 4 2
+Route #12: 42 44 61 81 54
+Route #13: 39 36 40 38 41 43 35 37 72
+Route #14: 91 64 57 86 74 52 82
+Cost 1457.4

@@ -25,8 +25,10 @@ bplex built with MKL off.
   (`instances/xml100/medium`, `scripts/pbench.sh`, 300 s, four at a time):
   - CVRPSEP's "existing cuts" list now holds only the RCC rows with a
     nonzero dual at the last solve; duplicates of the others are filtered by
-    a set hash. Separation time per call in the tree dropped from ~64 ms to
-    ~20 ms on XML200; medium set 1768 -> 1327 s (same 8 solved).
+    a set hash. Medium set 1768 -> 1327 s (same 8 solved). On XML200 the
+    per-call time of CVRPSEP in the tree is unchanged (~55 ms, 4161 calls
+    in 900 s = 231 s): the separation frequency, not the list, is the cost
+    there.
   - lazy pool pricing (a pool route with clearly positive reduced cost is
     skipped for 2/6/15 scans), adaptive heuristic stages (a stage empty
     twice in a row is skipped for the rest of the node, `--stage-skip`),
@@ -45,6 +47,17 @@ bplex built with MKL off.
   total 263 s, slowest E-n30-k3 40 s; medium set 9/12 in 300 s (class-6
   instances with ~20-customer routes stay open: pricing, not the tree).
   Regression passes.
+* Final 900 s check (free fleet, `results/large_v7/*.final.log`):
+  X-n153-k22 lb 21142 / ub 21248 (548 nodes; published 21220; this morning
+  21112 / 21415), XML200_2251_68 lb 31361 / ub 31434 (1448 nodes; this
+  morning 31338 / 31484). Solomon RC102 proven in 112 s (262 s this
+  morning), R104 open at 300 s with lb 9667 / ub 9793 (published 9715).
+  Where the 900 s go now: X-n153 pricing 611 s (pool scans 197 s over a
+  106k-route pool, capped full-graph stage 162 s, exact 158 s), master
+  188 s; XML200 pricing 336 s, master 243 s, RCC separation 231 s (2.9
+  calls per node). Next levers: a bounded pool (or an index) for the pool
+  scan, fewer RCC separation calls per tree node at n = 200, then the
+  pricing itself (bucket graph, arc fixing) for long-route instances.
 
 ## 2026-10-27 (night): tree bug fixed, large instances re-measured
 
