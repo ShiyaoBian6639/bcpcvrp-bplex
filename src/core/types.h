@@ -23,6 +23,7 @@ struct Params {
     bool savings_init = true;     // seed the master (and the incumbent) with Clarke-Wright routes
     int max_cols_per_iter = 150;  // columns added per CG iteration
     double rc_eps = 1e-6;         // a route prices out when rc < -rc_eps
+    int qbound_stage = 0;         // q-route completion bound prunes labels from this pricing stage on (3 = off)
     // master
     double smoothing_alpha = 0.0; // Wentges dual smoothing (0 = off); with smoothing_auto this is the start value
     bool smoothing_auto = true;   // adjust alpha by the subgradient angle rule (Pessoa et al. 2018)

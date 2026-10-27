@@ -289,6 +289,18 @@ with this file and the expected objective. There is a reader but no writer.
 
 ## Round 2 (2026-10-26): what is still asked for a standalone split
 
+**Status 2026-10-27: delivered in bplex API 0.2** (merge 2a6ea8e, history
+item 208): R2-1 `bplex_get_pool_size` / `bplex_get_pool_solution` (pool of
+the last MIP, `pool_size` parameter), R2-4 `BPLEX_INSTALL` with the
+`bplex::bplex` package and `bplexConfigVersion.cmake` (SameMajorVersion),
+R2-5 `bplex_version()` plus `BPLEX_VERSION_MINOR` bumps on header changes,
+R2-6 `bplex_set_log_callback`, R2-7 `bplex_chg_col_bounds_many`, and an
+error contract (`BPLEX_ERR_FATAL`: the object drops its model instead of
+aborting the process). cvrpbcp now builds with `find_package(bplex 0.2
+CONFIG)` against `cmake --install` output (`scripts/build_wsl.sh`), has no
+reference to the bplex source tree any more, and records `bplex_version()`
+in every JSONL result. The bullets below are kept as the original request.
+
 Goal agreed with the bplex side: bplex and cvrpbcp are developed
 independently and talk only through `include/bplex.h` and the CMake package.
 From the dev report (API items 179/180, agents `apipool`, `cliquecoef`) and

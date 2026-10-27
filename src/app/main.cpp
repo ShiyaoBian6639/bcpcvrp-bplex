@@ -77,6 +77,7 @@ static void parse_opts(int argc, char **argv, int from, BcpParams &P, std::strin
         else if (o == "--dive-time") P.dive_time = std::stod(val());
         else if (o == "--plunge") P.plunge_depth = std::stoi(val());
         else if (o == "--heur-cap") P.heur_label_cap = std::stoi(val());
+        else if (o == "--qbound") P.qbound_stage = std::stoi(val());
         else if (o == "--no-enum") P.enumerate = false;
         else if (o == "--enum-time") P.enum_mip_time = std::stod(val());
         else if (o == "--enum-mip-max") P.enum_mip_max_routes = (size_t)std::stoll(val());
@@ -131,6 +132,7 @@ static int cmd_info(const char *path)
 {
     Instance I = read_instance(path);
     std::printf("%s\n", I.summary().c_str());
+    std::printf("bplex %s\n", bplex_version());
     long long opt = comment_optimum(path);
     if (opt >= 0) std::printf("comment optimum: %lld\n", opt);
     return 0;
@@ -166,10 +168,10 @@ static int cmd_root(int argc, char **argv)
         return 1;
     }
     std::printf("ROOT %s lp %.4f lb %.4f lbint %lld opt %lld gap %.3f%% iters %d cutrounds %d cols %d rows %d "
-                "integral %d fleetbind %d time %.2fs (pricing %.2f master %.2f)\n",
+                "integral %d fleetbind %d time %.2fs (pricing %.2f master %.2f cuts %.2f of which src %.2f)\n",
                 I.name.c_str(), R.lp, R.lb, R.lb_int, opt, opt > 0 ? 100.0 * (opt - R.lb) / opt : 0.0,
                 R.cg_iters, R.cut_rounds, R.ncols, R.ncuts, (int)R.integral, (int)R.fleet_binding, R.time,
-                R.time_pricing, R.time_master);
+                R.time_pricing, R.time_master, R.time_cuts, R.time_src);
     if (R.integral) std::printf("%s", format_sol(R.sol, I.scale).c_str());
     if (opt > 0 && R.lb_int > opt) { std::printf("BUG: lower bound exceeds the published optimum\n"); return 1; }
     return 0;
@@ -215,10 +217,11 @@ static int cmd_solve(int argc, char **argv)
             std::fprintf(f,
                          "{\"instance\":\"%s\",\"n\":%d,\"status\":\"%s\",\"lb\":%lld,\"ub\":%lld,\"published\":%lld,"
                          "\"nodes\":%d,\"cols\":%d,\"rows\":%d,\"root_lp\":%.4f,\"root_lb\":%.4f,\"kmin\":%d,\"kmax\":%d,"
-                         "\"fleet_cap_binding\":%s,\"time\":%.2f,\"time_root\":%.2f,\"scale\":%d}\n",
+                         "\"fleet_cap_binding\":%s,\"time\":%.2f,\"time_root\":%.2f,\"scale\":%d,"
+                         "\"bplex\":\"%s\"}\n",
                          I.name.c_str(), I.n, R.status.c_str(), R.lb, R.ub, published, R.nodes, R.ncols, R.nrows,
                          R.root_lp, R.root_lb, R.kmin, R.kmax, R.fleet_cap_binding ? "true" : "false", R.time,
-                         R.time_root, I.scale);
+                         R.time_root, I.scale, bplex_version());
             std::fclose(f);
         }
     }

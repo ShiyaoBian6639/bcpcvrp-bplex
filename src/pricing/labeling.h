@@ -39,8 +39,8 @@ public:
                    const std::vector<double> &yrow);
     void set_forbidden(const std::vector<std::pair<int, int>> &edges);
     // customers that pricing must not visit (diving: covered by fixed columns)
-    void set_removed(const std::vector<char> &removed) { removed_ = removed; }
-    void clear_removed() { std::fill(removed_.begin(), removed_.end(), 0); }
+    void set_removed(const std::vector<char> &removed) { removed_ = removed; qb_dirty_ = true; }
+    void clear_removed() { std::fill(removed_.begin(), removed_.end(), 0); qb_dirty_ = true; }
 
     // Routes with reduced cost < -rc_eps, best first, at most max_routes.
     // stage 0: sparse graph (heur_knn successors) with a label cap;
@@ -81,6 +81,29 @@ private:
     bool ignore_tw_ = false; // enumeration bound pass: time-free labels
     double deadline_ = 0;    // label_pass aborts past this wall-clock time (0: none)
     bool aborted_ = false;
+
+    // Completion bound from q-routes (walks without 2-cycles, load resource,
+    // SRC ignored): qb_[v*(Q+1) + L] = min reduced cost of a q-walk
+    // depot -> ... -> v with load <= L (arc into v included). By symmetry it
+    // bounds the cheapest completion of a label at v. Labels and extensions
+    // whose rc + bound exceeds prune_thr_ (+ prune_vpay_[v], see enumerate)
+    // are dropped; valid because SRC penalties only add and the ng, time and
+    // elementarity restrictions only remove completions.
+    std::vector<double> qb_;
+    bool qb_dirty_ = true;
+    double prune_thr_ = 1e300;            // off
+    const std::vector<double> *prune_vpay_ = nullptr;
+    void compute_qbound();
+    double qcompletion(int v, int load) const
+    {
+        int L = I_.capacity - load + I_.demand[v];
+        if (L > I_.capacity) L = I_.capacity;
+        return qb_[(size_t)v * (I_.capacity + 1) + L];
+    }
+    bool pruned(int v, int load, double rc) const
+    {
+        return rc + qcompletion(v, load) > prune_thr_ + (prune_vpay_ ? (*prune_vpay_)[v] : 0.0);
+    }
     const Instance &I_;
     const Params &P_;
     int nv_, ngsz_;

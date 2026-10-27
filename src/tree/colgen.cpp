@@ -253,7 +253,9 @@ NodeResult solve_node(const Instance &I, const Params &P, Master &M, Pricer &pri
                 }
             int room = std::min(P.src_max_per_round, P.src_max_active - active);
             if (room > 0) {
+                const double ts = now();
                 auto cuts = separate_src(I, M, existing, room, P.src_min_violation);
+                R.time_src += now() - ts;
                 for (const auto &c : cuts) {
                     RobustRow r;
                     r.kind = RobustRow::SRC;

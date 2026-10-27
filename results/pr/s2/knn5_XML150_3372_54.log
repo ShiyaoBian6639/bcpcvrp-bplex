@@ -1,0 +1,2 @@
+root: XML150_3372_54: CVRP n=150 Q=137 K=-1 scale=1 kmin=24 ffd=24  kmin 24 kmax 25  ng 8
+ROOT XML150_3372_54 lp 41660.6252 lb 41660.6252 lbint 41661 opt -1 gap 0.000% iters 232 cutrounds 13 cols 18921 rows 220 integral 0 fleetbind 0 time 51.40s (pricing 21.05 master 11.79)

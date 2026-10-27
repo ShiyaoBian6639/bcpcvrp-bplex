@@ -1,0 +1,13 @@
+== instances/cvrplib/F/F-n45-k4.vrp (n=44)
+* incumbent 743 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/cvrplib/F/F-n45-k4.sol cost 724
+node     0 d0   lb    723.333 lp    724.000 glb      0.000 ub 743 open 0 lp 50977/50977 rows 63 it 452 33.2s
+* incumbent 724 from node LP (33.2s)
+times: pricing 10.8 master 12.7 cuts 3.0 rmip 0.0 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 33.2
+probes: 0  solve 0.0 (0 iters avg)  purged 0 repriced 0 lp cols 50977 pool 50977
+RESULT F-n45-k4 status optimal lb 724 ub 724 published 724 nodes 1 depth 0 cols 50977 rows 63 rootlp 724.000 rootlb 723.333 kmin 4 kmax 4 fleetcap 0 time 33.22s root 33.22s MATCHES published optimum
+Route #1: 24 16 2 1 15 9
+Route #2: 8 19 26 22 23 25 21 20
+Route #3: 10 17 18 11 12 13 14 4 3 35 7 5 6 27 29 33 28 44 43
+Route #4: 42 41 30 31 32 34 40 39 36 38 37
+Cost 724

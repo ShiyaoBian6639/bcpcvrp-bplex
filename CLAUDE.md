@@ -5,8 +5,10 @@ Branch-cut-and-price solver for CVRP/CVRPTW built on bplex. Plan and status:
 
 ## Hard rules
 - **Never modify anything under `../bplex/`.** bplex is a separate project under
-  active development; we consume only `../bplex/include/bplex.h`. Build it
-  out-of-tree into `build/bplex` (MKL off). bplex bugs are reported with an
+  active development; we consume only its installed CMake package
+  (`find_package(bplex 0.2 CONFIG)`, target `bplex::bplex`), built out-of-tree
+  into `build/bplex` and installed to `build/bplex-install` (MKL off) by
+  `scripts/build_wsl.sh`. bplex bugs are reported with an
   MPS dump (`bplex_write_mps`), never patched here.
 - Every optimum we report is verified independently (`src/verify`): coverage,
   capacity, time windows, recomputed cost, and comparison with the published

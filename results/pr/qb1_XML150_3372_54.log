@@ -1,0 +1,58 @@
+root: XML150_3372_54: CVRP n=150 Q=137 K=-1 scale=1 kmin=24 ffd=24  kmin 24 kmax 25  ng 8
+  it    1  z 103307555.0000  lb -1000000000.0000  minrc -112352592.0000  lp   150/   150  rows    0  hr +150  lbl 62506  spx 125  0.0s
+  it   11  z 65950008.0537  lb -1000000000.0000  minrc -29663786.3236  lp  1650/  1650  rows    0  hr +150  lbl 53740  spx 34  0.5s
+  it   21  z 50153283.5326  lb -1000000000.0000  minrc -20469958.4902  lp  3150/  3150  rows    0  hr +150  lbl 61649  spx 39  1.0s
+  it   31  z 37428518.1682  lb -1000000000.0000  minrc -20992678.7407  lp  4650/  4650  rows    0  hr +150  lbl 41442  spx 103  1.4s
+  it   41  z 16991171.9458  lb -1000000000.0000  minrc -15676527.0770  lp  6150/  6150  rows    0  hr +150  lbl 41570  spx 551  2.1s
+  it   51  z 9303344.6722  lb -1000000000.0000  minrc -1942455.3873  lp  7650/  7650  rows    0  hr +150  lbl 50387  spx 700  3.0s
+  it   61  z 7589212.9478  lb -1000000000.0000  minrc -1085148.7253  lp  9150/  9150  rows    0  hr +150  lbl 43548  spx 444  3.7s
+  it   71  z 6257403.9811  lb -1000000000.0000  minrc -823755.9063  lp 10650/ 10650  rows    0  hr +150  lbl 52033  spx 79  4.5s
+  it   81  z 5118928.0008  lb -1000000000.0000  minrc -567989.1050  lp 12150/ 12150  rows    0  hr +150  lbl 40772  spx 356  5.3s
+  it   91  z 3351532.3043  lb -1000000000.0000  minrc -3593.5791  lp 13650/ 13650  rows    0  hr +150  lbl 36211  spx 132  6.4s
+  it  101  z 1717010.8607  lb -1000000000.0000  minrc -386151.9846  lp 15150/ 15150  rows    0  hr +150  lbl 51180  spx 384  7.4s
+  it  111  z 1696565.6515  lb -1000000000.0000  minrc  -952.9715  lp 16650/ 16650  rows    0  hr +150  lbl 37711  spx 381  8.4s
+  it  121  z 1694725.6780  lb -1000000000.0000  minrc  -349.8818  lp 18150/ 18150  rows    0  hr +150  lbl 25826  spx 221  9.1s
+  it  131  z  869137.6299  lb -1000000000.0000  minrc  -327.2207  lp 19650/ 19650  rows    0  hr +150  lbl 31224  spx 255  10.4s
+  it  141  z  868180.9286  lb -1000000000.0000  minrc   -47.4855  lp 21150/ 21150  rows    0  hr +150  lbl 24195  spx 169  11.2s
+  it  151  z   42414.9330  lb -1000000000.0000  minrc  -201.8474  lp 21894/ 21894  rows    0  hr +150  lbl 33892  spx 295  12.1s
+  it  161  z   42163.7142  lb -1000000000.0000  minrc  -196.2674  lp 22597/ 22597  rows    0  hr +150  lbl 19539  spx 15  12.7s
+  it  171  z   41771.4049  lb -1000000000.0000  minrc   -82.2758  lp 23187/ 23187  rows    0  hr +79  lbl 36060  spx 417  13.3s
+  it  181  z   41716.3123  lb -1000000000.0000  minrc   -80.1180  lp 23487/ 23487  rows    0  hr +150  lbl 20744  spx 1  13.9s
+  it  191  z   41643.5021  lb -1000000000.0000  minrc    -7.6111  lp 23854/ 23854  rows    0  hr +2  lbl 38504  spx 71  14.4s
+  it  201  z   41611.4129  lb   41270.5693  minrc   -13.6337  lp 24143/ 24143  rows    0  ex +7  lbl 25689  spx 4  15.4s
+  it  205  z   41610.7002  lb   41610.7002  minrc    -0.0000  lp 24158/ 24158  rows    0  ex +0  lbl 26256  spx 2  16.3s
+  cut round 1: +2 RCC (max viol 0.625), z 41610.7002
+  it  207  z   41611.6127  lb   41611.6127  minrc    -0.0000  lp 24160/ 24160  rows    2  ex +0  lbl 26225  spx 2  16.7s
+  cut round 2: +48 RCC (max viol 1.090), z 41611.6127
+  it  211  z   41624.7882  lb   41611.6127  minrc    -3.3618  lp 24217/ 24217  rows   50  hr +5  lbl 15240  spx 1  17.9s
+  it  215  z   41624.3969  lb   41624.3969  minrc    -0.0000  lp 24231/ 24231  rows   50  ex +0  lbl 25771  spx 6  19.1s
+  cut round 3: +42 RCC (max viol 0.867), z 41624.3969
+  it  220  z   41631.7499  lb   41631.7499  minrc    -0.0000  lp 24264/ 24264  rows   92  ex +0  lbl 26290  spx 14  21.8s
+  cut round 4: +39 RCC (max viol 0.832), z 41631.7499
+  it  221  z   41670.6484  lb   41631.7499  minrc  -311.3588  lp 24264/ 24264  rows  131  hr +150  lbl 35528  spx 244  24.5s
+  it  228  z   41640.4399  lb   41640.4399  minrc    -0.0000  lp 24804/ 24804  rows  131  ex +0  lbl 24577  spx 22  25.6s
+  cut round 5: +6 RCC (max viol 0.376), z 41640.4399
+  it  230  z   41642.3496  lb   41642.3496  minrc    -0.0000  lp 24814/ 24814  rows  137  ex +0  lbl 24635  spx 17  26.5s
+  cut round 6: +2 RCC (max viol 0.229), z 41642.3496
+  it  231  z   41642.8646  lb   41642.3496  minrc    -0.2123  lp 24814/ 24814  rows  139  hr +1  lbl 37734  spx 30  26.7s
+  it  232  z   41642.8646  lb   41642.8646  minrc    -0.0000  lp 24815/ 24815  rows  139  ex +0  lbl 24487  spx 1  27.0s
+  cut round 7: +8 RCC (max viol 0.200), z 41642.8646
+  it  233  z   41643.5154  lb   41643.5154  minrc    -0.0000  lp 24815/ 24815  rows  147  ex +0  lbl 24161  spx 37  27.9s
+  cut round 8: +6 RCC (max viol 0.243), z 41643.5154
+  it  234  z   41643.9640  lb   41643.9640  minrc    -0.0000  lp 24815/ 24815  rows  153  ex +0  lbl 24669  spx 20  28.6s
+  cut round 9: +2 RCC (max viol 0.160), z 41643.9640
+  it  237  z   41644.4414  lb   41644.4414  minrc    -0.0000  lp 24829/ 24829  rows  155  ex +0  lbl 24580  spx 14  29.2s
+  cut round 10: +30 SRC (max viol 0.413), z 41644.4414
+  it  241  z   41650.6893  lb   41644.4414  minrc    -0.9758  lp 24858/ 24858  rows  185  hr +2  lbl 38648  spx 127  31.2s
+  it  244  z   41650.6741  lb   41650.6741  minrc    -0.0000  lp 24878/ 24878  rows  185  ex +0  lbl 27569  spx 8  31.8s
+  cut round 11: +30 SRC (max viol 0.317), z 41650.6741
+  it  251  z   41664.0997  lb   41650.6741  minrc    -3.2558  lp 24999/ 24999  rows  215  hr +4  lbl 22575  spx 121  34.6s
+  it  259  z   41663.0862  lb   41663.0862  minrc    -0.0000  lp 25175/ 25175  rows  215  ex +0  lbl 35566  spx 2  37.6s
+  cut round 12: +9 RCC (max viol 0.453), z 41663.0862
+  it  261  z   41664.0934  lb   41664.0934  minrc    -0.0000  lp 25176/ 25176  rows  224  ex +0  lbl 35394  spx 2  39.2s
+  cut round 13: +3 RCC (max viol 0.298), z 41664.0934
+  it  267  z   41664.7378  lb   41664.7378  minrc    -0.0000  lp 25192/ 25192  rows  227  ex +0  lbl 34982  spx 1  40.7s
+  cut round 14: +3 RCC (max viol 0.147), z 41664.7378
+  it  268  z   41664.8122  lb   41664.8122  minrc    -0.0000  lp 25192/ 25192  rows  230  ex +0  lbl 35077  spx 38  41.4s
+  cut round 15: +1 RCC (max viol 0.158), z 41664.8122
+ROOT XML150_3372_54 lp 41664.9816 lb 41664.8122 lbint 41665 opt -1 gap 0.000% iters 270 cutrounds 15 cols 25202 rows 231 integral 0 fleetbind 0 time 42.25s (pricing 17.76 master 11.43)

@@ -49,6 +49,7 @@ Pricer::Pricer(const Instance &I, const Params &P) : I_(I), P_(P), nv_(I.nv())
 void Pricer::set_duals(const std::vector<double> &pi, const std::vector<RobustRow> &rows,
                        const std::vector<double> &yrow)
 {
+    qb_dirty_ = true;
     for (int i = 0; i < nv_; i++)
         for (int j = 0; j < nv_; j++) rc_[(size_t)i * nv_ + j] = I_.d(i, j) - 0.5 * (pi[i] + pi[j]);
     nsrc_ = 0;
@@ -81,11 +82,68 @@ void Pricer::set_duals(const std::vector<double> &pi, const std::vector<RobustRo
 
 void Pricer::set_forbidden(const std::vector<std::pair<int, int>> &edges)
 {
+    qb_dirty_ = true;
     std::fill(forbid_.begin(), forbid_.end(), 0);
     for (auto [u, v] : edges) {
         forbid_[(size_t)u * nv_ + v] = 1;
         forbid_[(size_t)v * nv_ + u] = 1;
     }
+}
+
+// q-route DP over the load: for every load q and vertex v the cheapest and
+// the second cheapest (different predecessor) walk depot -> ... -> v with
+// load exactly q and no 2-cycle; then prefix minima over the load.
+void Pricer::compute_qbound()
+{
+    const int n = I_.n, Q = I_.capacity;
+    const double INF = 1e300;
+    const size_t stride = (size_t)Q + 1;
+    qb_.assign((size_t)nv_ * stride, INF);
+    std::vector<double> b1((size_t)(Q + 1) * nv_, INF), b2((size_t)(Q + 1) * nv_, INF);
+    std::vector<int> p1((size_t)(Q + 1) * nv_, -1);
+    std::vector<int> all;
+    for (int v = 1; v <= n; v++)
+        if (!removed_[v] && I_.demand[v] <= Q) all.push_back(v);
+    for (int v : all)
+        if (!forbidden(0, v)) {
+            b1[(size_t)I_.demand[v] * nv_ + v] = arc_rc(0, v);
+            p1[(size_t)I_.demand[v] * nv_ + v] = 0;
+        }
+    for (int q = 1; q <= Q; q++) {
+        const size_t row = (size_t)q * nv_;
+        for (int v : all) {
+            const double c1 = b1[row + v];
+            if (c1 >= INF) continue;
+            const double c2 = b2[row + v];
+            const int pv = p1[row + v];
+            const char *fb = &forbid_[(size_t)v * nv_];
+            const double *rcv = &rc_[(size_t)v * nv_];
+            for (int w : all) {
+                if (w == v || fb[w]) continue;
+                const int nq = q + I_.demand[w];
+                if (nq > Q) continue;
+                const double c = (pv == w) ? c2 : c1;
+                if (c >= INF) continue;
+                const double val = c + rcv[w];
+                const size_t t = (size_t)nq * nv_ + w;
+                if (val < b1[t]) {
+                    if (p1[t] != v) b2[t] = b1[t];
+                    b1[t] = val;
+                    p1[t] = v;
+                } else if (val < b2[t] && p1[t] != v) {
+                    b2[t] = val;
+                }
+            }
+        }
+    }
+    for (int v : all) {
+        double m = INF;
+        for (int q = 0; q <= Q; q++) {
+            m = std::min(m, b1[(size_t)q * nv_ + v]);
+            qb_[(size_t)v * stride + q] = m;
+        }
+    }
+    qb_dirty_ = false;
 }
 
 double Pricer::route_rc(const Route &r) const
@@ -174,6 +232,7 @@ Route Pricer::build_route(int label) const
 void Pricer::label_pass(bool heuristic, int extend_limit, int cap)
 {
     const int n = I_.n, Q = I_.capacity;
+    const bool prune = prune_thr_ < 1e299 && !qb_dirty_;
     cap_ = cap;
     arena_.clear();
     for (auto &l : at_) l.clear();
@@ -181,6 +240,7 @@ void Pricer::label_pass(bool heuristic, int extend_limit, int cap)
     for (int j = 1; j <= n; j++) {
         if (I_.demand[j] > Q || forbidden(0, j) || removed_[j]) continue;
         if (I_.has_tw && !ignore_tw_ && I_.tw_lo[0] + I_.d(0, j) > I_.tw_hi[j]) continue;
+        if (prune && pruned(j, I_.demand[j], arc_rc(0, j))) continue;
         Label L{arc_rc(0, j), I_.demand[j], j, -1, (uint16_t)(1u << ngpos_[(size_t)j * nv_ + j]), false, {0, 0},
                 start_time(j)};
         if (nsrc_) src_enter(L, j);
@@ -203,8 +263,12 @@ void Pricer::label_pass(bool heuristic, int extend_limit, int cap)
             const Label L = arena_[idx]; // copy: arena_ may reallocate
             const std::vector<int> &succ = heuristic ? knn_[L.v] : all;
             const char *fb = &forbid_[(size_t)L.v * nv_];
+            const double *rcv = &rc_[(size_t)L.v * nv_];
             for (int w : succ) {
                 if (w == L.v || fb[w] || removed_[w]) continue;
+                // arc-level bound check before the label is built (SRC
+                // penalties only add, so the arc reduced cost suffices)
+                if (prune && L.load + I_.demand[w] <= Q && pruned(w, L.load + I_.demand[w], L.rc + rcv[w])) continue;
                 Label N;
                 if (!extend(L, idx, w, N)) continue;
                 if (insert(N)) by_load[N.load].push_back((int)arena_.size() - 1);
@@ -244,12 +308,22 @@ int Pricer::start_time(int j) const
 
 std::vector<Route> Pricer::price(int stage, int max_routes, double &min_rc)
 {
-    if (stage == 0) { stage_cap_ = P_.heur_label_cap; return price_mono(true, max_routes, min_rc); }
-    if (stage == 1) { stage_cap_ = P_.heur_label_cap; return price_mono(false, max_routes, min_rc); }
-    stage_cap_ = 0;
-    // the bidirectional join relies on symmetric half-paths: not with time windows
-    return (P_.bidirectional && !I_.has_tw) ? price_bidir(false, max_routes, min_rc)
-                                             : price_mono(false, max_routes, min_rc);
+    // completion-bound pruning from stage qbound_stage on; the bound is
+    // computed once per set of duals (O(Q n^2))
+    if (stage >= P_.qbound_stage && qb_dirty_) compute_qbound();
+    prune_thr_ = (!qb_dirty_ && stage >= P_.qbound_stage) ? -1e-9 : 1e300;
+    prune_vpay_ = nullptr;
+    std::vector<Route> out;
+    if (stage == 0) { stage_cap_ = P_.heur_label_cap; out = price_mono(true, max_routes, min_rc); }
+    else if (stage == 1) { stage_cap_ = P_.heur_label_cap; out = price_mono(false, max_routes, min_rc); }
+    else {
+        stage_cap_ = 0;
+        // the bidirectional join relies on symmetric half-paths: not with time windows
+        out = (P_.bidirectional && !I_.has_tw) ? price_bidir(false, max_routes, min_rc)
+                                                : price_mono(false, max_routes, min_rc);
+    }
+    prune_thr_ = 1e300;
+    return out;
 }
 
 std::vector<Route> Pricer::price_mono(bool heuristic, int max_routes, double &min_rc)
@@ -382,9 +456,25 @@ bool Pricer::enumerate(double gap, size_t max_labels, size_t max_routes, std::ve
     out.clear();
     deadline_ = time_cap < 1e299 ? duration<double>(t_start.time_since_epoch()).count() + time_cap : 0;
     const int n = I_.n, Q = I_.capacity;
+    // The backward label at v includes v's own visit: an SRC pair (x, v)
+    // paid by that label may already be paid by the prefix (v paired with a
+    // prefix vertex), so subtract what v itself can pay. Elsewhere the
+    // junction only adds penalties.
+    std::vector<double> vpay(nv_, 0.0);
+    for (int v = 1; v <= n; v++)
+        for (int k : inC_[v]) vpay[v] -= sigma_[k];
+    // ng pass pruned by the q-route bound: a label G at v with
+    // G.rc + qcompletion(G) > gap + vpay[v] cannot be the reversed suffix of
+    // a route with rc <= gap (route rc >= prefix rc + G.rc - vpay[v], and the
+    // reversed prefix is a q-walk, so prefix rc >= qcompletion(G))
+    if (P_.qbound_stage <= 2 && qb_dirty_) compute_qbound();
+    prune_thr_ = qb_dirty_ ? 1e300 : gap + 1e-6;
+    prune_vpay_ = &vpay;
     ignore_tw_ = true; // the bound must cover completions in either direction: time-free labels
     label_pass(false, Q);
     ignore_tw_ = false;
+    prune_thr_ = 1e300;
+    prune_vpay_ = nullptr;
     deadline_ = 0;
     if (aborted_ || over_time()) return false;
     // bound[v][L] = min rc over ng labels at v with load <= L
@@ -397,13 +487,6 @@ bool Pricer::enumerate(double gap, size_t max_labels, size_t max_routes, std::ve
         }
         for (int L = 1; L <= Q; L++) bound[v][L] = std::min(bound[v][L], bound[v][L - 1]);
     }
-    // The backward label at v includes v's own visit: an SRC pair (x, v)
-    // paid by that label may already be paid by the prefix (v paired with a
-    // prefix vertex), so subtract what v itself can pay. Elsewhere the
-    // junction only adds penalties.
-    std::vector<double> vpay(nv_, 0.0);
-    for (int v = 1; v <= n; v++)
-        for (int k : inC_[v]) vpay[v] -= sigma_[k];
     auto completion = [&](int v, int q) {
         int L = Q - q + I_.demand[v];
         if (L > Q) L = Q;

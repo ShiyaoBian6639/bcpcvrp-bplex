@@ -1,0 +1,2 @@
+root: X-n153-k22: CVRP n=152 Q=144 K=-1 scale=1 kmin=22 ffd=22  kmin 22 kmax 23  ng 8
+ROOT X-n153-k22 lp 21112.9182 lb 21112.3490 lbint 21113 opt -1 gap 0.000% iters 357 cutrounds 14 cols 31312 rows 321 integral 0 fleetbind 1 time 95.31s (pricing 15.46 master 33.49)

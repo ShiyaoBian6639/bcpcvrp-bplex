@@ -2,11 +2,12 @@ cmake_minimum_required(VERSION 3.16)
 project(cvrpbcp LANGUAGES C CXX)
 
 # cvrpbcp: branch-cut-and-price for CVRP / CVRPTW on bplex.
-# bplex is an external dependency, never built from this tree's CMake:
-#   cmake -S ../bplex -B build/bplex -DBPLEX_USE_MKL=OFF   (out-of-tree)
-# and linked here by path through BPLEX_ROOT (source tree, for the header)
-# and BPLEX_BUILD (its build directory, for libbplex.a / libbasiclu.a).
-# When bplex ships an install/export target this collapses to find_package.
+# bplex is an external dependency consumed as an installed CMake package
+# (API 0.2+): build it out of tree, install it to a prefix and put that prefix
+# on CMAKE_PREFIX_PATH (scripts/build_wsl.sh does all three):
+#   cmake -S ../bplex -B build/bplex -DBPLEX_USE_MKL=OFF && cmake --build build/bplex
+#   cmake --install build/bplex --prefix build/bplex-install
+# Neither project's build reads the other's sources.
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -15,24 +16,12 @@ if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release CACHE STRING "" FORCE)
 endif()
 
-set(BPLEX_ROOT "${CMAKE_SOURCE_DIR}/../bplex" CACHE PATH "bplex source tree (include/bplex.h)")
-set(BPLEX_BUILD "${CMAKE_BINARY_DIR}/bplex" CACHE PATH "bplex out-of-tree build directory")
 option(CVRPBCP_SANITIZE "Build with ASan/UBSan" OFF)
 
 find_package(Threads REQUIRED)
 
-# ---- bplex (imported, prebuilt) ----
-find_library(BPLEX_LIB NAMES bplex PATHS "${BPLEX_BUILD}" NO_DEFAULT_PATH)
-find_library(BASICLU_LIB NAMES basiclu PATHS "${BPLEX_BUILD}" NO_DEFAULT_PATH)
-if(NOT BPLEX_LIB OR NOT BASICLU_LIB)
-  message(FATAL_ERROR "bplex not built: expected libbplex.a and libbasiclu.a in ${BPLEX_BUILD}. "
-                      "Run: cmake -S ${BPLEX_ROOT} -B ${BPLEX_BUILD} -DBPLEX_USE_MKL=OFF && cmake --build ${BPLEX_BUILD}")
-endif()
-add_library(bplex::bplex STATIC IMPORTED)
-set_target_properties(bplex::bplex PROPERTIES
-  IMPORTED_LOCATION "${BPLEX_LIB}"
-  INTERFACE_INCLUDE_DIRECTORIES "${BPLEX_ROOT}/include"
-  INTERFACE_LINK_LIBRARIES "${BASICLU_LIB};Threads::Threads;m")
+# ---- bplex (installed CMake package: target bplex::bplex) ----
+find_package(bplex 0.2 CONFIG REQUIRED)
 
 # ---- CVRPSEP (vendored, Lysgaard, CPL 1.0) ----
 file(GLOB CVRPSEP_SRC CONFIGURE_DEPENDS "${CMAKE_SOURCE_DIR}/third_party/cvrpsep/*.cpp")

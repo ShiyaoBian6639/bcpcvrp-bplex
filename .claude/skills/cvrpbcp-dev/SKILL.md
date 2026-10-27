@@ -12,8 +12,13 @@ so always go through `scripts/wsl.sh`, which handles both.
 
 ## Rules
 - `../bplex/` is read-only. Build it out-of-tree only: `scripts/build_wsl.sh`
-  does `cmake -S ../bplex -B build/bplex -DBPLEX_USE_MKL=OFF`.
-  Set `REBUILD_BPLEX=1` when bplex's sources changed (new API).
+  does `cmake -S ../bplex -B build/bplex -DBPLEX_USE_MKL=OFF`, then
+  `cmake --install build/bplex --prefix build/bplex-install`; cvrpbcp finds it
+  with `find_package(bplex 0.2 CONFIG)` (CMAKE_PREFIX_PATH). Set
+  `REBUILD_BPLEX=1` when bplex's sources changed (new API).
+- Token discipline (from `../bplex_wt/AGENT_BRIEF.md`): never Read or cat a
+  whole source file (grep -n, then a range); grep logs and JSONL, never cat
+  them; cap open-ended output with `| tail -n 20`; `git diff --stat` first.
 - Write C++ sources with the Write/Edit tools, not shell heredocs.
 - Never report an optimum that `cvrpbcp check` or the solver's own checker
   did not verify.

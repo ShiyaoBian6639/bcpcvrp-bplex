@@ -30,9 +30,11 @@ are developed independently and communicate through the API documented in
 
 ## Build (Linux or WSL)
 
-bplex is expected as a sibling checkout (`../bplex`) and is built out-of-tree:
+bplex (API 0.2 or later) is expected as a sibling checkout (`../bplex`); it
+is built out-of-tree, installed to `build/bplex-install` and consumed as the
+CMake package `bplex::bplex` (`find_package(bplex 0.2 CONFIG)`):
 
-    scripts/build_wsl.sh                 # cmake+ninja: build/bplex, build/cvrpbcp-Release
+    scripts/build_wsl.sh                 # cmake+ninja: build/bplex (+install), build/cvrpbcp-Release
     build/cvrpbcp-Release/cvrpbcp selftest
     build/cvrpbcp-Release/cvrpbcp solve instances/cvrplib/A/A-n32-k5.vrp --time 600
     scripts/regress.sh 300               # regression set with known optima
