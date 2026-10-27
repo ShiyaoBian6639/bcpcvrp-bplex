@@ -1,0 +1,18 @@
+# build trees (bplex is built out-of-tree into build/bplex)
+build/
+# solver dumps
+*.mps
+!results/enum_mips/*.mps
+# benchmark binaries / consoles
+results/**/*.bin
+results/*.bin
+results/**/*.console
+results/*.console
+# editor / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+# symlink staging dirs created by bench.sh for out-of-tree instance sets
+results/solomon/set1/

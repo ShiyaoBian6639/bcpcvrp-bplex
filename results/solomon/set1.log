@@ -1,0 +1,734 @@
+== results/solomon/set1/C101.vrp (n=100)
+debug: loaded solution results/solomon/set1/C101.sol cost 8273
+node     0 d0   lb   8273.000 lp   8273.000 glb      0.000 ub - open 0 lp 1639/1639 rows 0 it 42 0.1s
+* incumbent 8273 from node LP (0.1s)
+times: pricing 0.0 master 0.0 cuts 0.0 rmip 0.0 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 0.1
+probes: 0  solve 0.0 (0 iters avg)  purged 0 repriced 0 lp cols 1639 pool 1639
+RESULT C101 status optimal lb 8273 ub 8273 published 8273 nodes 1 depth 0 cols 1639 rows 0 rootlp 8273.000 rootlb 8273.000 kmin 10 kmax 25 fleetcap 0 time 0.05s root 0.05s MATCHES published optimum
+Route #1: 43 42 41 40 44 46 45 48 51 50 52 49 47
+Route #2: 5 3 7 8 10 11 9 6 4 2 1 75
+Route #3: 67 65 63 62 74 72 61 64 68 66 69
+Route #4: 20 24 25 27 29 30 28 26 23 22 21
+Route #5: 90 87 86 83 82 84 85 88 89 91
+Route #6: 81 78 76 71 70 73 77 79 80
+Route #7: 98 96 95 94 92 93 97 100 99
+Route #8: 32 33 31 35 37 38 39 36 34
+Route #9: 57 55 54 53 56 58 60 59
+Route #10: 13 17 18 19 15 16 14 12
+Cost 827.3
+== results/solomon/set1/C102.vrp (n=100)
+debug: loaded solution results/solomon/set1/C102.sol cost 8273
+node     0 d0   lb   8273.000 lp   8273.000 glb      0.000 ub - open 0 lp 6060/6060 rows 0 it 76 0.5s
+* incumbent 8273 from node LP (0.5s)
+times: pricing 0.4 master 0.1 cuts 0.0 rmip 0.0 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 0.5
+probes: 0  solve 0.0 (0 iters avg)  purged 0 repriced 0 lp cols 6060 pool 6060
+RESULT C102 status optimal lb 8273 ub 8273 published 8273 nodes 1 depth 0 cols 6060 rows 0 rootlp 8273.000 rootlb 8273.000 kmin 10 kmax 25 fleetcap 0 time 0.55s root 0.55s MATCHES published optimum
+Route #1: 43 42 41 40 44 46 45 48 51 50 52 49 47
+Route #2: 20 24 25 27 29 30 28 26 23 22 21
+Route #3: 81 78 76 71 70 73 77 79 80
+Route #4: 57 55 54 53 56 58 60 59
+Route #5: 13 17 18 19 15 16 14 12
+Route #6: 32 33 31 35 37 38 39 36 34
+Route #7: 90 87 86 83 82 84 85 88 89 91
+Route #8: 98 96 95 94 92 93 97 100 99
+Route #9: 67 65 63 62 74 72 61 64 68 66 69
+Route #10: 5 3 7 8 10 11 9 6 4 2 1 75
+Cost 827.3
+== results/solomon/set1/C103.vrp (n=100)
+debug: loaded solution results/solomon/set1/C103.sol cost 8263
+node     0 d0   lb   8263.000 lp   8263.000 glb      0.000 ub - open 0 lp 8327/8327 rows 0 it 100 2.7s
+* incumbent 8263 from node LP (2.7s)
+times: pricing 2.5 master 0.2 cuts 0.0 rmip 0.0 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 2.7
+probes: 0  solve 0.0 (0 iters avg)  purged 0 repriced 0 lp cols 8327 pool 8327
+RESULT C103 status optimal lb 8263 ub 8263 published 8263 nodes 1 depth 0 cols 8327 rows 0 rootlp 8263.000 rootlb 8263.000 kmin 10 kmax 25 fleetcap 0 time 2.70s root 2.70s MATCHES published optimum
+Route #1: 13 17 18 19 15 16 14 12
+Route #2: 55 54 53 56 58 60 59 57
+Route #3: 98 96 95 94 92 93 97 100 99
+Route #4: 32 33 31 35 37 38 39 36 34
+Route #5: 5 3 7 8 10 11 9 6 4 2 1 75
+Route #6: 43 42 41 40 44 46 45 48 51 50 52 49 47
+Route #7: 67 65 62 74 72 61 64 68 66 69
+Route #8: 20 24 25 27 29 30 28 26 23 22 21
+Route #9: 81 78 76 71 70 73 77 79 80 63
+Route #10: 90 87 86 83 82 84 85 88 89 91
+Cost 826.3
+== results/solomon/set1/C104.vrp (n=100)
+debug: loaded solution results/solomon/set1/C104.sol cost 8229
+node     0 d0   lb   8229.000 lp   8229.000 glb      0.000 ub - open 0 lp 9554/9554 rows 0 it 113 8.0s
+* incumbent 8229 from node LP (8.0s)
+times: pricing 7.5 master 0.4 cuts 0.0 rmip 0.0 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 8.0
+probes: 0  solve 0.0 (0 iters avg)  purged 0 repriced 0 lp cols 9554 pool 9554
+RESULT C104 status optimal lb 8229 ub 8229 published 8229 nodes 1 depth 0 cols 9554 rows 0 rootlp 8229.000 rootlb 8229.000 kmin 10 kmax 25 fleetcap 0 time 7.97s root 7.97s MATCHES published optimum
+Route #1: 34 36 39 38 37 35 31 33 32
+Route #2: 55 54 53 56 58 60 59 57
+Route #3: 90 87 86 83 82 84 85 88 89 91
+Route #4: 43 42 41 40 44 45 46 48 51 50 52 49 47
+Route #5: 67 65 62 74 72 61 64 68 66 69
+Route #6: 5 3 7 8 11 9 6 4 2 1 75
+Route #7: 98 96 95 94 92 93 97 100 99
+Route #8: 13 17 18 19 15 16 14 12 10
+Route #9: 81 78 76 71 70 73 77 79 80 63
+Route #10: 20 24 25 27 29 30 28 26 23 22 21
+Cost 822.9
+== results/solomon/set1/C105.vrp (n=100)
+debug: loaded solution results/solomon/set1/C105.sol cost 8273
+node     0 d0   lb   8273.000 lp   8273.000 glb      0.000 ub - open 0 lp 2572/2572 rows 0 it 56 0.1s
+* incumbent 8273 from node LP (0.1s)
+times: pricing 0.1 master 0.0 cuts 0.0 rmip 0.0 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 0.1
+probes: 0  solve 0.0 (0 iters avg)  purged 0 repriced 0 lp cols 2572 pool 2572
+RESULT C105 status optimal lb 8273 ub 8273 published 8273 nodes 1 depth 0 cols 2572 rows 0 rootlp 8273.000 rootlb 8273.000 kmin 10 kmax 25 fleetcap 0 time 0.10s root 0.10s MATCHES published optimum
+Route #1: 43 42 41 40 44 46 45 48 51 50 52 49 47
+Route #2: 5 3 7 8 10 11 9 6 4 2 1 75
+Route #3: 67 65 63 62 74 72 61 64 68 66 69
+Route #4: 20 24 25 27 29 30 28 26 23 22 21
+Route #5: 90 87 86 83 82 84 85 88 89 91
+Route #6: 81 78 76 71 70 73 77 79 80
+Route #7: 98 96 95 94 92 93 97 100 99
+Route #8: 32 33 31 35 37 38 39 36 34
+Route #9: 57 55 54 53 56 58 60 59
+Route #10: 13 17 18 19 15 16 14 12
+Cost 827.3
+== results/solomon/set1/C106.vrp (n=100)
+debug: loaded solution results/solomon/set1/C106.sol cost 8273
+node     0 d0   lb   8273.000 lp   8273.000 glb      0.000 ub - open 0 lp 3592/3592 rows 0 it 82 0.2s
+* incumbent 8273 from node LP (0.2s)
+times: pricing 0.1 master 0.0 cuts 0.0 rmip 0.0 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 0.2
+probes: 0  solve 0.0 (0 iters avg)  purged 0 repriced 0 lp cols 3592 pool 3592
+RESULT C106 status optimal lb 8273 ub 8273 published 8273 nodes 1 depth 0 cols 3592 rows 0 rootlp 8273.000 rootlb 8273.000 kmin 10 kmax 25 fleetcap 0 time 0.21s root 0.21s MATCHES published optimum
+Route #1: 43 42 41 40 44 46 45 48 51 50 52 49 47
+Route #2: 5 3 7 8 10 11 9 6 4 2 1 75
+Route #3: 67 65 63 62 74 72 61 64 68 66 69
+Route #4: 20 24 25 27 29 30 28 26 23 22 21
+Route #5: 90 87 86 83 82 84 85 88 89 91
+Route #6: 81 78 76 71 70 73 77 79 80
+Route #7: 98 96 95 94 92 93 97 100 99
+Route #8: 32 33 31 35 37 38 39 36 34
+Route #9: 13 17 18 19 15 16 14 12
+Route #10: 57 55 54 53 56 58 60 59
+Cost 827.3
+== results/solomon/set1/C107.vrp (n=100)
+debug: loaded solution results/solomon/set1/C107.sol cost 8273
+node     0 d0   lb   8273.000 lp   8273.000 glb      0.000 ub - open 0 lp 2696/2696 rows 0 it 85 0.2s
+* incumbent 8273 from node LP (0.2s)
+times: pricing 0.1 master 0.0 cuts 0.0 rmip 0.0 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 0.2
+probes: 0  solve 0.0 (0 iters avg)  purged 0 repriced 0 lp cols 2696 pool 2696
+RESULT C107 status optimal lb 8273 ub 8273 published 8273 nodes 1 depth 0 cols 2696 rows 0 rootlp 8273.000 rootlb 8273.000 kmin 10 kmax 25 fleetcap 0 time 0.16s root 0.16s MATCHES published optimum
+Route #1: 43 42 41 40 44 46 45 48 51 50 52 49 47
+Route #2: 5 3 7 8 10 11 9 6 4 2 1 75
+Route #3: 67 65 63 62 74 72 61 64 68 66 69
+Route #4: 20 24 25 27 29 30 28 26 23 22 21
+Route #5: 90 87 86 83 82 84 85 88 89 91
+Route #6: 81 78 76 71 70 73 77 79 80
+Route #7: 98 96 95 94 92 93 97 100 99
+Route #8: 32 33 31 35 37 38 39 36 34
+Route #9: 57 55 54 53 56 58 60 59
+Route #10: 13 17 18 19 15 16 14 12
+Cost 827.3
+== results/solomon/set1/C108.vrp (n=100)
+debug: loaded solution results/solomon/set1/C108.sol cost 8273
+node     0 d0   lb   8273.000 lp   8273.000 glb      0.000 ub - open 0 lp 3923/3923 rows 0 it 62 0.4s
+* incumbent 8273 from node LP (0.4s)
+times: pricing 0.4 master 0.1 cuts 0.0 rmip 0.0 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 0.4
+probes: 0  solve 0.0 (0 iters avg)  purged 0 repriced 0 lp cols 3923 pool 3923
+RESULT C108 status optimal lb 8273 ub 8273 published 8273 nodes 1 depth 0 cols 3923 rows 0 rootlp 8273.000 rootlb 8273.000 kmin 10 kmax 25 fleetcap 0 time 0.44s root 0.44s MATCHES published optimum
+Route #1: 43 42 41 40 44 45 46 48 51 50 52 49 47
+Route #2: 5 3 7 8 10 11 9 6 4 2 1 75
+Route #3: 67 65 63 62 74 72 61 64 68 66 69
+Route #4: 20 24 25 27 29 30 28 26 23 22 21
+Route #5: 90 87 86 83 82 84 85 88 89 91
+Route #6: 32 33 31 35 37 38 39 36 34
+Route #7: 57 55 54 53 56 58 60 59
+Route #8: 13 17 18 19 15 16 14 12
+Route #9: 81 78 76 71 70 73 77 79 80
+Route #10: 98 96 95 94 92 93 97 100 99
+Cost 827.3
+== results/solomon/set1/C109.vrp (n=100)
+debug: loaded solution results/solomon/set1/C109.sol cost 8273
+node     0 d0   lb   8273.000 lp   8273.000 glb      0.000 ub - open 0 lp 4851/4851 rows 0 it 98 0.9s
+* incumbent 8273 from node LP (0.9s)
+times: pricing 0.7 master 0.1 cuts 0.0 rmip 0.0 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 0.9
+probes: 0  solve 0.0 (0 iters avg)  purged 0 repriced 0 lp cols 4851 pool 4851
+RESULT C109 status optimal lb 8273 ub 8273 published 8273 nodes 1 depth 0 cols 4851 rows 0 rootlp 8273.000 rootlb 8273.000 kmin 10 kmax 25 fleetcap 0 time 0.85s root 0.85s MATCHES published optimum
+Route #1: 43 42 41 40 44 45 46 48 51 50 52 49 47
+Route #2: 5 3 7 8 10 11 9 6 4 2 1 75
+Route #3: 67 65 63 62 74 72 61 64 68 66 69
+Route #4: 32 33 31 35 37 38 39 36 34
+Route #5: 13 17 18 19 15 16 14 12
+Route #6: 57 55 54 53 56 58 60 59
+Route #7: 90 87 86 83 82 84 85 88 89 91
+Route #8: 98 96 95 94 92 93 97 100 99
+Route #9: 81 78 76 71 70 73 77 79 80
+Route #10: 20 24 25 27 29 30 28 26 23 22 21
+Cost 827.3
+== results/solomon/set1/R101.vrp (n=100)
+debug: loaded solution results/solomon/set1/R101.sol cost 16377
+node     0 d0   lb  16340.000 lp  16340.000 glb      0.000 ub - open 0 lp 1783/1783 rows 14 it 37 0.1s
+* incumbent 16608 from dive (0.1s)
+* incumbent 16382 from restricted master MIP (0.7s)
+node     9 d4   lb  16360.000 lp  16360.000 glb  16352.000 ub 16382 open 1 lp 2015/2250 rows 39 it 4 7.3s
+* incumbent 16377 from node LP (7.4s)
+times: pricing 0.1 master 0.1 cuts 0.0 rmip 0.6 dive 0.0 branch 0.0 switch 0.0 enum 6.6 (label 6.5 in 3 tries, mip 0.1 in 2 solves, 2 nodes closed) total 7.4
+probes: 0  solve 0.0 (0 iters avg)  purged 253 repriced 0 lp cols 2007 pool 2260
+RESULT R101 status optimal lb 16377 ub 16377 published 16377 nodes 13 depth 5 cols 2260 rows 41 rootlp 16340.000 rootlb 16340.000 kmin 8 kmax 25 fleetcap 0 time 7.43s root 0.07s MATCHES published optimum
+Route #1: 2 21 73 41 56 4
+Route #2: 62 11 90 10
+Route #3: 59 99 94 96
+Route #4: 63 64 49 48
+Route #5: 31 88 7
+Route #6: 52 6
+Route #7: 39 23 67 55 25
+Route #8: 40 53 26
+Route #9: 27 69 30 51 20 32 70
+Route #10: 36 47 19 8 46 17
+Route #11: 65 71 9 66 1
+Route #12: 92 42 15 87 57 97
+Route #13: 14 44 38 43 13
+Route #14: 33 81 50 68
+Route #15: 95 98 16 86 91 100
+Route #16: 28 29 78 34 35 77
+Route #17: 72 75 22 74 58
+Route #18: 45 82 18 84 60 89
+Route #19: 5 83 61 85 37 93
+Route #20: 12 76 79 3 54 24 80
+Cost 1637.7
+== results/solomon/set1/R102.vrp (n=100)
+debug: loaded solution results/solomon/set1/R102.sol cost 14666
+node     0 d0   lb  14666.000 lp  14666.000 glb      0.000 ub - open 0 lp 4286/4286 rows 0 it 48 0.2s
+* incumbent 14666 from node LP (0.2s)
+times: pricing 0.1 master 0.1 cuts 0.0 rmip 0.0 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 0.2
+probes: 0  solve 0.0 (0 iters avg)  purged 0 repriced 0 lp cols 4286 pool 4286
+RESULT R102 status optimal lb 14666 ub 14666 published 14666 nodes 1 depth 0 cols 4286 rows 0 rootlp 14666.000 rootlb 14666.000 kmin 8 kmax 25 fleetcap 0 time 0.24s root 0.24s MATCHES published optimum
+Route #1: 18
+Route #2: 65 71 81 3 68
+Route #3: 73 22 74 72 21
+Route #4: 40 53
+Route #5: 87 57 2 58
+Route #6: 27 69 88 10 31
+Route #7: 42 15 41 75 56 4
+Route #8: 83 45 61 84 5 60 89
+Route #9: 63 64 49 48 82 7 52
+Route #10: 36 47 19 8 46 17 93 59
+Route #11: 62 11 90 20 32 70
+Route #12: 50 33 29 78 34 35 77
+Route #13: 28 76 79 54 24 80 12
+Route #14: 95 14 44 38 43 100 37
+Route #15: 94 96 99 6
+Route #16: 92 98 85 16 86 91 97 13
+Route #17: 39 23 67 55 25 26
+Route #18: 30 51 9 66 1
+Cost 1466.6
+== results/solomon/set1/R103.vrp (n=100)
+debug: loaded solution results/solomon/set1/R103.sol cost 12087
+node     0 d0   lb  12084.400 lp  12084.400 glb      0.000 ub - open 0 lp 5964/5964 rows 100 it 108 1.4s
+* incumbent 12087 from dive (1.6s)
+times: pricing 1.7 master 0.5 cuts 0.1 rmip 0.8 dive 0.2 branch 0.0 switch 0.0 enum 2.2 (label 2.2 in 1 tries, mip 0.0 in 0 solves, 0 nodes closed) total 5.5
+probes: 0  solve 0.0 (0 iters avg)  purged 4566 repriced 249 lp cols 2121 pool 6438
+RESULT R103 status optimal lb 12087 ub 12087 published 12087 nodes 3 depth 1 cols 6438 rows 100 rootlp 12084.400 rootlb 12084.400 kmin 8 kmax 25 fleetcap 0 time 5.50s root 1.45s MATCHES published optimum
+Route #1: 52 7 62 11 63 90 10 31
+Route #2: 94 95 97 87 13
+Route #3: 40 53
+Route #4: 50 33 3 76 79 29 24 68 80 12
+Route #5: 36 64 49 19 47 48 82 18
+Route #6: 27 69 88 8 46 17 5 60 89
+Route #7: 96 99 6
+Route #8: 51 65 71 9 66 20 32 70
+Route #9: 2 22 74 72 73 58
+Route #10: 21 39 23 67 55 25 54
+Route #11: 42 43 15 57 41 75 56 4 26
+Route #12: 92 98 14 44 38 86 16 91 100 37
+Route #13: 83 45 84 61 85 93 59
+Route #14: 1 30 78 34 35 81 77 28
+Cost 1208.7
+== results/solomon/set1/R104.vrp (n=100)
+debug: loaded solution results/solomon/set1/R104.sol cost 9715
+node     0 d0   lb   9627.942 lp   9627.942 glb      0.000 ub - open 0 lp 6559/6559 rows 101 it 130 14.2s
+node    18 d9   lb   9761.333 lp   9761.333 glb   9627.942 ub - open 9 lp 2594/10833 rows 117 it 21 37.5s
+* incumbent 9816 from node LP (48.4s)
+node    36 d4   lb   9676.026 lp   9676.026 glb   9635.398 ub 9816 open 17 lp 2302/12139 rows 135 it 15 60.7s
+node    56 d14  lb   9835.692 lp   9862.881 glb   9635.398 ub 9816 open 27 lp 2542/14062 rows 156 it 17 123.6s
+node    74 d11  lb   9768.576 lp   9768.778 glb   9653.467 ub 9816 open 35 lp 2721/15494 rows 174 it 39 155.4s
+node    92 d7   lb   9716.853 lp   9716.853 glb   9658.934 ub 9816 open 43 lp 2147/16974 rows 192 it 8 188.4s
+node    57 d3   lb   9692.491 lp   9692.491 glb   9658.934 ub 9816 open 51 lp 2722/17948 rows 206 it 17 230.9s
+node   130 d13  lb   9790.099 lp   9790.099 glb   9659.729 ub 9816 open 61 lp 2072/18307 rows 226 it 9 264.4s
+times: pricing 227.4 master 8.4 cuts 0.7 rmip 7.0 dive 7.0 branch 0.1 switch 0.0 enum 49.8 (label 49.8 in 27 tries, mip 0.0 in 0 solves, 0 nodes closed) total 300.7
+probes: 0  solve 0.0 (0 iters avg)  purged 31874 repriced 14563 lp cols 2033 pool 19344
+RESULT R104 status time_limit lb 9663 ub 9816 published 9715 nodes 78 depth 16 cols 19344 rows 238 rootlp 9627.942 rootlb 9627.942 kmin 8 kmax 25 fleetcap 0 time 300.68s root 14.19s 
+Route #1: 53
+Route #2: 2 57 15 41 22 75 74 73 40 58
+Route #3: 31 88 62 11 63 64 49 19 7 52
+Route #4: 94 95 97 87 13
+Route #5: 21 72 56 23 67 39 55 4 25 54
+Route #6: 89 60 83 45 8 46 36 47 48 82 18
+Route #7: 50 78 34 35 71 65 66 32 90 10
+Route #8: 27 69 76 79 29 24 68 80 12 26
+Route #9: 92 37 98 93 96 99 84 17 86 16 61 5
+Route #10: 6 85 91 44 38 14 43 42 100 59
+Route #11: 1 70 30 20 51 9 81 33 3 77 28
+Cost 981.6
+== results/solomon/set1/R105.vrp (n=100)
+debug: loaded solution results/solomon/set1/R105.sol cost 13553
+node     0 d0   lb  13538.140 lp  13538.140 glb      0.000 ub - open 0 lp 3073/3073 rows 100 it 86 0.7s
+* incumbent 13553 from dive (0.8s)
+times: pricing 0.7 master 0.3 cuts 0.0 rmip 1.2 dive 0.1 branch 0.0 switch 0.0 enum 2.0 (label 2.0 in 1 tries, mip 0.0 in 0 solves, 0 nodes closed) total 4.3
+probes: 0  solve 0.0 (0 iters avg)  purged 1183 repriced 26 lp cols 2038 pool 3195
+RESULT R105 status optimal lb 13553 ub 13553 published 13553 nodes 5 depth 2 cols 3195 rows 102 rootlp 13538.140 rootlb 13538.140 kmin 8 kmax 25 fleetcap 0 time 4.26s root 0.72s MATCHES published optimum
+Route #1: 47 36 19 49 46 48
+Route #2: 62 88 7 18
+Route #3: 53 40 26
+Route #4: 52 82 8 84 17 60 89
+Route #5: 63 64 11 90 10
+Route #6: 27 69 76 50 1
+Route #7: 28 12 29 79 78 34 35 77
+Route #8: 33 65 71 66 20 32 70
+Route #9: 31 30 51 9 81 3 68 24 80
+Route #10: 21 73 75 22 41 56 74 58
+Route #11: 42 14 44 38 86 43 100 91 93
+Route #12: 2 15 57 87 97 13
+Route #13: 72 39 23 67 55 54 4 25
+Route #14: 5 45 83 99 94 6
+Route #15: 59 95 92 98 16 61 85 37 96
+Cost 1355.3
+== results/solomon/set1/R106.vrp (n=100)
+debug: loaded solution results/solomon/set1/R106.sol cost 12346
+node     0 d0   lb  12319.173 lp  12319.173 glb      0.000 ub - open 0 lp 5440/5440 rows 100 it 86 1.7s
+* incumbent 12433 from dive (2.7s)
+* incumbent 12358 from restricted master MIP (5.9s)
+node    14 d3   lb  12332.621 lp  12332.621 glb  12324.378 ub 12358 open 5 lp 2044/6959 rows 112 it 7 16.7s
+node    30 d5   lb  12344.082 lp  12344.082 glb  12329.893 ub 12358 open 11 lp 2003/7269 rows 128 it 3 30.8s
+* incumbent 12346 from node LP (42.4s)
+node    44 d6   lb  12357.855 lp  12357.855 glb  12332.621 ub 12346 open 15 lp 2015/7915 rows 138 it 6 45.3s
+node    25 d6   lb  12352.969 lp  12352.969 glb  12339.766 ub 12346 open 13 lp 2229/8195 rows 146 it 10 55.7s
+times: pricing 10.1 master 2.3 cuts 0.2 rmip 3.0 dive 1.0 branch 0.0 switch 0.0 enum 40.5 (label 40.5 in 20 tries, mip 0.0 in 0 solves, 0 nodes closed) total 57.3
+probes: 0  solve 0.0 (0 iters avg)  purged 9679 repriced 3458 lp cols 2074 pool 8295
+RESULT R106 status optimal lb 12346 ub 12346 published 12346 nodes 47 depth 8 cols 8295 rows 146 rootlp 12319.173 rootlb 12319.173 kmin 8 kmax 25 fleetcap 0 time 57.34s root 1.73s MATCHES published optimum
+Route #1: 63 64 11 90 10 31
+Route #2: 83 45 8 84 17 5 60
+Route #3: 73 41 22 75 56 74 2 58
+Route #4: 69 30 51 81 9 35 34 3 77
+Route #5: 48 47 36 19 49 46 82 7 52
+Route #6: 50 33 65 71 66 20 32 70 1
+Route #7: 94 92 42 15 57 87 97 95 13
+Route #8: 28 76 40 53
+Route #9: 12 29 78 79 68 54 24 80
+Route #10: 96 85 91 16 61 99 6
+Route #11: 21 72 39 23 67 55 4 25 26
+Route #12: 27 62 88 18 89
+Route #13: 59 37 14 44 38 86 43 100 98 93
+Cost 1234.6
+== results/solomon/set1/R107.vrp (n=100)
+debug: loaded solution results/solomon/set1/R107.sol cost 10646
+node     0 d0   lb  10593.686 lp  10593.686 glb      0.000 ub - open 0 lp 6917/6917 rows 103 it 123 6.8s
+* incumbent 11162 from dive (10.4s)
+node    18 d9   lb  10725.000 lp  10725.000 glb  10593.686 ub 11162 open 9 lp 2154/9463 rows 119 it 19 25.8s
+* incumbent 10728 from node LP (27.5s)
+node    36 d9   lb  10681.209 lp  10681.209 glb  10595.262 ub 10728 open 17 lp 2116/10456 rows 137 it 10 45.7s
+node    54 d5   lb  10673.000 lp  10673.000 glb  10606.622 ub 10728 open 25 lp 2125/11942 rows 153 it 15 73.1s
+* incumbent 10673 from node LP (73.1s)
+* incumbent 10646 from node LP (80.5s)
+node    70 d8   lb  10651.232 lp  10662.232 glb  10614.746 ub 10646 open 31 lp 2290/12337 rows 167 it 15 88.0s
+node    71 d6   lb  10648.897 lp  10648.897 glb  10616.771 ub 10646 open 35 lp 2320/13035 rows 181 it 17 108.7s
+node    92 d6   lb  10643.003 lp  10643.003 glb  10633.479 ub 10646 open 33 lp 2063/14648 rows 183 it 14 128.6s
+node    89 d7   lb  10645.285 lp  10645.285 glb  10637.760 ub 10646 open 31 lp 2098/15026 rows 191 it 7 147.5s
+node   101 d10  lb  10645.469 lp  10645.469 glb  10643.624 ub 10646 open 23 lp 2520/15758 rows 152 it 13 158.4s
+times: pricing 74.6 master 9.4 cuts 0.5 rmip 6.5 dive 3.5 branch 0.0 switch 0.0 enum 65.0 (label 65.0 in 30 tries, mip 0.0 in 0 solves, 0 nodes closed) total 159.9
+probes: 0  solve 0.0 (0 iters avg)  purged 30209 repriced 16697 lp cols 2281 pool 15793
+RESULT R107 status optimal lb 10646 ub 10646 published 10646 nodes 82 depth 15 cols 15793 rows 152 rootlp 10593.686 rootlb 10593.686 kmin 8 kmax 25 fleetcap 0 time 159.90s root 6.85s MATCHES published optimum
+Route #1: 28 76 79 78 29 24 68 80 12
+Route #2: 42 43 14 44 38 86 16 91 100 37 98
+Route #3: 33 81 65 71 9 35 34 3 77
+Route #4: 53 40
+Route #5: 52 7 62 11 63 90 32 66 20 51 50
+Route #6: 94 96 92 59 99 6 87 97 95 13
+Route #7: 2 57 15 41 22 75 56 4 74 73 58
+Route #8: 21 72 39 23 67 55 25 54 26
+Route #9: 60 83 45 46 8 84 5 17 61 85 93
+Route #10: 27 69 30 88 31 10 70 1
+Route #11: 48 47 36 64 49 19 82 18 89
+Cost 1064.6
+== results/solomon/set1/R108.vrp (n=100)
+debug: loaded solution results/solomon/set1/R108.sol cost 9321
+node     0 d0   lb   9227.796 lp   9227.796 glb      0.000 ub - open 0 lp 8177/8177 rows 104 it 137 25.0s
+* incumbent 9659 from dive (36.4s)
+node    18 d9   lb   9295.548 lp   9295.548 glb   9227.796 ub 9659 open 9 lp 2397/12475 rows 120 it 12 74.2s
+node    38 d19  lb   9452.653 lp   9452.653 glb   9227.796 ub 9659 open 19 lp 2473/13854 rows 139 it 19 96.3s
+node    58 d29  lb   9658.197 lp   9658.197 glb   9227.796 ub 9659 open 29 lp 2309/16351 rows 160 it 21 124.7s
+node    76 d10  lb   9539.061 lp   9539.061 glb   9233.879 ub 9659 open 37 lp 2378/18674 rows 178 it 17 224.8s
+times: pricing 256.8 master 5.7 cuts 0.6 rmip 5.0 dive 11.4 branch 0.0 switch 0.0 enum 22.6 (label 22.6 in 13 tries, mip 0.0 in 0 solves, 0 nodes closed) total 302.4
+probes: 0  solve 0.0 (0 iters avg)  purged 28060 repriced 10040 lp cols 2115 pool 20135
+RESULT R108 status time_limit lb 9234 ub 9659 published 9321 nodes 48 depth 29 cols 20135 rows 197 rootlp 9227.796 rootlb 9227.796 kmin 8 kmax 25 fleetcap 0 time 302.44s root 24.97s 
+Route #1: 18
+Route #2: 53
+Route #3: 92 98 91 44 14 38 86 16 61 85 100 37
+Route #4: 70 30 20 66 65 71 35 34 78 77 28
+Route #5: 72 75 56 23 67 39 55 4 25 54
+Route #6: 88 62 11 64 49 36 47 19 7 52
+Route #7: 2 57 15 43 42 87 41 22 74 73 21 40
+Route #8: 50 33 81 9 51 32 90 63 10 31
+Route #9: 27 69 1 76 3 79 29 24 68 80 12 26
+Route #10: 6 96 99 93 59 97 95 94 13 58
+Route #11: 82 48 46 8 45 84 17 5 83 60 89
+Cost 965.9
+== results/solomon/set1/R109.vrp (n=100)
+debug: loaded solution results/solomon/set1/R109.sol cost 11469
+node     0 d0   lb  11399.245 lp  11399.245 glb      0.000 ub - open 0 lp 3818/3818 rows 100 it 92 2.6s
+* incumbent 11540 from dive (4.7s)
+* incumbent 11487 from node LP (19.4s)
+node     1 d1   lb  11411.429 lp  11411.429 glb  11399.245 ub 11487 open 7 lp 2170/6747 rows 114 it 15 19.7s
+node    34 d6   lb  11491.139 lp  11491.139 glb  11413.228 ub 11487 open 15 lp 2032/7559 rows 132 it 8 36.2s
+node    50 d7   lb  11472.000 lp  11472.000 glb  11419.979 ub 11487 open 21 lp 2365/8100 rows 145 it 19 51.9s
+* incumbent 11472 from node LP (51.9s)
+node    66 d6   lb  11479.933 lp  11479.933 glb  11424.487 ub 11472 open 27 lp 2184/8547 rows 161 it 10 66.3s
+node    80 d6   lb  11448.415 lp  11448.415 glb  11426.635 ub 11472 open 31 lp 2014/8693 rows 175 it 5 76.9s
+node    29 d4   lb  11436.406 lp  11436.406 glb  11431.290 ub 11472 open 35 lp 2221/9130 rows 183 it 12 92.5s
+node   110 d7   lb  11472.054 lp  11472.054 glb  11436.406 ub 11472 open 41 lp 2291/9436 rows 199 it 15 107.2s
+node   122 d7   lb  11474.580 lp  11474.580 glb  11438.712 ub 11472 open 43 lp 2064/9645 rows 204 it 9 120.2s
+node    43 d4   lb  11476.000 lp  11476.000 glb  11441.616 ub 11472 open 43 lp 2059/9804 rows 214 it 6 133.9s
+node    55 d6   lb  11467.352 lp  11467.352 glb  11446.688 ub 11472 open 41 lp 2142/10025 rows 222 it 10 145.3s
+node   152 d6   lb  11475.289 lp  11475.289 glb  11451.610 ub 11472 open 43 lp 2024/10216 rows 221 it 6 159.7s
+* incumbent 11469 from node LP (167.0s)
+node   137 d7   lb  11471.997 lp  11471.997 glb  11455.998 ub 11469 open 39 lp 2255/10350 rows 227 it 6 168.4s
+node   113 d7   lb  11465.961 lp  11465.961 glb  11460.415 ub 11469 open 31 lp 2347/10655 rows 211 it 18 174.0s
+node   105 d6   lb  11471.392 lp  11483.392 glb  11463.389 ub 11469 open 25 lp 2251/11029 rows 215 it 8 182.1s
+node   161 d8   lb  11490.201 lp  11490.201 glb  11465.961 ub 11469 open 15 lp 2169/11339 rows 215 it 11 185.9s
+times: pricing 37.3 master 11.2 cuts 0.5 rmip 5.0 dive 2.1 branch 0.1 switch 0.0 enum 131.8 (label 131.8 in 67 tries, mip 0.0 in 0 solves, 0 nodes closed) total 188.2
+probes: 0  solve 0.0 (0 iters avg)  purged 30325 repriced 21202 lp cols 2403 pool 11526
+RESULT R109 status optimal lb 11469 ub 11469 published 11469 nodes 157 depth 9 cols 11526 rows 162 rootlp 11399.245 rootlb 11399.245 kmin 8 kmax 25 fleetcap 0 time 188.22s root 2.57s MATCHES published optimum
+Route #1: 53
+Route #2: 62 11 64 63 90 32 10 70
+Route #3: 52 88 7 82 18
+Route #4: 72 75 23 67 39 25 55 54 24 80
+Route #5: 95 92 98 44 38 14 43 97 13
+Route #6: 2 42 15 57 87 94 6 96
+Route #7: 40 21 73 22 41 74 56 4 58
+Route #8: 28 76 33 81 9 35 34 68 77
+Route #9: 12 29 78 79 3 50 26
+Route #10: 27 69 30 51 71 65 66 20 1
+Route #11: 31 19 47 49 36 46 48
+Route #12: 5 83 8 45 84 17 60 89
+Route #13: 59 99 85 61 16 86 91 37 100 93
+Cost 1146.9
+== results/solomon/set1/R110.vrp (n=100)
+debug: loaded solution results/solomon/set1/R110.sol cost 10680
+node     0 d0   lb  10605.500 lp  10605.500 glb      0.000 ub - open 0 lp 4039/4039 rows 100 it 100 6.3s
+* incumbent 10742 from restricted master MIP (14.3s)
+node    18 d9   lb  10733.630 lp  10733.630 glb  10605.500 ub 10742 open 9 lp 2245/6313 rows 116 it 18 30.3s
+node    36 d9   lb  10738.602 lp  10738.602 glb  10612.083 ub 10742 open 17 lp 2073/7299 rows 134 it 11 51.6s
+node    54 d10  lb  10734.999 lp  10734.999 glb  10615.562 ub 10742 open 25 lp 2116/7874 rows 150 it 16 73.9s
+node    72 d11  lb  10760.633 lp  10760.633 glb  10632.497 ub 10742 open 33 lp 2035/8396 rows 168 it 11 96.3s
+node    88 d5   lb  10672.100 lp  10672.100 glb  10640.365 ub 10742 open 39 lp 2025/8786 rows 185 it 5 121.4s
+node   106 d8   lb  10738.669 lp  10738.669 glb  10641.666 ub 10742 open 47 lp 2035/8992 rows 199 it 13 145.4s
+node    59 d5   lb  10651.786 lp  10651.786 glb  10642.589 ub 10742 open 53 lp 2172/9315 rows 215 it 6 171.1s
+node   140 d8   lb  10719.313 lp  10719.313 glb  10651.786 ub 10742 open 61 lp 2033/9509 rows 231 it 12 197.1s
+node   158 d13  lb  10743.990 lp  10745.529 glb  10655.272 ub 10742 open 69 lp 2091/9754 rows 249 it 12 222.7s
+node   174 d6   lb  10706.615 lp  10706.615 glb  10656.875 ub 10742 open 75 lp 2030/9940 rows 265 it 13 244.5s
+node   192 d12  lb  10723.746 lp  10723.746 glb  10657.169 ub 10742 open 83 lp 2484/10458 rows 279 it 27 266.5s
+node   210 d9   lb  10740.402 lp  10740.402 glb  10658.346 ub 10742 open 91 lp 2231/10702 rows 297 it 12 291.3s
+times: pricing 125.4 master 7.3 cuts 1.2 rmip 4.4 dive 4.7 branch 0.1 switch 0.0 enum 156.9 (label 156.9 in 72 tries, mip 0.0 in 0 solves, 0 nodes closed) total 300.1
+probes: 0  solve 0.0 (0 iters avg)  purged 17330 repriced 8166 lp cols 2084 pool 11248
+RESULT R110 status time_limit lb 10660 ub 10742 published 10680 nodes 123 depth 15 cols 11248 rows 303 rootlp 10605.500 rootlb 10605.500 kmin 8 kmax 25 fleetcap 0 time 300.14s root 6.30s 
+Route #1: 52 18 83 8 46 45 17 60 89
+Route #2: 69 70 30 51 81 79 3 77 50
+Route #3: 53 58 87 57 15 43 42 13
+Route #4: 21 72 75 56 23 67 39 25 55 4
+Route #5: 33 9 35 71 65 66 20 1
+Route #6: 82 47 19 11 64 49 36 48
+Route #7: 27 31 88 7 62 63 90 32 10
+Route #8: 28 12 76 29 78 34 24 54 80 68
+Route #9: 59 99 5 84 61 16 85 37 97
+Route #10: 2 41 22 74 73 40 26
+Route #11: 94 96 6
+Route #12: 95 92 98 100 14 38 86 44 91 93
+Cost 1074.2
+== results/solomon/set1/R111.vrp (n=100)
+debug: loaded solution results/solomon/set1/R111.sol cost 10487
+node     0 d0   lb  10414.134 lp  10414.134 glb      0.000 ub - open 0 lp 5723/5723 rows 102 it 117 4.9s
+* incumbent 10938 from dive (8.2s)
+* incumbent 10539 from restricted master MIP (13.4s)
+node    18 d9   lb  10490.720 lp  10490.720 glb  10414.134 ub 10539 open 9 lp 2594/8687 rows 118 it 17 23.3s
+node    36 d5   lb  10463.610 lp  10463.610 glb  10427.786 ub 10539 open 17 lp 2334/9627 rows 136 it 19 35.7s
+node    54 d5   lb  10468.346 lp  10468.346 glb  10429.321 ub 10539 open 25 lp 2039/11414 rows 151 it 10 57.2s
+node    72 d8   lb  10528.028 lp  10528.028 glb  10431.294 ub 10539 open 33 lp 2051/12078 rows 169 it 8 72.1s
+node    88 d6   lb  10524.121 lp  10524.121 glb  10432.244 ub 10539 open 39 lp 2033/13316 rows 186 it 10 87.9s
+node   104 d6   lb  10459.815 lp  10459.815 glb  10439.392 ub 10539 open 45 lp 2080/13727 rows 201 it 9 103.9s
+* incumbent 10523 from node LP (116.4s)
+node   122 d9   lb  10510.448 lp  10510.448 glb  10439.768 ub 10523 open 53 lp 2275/15303 rows 220 it 7 124.6s
+* incumbent 10520 from node LP (129.0s)
+node   140 d12  lb  10526.587 lp  10526.587 glb  10442.386 ub 10520 open 61 lp 2338/16679 rows 232 it 18 152.4s
+node   156 d10  lb  10546.674 lp  10546.674 glb  10444.670 ub 10520 open 67 lp 2214/16984 rows 248 it 12 167.0s
+node   103 d6   lb  10458.104 lp  10458.104 glb  10445.921 ub 10520 open 71 lp 2421/17174 rows 263 it 16 184.2s
+node   188 d8   lb  10527.018 lp  10527.018 glb  10448.834 ub 10520 open 79 lp 2205/18540 rows 275 it 10 216.4s
+node    51 d4   lb  10466.873 lp  10466.873 glb  10451.775 ub 10520 open 85 lp 2719/19071 rows 291 it 11 237.4s
+node   220 d7   lb  10518.021 lp  10518.021 glb  10453.509 ub 10520 open 91 lp 2097/19544 rows 303 it 16 249.2s
+node   234 d9   lb  10478.220 lp  10478.220 glb  10454.376 ub 10520 open 95 lp 2336/20173 rows 317 it 9 262.8s
+* incumbent 10499 from node LP (275.4s)
+node   245 d7   lb  10460.160 lp  10460.160 glb  10454.471 ub 10499 open 99 lp 2174/20663 rows 332 it 8 282.0s
+times: pricing 134.5 master 13.9 cuts 1.0 rmip 4.7 dive 3.3 branch 0.1 switch 0.0 enum 142.9 (label 142.9 in 80 tries, mip 0.0 in 0 solves, 0 nodes closed) total 300.9
+probes: 0  solve 0.0 (0 iters avg)  purged 47326 repriced 28775 lp cols 2264 pool 20815
+RESULT R111 status time_limit lb 10458 ub 10499 published 10487 nodes 158 depth 14 cols 20815 rows 334 rootlp 10414.134 rootlb 10414.134 kmin 8 kmax 25 fleetcap 0 time 300.87s root 4.90s 
+Route #1: 53 40 58
+Route #2: 28 76 79 78 29 24 68 80 12
+Route #3: 2 57 15 43 41 22 74 4 72 21
+Route #4: 73 75 23 67 39 56 55 25 54 26
+Route #5: 7 19 64 49 36 46 47 48 82
+Route #6: 1 30 51 71 65 66 20 32 70
+Route #7: 52 88 62 11 63 90 10 31
+Route #8: 92 98 37 59 99 97 87 6 94 13
+Route #9: 95 42 14 44 38 86 16 17 5 60 89
+Route #10: 27 69 50 33 81 9 35 34 3 77
+Route #11: 83 18 45 8 84 61 91 100 85 93 96
+Cost 1049.9
+== results/solomon/set1/R112.vrp (n=100)
+debug: loaded solution results/solomon/set1/R112.sol cost 9486
+node     0 d0   lb   9373.558 lp   9373.558 glb      0.000 ub - open 0 lp 5619/5619 rows 110 it 132 25.6s
+* incumbent 9694 from dive (38.4s)
+node    18 d9   lb   9471.877 lp   9471.877 glb   9373.558 ub 9694 open 9 lp 2058/9694 rows 128 it 13 76.5s
+node    38 d19  lb   9612.268 lp   9612.268 glb   9373.558 ub 9694 open 19 lp 2065/11200 rows 149 it 9 103.2s
+times: pricing 265.0 master 3.3 cuts 0.4 rmip 5.0 dive 12.9 branch 0.0 switch 0.0 enum 13.3 (label 13.3 in 6 tries, mip 0.0 in 0 solves, 0 nodes closed) total 300.0
+probes: 0  solve 0.0 (0 iters avg)  purged 16032 repriced 5918 lp cols 3445 pool 13559
+RESULT R112 status time_limit lb 9374 ub 9694 published 9486 nodes 27 depth 25 cols 13559 rows 141 rootlp 9373.558 rootlb 9373.558 kmin 8 kmax 25 fleetcap 0 time 300.01s root 25.55s 
+Route #1: 95 99 61 16 86 38 14 44 91 100 37 13
+Route #2: 21 73 72 75 56 23 67 39 25 55 4
+Route #3: 28 76 79 78 34 35 71 65 66 20 1
+Route #4: 53 12 80 68 29 24 54 26
+Route #5: 31 62 19 11 64 63 90 32 10
+Route #6: 27 69 70 30 51 9 81 33 3 77 50
+Route #7: 40 2 57 43 15 41 22 74 58
+Route #8: 52 88 7 82 8 46 36 49 47 48
+Route #9: 6 94 87 42 97 98 85 93 59 96
+Route #10: 92 5 84 17 45 83 18 60 89
+Cost 969.4
+== results/solomon/set1/RC101.vrp (n=100)
+debug: loaded solution results/solomon/set1/RC101.sol cost 16198
+node     0 d0   lb  16170.476 lp  16170.476 glb      0.000 ub - open 0 lp 3310/3310 rows 105 it 92 0.7s
+* incumbent 16752 from dive (1.1s)
+* incumbent 16198 from restricted master MIP (3.6s)
+node    10 d3   lb  16230.613 lp  16235.412 glb  16194.307 ub 16198 open 1 lp 2000/3955 rows 113 it 1 12.3s
+times: pricing 1.1 master 0.5 cuts 0.1 rmip 2.4 dive 0.4 branch 0.0 switch 0.0 enum 8.0 (label 8.0 in 4 tries, mip 0.0 in 0 solves, 0 nodes closed) total 12.4
+probes: 0  solve 0.0 (0 iters avg)  purged 2392 repriced 450 lp cols 2022 pool 3964
+RESULT RC101 status optimal lb 16198 ub 16198 published 16198 nodes 11 depth 3 cols 3964 rows 113 rootlp 16170.476 rootlb 16170.476 kmin 9 kmax 25 fleetcap 0 time 12.40s root 0.73s MATCHES published optimum
+Route #1: 90
+Route #2: 23 21 18 49 22 20 25 24
+Route #3: 59 75 87 97 58 77
+Route #4: 65 52 99 57 86 74
+Route #5: 69 98 88 53 78 60
+Route #6: 64 51 85 84 56 66
+Route #7: 82 11 15 16 9 10 13 17
+Route #8: 92 31 29 27 26 32 93
+Route #9: 63 33 28 30 34 50 91 80
+Route #10: 39 42 44 61 81 68 55
+Route #11: 72 36 38 41 40 43 37 35
+Route #12: 83 19 76 89 48
+Route #13: 5 45 2 7 6 8 3 1 70
+Route #14: 14 47 12 73 79 46 4 100
+Route #15: 95 62 67 71 94 96 54
+Cost 1619.8
+== results/solomon/set1/RC102.vrp (n=100)
+debug: loaded solution results/solomon/set1/RC102.sol cost 14574
+node     0 d0   lb  14379.665 lp  14379.665 glb      0.000 ub - open 0 lp 4962/4962 rows 114 it 119 3.3s
+* incumbent 16837 from dive (6.6s)
+* incumbent 15717 from restricted master MIP (12.0s)
+node    18 d9   lb  14672.000 lp  14672.000 glb  14379.665 ub 15717 open 9 lp 2081/8189 rows 134 it 13 17.2s
+* incumbent 14672 from node LP (17.2s)
+node    34 d6   lb  14640.922 lp  14640.922 glb  14384.367 ub 14672 open 15 lp 2034/9699 rows 148 it 8 34.9s
+node    52 d10  lb  14639.043 lp  14639.043 glb  14384.791 ub 14672 open 23 lp 2100/10464 rows 152 it 16 51.3s
+node    68 d4   lb  14558.918 lp  14558.918 glb  14429.849 ub 14672 open 29 lp 2087/11157 rows 168 it 8 64.3s
+node    86 d7   lb  14657.467 lp  14657.467 glb  14435.968 ub 14672 open 37 lp 2111/11534 rows 184 it 14 81.2s
+node   100 d7   lb  14561.670 lp  14561.670 glb  14444.184 ub 14672 open 41 lp 2144/12108 rows 196 it 18 92.5s
+node   116 d8   lb  14620.546 lp  14620.546 glb  14451.132 ub 14672 open 47 lp 2189/12404 rows 212 it 8 105.7s
+node   132 d8   lb  14580.232 lp  14580.232 glb  14461.693 ub 14672 open 53 lp 2182/12843 rows 220 it 15 121.2s
+node   148 d7   lb  14677.833 lp  14677.833 glb  14487.203 ub 14672 open 59 lp 2208/13336 rows 239 it 10 132.3s
+node   162 d8   lb  14607.514 lp  14607.514 glb  14496.037 ub 14672 open 63 lp 2200/13708 rows 253 it 17 145.6s
+node    61 d6   lb  14586.575 lp  14586.581 glb  14509.233 ub 14672 open 65 lp 2341/14371 rows 255 it 16 159.1s
+node   139 d6   lb  14579.680 lp  14579.680 glb  14520.009 ub 14672 open 67 lp 2139/14734 rows 270 it 6 171.1s
+* incumbent 14657 from node LP (183.9s)
+node    21 d3   lb  14586.480 lp  14586.480 glb  14538.256 ub 14657 open 71 lp 2637/15103 rows 274 it 21 192.3s
+node   216 d12  lb  14641.373 lp  14641.373 glb  14546.827 ub 14657 open 77 lp 2047/15444 rows 294 it 11 203.9s
+node   228 d8   lb  14618.790 lp  14618.790 glb  14551.255 ub 14657 open 79 lp 2095/15657 rows 305 it 5 213.7s
+node   244 d7   lb  14594.565 lp  14594.565 glb  14556.064 ub 14657 open 85 lp 2198/16309 rows 305 it 18 240.4s
+node   256 d11  lb  14601.023 lp  14601.023 glb  14562.728 ub 14657 open 87 lp 2021/16819 rows 316 it 12 256.3s
+node   272 d11  lb  14655.401 lp  14655.401 glb  14567.998 ub 14657 open 93 lp 2356/17437 rows 316 it 18 296.3s
+times: pricing 64.9 master 14.7 cuts 1.1 rmip 5.0 dive 3.3 branch 0.1 switch 0.0 enum 217.7 (label 217.7 in 91 tries, mip 0.0 in 0 solves, 0 nodes closed) total 307.2
+probes: 0  solve 0.0 (0 iters avg)  purged 50703 repriced 35622 lp cols 2356 pool 17437
+RESULT RC102 status time_limit lb 14568 ub 14657 published 14574 nodes 180 depth 14 cols 17437 rows 318 rootlp 14379.665 rootlb 14379.665 kmin 9 kmax 25 fleetcap 0 time 307.24s root 3.34s 
+Route #1: 90
+Route #2: 1 3 45 5 8 7 6 46 4 2 100
+Route #3: 96 71 67 84 56 66
+Route #4: 61 81
+Route #5: 69 88 53 55 68
+Route #6: 33 28 27 26 31 34 50 93 94 80
+Route #7: 82 11 15 16 9 10 13 17 12
+Route #8: 14 47 73 79 78 60 98
+Route #9: 65 99 87 59 97 75 58
+Route #10: 19 23 48 18 21 25 77
+Route #11: 85 63 76 51 22 49 20 24 83
+Route #12: 92 95 62 29 30 32 89
+Route #13: 91 64 57 86 74 52
+Route #14: 39 36 40 38 41 72 54
+Route #15: 42 44 43 35 37 70
+Cost 1465.7
+== results/solomon/set1/RC103.vrp (n=100)
+debug: loaded solution results/solomon/set1/RC103.sol cost 12580
+node     0 d0   lb  12481.207 lp  12481.207 glb      0.000 ub - open 0 lp 5773/5773 rows 132 it 149 7.4s
+* incumbent 13277 from dive (14.0s)
+* incumbent 12580 from restricted master MIP (17.0s)
+node     7 d2   lb  12485.475 lp  12485.475 glb  12481.268 ub 12580 open 5 lp 2099/9084 rows 148 it 5 29.0s
+node    32 d4   lb  12549.640 lp  12549.640 glb  12512.371 ub 12580 open 13 lp 2145/9691 rows 164 it 11 44.2s
+node    48 d6   lb  12596.607 lp  12596.607 glb  12524.073 ub 12580 open 19 lp 2227/10629 rows 148 it 15 61.5s
+node    60 d7   lb  12562.492 lp  12562.492 glb  12533.137 ub 12580 open 21 lp 2116/10905 rows 165 it 13 75.8s
+node    70 d7   lb  12567.844 lp  12567.844 glb  12539.778 ub 12580 open 21 lp 2086/12877 rows 175 it 7 100.2s
+node    55 d6   lb  12560.277 lp  12560.277 glb  12546.898 ub 12580 open 21 lp 2405/14020 rows 171 it 21 126.8s
+node    94 d8   lb  12582.455 lp  12582.455 glb  12552.807 ub 12580 open 25 lp 2199/14275 rows 189 it 14 149.9s
+node   102 d8   lb  12597.519 lp  12597.519 glb  12558.702 ub 12580 open 23 lp 2149/14630 rows 183 it 16 167.7s
+node    81 d7   lb  12586.437 lp  12586.437 glb  12560.277 ub 12580 open 23 lp 2476/15238 rows 193 it 13 191.6s
+node    99 d7   lb  12566.188 lp  12566.188 glb  12565.513 ub 12580 open 19 lp 2762/15691 rows 201 it 12 211.5s
+node   124 d8   lb  12587.305 lp  12587.305 glb  12570.648 ub 12580 open 15 lp 2095/15938 rows 184 it 12 225.6s
+node    93 d8   lb  12579.354 lp  12579.354 glb  12575.063 ub 12580 open 5 lp 2238/16077 rows 186 it 10 235.5s
+times: pricing 151.5 master 15.2 cuts 0.8 rmip 4.3 dive 6.6 branch 0.1 switch 0.0 enum 60.3 (label 60.3 in 44 tries, mip 0.0 in 0 solves, 0 nodes closed) total 239.3
+probes: 0  solve 0.0 (0 iters avg)  purged 43343 repriced 29786 lp cols 2588 pool 16145
+RESULT RC103 status optimal lb 12580 ub 12580 published 12580 nodes 125 depth 10 cols 16145 rows 186 rootlp 12481.207 rootlb 12481.207 kmin 9 kmax 25 fleetcap 0 time 239.26s root 7.37s MATCHES published optimum
+Route #1: 69 88 53 10 13 16 17 47
+Route #2: 33 27 30 32 28 26 29 31 34
+Route #3: 12 14 15 11 9 87 59 74 86 52 82 90
+Route #4: 61 42 43 44 40 38 41 72 71 93 94 80
+Route #5: 2 45 1 3 5 8 6 55 68
+Route #6: 81 39 36 35 37 54 96
+Route #7: 98 60 73 78 79 7 46 4 100 70
+Route #8: 92 95 62 50 67 84 56 66
+Route #9: 65 99 97 75 58 77
+Route #10: 83 24 23 76 89 63 85 51 91
+Route #11: 64 20 22 49 19 18 48 21 25 57
+Cost 1258.0
+== results/solomon/set1/RC104.vrp (n=100)
+== results/solomon/set1/RC105.vrp (n=100)
+debug: loaded solution results/solomon/set1/RC105.sol cost 15137
+node     0 d0   lb  14979.900 lp  14979.900 glb      0.000 ub - open 0 lp 4319/4319 rows 106 it 124 1.6s
+* incumbent 15644 from dive (2.2s)
+node    18 d9   lb  15136.000 lp  15136.000 glb  14979.900 ub 15644 open 9 lp 2035/5402 rows 122 it 9 7.3s
+node    38 d19  lb  15592.800 lp  15592.800 glb  14979.900 ub 15644 open 19 lp 2001/7105 rows 140 it 2 16.9s
+* incumbent 15346 from node LP (19.9s)
+node    54 d5   lb  15043.933 lp  15043.933 glb  15001.333 ub 15346 open 25 lp 2131/8162 rows 149 it 19 22.7s
+* incumbent 15195 from node LP (26.0s)
+* incumbent 15164 from node LP (31.6s)
+node    45 d2   lb  15039.255 lp  15039.255 glb  15001.748 ub 15164 open 31 lp 2454/9016 rows 167 it 16 31.9s
+node    79 d6   lb  15046.000 lp  15046.000 glb  15016.000 ub 15164 open 35 lp 2060/9700 rows 184 it 7 41.4s
+* incumbent 15154 from node LP (47.3s)
+* incumbent 15142 from node LP (51.7s)
+node    96 d7   lb  15174.500 lp  15174.500 glb  15045.500 ub 15142 open 37 lp 2197/10354 rows 187 it 6 53.5s
+node   110 d6   lb  15249.304 lp  15439.000 glb  15051.500 ub 15142 open 41 lp 2659/11094 rows 199 it 22 64.1s
+node     7 d4   lb  15102.375 lp  15102.375 glb  15058.500 ub 15142 open 41 lp 2847/11775 rows 199 it 41 71.7s
+node   134 d9   lb  15163.750 lp  15163.750 glb  15067.667 ub 15142 open 45 lp 2489/12499 rows 209 it 23 83.4s
+* incumbent 15138 from node LP (87.0s)
+node   140 d7   lb  15140.750 lp  15140.750 glb  15095.667 ub 15138 open 41 lp 2292/13231 rows 215 it 12 91.4s
+* incumbent 15137 from node LP (93.4s)
+node    93 d7   lb  15137.000 lp  15137.000 glb  15117.500 ub 15137 open 31 lp 2250/13677 rows 200 it 13 94.8s
+node   119 d8   lb  15237.349 lp  15237.349 glb  15135.318 ub 15137 open 21 lp 2678/14539 rows 200 it 26 99.2s
+times: pricing 26.8 master 8.7 cuts 0.1 rmip 3.1 dive 0.6 branch 0.1 switch 0.0 enum 60.5 (label 60.5 in 41 tries, mip 0.0 in 0 solves, 0 nodes closed) total 100.2
+probes: 0  solve 0.0 (0 iters avg)  purged 39210 repriced 27340 lp cols 2819 pool 14689
+RESULT RC105 status optimal lb 15137 ub 15137 published 15137 nodes 122 depth 22 cols 14689 rows 200 rootlp 14979.900 rootlb 14979.900 kmin 9 kmax 25 fleetcap 0 time 100.19s root 1.60s MATCHES published optimum
+Route #1: 12 14 47 15 16 9 10 13 17
+Route #2: 51 76 89 48 21 25 24
+Route #3: 65 99 52 57 74
+Route #4: 81 61 68
+Route #5: 92 95 62 67 71 93 96
+Route #6: 90 53 98
+Route #7: 69 88 79 7 46 4 70 100
+Route #8: 83 19 23 18 22 49 20 77
+Route #9: 64 86 87 59 97 75 58
+Route #10: 31 29 27 30 28 26 32 34 50 91
+Route #11: 2 45 5 3 1 8 6 55
+Route #12: 82 11 73 78 60
+Route #13: 39 36 37 38 41 72 54 94 80
+Route #14: 42 44 40 35 43
+Route #15: 33 63 85 84 56 66
+Cost 1513.7
+== results/solomon/set1/RC106.vrp (n=100)
+debug: loaded solution results/solomon/set1/RC106.sol cost 13727
+node     0 d0   lb  13476.175 lp  13476.175 glb      0.000 ub - open 0 lp 4759/4759 rows 114 it 138 5.3s
+* incumbent 14646 from dive (11.0s)
+node    18 d9   lb  13685.770 lp  13685.770 glb  13476.175 ub 14646 open 9 lp 2371/7483 rows 130 it 30 22.5s
+node    38 d19  lb  14036.440 lp  14036.440 glb  13476.175 ub 14646 open 19 lp 2511/8731 rows 148 it 33 28.5s
+* incumbent 14409 from node LP (40.3s)
+node    56 d3   lb  13580.031 lp  13580.031 glb  13479.309 ub 14409 open 27 lp 2006/10416 rows 159 it 5 43.6s
+node    76 d13  lb  13859.684 lp  13859.684 glb  13479.309 ub 14409 open 37 lp 2042/11290 rows 183 it 10 49.0s
+node    53 d2   lb  13481.231 lp  13481.231 glb  13479.309 ub 14409 open 45 lp 3115/13580 rows 207 it 13 58.9s
+node   114 d12  lb  13920.182 lp  13920.182 glb  13481.231 ub 14409 open 55 lp 2068/15106 rows 219 it 16 72.9s
+node   132 d4   lb  13511.447 lp  13511.447 glb  13487.295 ub 14409 open 63 lp 2092/17588 rows 238 it 7 83.4s
+node   152 d14  lb  14097.563 lp  14097.563 glb  13487.295 ub 14409 open 73 lp 2106/18751 rows 252 it 11 95.9s
+node   170 d3   lb  13549.382 lp  13549.382 glb  13487.295 ub 14409 open 81 lp 2239/20135 rows 278 it 17 114.0s
+node   190 d13  lb  13914.487 lp  13914.487 glb  13487.295 ub 14409 open 91 lp 2011/20434 rows 296 it 6 120.6s
+node   210 d23  lb  14267.340 lp  14267.340 glb  13487.295 ub 14409 open 101 lp 2221/21555 rows 309 it 31 128.6s
+node   228 d10  lb  13635.956 lp  13635.956 glb  13487.295 ub 14409 open 109 lp 2268/21859 rows 333 it 11 138.4s
+node   248 d20  lb  14054.206 lp  14054.206 glb  13487.295 ub 14409 open 119 lp 2034/22324 rows 337 it 9 150.5s
+node   268 d30  lb  14345.889 lp  14345.889 glb  13487.295 ub 14409 open 129 lp 2058/22805 rows 355 it 11 160.4s
+node   286 d12  lb  13742.009 lp  13742.009 glb  13487.295 ub 14409 open 137 lp 2081/23333 rows 376 it 10 173.1s
+node   306 d22  lb  14217.375 lp  14217.375 glb  13487.295 ub 14409 open 147 lp 2269/23975 rows 392 it 19 181.2s
+* incumbent 14334 from node LP (184.5s)
+node   324 d11  lb  13725.874 lp  13725.874 glb  13487.295 ub 14334 open 155 lp 2198/24328 rows 411 it 12 196.4s
+node   344 d21  lb  14050.593 lp  14050.593 glb  13487.295 ub 14334 open 165 lp 2012/24570 rows 423 it 7 209.4s
+node   273 d6   lb  13481.739 lp  13481.739 glb  13487.295 ub 14334 open 173 lp 2907/25226 rows 439 it 23 218.7s
+node   382 d16  lb  13995.625 lp  13995.625 glb  13487.295 ub 14334 open 183 lp 2329/25768 rows 458 it 13 237.6s
+* incumbent 14252 from node LP (246.0s)
+node   400 d9   lb  13593.868 lp  13593.868 glb  13487.295 ub 14252 open 191 lp 2006/26010 rows 475 it 4 250.9s
+node   420 d19  lb  14119.213 lp  14119.213 glb  13487.295 ub 14252 open 201 lp 2050/26522 rows 494 it 9 266.2s
+node   438 d10  lb  13618.320 lp  13618.320 glb  13487.295 ub 14252 open 209 lp 2022/26861 rows 507 it 4 282.2s
+node   458 d20  lb  14189.546 lp  14189.546 glb  13487.295 ub 14252 open 219 lp 2028/27780 rows 528 it 6 294.5s
+times: pricing 105.8 master 17.5 cuts 1.4 rmip 7.0 dive 5.7 branch 0.2 switch 0.0 enum 161.7 (label 161.7 in 69 tries, mip 0.0 in 0 solves, 0 nodes closed) total 300.1
+probes: 0  solve 0.0 (0 iters avg)  purged 69797 repriced 43986 lp cols 2224 pool 28035
+RESULT RC106 status time_limit lb 13488 ub 14252 published 13727 nodes 246 depth 31 cols 28035 rows 538 rootlp 13476.175 rootlb 13476.175 kmin 9 kmax 25 fleetcap 0 time 300.06s root 5.30s 
+Route #1: 90
+Route #2: 82 99 86 57 22 49 20 24
+Route #3: 69 98 53 78 73 60 55
+Route #4: 65 52 87 59 75 97 58 74
+Route #5: 11 12 14 47 15 16 9 10 13 17
+Route #6: 33 31 29 27 28 26 34 32 93
+Route #7: 2 45 5 3 1 70 68
+Route #8: 81 61
+Route #9: 95 63 85 51 76 89 91 80
+Route #10: 83 64 19 23 21 18 48 25 77
+Route #11: 88 79 7 6 8 46 4 100
+Route #12: 92 62 30 50 84 56 66
+Route #13: 72 71 94 67 96 54
+Route #14: 42 44 39 38 36 40 41 43 37 35
+Cost 1425.2
+== results/solomon/set1/RC107.vrp (n=100)
+debug: loaded solution results/solomon/set1/RC107.sol cost 12078
+node     0 d0   lb  12055.994 lp  12055.994 glb      0.000 ub - open 0 lp 4743/4743 rows 129 it 130 22.7s
+* incumbent 12883 from dive (41.9s)
+* incumbent 12553 from restricted master MIP (49.5s)
+* incumbent 12078 from node LP (67.8s)
+times: pricing 48.2 master 1.1 cuts 0.2 rmip 5.0 dive 19.2 branch 0.0 switch 0.0 enum 10.1 (label 10.1 in 2 tries, mip 0.0 in 0 solves, 0 nodes closed) total 83.9
+probes: 0  solve 0.0 (0 iters avg)  purged 6874 repriced 2050 lp cols 2028 pool 6852
+RESULT RC107 status optimal lb 12078 ub 12078 published 12078 nodes 9 depth 3 cols 6852 rows 138 rootlp 12055.994 rootlb 12055.994 kmin 9 kmax 25 fleetcap 0 time 83.85s root 22.74s MATCHES published optimum
+Route #1: 90
+Route #2: 61 81 54 96
+Route #3: 69 98 88 53 78 73 79 60 55 70 68
+Route #4: 72 71 93 94 67 50 62 91 80
+Route #5: 2 6 7 8 5 3 1 45 46 4 100
+Route #6: 92 95 84 85 63 51 76 89 56
+Route #7: 64 22 19 23 21 18 48 49 20 24
+Route #8: 11 12 14 47 17 16 15 13 9 10
+Route #9: 41 38 39 42 44 43 40 37 35 36
+Route #10: 31 29 27 28 26 34 30 32 33
+Route #11: 82 99 52 87 59 86 57 66
+Route #12: 65 83 25 77 75 97 58 74
+Cost 1207.8
+== results/solomon/set1/RC108.vrp (n=100)
+debug: loaded solution results/solomon/set1/RC108.sol cost 11142
+node     0 d0   lb  11078.427 lp  11078.427 glb      0.000 ub - open 0 lp 7102/7102 rows 158 it 180 115.2s
+* incumbent 12308 from dive (183.9s)
+times: pricing 222.8 master 1.7 cuts 0.3 rmip 5.0 dive 68.8 branch 0.0 switch 0.0 enum 4.0 (label 4.0 in 1 tries, mip 0.0 in 0 solves, 0 nodes closed) total 302.8
+probes: 0  solve 0.0 (0 iters avg)  purged 9584 repriced 2679 lp cols 2174 pool 9079
+RESULT RC108 status time_limit lb 11079 ub 12308 published 11142 nodes 8 depth 7 cols 9079 rows 170 rootlp 11078.427 rootlb 11078.427 kmin 9 kmax 25 fleetcap 0 time 302.80s root 115.18s 
+Route #1: 31
+Route #2: 90
+Route #3: 12 14 47 17 16 15 13 9 11 10
+Route #4: 82 99 52 86 87 59 97 75 58 74
+Route #5: 64 51 76 89 63 85 84 56 91 80
+Route #6: 65 83 57 22 49 19 18 48 25 77
+Route #7: 2 6 7 8 46 4 45 5 3 1 100
+Route #8: 61 81 94 71 72 54 96
+Route #9: 41 42 44 43 40 38 37 35 36 39
+Route #10: 33 32 30 28 26 27 29 34 50 93
+Route #11: 69 98 88 53 78 73 79 60 55 70 68
+Route #12: 92 67 62 95 20 21 23 24 66
+Cost 1230.8

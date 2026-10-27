@@ -1,0 +1,72 @@
+node     0 d0   lb  43907.878 lp  43907.878 glb      0.000 ub - open 0 lp 4918/4918 rows 355 it 111 9.2s
+node    18 d9   lb  44043.489 lp  44043.893 glb  43907.878 ub - open 9 lp 3023/5525 rows 518 it 10 27.4s
+* incumbent 44077 from node LP (31.3s)
+node    36 d6   lb  44019.222 lp  44019.222 glb  43913.035 ub 44077 open 17 lp 3022/5933 rows 587 it 6 36.7s
+* incumbent 44002 from node LP (45.9s)
+node    43 d3   lb  43918.674 lp  43918.674 glb  43916.908 ub 44002 open 23 lp 3018/6436 rows 638 it 4 46.4s
+* incumbent 43972 from node LP (49.4s)
+node    68 d7   lb  43938.473 lp  43938.473 glb  43925.854 ub 43972 open 29 lp 3002/6537 rows 708 it 3 53.2s
+node    82 d7   lb  43970.983 lp  43970.983 glb  43931.067 ub 43972 open 33 lp 3032/6732 rows 757 it 13 59.9s
+node    96 d7   lb  43971.412 lp  43974.479 glb  43934.438 ub 43972 open 37 lp 3014/6834 rows 781 it 3 66.6s
+node   110 d10  lb  43975.710 lp  43975.710 glb  43938.473 ub 43972 open 41 lp 3014/6904 rows 809 it 4 72.7s
+node   124 d6   lb  43981.543 lp  43981.543 glb  43941.334 ub 43972 open 45 lp 3005/6966 rows 830 it 4 78.8s
+node   138 d10  lb  43971.108 lp  43978.092 glb  43942.467 ub 43972 open 49 lp 3010/7127 rows 857 it 2 86.5s
+node   150 d9   lb  43999.766 lp  43999.766 glb  43946.110 ub 43972 open 51 lp 3025/7171 rows 874 it 7 92.7s
+node    45 d4   lb  43955.354 lp  43955.354 glb  43947.986 ub 43972 open 53 lp 3020/7223 rows 869 it 4 97.7s
+node   174 d9   lb  43989.613 lp  43989.613 glb  43951.975 ub 43972 open 55 lp 3033/7442 rows 882 it 7 103.6s
+node   165 d9   lb  43973.694 lp  43973.694 glb  43952.738 ub 43972 open 57 lp 3021/7513 rows 905 it 4 109.9s
+node   194 d9   lb  43976.147 lp  43976.147 glb  43956.434 ub 43972 open 55 lp 3000/7550 rows 915 it 1 115.0s
+node   206 d9   lb  43979.642 lp  43979.642 glb  43957.488 ub 43972 open 57 lp 3003/7606 rows 935 it 3 120.7s
+node   216 d10  lb  43984.936 lp  44000.704 glb  43960.594 ub 43972 open 57 lp 3049/7898 rows 995 it 8 129.3s
+node   195 d8   lb  43962.224 lp  43962.224 glb  43962.203 ub 43972 open 55 lp 3022/8007 rows 1003 it 2 135.9s
+node    99 d6   lb  43970.081 lp  43970.081 glb  43962.967 ub 43972 open 53 lp 3009/8124 rows 1011 it 3 142.8s
+node   242 d10  lb  43970.547 lp  43970.547 glb  43964.356 ub 43972 open 53 lp 3007/8136 rows 1022 it 2 147.2s
+node   211 d9   lb  43983.750 lp  43983.750 glb  43965.051 ub 43972 open 51 lp 3028/8175 rows 1030 it 5 152.6s
+node   260 d11  lb  43972.401 lp  43972.401 glb  43965.827 ub 43972 open 51 lp 3005/8221 rows 985 it 4 158.3s
+node   268 d10  lb  43981.202 lp  43981.202 glb  43966.478 ub 43972 open 49 lp 3012/8295 rows 995 it 5 166.2s
+node   269 d11  lb  43970.943 lp  43970.943 glb  43966.698 ub 43972 open 47 lp 3022/8383 rows 1004 it 5 173.0s
+node   231 d10  lb  43969.508 lp  43969.508 glb  43967.798 ub 43972 open 41 lp 3037/8447 rows 1008 it 4 179.7s
+node    93 d6   lb  43982.670 lp  43982.670 glb  43969.249 ub 43972 open 35 lp 3004/8464 rows 1012 it 2 185.1s
+node   233 d7   lb  43980.270 lp  43980.270 glb  43970.081 ub 43972 open 27 lp 3007/8496 rows 1014 it 4 191.9s
+node    83 d8   lb  43979.980 lp  43979.980 glb  43970.983 ub 43972 open 17 lp 3005/8535 rows 1014 it 3 199.4s
+times: pricing 92.8 master 77.4 cuts 16.8 rmip 5.0 branch 2.6 switch 0.0 total 199.4
+probes: 0  solve 0.0 (0 iters avg)  purged 8882 repriced 3352 lp cols 3005 pool 8535
+RESULT XML150_1121_01 status optimal lb 43972 ub 43972 published -1 nodes 270 depth 14 cols 8535 rows 1014 rootlp 43907.878 rootlb 43907.878 kmin 37 kmax 38 fleetcap 0 time 199.36s root 9.19s no published optimum to compare
+Route #1: 7 32 102
+Route #2: 63 95 125
+Route #3: 13 25 141
+Route #4: 126 48 130
+Route #5: 45 31 9
+Route #6: 83 116 135 5 44 131 110
+Route #7: 3 133 71 4
+Route #8: 18 72 145 22
+Route #9: 149 108 94 121
+Route #10: 64 17 37
+Route #11: 67 128 30
+Route #12: 40 35 42
+Route #13: 140 123 106 136 127 143
+Route #14: 98 80 90
+Route #15: 78 55 36 66 113
+Route #16: 138 29 139 87
+Route #17: 20 129 122 8 65
+Route #18: 89 117 68
+Route #19: 91 82 99 52 147
+Route #20: 124 19 70 74 50
+Route #21: 104 41 120 10 107
+Route #22: 54 146 103
+Route #23: 76 100 88
+Route #24: 26 114 109 62
+Route #25: 28 1 101
+Route #26: 96 77 56
+Route #27: 150 60 85 21
+Route #28: 119 132 84
+Route #29: 24 23 51 97
+Route #30: 69 115 43 15
+Route #31: 112 111 47 73 14
+Route #32: 61 59 134 34 27 79 142
+Route #33: 16 118 11 49
+Route #34: 148 144 53 38 39
+Route #35: 93 12 58 86 81 75
+Route #36: 33 6 92 137 57
+Route #37: 105 2 46
+Cost 43972

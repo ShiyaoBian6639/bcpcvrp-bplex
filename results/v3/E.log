@@ -1,0 +1,83 @@
+== instances/cvrplib/E/E-n13-k4.vrp (n=12)
+node     0 d0   lb    247.000 lp    247.000 glb      0.000 ub - open 0 lp 464/464 rows 0 it 5 0.0s
+* incumbent 247 from node LP (0.0s)
+times: pricing 0.0 master 0.0 cuts 0.0 rmip 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 0.0
+probes: 0  solve 0.0 (0 iters avg)  purged 0 repriced 0 lp cols 464 pool 464
+RESULT E-n13-k4 status optimal lb 247 ub 247 published 247 nodes 1 depth 0 cols 464 rows 0 rootlp 247.000 rootlb 247.000 kmin 4 kmax 4 fleetcap 0 time 0.01s root 0.01s MATCHES published optimum
+Route #1: 1
+Route #2: 6 10 12 9
+Route #3: 2 7 4 11
+Route #4: 3 5 8
+Cost 247
+== instances/cvrplib/E/E-n22-k4.vrp (n=21)
+node     0 d0   lb    375.000 lp    375.000 glb      0.000 ub - open 0 lp 2480/2480 rows 26 it 25 0.1s
+* incumbent 375 from node LP (0.1s)
+times: pricing 0.1 master 0.0 cuts 0.0 rmip 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 0.1
+probes: 0  solve 0.0 (0 iters avg)  purged 0 repriced 0 lp cols 2480 pool 2480
+RESULT E-n22-k4 status optimal lb 375 ub 375 published 375 nodes 1 depth 0 cols 2480 rows 26 rootlp 375.000 rootlb 375.000 kmin 4 kmax 4 fleetcap 0 time 0.14s root 0.14s MATCHES published optimum
+Route #1: 10 8 3 4 11 13
+Route #2: 17 20 18 15 12
+Route #3: 16 19 21 14
+Route #4: 6 1 2 5 7 9
+Cost 375
+== instances/cvrplib/E/E-n23-k3.vrp (n=22)
+node     0 d0   lb    569.000 lp    569.000 glb      0.000 ub - open 0 lp 6308/6308 rows 7 it 49 15.3s
+* incumbent 569 from node LP (15.3s)
+times: pricing 15.2 master 0.1 cuts 0.0 rmip 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 15.3
+probes: 0  solve 0.0 (0 iters avg)  purged 0 repriced 0 lp cols 6308 pool 6308
+RESULT E-n23-k3 status optimal lb 569 ub 569 published 569 nodes 1 depth 0 cols 6308 rows 7 rootlp 569.000 rootlb 569.000 kmin 3 kmax 3 fleetcap 0 time 15.35s root 15.35s MATCHES published optimum
+Route #1: 12 11 6 1 2 3 16 15 14 17 22 20 19 18
+Route #2: 13 10
+Route #3: 7 9 8 5 4 21
+Cost 569
+== instances/cvrplib/E/E-n30-k3.vrp (n=29)
+node     0 d0   lb    519.200 lp    519.451 glb      0.000 ub - open 0 lp 9399/9399 rows 75 it 94 6.3s
+* incumbent 621 from restricted master MIP (11.4s)
+* incumbent 543 from node LP (12.9s)
+node    14 d6   lb    534.167 lp    534.333 glb    526.271 ub 543 open 5 lp 890/13431 rows 125 it 6 16.5s
+* incumbent 534 from node LP (17.5s)
+node    26 d6   lb    532.168 lp    532.306 glb    527.778 ub 534 open 7 lp 617/15982 rows 176 it 3 20.1s
+times: pricing 10.0 master 1.9 cuts 0.3 rmip 5.0 branch 0.0 switch 0.0 enum 5.2 (label 3.5 in 6 tries, mip 1.8 in 6 solves, 6 nodes closed) total 22.8
+probes: 0  solve 0.0 (0 iters avg)  purged 23838 repriced 7334 lp cols 780 pool 17284
+RESULT E-n30-k3 status optimal lb 534 ub 534 published 534 nodes 25 depth 9 cols 17284 rows 178 rootlp 519.451 rootlb 519.200 kmin 3 kmax 3 fleetcap 0 time 22.78s root 6.34s MATCHES published optimum
+Route #1: 26 28 27 29 25 24 6 21
+Route #2: 20 3 4 1 5 2 22
+Route #3: 19 15 16 13 7 17 9 14 8 12 11 10 23 18
+Cost 534
+== instances/cvrplib/E/E-n31-k7.vrp (n=30)
+node     0 d0   lb    378.500 lp    379.000 glb      0.000 ub - open 0 lp 3986/3986 rows 27 it 41 0.8s
+* incumbent 379 from node LP (0.8s)
+times: pricing 0.7 master 0.0 cuts 0.0 rmip 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 0.8
+probes: 0  solve 0.0 (0 iters avg)  purged 0 repriced 0 lp cols 3986 pool 3986
+RESULT E-n31-k7 status optimal lb 379 ub 379 published 379 nodes 1 depth 0 cols 3986 rows 27 rootlp 379.000 rootlb 378.500 kmin 7 kmax 7 fleetcap 0 time 0.76s root 0.76s MATCHES published optimum
+Route #1: 30
+Route #2: 21 11 13 9 28 15
+Route #3: 10 18 12 7 27
+Route #4: 19 2 8 22 6 20
+Route #5: 23 29
+Route #6: 16 5 17 4 26
+Route #7: 25 1 14 3 24
+Cost 379
+== instances/cvrplib/E/E-n33-k4.vrp (n=32)
+node     0 d0   lb    835.000 lp    835.000 glb      0.000 ub - open 0 lp 6804/6804 rows 49 it 57 8.0s
+* incumbent 835 from node LP (8.1s)
+times: pricing 7.7 master 0.1 cuts 0.2 rmip 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 8.1
+probes: 0  solve 0.0 (0 iters avg)  purged 0 repriced 0 lp cols 6804 pool 6804
+RESULT E-n33-k4 status optimal lb 835 ub 835 published 835 nodes 1 depth 0 cols 6804 rows 49 rootlp 835.000 rootlb 835.000 kmin 4 kmax 4 fleetcap 0 time 8.05s root 8.05s MATCHES published optimum
+Route #1: 4 7 9 8 32 11 12 2
+Route #2: 1 15 26 27 28 16 29
+Route #3: 31 14 30
+Route #4: 3 5 6 10 18 19 21 22 20 23 24 25 17 13
+Cost 835
+== instances/cvrplib/E/E-n51-k5.vrp (n=50)
+node     0 d0   lb    521.000 lp    521.000 glb      0.000 ub - open 0 lp 7620/7620 rows 86 it 73 11.8s
+* incumbent 521 from node LP (11.8s)
+times: pricing 11.0 master 0.5 cuts 0.2 rmip 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 11.8
+probes: 0  solve 0.0 (0 iters avg)  purged 0 repriced 0 lp cols 7620 pool 7620
+RESULT E-n51-k5 status optimal lb 521 ub 521 published 521 nodes 1 depth 0 cols 7620 rows 86 rootlp 521.000 rootlb 521.000 kmin 5 kmax 5 fleetcap 0 time 11.76s root 11.75s MATCHES published optimum
+Route #1: 12 37 44 15 45 33 39 10 49 5 46
+Route #2: 27 48 23 7 43 24 25 14 6
+Route #3: 8 26 31 28 3 36 35 20 22 1 32
+Route #4: 38 9 30 34 50 21 29 2 16 11
+Route #5: 47 4 17 42 40 19 41 13 18
+Cost 521

@@ -1,0 +1,54 @@
+* incumbent 32698 from Clarke-Wright savings (0.1s)
+node     0 d0   lb  31282.241 lp  31282.241 glb      0.000 ub 32698 open 0 lp 5700/5700 rows 368 it 159 107.6s
+node    18 d9   lb  31369.250 lp  31369.250 glb  31289.303 ub 32698 open 9 lp 4067/9152 rows 423 it 15 282.7s
+node    38 d19  lb  31439.521 lp  31439.521 glb  31289.303 ub 32698 open 19 lp 4112/9661 rows 481 it 13 362.6s
+node    58 d29  lb  31550.780 lp  31550.780 glb  31289.303 ub 32698 open 29 lp 4103/10566 rows 318 it 18 472.9s
+times: pricing 386.8 master 7.1 cuts 14.2 rmip 5.0 dive 75.0 branch 0.4 switch 0.0 enum 9.1 (label 9.1 in 1 tries, mip 0.0 in 0 solves, 0 nodes closed) total 500.8
+probes: 0  solve 0.0 (0 iters avg)  purged 9426 repriced 2772 lp cols 4225 pool 10879
+RESULT XML200_2251_68 status time_limit lb 31290 ub 32698 published -1 nodes 35 depth 34 cols 10879 rows 329 rootlp 31282.241 rootlb 31282.241 kmin 41 kmax 44 fleetcap 1 time 500.80s root 107.56s 
+Route #1: 95 199 147 3 57
+Route #2: 157 7 80 182
+Route #3: 139 38 9 85
+Route #4: 165 10 45 155 171
+Route #5: 102 12 25 82
+Route #6: 37 13 123 175
+Route #7: 83 58 14 161
+Route #8: 98 15 42 108
+Route #9: 17 22 54 168 109
+Route #10: 18 133 117 11 180
+Route #11: 92 29 43 194 19 21
+Route #12: 4 183 26 146 167
+Route #13: 86 28 164 192 69
+Route #14: 33 50 121 119
+Route #15: 39 88 179 87
+Route #16: 125 40 191 53
+Route #17: 62 41 99 170
+Route #18: 36 160 90 44 195
+Route #19: 46 106 145 114 59
+Route #20: 49 166 154 120 31
+Route #21: 130 107 140 51 126
+Route #22: 116 52 128 197
+Route #23: 56 110 24 163 188
+Route #24: 61 79 8 162 16
+Route #25: 64 84 152 23
+Route #26: 67 72 55 63
+Route #27: 68 134 143 77
+Route #28: 115 129 70 93
+Route #29: 159 71 124 177
+Route #30: 104 74 91 73 186
+Route #31: 75 173 148 48
+Route #32: 76 94 193 66
+Route #33: 2 189 81 101 187
+Route #34: 89 127 184 30 156
+Route #35: 65 20 141 96 153
+Route #36: 97 174 5 113 1
+Route #37: 132 198 151 100 190
+Route #38: 103 112 158 142 35
+Route #39: 118 181 60 47 200
+Route #40: 122 137 32 150 105
+Route #41: 131 169 172 149 111
+Route #42: 135 144 78
+Route #43: 136 176 34 138
+Route #44: 178 196 6 27 185
+Cost 32698
+exit 0

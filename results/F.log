@@ -1,0 +1,11 @@
+== instances/cvrplib/F/F-n45-k4.vrp (n=44)
+node     0 d0   lb    723.152 lp    724.000 glb      0.000 ub - open 0 lp 27311/27311 rows 61 it 250 79.5s
+* incumbent 724 from node LP (79.5s)
+times: pricing 72.3 master 4.1 cuts 1.5 rmip 0.0 branch 0.0 switch 0.0 total 79.5
+probes: 0  solve 0.0 (0 iters avg)  purged 0 repriced 0 lp cols 27311 pool 27311
+RESULT F-n45-k4 status optimal lb 724 ub 724 published 724 nodes 1 depth 0 cols 27311 rows 61 rootlp 724.000 rootlb 723.152 kmin 4 kmax 4 fleetcap 0 time 79.53s root 79.53s MATCHES published optimum
+Route #1: 24 16 2 1 15 9
+Route #2: 37 38 36 39 40 34 31 32 30 41 42
+Route #3: 8 19 26 22 23 25 20 21
+Route #4: 43 44 28 33 29 27 6 5 7 35 3 4 14 13 12 11 18 17 10
+Cost 724

@@ -1,0 +1,39 @@
+node     0 d0   lb  27555.782 lp  27555.782 glb      0.000 ub - open 0 lp 4101/4101 rows 191 it 76 3.0s
+node    18 d9   lb  27670.779 lp  27670.779 glb  27555.782 ub - open 9 lp 2046/4711 rows 304 it 9 14.5s
+* incumbent 27703 from node LP (15.7s)
+node    34 d8   lb  27656.287 lp  27656.287 glb  27571.233 ub 27703 open 15 lp 2108/5836 rows 396 it 22 39.0s
+node    52 d7   lb  27634.138 lp  27634.138 glb  27577.497 ub 27703 open 23 lp 2031/6227 rows 450 it 8 44.1s
+* incumbent 27680 from node LP (46.3s)
+node    70 d6   lb  27595.000 lp  27595.000 glb  27580.031 ub 27680 open 31 lp 2000/6476 rows 495 it 1 47.0s
+* incumbent 27595 from node LP (47.0s)
+* incumbent 27591 from node LP (49.9s)
+times: pricing 38.4 master 4.5 cuts 2.0 rmip 5.0 branch 0.1 switch 0.0 total 50.4
+probes: 0  solve 0.0 (0 iters avg)  purged 5826 repriced 1242 lp cols 2030 pool 6614
+RESULT X-n101-k25 status optimal lb 27591 ub 27591 published 27591 nodes 48 depth 14 cols 6614 rows 501 rootlp 27555.782 rootlb 27555.782 kmin 25 kmax 27 fleetcap 0 time 50.42s root 3.04s MATCHES published optimum
+Route #1: 68 90 84 66
+Route #2: 15 22 41 20
+Route #3: 4 13 74
+Route #4: 18 10 39
+Route #5: 75 93
+Route #6: 24 95 73 53 33 32
+Route #7: 30 85 11 79
+Route #8: 38 47 26 48 96 64 34
+Route #9: 5 12 58
+Route #10: 69 16 55 76
+Route #11: 8 17
+Route #12: 89 98 99 62 71
+Route #13: 1 70 54
+Route #14: 25 65 78 42 28
+Route #15: 19 97 27
+Route #16: 35 46 31
+Route #17: 86 9 92
+Route #18: 100 61 23
+Route #19: 83 51 81
+Route #20: 59 60 82
+Route #21: 57 72 36 29 43 45 2 7
+Route #22: 80 94 56 21
+Route #23: 87 37 6 49 14
+Route #24: 44 88 67 40
+Route #25: 50 91 52
+Route #26: 63 77 3
+Cost 27591

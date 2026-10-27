@@ -1,0 +1,2 @@
+Vendored from https://github.com/Zhengzhong-You/cvrpsep at commit 75dacda (Update Makefile), 2026-10-26.
+License: CPL 1.0 (see the sources). Built as a static library by the top-level CMakeLists.txt.

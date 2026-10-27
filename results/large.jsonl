@@ -1,0 +1,2 @@
+{"instance":"XML150_3372_54","n":150,"status":"time_limit","lb":41656,"ub":-1,"published":-1,"nodes":710,"cols":50866,"rows":117,"root_lp":41655.1691,"root_lb":41655.1312,"kmin":24,"kmax":25,"fleet_cap_binding":false,"time":900.28,"time_root":79.96,"scale":1}
+{"instance":"X-n153-k22","n":152,"status":"time_limit","lb":21124,"ub":-1,"published":21220,"nodes":220,"cols":104381,"rows":900,"root_lp":21113.0320,"root_lb":21113.0320,"kmin":22,"kmax":23,"fleet_cap_binding":false,"time":900.03,"time_root":111.81,"scale":1}

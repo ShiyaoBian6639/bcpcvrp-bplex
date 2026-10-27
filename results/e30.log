@@ -1,0 +1,9 @@
+node     0 d0   lb    519.200 lp    519.442 glb      0.000 ub - open 0 lp 6385/6385 rows 68 it 85 5.6s
+* incumbent 544 from restricted master MIP (10.0s)
+times: pricing 119.1 master 0.5 cuts 0.2 rmip 4.4 branch 0.0 switch 0.0 total 124.3
+probes: 0  solve 0.0 (0 iters avg)  purged 7376 repriced 948 lp cols 1695 pool 8123
+RESULT E-n30-k3 status time_limit lb 520 ub 544 published 534 nodes 3 depth 2 cols 8123 rows 161 rootlp 519.442 rootlb 519.200 kmin 3 kmax 3 fleetcap 0 time 124.26s root 5.63s 
+Route #1: 19 23 18 14 8 9 17 7 13 16 15 10 12 11
+Route #2: 22 2 5 1 4 3 20
+Route #3: 26 28 27 29 25 24 6 21
+Cost 544

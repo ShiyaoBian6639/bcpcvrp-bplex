@@ -1,0 +1,648 @@
+  it    1  z 74428780.0000  lb -1000000000.0000  minrc -10627220.0000  lp   150/   150  rows    0  hr +150  lbl 5579  spx 112  0.2s
+  it   11  z 40870981.6296  lb -1000000000.0000  minrc -6040641.0032  lp  1650/  1650  rows    0  hr +150  lbl 3461  spx 91  1.5s
+  it   21  z 16814381.5382  lb -1000000000.0000  minrc -1711007.5553  lp  3150/  3150  rows    0  hr +150  lbl 3014  spx 178  2.3s
+  it   31  z 4431779.6328  lb -1000000000.0000  minrc -896859.0794  lp  4650/  4650  rows    0  hr +150  lbl 2633  spx 219  2.9s
+  it   41  z   52575.8193  lb -1000000000.0000  minrc -1001.0399  lp  6150/  6150  rows    0  hr +150  lbl 3593  spx 438  3.3s
+  it   51  z   45454.7280  lb -1000000000.0000  minrc  -243.4142  lp  7650/  7650  rows    0  hr +150  lbl 4054  spx 162  3.6s
+  it   61  z   43821.4003  lb -1000000000.0000  minrc    -1.3940  lp  8956/  8956  rows    0  hr +2  lbl 4216  spx 14  3.7s
+  it   67  z   43712.4457  lb   43712.4457  minrc    -0.0000  lp  9233/  9233  rows    0  ex +0  lbl 5539  spx 17  3.8s
+  cut round 1: +48 RCC (max viol 1.085), z 43712.4457
+  it   71  z   43748.8859  lb   43712.4457  minrc   -10.0000  lp  9310/  9310  rows   48  ex +2  lbl 5563  spx 62  3.9s
+  it   72  z   43748.8478  lb   43748.8478  minrc    -0.0000  lp  9312/  9312  rows   48  ex +0  lbl 5644  spx 6  4.0s
+  cut round 2: +43 RCC (max viol 0.697), z 43748.8478
+  it   76  z   43773.0151  lb   43773.0151  minrc    -0.0000  lp  9371/  9371  rows   91  ex +0  lbl 5684  spx 1  4.3s
+  cut round 3: +33 RCC (max viol 0.685), z 43773.0151
+  it   81  z   43784.4638  lb   43773.0151  minrc    -0.5178  lp  9393/  9393  rows  124  ex +2  lbl 5662  spx 14  4.8s
+  it   82  z   43784.4580  lb   43784.4580  minrc    -0.0000  lp  9395/  9395  rows  124  ex +0  lbl 5683  spx 1  4.8s
+  cut round 4: +41 RCC (max viol 0.762), z 43784.4580
+  it   86  z   43801.4469  lb   43801.4469  minrc    -0.0000  lp  9445/  9445  rows  165  ex +0  lbl 5538  spx 45  5.4s
+  cut round 5: +35 RCC (max viol 0.472), z 43801.4469
+  it   90  z   43816.7000  lb   43816.7000  minrc    -0.0000  lp  9488/  9488  rows  200  ex +0  lbl 5460  spx 3  6.1s
+  cut round 6: +15 RCC (max viol 0.411), z 43816.7000
+  it   91  z   43821.2613  lb   43816.7000  minrc    -8.3907  lp  9488/  9488  rows  215  hr +14  lbl 3937  spx 71  6.4s
+  it   93  z   43821.0262  lb   43821.0262  minrc    -0.0000  lp  9511/  9511  rows  215  ex +0  lbl 5297  spx 36  6.5s
+  cut round 7: +10 RCC (max viol 0.199), z 43821.0262
+  it   95  z   43822.8225  lb   43822.8225  minrc    -0.0000  lp  9517/  9517  rows  225  ex +0  lbl 5281  spx 3  6.7s
+  cut round 8: +3 RCC (max viol 0.176), z 43822.8225
+  it   97  z   43823.4348  lb   43823.4348  minrc    -0.0000  lp  9528/  9528  rows  228  ex +0  lbl 5195  spx 18  6.8s
+  cut round 9: +4 RCC (max viol 0.202), z 43823.4348
+  it   98  z   43823.4713  lb   43823.4713  minrc    -0.0000  lp  9528/  9528  rows  232  ex +0  lbl 5201  spx 4  6.9s
+  cut round 10: +30 SRC (max viol 0.430), z 43823.4713
+  it  101  z   43884.2392  lb   43823.4713  minrc    -0.4694  lp  9679/  9679  rows  262  hr +2  lbl 4110  spx 48  7.5s
+  it  104  z   43882.8012  lb   43882.8012  minrc    -0.0000  lp  9711/  9711  rows  262  ex +0  lbl 5604  spx 9  7.6s
+  cut round 11: +24 RCC (max viol 0.621), z 43882.8012
+  it  106  z   43884.4877  lb   43884.4877  minrc    -0.0000  lp  9713/  9713  rows  286  ex +0  lbl 5616  spx 6  8.2s
+  cut round 12: +4 RCC (max viol 0.117), z 43884.4877
+  cut round 13: +25 SRC (max viol 0.365), z 43884.9110
+  it  111  z   43900.6414  lb   43884.4877  minrc    -1.6689  lp  9758/  9758  rows  315  ex +6  lbl 5791  spx 36  8.9s
+  it  112  z   43900.6065  lb   43900.6065  minrc    -0.0000  lp  9764/  9764  rows  315  ex +0  lbl 5745  spx 22  9.0s
+  cut round 14: +2 RCC (max viol 0.465), z 43900.6065
+  it  116  z   43901.3879  lb   43901.3879  minrc    -0.0000  lp  9778/  9778  rows  317  ex +0  lbl 5710  spx 20  9.2s
+  cut round 15: +14 SRC (max viol 0.322), z 43901.3879
+  it  119  z   43905.3428  lb   43905.3428  minrc    -0.0000  lp  9786/  9786  rows  331  ex +0  lbl 5812  spx 1  9.5s
+node     0 d0   lb  43905.343 lp  43905.343 glb      0.000 ub - open 0 lp 9786/9786 rows 331 it 119 9.5s
+  rmip (root): status time limit obj 0.0 in 5.0s
+  branch on edge (16,118) = 0.495  probes -1.000 | -1.000  score 0.250
+  it    1  z   43908.6311  lb -1000000000.0000  minrc   -37.7695  lp  3000/  9786  rows  333  hr +27  lbl 4213  spx 122  0.1s
+  it    4  z   43907.8656  lb   43907.8656  minrc    -0.0000  lp  3050/  9836  rows  333  ex +0  lbl 5754  spx 11  0.2s
+  cut round 1: +12 RCC (max viol 0.611), z 43907.8656
+  it   10  z   43911.8366  lb   43911.8366  minrc    -0.0000  lp  3088/  9872  rows  345  ex +0  lbl 5788  spx 7  0.4s
+  cut round 2: +4 RCC (max viol 0.144), z 43911.8366
+  it   11  z   43912.3858  lb   43911.8366  minrc    -0.9252  lp  3088/  9872  rows  349  ex +4  lbl 5860  spx 35  0.5s
+  it   12  z   43912.3779  lb   43912.3779  minrc    -0.0000  lp  3092/  9876  rows  349  ex +0  lbl 5845  spx 7  0.5s
+  cut round 3: +4 RCC (max viol 0.175), z 43912.3779
+  it   14  z   43913.4413  lb   43913.4413  minrc    -0.0000  lp  3098/  9882  rows  353  ex +0  lbl 5834  spx 17  0.6s
+  cut round 4: +2 RCC (max viol 0.156), z 43913.4413
+  cut round 5: +4 SRC (max viol 0.126), z 43913.5013
+  it   18  z   43914.7055  lb   43914.7055  minrc    -0.0000  lp  3110/  9894  rows  359  ex +0  lbl 5874  spx 9  0.8s
+  cut round 6: +1 SRC (max viol 0.100), z 43914.7055
+  it   19  z   43914.7134  lb   43914.7134  minrc    -0.0000  lp  3110/  9894  rows  360  ex +0  lbl 5867  spx 15  0.9s
+node     2 d1   lb  43914.713 lp  43914.713 glb  43905.343 ub - open 1 lp 3110/9894 rows 360 it 19 15.5s
+  branch on edge (18,105) = 0.500  probes -1.000 | -1.000  score 4.639
+  it    1  z   43977.4931  lb -1000000000.0000  minrc     0.0000  lp  3008/  9894  rows  362  pl +8  lbl 5867  spx 246  0.1s
+  it    8  z   43929.3894  lb   43929.3894  minrc    -0.0000  lp  3176/ 10059  rows  362  ex +0  lbl 5766  spx 4  0.3s
+  cut round 1: +1 RCC (max viol 0.147), z 43929.3894
+  it    9  z   43929.6520  lb   43929.6520  minrc    -0.0000  lp  3176/ 10059  rows  363  ex +0  lbl 5741  spx 37  0.3s
+  cut round 2: +2 SRC (max viol 0.162), z 43929.6520
+  it   11  z   43931.2547  lb   43929.6520  minrc    -1.0237  lp  3182/ 10065  rows  365  ex +2  lbl 5812  spx 61  0.4s
+  it   12  z   43931.2547  lb   43931.2547  minrc    -0.0000  lp  3184/ 10067  rows  365  ex +0  lbl 5807  spx 1  0.4s
+  cut round 3: +1 RCC (max viol 0.173), z 43931.2547
+node     4 d2   lb  43931.255 lp  43931.627 glb  43905.343 ub - open 2 lp 3186/10069 rows 366 it 13 16.0s
+  branch on edge (12,132) = 0.500  probes -1.000 | -1.000  score 6.549
+  it    1  z   43938.4228  lb -1000000000.0000  minrc    -2.0555  lp  3000/ 10069  rows  368  hr +1  lbl 4142  spx 175  0.0s
+  it    3  z   43938.3113  lb   43938.3113  minrc    -0.0000  lp  3009/ 10078  rows  368  ex +0  lbl 5705  spx 35  0.1s
+  cut round 1: +14 RCC (max viol 0.416), z 43938.3113
+  it    5  z   43939.7537  lb   43939.7537  minrc    -0.0000  lp  3013/ 10082  rows  382  ex +0  lbl 5739  spx 14  0.3s
+  cut round 2: +1 SRC (max viol 0.111), z 43939.7537
+node     6 d3   lb  43939.754 lp  43939.861 glb  43905.343 ub - open 3 lp 3015/10084 rows 383 it 6 16.4s
+  branch on edge (46,138) = 0.504  probes -1.000 | -1.000  score 5.737
+  it    1  z   43958.5491  lb -1000000000.0000  minrc     0.0000  lp  3003/ 10084  rows  385  pl +3  lbl 5687  spx 215  0.1s
+  it    9  z   43957.1409  lb   43957.1409  minrc    -0.0000  lp  3045/ 10122  rows  385  ex +0  lbl 5608  spx 32  0.2s
+  cut round 1: +9 RCC (max viol 0.361), z 43957.1409
+  it   11  z   43959.5098  lb   43959.5098  minrc    -0.0000  lp  3049/ 10126  rows  394  ex +0  lbl 5543  spx 15  0.3s
+  cut round 2: +1 RCC (max viol 0.134), z 43959.5098
+  it   12  z   43959.6176  lb   43959.6176  minrc    -0.0000  lp  3049/ 10126  rows  395  ex +0  lbl 5546  spx 23  0.4s
+  cut round 3: +1 SRC (max viol 0.121), z 43959.6176
+  it   15  z   43959.9751  lb   43959.9751  minrc    -0.0000  lp  3057/ 10134  rows  396  ex +0  lbl 5547  spx 3  0.5s
+node     8 d4   lb  43959.975 lp  43959.975 glb  43905.343 ub - open 4 lp 3057/10134 rows 396 it 15 16.9s
+  branch on edge (57,92) = 0.515  probes -1.000 | -1.000  score 6.833
+  it    1  z   43975.7444  lb -1000000000.0000  minrc     0.0000  lp  3002/ 10134  rows  398  pl +2  lbl 5547  spx 213  0.0s
+  it    8  z   43973.3550  lb   43973.3550  minrc    -0.0000  lp  3111/ 10242  rows  398  ex +0  lbl 5413  spx 1  0.2s
+  cut round 1: +1 RCC (max viol 0.142), z 43973.3550
+  it   10  z   43973.3681  lb   43973.3681  minrc    -0.0000  lp  3113/ 10244  rows  399  ex +0  lbl 5420  spx 1  0.3s
+  cut round 2: +3 SRC (max viol 0.260), z 43973.3681
+  it   11  z   43974.1405  lb   43973.3681  minrc    -3.6266  lp  3113/ 10244  rows  402  hr +2  lbl 3984  spx 65  0.3s
+  it   13  z   43974.1398  lb   43974.1398  minrc    -0.0000  lp  3119/ 10250  rows  402  ex +0  lbl 5493  spx 3  0.4s
+  cut round 3: +2 RCC (max viol 0.162), z 43974.1398
+  it   15  z   43975.9271  lb   43975.9271  minrc    -0.0000  lp  3123/ 10254  rows  404  ex +0  lbl 5447  spx 2  0.5s
+node    10 d5   lb  43975.927 lp  43975.927 glb  43905.343 ub - open 5 lp 3123/10254 rows 404 it 15 17.4s
+  branch on edge (29,91) = 0.505  probes -1.000 | -1.000  score 7.116
+  it    1  z   43995.1512  lb -1000000000.0000  minrc     0.0000  lp  3002/ 10254  rows  406  pl +2  lbl 5447  spx 174  0.0s
+  it    4  z   43991.6374  lb   43991.6374  minrc    -0.0000  lp  3048/ 10300  rows  406  ex +0  lbl 5500  spx 53  0.2s
+  cut round 1: +7 RCC (max viol 0.309), z 43991.6374
+  it    6  z   43992.6021  lb   43992.6021  minrc    -0.0000  lp  3056/ 10308  rows  413  ex +0  lbl 5439  spx 62  0.3s
+  cut round 2: +1 SRC (max viol 0.143), z 43992.6021
+  it    8  z   43995.2595  lb   43995.2595  minrc    -0.0000  lp  3058/ 10310  rows  414  ex +0  lbl 5507  spx 1  0.4s
+  cut round 3: +1 RCC (max viol 0.108), z 43995.2595
+  it    9  z   43995.3170  lb   43995.3170  minrc    -0.0000  lp  3058/ 10310  rows  415  ex +0  lbl 5517  spx 16  0.5s
+node    12 d6   lb  43995.317 lp  43995.317 glb  43905.343 ub - open 6 lp 3058/10310 rows 415 it 9 17.9s
+  branch on edge (58,86) = 0.511  probes -1.000 | -1.000  score 7.560
+  it    1  z   44008.7871  lb -1000000000.0000  minrc     0.0000  lp  3011/ 10310  rows  417  pl +11  lbl 5517  spx 168  0.0s
+  it    6  z   44001.3658  lb   44001.3658  minrc    -0.0000  lp  3095/ 10391  rows  417  ex +0  lbl 5339  spx 19  0.2s
+  cut round 1: +3 RCC (max viol 0.170), z 44001.3658
+  cut round 2: +1 RCC (max viol 0.135), z 44001.5729
+  it    9  z   44001.6288  lb   44001.6288  minrc    -0.0000  lp  3099/ 10393  rows  421  ex +0  lbl 5309  spx 89  0.3s
+  cut round 3: +2 SRC (max viol 0.118), z 44001.6288
+  it   11  z   44003.1292  lb   44003.1292  minrc    -0.0000  lp  3107/ 10401  rows  423  ex +0  lbl 5343  spx 22  0.4s
+node    14 d7   lb  44003.129 lp  44003.129 glb  43905.343 ub - open 7 lp 3107/10401 rows 423 it 11 18.3s
+  branch on edge (0,82) = 0.497  probes -1.000 | -1.000  score 7.055
+  it    1  z   44008.7873  lb -1000000000.0000  minrc   -19.5971  lp  3000/ 10401  rows  425  hr +10  lbl 4026  spx 152  0.0s
+  it    4  z   44008.4481  lb   44008.4481  minrc    -0.0000  lp  3065/ 10466  rows  425  ex +0  lbl 5383  spx 6  0.1s
+  cut round 1: +3 RCC (max viol 0.338), z 44008.4481
+  it    9  z   44009.8659  lb   44009.8659  minrc    -0.0000  lp  3073/ 10473  rows  428  ex +0  lbl 5499  spx 4  0.3s
+  cut round 2: +1 RCC (max viol 0.204), z 44009.8659
+  it   11  z   44010.3328  lb   44010.3328  minrc    -0.0000  lp  3075/ 10475  rows  429  ex +0  lbl 5494  spx 1  0.4s
+  cut round 3: +2 SRC (max viol 0.113), z 44010.3328
+  it   14  z   44013.2152  lb   44013.2152  minrc    -0.0000  lp  3081/ 10481  rows  431  ex +0  lbl 5364  spx 52  0.5s
+  cut round 4: +1 RCC (max viol 0.175), z 44013.2152
+  it   16  z   44014.1994  lb   44014.1994  minrc    -0.0000  lp  3083/ 10483  rows  432  ex +0  lbl 5426  spx 7  0.6s
+  cut round 5: +1 RCC (max viol 0.116), z 44014.1994
+  it   19  z   44014.2832  lb   44014.2832  minrc    -0.0000  lp  3085/ 10484  rows  433  ex +0  lbl 5356  spx 15  0.7s
+  cut round 6: +1 RCC (max viol 0.130), z 44014.2832
+node    16 d8   lb  44014.283 lp  44014.320 glb  43905.343 ub - open 8 lp 3087/10486 rows 434 it 20 19.1s
+  branch on edge (28,145) = 0.546  probes -1.000 | -1.000  score 6.811
+  it    1  z   44055.0510  lb -1000000000.0000  minrc     0.0000  lp  3006/ 10486  rows  436  pl +6  lbl 5368  spx 322  0.1s
+  it   11  z   44050.6484  lb   44050.6484  minrc    -0.0000  lp  3266/ 10746  rows  436  ex +0  lbl 5146  spx 1  0.3s
+  cut round 1: +17 RCC (max viol 0.208), z 44050.6484
+  it   15  z   44053.3481  lb   44053.3481  minrc    -0.0000  lp  3279/ 10759  rows  453  ex +0  lbl 5114  spx 1  0.5s
+  cut round 2: +18 RCC (max viol 0.193), z 44053.3481
+  it   19  z   44055.9169  lb   44055.9169  minrc    -0.0000  lp  3300/ 10779  rows  471  ex +0  lbl 5160  spx 76  0.7s
+  cut round 3: +12 RCC (max viol 0.179), z 44055.9169
+  it   21  z   44058.6254  lb   44055.9169  minrc   -11.6254  lp  3303/ 10779  rows  483  hr +26  lbl 3773  spx 26  0.9s
+  it   23  z   44058.2297  lb   44058.2297  minrc    -0.0000  lp  3335/ 10811  rows  483  ex +0  lbl 5089  spx 30  0.9s
+  cut round 4: +3 RCC (max viol 0.155), z 44058.2297
+  it   25  z   44059.2301  lb   44059.2301  minrc    -0.0000  lp  3343/ 10819  rows  486  ex +0  lbl 5013  spx 3  1.0s
+node    18 d9   lb  44059.230 lp  44059.230 glb  43905.343 ub - open 9 lp 3343/10819 rows 486 it 25 20.2s
+  branch on edge (1,17) = 0.464  probes -1.000 | -1.000  score 8.807
+  it    1  z   44062.9334  lb -1000000000.0000  minrc     0.0000  lp  3002/ 10819  rows  488  pl +2  lbl 5013  spx 120  0.0s
+  it    5  z   44061.0000  lb   44061.0000  minrc    -0.0000  lp  3018/ 10835  rows  488  ex +0  lbl 5050  spx 17  0.1s
+node    20 d10  lb  44061.000 lp  44061.000 glb  43905.343 ub - open 10 lp 3018/10835 rows 488 it 5 20.3s
+* incumbent 44061 from node LP (20.3s)
+  it    1  z   43924.3832  lb -1000000000.0000  minrc     0.0000  lp  3040/ 10835  rows  488  pl +40  lbl 5050  spx 837  0.2s
+  it    5  z   43908.7051  lb   43908.7051  minrc    -0.0000  lp  3055/ 10846  rows  488  ex +0  lbl 5824  spx 25  0.3s
+  cut round 1: +3 SRC (max viol 0.200), z 43908.7051
+  it    7  z   43911.0534  lb   43911.0534  minrc    -0.0000  lp  3058/ 10846  rows  491  ex +0  lbl 5928  spx 21  0.4s
+  cut round 2: +2 SRC (max viol 0.155), z 43911.0534
+  it   10  z   43912.4133  lb   43912.4133  minrc    -0.0000  lp  3074/ 10862  rows  493  ex +0  lbl 5935  spx 36  0.6s
+  cut round 3: +1 RCC (max viol 0.110), z 43912.4133
+  it   11  z   43912.7395  lb   43912.7395  minrc    -0.0000  lp  3074/ 10862  rows  494  ex +0  lbl 5973  spx 35  0.6s
+node     1 d1   lb  43912.739 lp  43912.739 glb  43905.343 ub 44061 open 9 lp 3074/10862 rows 494 it 11 21.0s
+  enumeration: gap 147.261 -> 214953 routes (0.7s)
+  branch on edge (28,145) = 0.188  probes -1.000 | -1.000  score 225.119
+  it    1  z   43964.4689  lb   42575.0261  minrc   -37.5525  lp  3000/ 10862  rows  496  ex +53  lbl 15966  spx 345  0.1s
+  it    3  z   43957.0885  lb   43957.0885  minrc    -0.0000  lp  3055/ 10917  rows  496  ex +0  lbl 15966  spx 3  0.2s
+  cut round 1: +30 RCC (max viol 0.443), z 43957.0885
+  it    5  z   43960.8650  lb   43960.8650  minrc    -0.0000  lp  3059/ 10921  rows  526  ex +0  lbl 15966  spx 2  0.5s
+  cut round 2: +4 RCC (max viol 0.311), z 43960.8650
+  it    7  z   43962.3421  lb   43962.3421  minrc    -0.0000  lp  3065/ 10927  rows  530  ex +0  lbl 15966  spx 16  0.6s
+  cut round 3: +2 RCC (max viol 0.106), z 43962.3421
+  cut round 4: +5 SRC (max viol 0.163), z 43962.3886
+  it    9  z   43963.7252  lb   43963.7252  minrc    -0.0000  lp  3067/ 10929  rows  537  ex +0  lbl 15966  spx 109  0.7s
+node    22 d2   lb  43963.725 lp  43963.725 glb  43912.739 ub 44061 open 10 lp 3067/10929 rows 537 it 9 22.4s
+  enumeration: gap 96.275 -> 41561 routes (0.0s) [filtered]
+  branch on edge (46,138) = 0.633  probes -1.000 | -1.000  score 140.790
+  it    1  z   43972.8449  lb   43527.8673  minrc   -12.0264  lp  3000/ 10929  rows  539  ex +16  lbl 15966  spx 110  0.0s
+  it    3  z   43972.0472  lb   43972.0472  minrc    -0.0000  lp  3018/ 10947  rows  539  ex +0  lbl 15966  spx 16  0.1s
+  cut round 1: +5 RCC (max viol 0.218), z 43972.0472
+  it    4  z   43972.2729  lb   43972.2729  minrc    -0.0000  lp  3018/ 10947  rows  544  ex +0  lbl 15966  spx 30  0.2s
+  cut round 2: +1 RCC (max viol 0.120), z 43972.2729
+  it    5  z   43972.3819  lb   43972.3819  minrc    -0.0000  lp  3018/ 10947  rows  545  ex +0  lbl 15966  spx 22  0.2s
+node    24 d3   lb  43972.382 lp  43972.382 glb  43912.739 ub 44061 open 11 lp 3018/10947 rows 545 it 5 22.6s
+  enumeration: gap 87.618 -> 30659 routes (0.0s) [filtered]
+  branch on edge (29,91) = 0.445  probes -1.000 | -1.000  score 144.710
+  it    1  z   43980.7838  lb   43718.9637  minrc    -7.0762  lp  3000/ 10947  rows  547  ex +26  lbl 15966  spx 118  0.0s
+  it    3  z   43980.3652  lb   43980.3652  minrc    -0.0000  lp  3028/ 10975  rows  547  ex +0  lbl 15966  spx 1  0.1s
+  cut round 1: +15 RCC (max viol 0.307), z 43980.3652
+  it    6  z   43982.9337  lb   43982.9337  minrc    -0.0000  lp  3043/ 10990  rows  562  ex +0  lbl 15966  spx 3  0.3s
+  cut round 2: +1 RCC (max viol 0.144), z 43982.9337
+  it    7  z   43983.0991  lb   43983.0991  minrc    -0.0000  lp  3043/ 10990  rows  563  ex +0  lbl 15966  spx 28  0.3s
+  cut round 3: +1 SRC (max viol 0.101), z 43983.0991
+  it    8  z   43983.2197  lb   43983.2197  minrc    -0.0000  lp  3043/ 10990  rows  564  ex +0  lbl 15966  spx 1  0.4s
+node    26 d4   lb  43983.220 lp  43983.220 glb  43912.739 ub 44061 open 12 lp 3043/10990 rows 564 it 8 23.0s
+  enumeration: gap 76.780 -> 20213 routes (0.0s) [filtered]
+  branch on edge (0,49) = 0.500  probes -1.000 | -1.000  score 122.949
+  it    1  z   43986.6188  lb   43505.6188  minrc   -13.0000  lp  3000/ 10990  rows  566  ex +6  lbl 15966  spx 81  0.0s
+  it    3  z   43985.8276  lb   43985.8276  minrc    -0.0000  lp  3008/ 10998  rows  566  ex +0  lbl 15966  spx 5  0.1s
+  cut round 1: +1 RCC (max viol 0.160), z 43985.8276
+  it    4  z   43985.9170  lb   43985.9170  minrc    -0.0000  lp  3008/ 10998  rows  567  ex +0  lbl 15966  spx 22  0.1s
+node    28 d5   lb  43985.917 lp  43985.917 glb  43912.739 ub 44061 open 13 lp 3008/10998 rows 567 it 4 23.2s
+  enumeration: gap 74.083 -> 18076 routes (0.0s) [filtered]
+  branch on edge (57,92) = 0.592  probes -1.000 | -1.000  score 118.777
+  it    1  z   43998.5761  lb   43128.9751  minrc   -23.5027  lp  3000/ 10998  rows  569  ex +47  lbl 15966  spx 195  0.1s
+  it    3  z   43995.5120  lb   43995.5120  minrc    -0.0000  lp  3057/ 11055  rows  569  ex +0  lbl 15966  spx 4  0.2s
+  cut round 1: +1 RCC (max viol 0.168), z 43995.5120
+node    30 d6   lb  43995.512 lp  43995.939 glb  43912.739 ub 44061 open 14 lp 3063/11061 rows 570 it 4 23.6s
+  enumeration: gap 172.061 -> 18055 routes (0.0s) [filtered]
+  branch on edge (11,49) = 0.471  probes -1.000 | -1.000  score 113.623
+  it    1  z   44005.7296  lb   43338.3462  minrc   -18.0374  lp  3000/ 11061  rows  572  ex +36  lbl 15966  spx 259  0.1s
+  it    3  z   44005.4270  lb   44005.4270  minrc    -0.0000  lp  3038/ 11099  rows  572  ex +0  lbl 15966  spx 1  0.2s
+  cut round 1: +3 RCC (max viol 0.129), z 44005.4270
+  it    5  z   44006.0505  lb   44006.0505  minrc    -0.0000  lp  3040/ 11101  rows  575  ex +0  lbl 15966  spx 1  0.2s
+  cut round 2: +1 SRC (max viol 0.106), z 44006.0505
+  it    7  z   44011.5089  lb   44011.5089  minrc    -0.0000  lp  3050/ 11111  rows  576  ex +0  lbl 15966  spx 8  0.3s
+  cut round 3: +3 RCC (max viol 0.120), z 44011.5089
+  it    8  z   44012.2615  lb   44012.2615  minrc    -0.0000  lp  3050/ 11111  rows  579  ex +0  lbl 15966  spx 47  0.4s
+  cut round 4: +2 SRC (max viol 0.109), z 44012.2615
+  cut round 5: +1 RCC (max viol 0.109), z 44012.8127
+  it   11  z   44013.0016  lb   44013.0016  minrc    -0.0000  lp  3052/ 11113  rows  582  ex +0  lbl 15966  spx 4  0.5s
+node    32 d7   lb  44013.002 lp  44013.002 glb  43912.739 ub 44061 open 15 lp 3052/11113 rows 582 it 11 24.1s
+  enumeration: gap 46.998 -> 6594 routes (0.0s) [filtered]
+  branch on edge (0,134) = 0.471  probes -1.000 | -1.000  score 114.031
+  it    1  z   44017.7825  lb   43608.1761  minrc   -11.0704  lp  3000/ 11113  rows  584  ex +21  lbl 15966  spx 171  0.1s
+  it    3  z   44017.5193  lb   44017.5193  minrc    -0.0000  lp  3025/ 11138  rows  584  ex +0  lbl 15966  spx 1  0.1s
+  cut round 1: +2 RCC (max viol 0.127), z 44017.5193
+  it    4  z   44017.6483  lb   44017.6483  minrc    -0.0000  lp  3025/ 11138  rows  586  ex +0  lbl 15966  spx 34  0.2s
+node    34 d8   lb  44017.648 lp  44017.648 glb  43912.739 ub 44061 open 16 lp 3025/11138 rows 586 it 4 24.3s
+  enumeration: gap 42.352 -> 5419 routes (0.0s) [filtered]
+  branch on edge (0,144) = 0.515  probes -1.000 | -1.000  score 109.515
+  it    1  z   44040.8191  lb   42254.2682  minrc   -48.2852  lp  3000/ 11138  rows  588  ex +80  lbl 15966  spx 258  0.1s
+  it    3  z   44036.1071  lb   44036.1071  minrc    -0.0000  lp  3091/ 11229  rows  588  ex +0  lbl 15966  spx 110  0.2s
+  cut round 1: +1 RCC (max viol 0.135), z 44036.1071
+node    36 d9   lb  44036.107 lp  44036.187 glb  43912.739 ub 44061 open 17 lp 3092/11230 rows 589 it 4 24.5s
+  enumeration: gap 31.764 -> 2950 routes (0.0s) [filtered]
+  enum MIP: infeasible, bound 44060.500, no solution (9.0s)
+  it    1  z   43917.6893  lb   43025.5329  minrc   -24.1123  lp  3000/ 11230  rows  589  ex +20  lbl 15966  spx 997  0.3s
+  it    3  z   43917.1897  lb   43917.1897  minrc    -0.0000  lp  3022/ 11252  rows  589  ex +0  lbl 15966  spx 1  0.4s
+  cut round 1: +2 RCC (max viol 0.106), z 43917.1897
+  it    5  z   43918.3821  lb   43918.3821  minrc    -0.0000  lp  3029/ 11259  rows  591  ex +0  lbl 15966  spx 17  0.5s
+node    21 d2   lb  43918.382 lp  43918.382 glb  43912.739 ub 44061 open 16 lp 3029/11259 rows 591 it 5 34.1s
+  enumeration: gap 141.618 -> 176456 routes (0.0s) [filtered]
+  branch on edge (11,49) = 0.518  probes -1.000 | -1.000  score 181.166
+  it    1  z   43928.2815  lb   43928.2815  minrc    -0.0000  lp  3000/ 11259  rows  593  ex +0  lbl 15966  spx 107  0.0s
+  cut round 1: +1 RCC (max viol 0.126), z 43928.2815
+  it    2  z   43928.3996  lb   43928.3996  minrc    -0.0000  lp  3000/ 11259  rows  594  ex +0  lbl 15966  spx 12  0.1s
+node    38 d3   lb  43928.400 lp  43928.400 glb  43914.713 ub 44061 open 17 lp 3000/11259 rows 594 it 2 34.2s
+  enumeration: gap 131.600 -> 122242 routes (0.0s) [filtered]
+  branch on edge (0,144) = 0.294  probes -1.000 | -1.000  score 178.703
+  it    1  z   43949.9331  lb   42245.7194  minrc   -46.0598  lp  3000/ 11259  rows  596  ex +26  lbl 15966  spx 111  0.0s
+  it    3  z   43947.1477  lb   43947.1477  minrc    -0.0000  lp  3028/ 11287  rows  596  ex +0  lbl 15966  spx 1  0.1s
+  cut round 1: +2 RCC (max viol 0.243), z 43947.1477
+node    40 d4   lb  43947.148 lp  43947.824 glb  43914.713 ub 44061 open 18 lp 3030/11289 rows 598 it 4 34.5s
+  enumeration: gap 234.365 -> 122242 routes (0.0s) [filtered]
+  branch on edge (18,105) = 0.386  probes -1.000 | -1.000  score 180.565
+  it    1  z   43971.1667  lb   43904.8969  minrc    -1.7911  lp  3000/ 11289  rows  600  ex +2  lbl 15966  spx 184  0.1s
+  it    2  z   43971.0333  lb   43971.0333  minrc    -0.0000  lp  3002/ 11291  rows  600  ex +0  lbl 15966  spx 19  0.1s
+  cut round 1: +9 RCC (max viol 0.459), z 43971.0333
+  it    4  z   43972.4873  lb   43972.4873  minrc    -0.0000  lp  3007/ 11296  rows  609  ex +0  lbl 15966  spx 3  0.2s
+  cut round 2: +8 RCC (max viol 0.245), z 43972.4873
+  it    6  z   43973.9505  lb   43973.9505  minrc    -0.0000  lp  3011/ 11300  rows  617  ex +0  lbl 15966  spx 4  0.4s
+node    42 d5   lb  43973.951 lp  43973.951 glb  43914.713 ub 44061 open 19 lp 3011/11300 rows 617 it 6 34.9s
+  enumeration: gap 86.049 -> 30735 routes (0.0s) [filtered]
+  branch on edge (46,138) = 0.413  probes -1.000 | -1.000  score 175.196
+  it    1  z   43985.0352  lb   43622.3952  minrc    -9.8011  lp  3000/ 11300  rows  619  ex +23  lbl 15966  spx 96  0.0s
+  it    2  z   43984.8640  lb   43984.8640  minrc    -0.0000  lp  3023/ 11323  rows  619  ex +0  lbl 15966  spx 42  0.1s
+  cut round 1: +2 RCC (max viol 0.150), z 43984.8640
+  it    3  z   43985.5013  lb   43985.5013  minrc    -0.0000  lp  3023/ 11323  rows  621  ex +0  lbl 15966  spx 18  0.1s
+node    44 d6   lb  43985.501 lp  43985.501 glb  43914.713 ub 44061 open 20 lp 3023/11323 rows 621 it 3 35.0s
+  enumeration: gap 74.499 -> 17992 routes (0.0s) [filtered]
+  branch on edge (27,34) = 0.514  probes -1.000 | -1.000  score 165.581
+  it    1  z   43993.9015  lb   43750.7898  minrc    -6.5706  lp  3000/ 11323  rows  623  ex +4  lbl 15966  spx 83  0.0s
+  it    2  z   43993.8554  lb   43993.8554  minrc    -0.0000  lp  3004/ 11327  rows  623  ex +0  lbl 15966  spx 25  0.0s
+  cut round 1: +5 RCC (max viol 0.148), z 43993.8554
+  it    4  z   43993.9831  lb   43993.9831  minrc    -0.0000  lp  3012/ 11335  rows  628  ex +0  lbl 15966  spx 4  0.2s
+  cut round 2: +2 RCC (max viol 0.115), z 43993.9831
+  it    6  z   43994.9175  lb   43994.9175  minrc    -0.0000  lp  3016/ 11339  rows  630  ex +0  lbl 15966  spx 20  0.3s
+node    46 d7   lb  43994.917 lp  43994.917 glb  43914.713 ub 44061 open 21 lp 3016/11339 rows 630 it 6 35.3s
+  enumeration: gap 65.083 -> 13071 routes (0.0s) [filtered]
+  branch on edge (38,148) = 0.524  probes -1.000 | -1.000  score 162.870
+  it    1  z   44009.7110  lb   43507.0638  minrc   -13.5851  lp  3000/ 11339  rows  632  ex +13  lbl 15966  spx 130  0.0s
+  it    2  z   44008.5442  lb   44008.5442  minrc    -0.0000  lp  3013/ 11352  rows  632  ex +0  lbl 15966  spx 57  0.1s
+  cut round 1: +6 RCC (max viol 0.320), z 44008.5442
+  it    4  z   44010.7432  lb   44010.7432  minrc    -0.0000  lp  3027/ 11366  rows  638  ex +0  lbl 15966  spx 14  0.2s
+  cut round 2: +1 RCC (max viol 0.104), z 44010.7432
+  it    5  z   44010.9363  lb   44010.9363  minrc    -0.0000  lp  3027/ 11366  rows  639  ex +0  lbl 15966  spx 14  0.2s
+node    48 d8   lb  44010.936 lp  44010.936 glb  43914.713 ub 44061 open 22 lp 3027/11366 rows 639 it 5 35.6s
+  enumeration: gap 49.064 -> 6850 routes (0.0s) [filtered]
+  branch on edge (69,115) = 0.478  probes -1.000 | -1.000  score 164.029
+  it    1  z   44023.2864  lb   43916.6763  minrc    -2.8814  lp  3000/ 11366  rows  641  ex +4  lbl 15966  spx 104  0.0s
+  it    2  z   44023.2864  lb   44023.2864  minrc    -0.0000  lp  3004/ 11370  rows  641  ex +0  lbl 15966  spx 2  0.0s
+  cut round 1: +2 RCC (max viol 0.155), z 44023.2864
+node    50 d9   lb  44023.286 lp  44023.872 glb  43914.713 ub 44061 open 23 lp 3019/11385 rows 643 it 4 35.8s
+  enumeration: gap 136.080 -> 6850 routes (0.0s) [filtered]
+  branch on edge (132,147) = 0.522  probes -1.000 | -1.000  score 163.028
+  it    1  z   44042.5255  lb   41231.2943  minrc   -75.9792  lp  3000/ 11385  rows  645  ex +33  lbl 15966  spx 199  0.1s
+  it    3  z   44034.6665  lb   44034.6665  minrc    -0.0000  lp  3035/ 11420  rows  645  ex +0  lbl 15966  spx 1  0.1s
+  cut round 1: +5 RCC (max viol 0.464), z 44034.6665
+  it    5  z   44037.3209  lb   44037.3209  minrc    -0.0000  lp  3039/ 11424  rows  650  ex +0  lbl 15966  spx 2  0.2s
+  cut round 2: +3 RCC (max viol 0.270), z 44037.3209
+  it    7  z   44038.3005  lb   44038.3005  minrc    -0.0000  lp  3040/ 11425  rows  653  ex +0  lbl 15966  spx 1  0.3s
+node    52 d10  lb  44038.300 lp  44038.300 glb  43914.713 ub 44061 open 24 lp 3040/11425 rows 653 it 7 36.2s
+  enumeration: gap 21.700 -> 1763 routes (0.0s) [filtered]
+  enum MIP: infeasible, bound 44060.500, no solution (14.7s)
+  it    1  z   43929.7009  lb -1000000000.0000  minrc     0.0000  lp  3021/ 11425  rows  653  pl +21  lbl 15966  spx 813  0.3s
+  it    9  z   43921.9920  lb   43921.9920  minrc    -0.0000  lp  3059/ 11454  rows  653  ex +0  lbl 5970  spx 5  0.6s
+  cut round 1: +1 RCC (max viol 0.124), z 43921.9920
+  it   10  z   43922.0764  lb   43922.0764  minrc    -0.0000  lp  3059/ 11454  rows  654  ex +0  lbl 5961  spx 20  0.6s
+node     3 d2   lb  43922.076 lp  43922.076 glb  43914.713 ub 44061 open 23 lp 3059/11454 rows 654 it 10 51.5s
+  enumeration: gap 137.924 -> 176289 routes (0.5s)
+  branch on edge (28,145) = 0.134  probes -1.000 | -1.000  score 282.663
+  it    1  z   43974.0625  lb   43539.2157  minrc   -11.7526  lp  3000/ 11454  rows  656  ex +34  lbl 16047  spx 556  0.2s
+  it    3  z   43973.7817  lb   43973.7817  minrc    -0.0000  lp  3036/ 11490  rows  656  ex +0  lbl 16047  spx 1  0.3s
+  cut round 1: +12 RCC (max viol 0.416), z 43973.7817
+  it    6  z   43976.5618  lb   43976.5618  minrc    -0.0000  lp  3057/ 11511  rows  668  ex +0  lbl 16047  spx 10  0.6s
+node    54 d3   lb  43976.562 lp  43976.562 glb  43918.382 ub 44061 open 24 lp 3057/11511 rows 668 it 6 52.6s
+  enumeration: gap 83.438 -> 30420 routes (0.0s) [filtered]
+  branch on edge (0,144) = 0.492  probes -1.000 | -1.000  score 163.657
+  it    1  z   43989.2363  lb   43651.5149  minrc    -9.1276  lp  3000/ 11511  rows  670  ex +26  lbl 16047  spx 203  0.1s
+  it    3  z   43988.9541  lb   43988.9541  minrc    -0.0000  lp  3033/ 11544  rows  670  ex +0  lbl 16047  spx 10  0.1s
+  cut round 1: +1 RCC (max viol 0.106), z 43988.9541
+  it    4  z   43989.2402  lb   43989.2402  minrc    -0.0000  lp  3033/ 11544  rows  671  ex +0  lbl 16047  spx 21  0.2s
+node    56 d4   lb  43989.240 lp  43989.240 glb  43918.382 ub 44061 open 25 lp 3033/11544 rows 671 it 4 52.9s
+  enumeration: gap 70.760 -> 19556 routes (0.0s) [filtered]
+  branch on edge (0,87) = 0.519  probes -1.000 | -1.000  score 149.798
+  it    1  z   43991.7177  lb   43820.9543  minrc    -4.6152  lp  3000/ 11544  rows  673  ex +12  lbl 16047  spx 104  0.0s
+  it    2  z   43991.6016  lb   43991.6016  minrc    -0.0000  lp  3012/ 11556  rows  673  ex +0  lbl 16047  spx 33  0.1s
+node    58 d5   lb  43991.602 lp  43991.602 glb  43918.382 ub 44061 open 26 lp 3012/11556 rows 673 it 2 52.9s
+  enumeration: gap 68.398 -> 17351 routes (0.0s) [filtered]
+  branch on edge (0,139) = 0.495  probes -1.000 | -1.000  score 145.671
+  it    1  z   44005.1808  lb   42969.1808  minrc   -28.0000  lp  3000/ 11556  rows  675  ex +24  lbl 16047  spx 273  0.1s
+  it    3  z   44002.3870  lb   44002.3870  minrc    -0.0000  lp  3032/ 11588  rows  675  ex +0  lbl 16047  spx 7  0.2s
+  cut round 1: +2 RCC (max viol 0.103), z 44002.3870
+node    60 d6   lb  44002.387 lp  44002.670 glb  43918.382 ub 44061 open 27 lp 3036/11592 rows 677 it 4 53.2s
+  enumeration: gap 61.850 -> 13237 routes (0.0s) [filtered]
+  branch on edge (132,147) = 0.493  probes -1.000 | -1.000  score 150.281
+  it    1  z   44027.8020  lb   43343.5311  minrc   -18.4938  lp  3000/ 11592  rows  679  ex +39  lbl 16047  spx 303  0.1s
+  it    2  z   44026.0116  lb   44026.0116  minrc    -0.0000  lp  3039/ 11631  rows  679  ex +0  lbl 16047  spx 265  0.2s
+node    62 d7   lb  44026.012 lp  44026.012 glb  43918.382 ub 44061 open 28 lp 3039/11631 rows 679 it 2 53.4s
+  enumeration: gap 33.988 -> 3980 routes (0.0s) [filtered]
+  enum MIP: optimal, bound 44051.000, solution (9.3s)
+* incumbent 44051 from enumeration MIP (62.7s)
+  it    1  z   43966.8302  lb   40832.2017  minrc   -84.7197  lp  3000/ 11631  rows  679  ex +150  lbl 16047  spx 967  0.3s
+  it    4  z   43926.0638  lb   43926.0638  minrc    -0.0000  lp  3194/ 11825  rows  679  ex +0  lbl 16047  spx 40  0.6s
+  cut round 1: +1 RCC (max viol 0.227), z 43926.0638
+  it    5  z   43926.4475  lb   43926.4475  minrc    -0.0000  lp  3194/ 11825  rows  680  ex +0  lbl 16047  spx 31  0.7s
+node    37 d3   lb  43926.448 lp  43926.448 glb  43918.382 ub 44051 open 27 lp 3194/11825 rows 680 it 5 63.4s
+  enumeration: gap 123.552 -> 104471 routes (0.0s) [filtered]
+  branch on edge (132,147) = 0.556  probes -1.000 | -1.000  score 177.058
+  it    1  z   43931.3259  lb   43652.1467  minrc    -7.5454  lp  3000/ 11825  rows  682  ex +7  lbl 16047  spx 127  0.0s
+  it    3  z   43930.9198  lb   43930.9198  minrc    -0.0000  lp  3009/ 11834  rows  682  ex +0  lbl 16047  spx 2  0.1s
+node    64 d4   lb  43930.920 lp  43930.920 glb  43922.076 ub 44051 open 28 lp 3009/11834 rows 682 it 3 63.5s
+  enumeration: gap 119.080 -> 85170 routes (0.0s) [filtered]
+  branch on edge (38,148) = 0.421  probes -1.000 | -1.000  score 154.405
+  it    1  z   43951.7831  lb   42762.6560  minrc   -32.1386  lp  3000/ 11834  rows  684  ex +32  lbl 16047  spx 192  0.1s
+  it    3  z   43948.8774  lb   43948.8774  minrc    -0.0000  lp  3041/ 11875  rows  684  ex +0  lbl 16047  spx 12  0.1s
+node    66 d5   lb  43948.877 lp  43948.877 glb  43922.076 ub 44051 open 29 lp 3041/11875 rows 684 it 3 63.7s
+  enumeration: gap 101.123 -> 51165 routes (0.0s) [filtered]
+  branch on edge (0,144) = 0.547  probes -1.000 | -1.000  score 141.067
+  it    1  z   43961.8604  lb   43862.8253  minrc    -2.6766  lp  3000/ 11875  rows  686  ex +6  lbl 16047  spx 123  0.1s
+  it    2  z   43961.8601  lb   43961.8601  minrc    -0.0000  lp  3006/ 11881  rows  686  ex +0  lbl 16047  spx 4  0.1s
+  cut round 1: +1 RCC (max viol 0.144), z 43961.8601
+  cut round 2: +1 RCC (max viol 0.187), z 43961.9039
+  it    5  z   43962.4534  lb   43962.4534  minrc    -0.0000  lp  3011/ 11886  rows  688  ex +0  lbl 16047  spx 7  0.3s
+node    68 d6   lb  43962.453 lp  43962.453 glb  43922.076 ub 44051 open 30 lp 3011/11886 rows 688 it 5 64.1s
+  enumeration: gap 87.547 -> 35433 routes (0.0s) [filtered]
+  branch on edge (37,138) = 0.508  probes -1.000 | -1.000  score 136.664
+  it    1  z   43980.8640  lb   41001.2640  minrc   -80.5297  lp  3000/ 11886  rows  690  ex +100  lbl 16047  spx 259  0.1s
+  it    3  z   43978.6099  lb   43978.6099  minrc    -0.0000  lp  3129/ 12015  rows  690  ex +0  lbl 16047  spx 43  0.2s
+  cut round 1: +16 RCC (max viol 0.712), z 43978.6099
+  it    6  z   43992.9406  lb   43992.9406  minrc    -0.0000  lp  3148/ 12034  rows  706  ex +0  lbl 16047  spx 3  0.5s
+  cut round 2: +5 RCC (max viol 0.170), z 43992.9406
+  it    9  z   43993.9599  lb   43993.9599  minrc    -0.0000  lp  3155/ 12041  rows  711  ex +0  lbl 16047  spx 2  0.7s
+  cut round 3: +5 RCC (max viol 0.139), z 43993.9599
+  it   11  z   43994.6750  lb   43994.6750  minrc    -0.0000  lp  3159/ 12045  rows  716  ex +0  lbl 16047  spx 1  0.8s
+  cut round 4: +1 RCC (max viol 0.250), z 43994.6750
+  it   12  z   43994.8880  lb   43994.8880  minrc    -0.0000  lp  3159/ 12045  rows  717  ex +0  lbl 16047  spx 37  0.8s
+node    70 d7   lb  43994.888 lp  43994.888 glb  43922.076 ub 44051 open 31 lp 3159/12045 rows 717 it 12 65.0s
+  enumeration: gap 55.112 -> 9671 routes (0.0s) [filtered]
+  branch on edge (1,93) = 0.505  probes -1.000 | -1.000  score 141.645
+  it    1  z   44000.0838  lb   43210.4496  minrc   -21.3415  lp  3000/ 12045  rows  719  ex +36  lbl 16047  spx 178  0.1s
+  it    3  z   43999.6972  lb   43999.6972  minrc    -0.0000  lp  3038/ 12083  rows  719  ex +0  lbl 16047  spx 1  0.1s
+node    72 d8   lb  43999.697 lp  43999.697 glb  43922.076 ub 44051 open 32 lp 3038/12083 rows 719 it 3 65.1s
+  enumeration: gap 50.303 -> 7201 routes (0.0s) [filtered]
+  branch on edge (22,33) = 0.500  probes -1.000 | -1.000  score 138.996
+  it    1  z   44082.2838  lb   26056.0404  minrc  -477.3409  lp  3000/ 12083  rows  721  ex +109  lbl 16047  spx 426  0.1s
+  it    4  z   44012.5250  lb   44012.5250  minrc    -0.0000  lp  3149/ 12232  rows  721  ex +0  lbl 16047  spx 18  0.4s
+  cut round 1: +12 RCC (max viol 0.278), z 44012.5250
+  it    6  z   44015.3511  lb   44015.3511  minrc    -0.0000  lp  3157/ 12240  rows  733  ex +0  lbl 16047  spx 48  0.7s
+node    74 d9   lb  44015.351 lp  44015.351 glb  43922.076 ub 44051 open 33 lp 3157/12240 rows 733 it 6 65.8s
+  enumeration: gap 34.649 -> 3390 routes (0.0s) [filtered]
+  enum MIP: infeasible, bound 44050.500, no solution (38.9s)
+  it    1  z   43976.1231  lb   41403.5149  minrc   -69.5300  lp  3000/ 12240  rows  733  ex +89  lbl 16047  spx 877  0.4s
+  it    5  z   43923.5874  lb   43923.5874  minrc    -0.0000  lp  3153/ 12393  rows  733  ex +0  lbl 16047  spx 19  0.7s
+  cut round 1: +1 RCC (max viol 0.104), z 43923.5874
+  it    6  z   43923.9802  lb   43923.9802  minrc    -0.0000  lp  3153/ 12393  rows  734  ex +0  lbl 16047  spx 31  0.8s
+node    53 d3   lb  43923.980 lp  43923.980 glb  43922.076 ub 44051 open 32 lp 3153/12393 rows 734 it 6 105.5s
+  enumeration: gap 126.020 -> 122484 routes (0.0s) [filtered]
+  branch on edge (0,29) = 0.496  probes -1.000 | -1.000  score 132.341
+  it    1  z   43930.6716  lb   42414.5432  minrc   -40.9764  lp  3000/ 12393  rows  736  ex +17  lbl 16047  spx 205  0.1s
+  it    3  z   43928.1063  lb   43928.1063  minrc    -0.0000  lp  3023/ 12416  rows  736  ex +0  lbl 16047  spx 4  0.2s
+node    76 d4   lb  43928.106 lp  43928.106 glb  43923.980 ub 44051 open 33 lp 3023/12416 rows 736 it 3 105.8s
+  enumeration: gap 121.894 -> 100739 routes (0.0s) [filtered]
+  branch on edge (37,138) = 0.147  probes -1.000 | -1.000  score 147.725
+  it    1  z   43966.6748  lb   42669.6277  minrc   -35.0553  lp  3000/ 12416  rows  738  ex +99  lbl 16047  spx 384  0.1s
+  it    4  z   43963.8615  lb   43963.8615  minrc    -0.0000  lp  3130/ 12546  rows  738  ex +0  lbl 16047  spx 21  0.2s
+  cut round 1: +7 RCC (max viol 0.569), z 43963.8615
+  it    7  z   43970.2186  lb   43970.2186  minrc    -0.0000  lp  3170/ 12586  rows  745  ex +0  lbl 16047  spx 12  0.5s
+  cut round 2: +5 RCC (max viol 0.198), z 43970.2186
+  it    8  z   43971.3447  lb   43971.3447  minrc    -0.0000  lp  3170/ 12586  rows  750  ex +0  lbl 16047  spx 78  0.7s
+  cut round 3: +1 RCC (max viol 0.117), z 43971.3447
+  it    9  z   43971.3713  lb   43971.3713  minrc    -0.0000  lp  3170/ 12586  rows  751  ex +0  lbl 16047  spx 7  0.7s
+node    78 d5   lb  43971.371 lp  43971.371 glb  43923.980 ub 44051 open 34 lp 3170/12586 rows 751 it 9 106.5s
+  enumeration: gap 78.629 -> 24978 routes (0.0s) [filtered]
+  branch on edge (38,148) = 0.534  probes -1.000 | -1.000  score 143.976
+  it    1  z   43987.1811  lb   43469.1811  minrc   -14.0000  lp  3000/ 12586  rows  753  ex +29  lbl 16047  spx 295  0.1s
+  it    3  z   43986.9656  lb   43986.9656  minrc    -0.0000  lp  3031/ 12617  rows  753  ex +0  lbl 16047  spx 12  0.2s
+node    80 d6   lb  43986.966 lp  43986.966 glb  43923.980 ub 44051 open 35 lp 3031/12617 rows 753 it 3 106.7s
+  enumeration: gap 63.034 -> 13577 routes (0.0s) [filtered]
+  branch on edge (22,33) = 0.436  probes -1.000 | -1.000  score 137.901
+  it    1  z   44009.4329  lb   41842.2082  minrc   -58.5736  lp  3000/ 12617  rows  755  ex +100  lbl 16047  spx 231  0.1s
+  it    3  z   44004.9512  lb   44004.9512  minrc    -0.0000  lp  3115/ 12732  rows  755  ex +0  lbl 16047  spx 33  0.2s
+  cut round 1: +8 RCC (max viol 0.224), z 44004.9512
+  it    7  z   44007.7017  lb   44007.7017  minrc    -0.0000  lp  3127/ 12744  rows  763  ex +0  lbl 16047  spx 1  0.4s
+node    82 d7   lb  44007.702 lp  44007.702 glb  43923.980 ub 44051 open 36 lp 3127/12744 rows 763 it 7 107.2s
+  enumeration: gap 42.298 -> 5272 routes (0.0s) [filtered]
+  branch on edge (1,101) = 0.489  probes -1.000 | -1.000  score 133.472
+  it    1  z   44007.7017  lb   44007.7017  minrc    -0.0000  lp  3000/ 12744  rows  765  ex +0  lbl 16047  spx 1  0.0s
+node    84 d8   lb  44007.702 lp  44007.702 glb  43923.980 ub 44051 open 37 lp 3000/12744 rows 765 it 1 107.3s
+  enumeration: gap 42.298 -> 5272 routes (0.0s) [filtered]
+  branch on edge (0,101) = 0.489  probes -1.000 | -1.000  score 133.472
+  it    1  z   44012.6101  lb   42344.2512  minrc   -45.0908  lp  3000/ 12744  rows  767  ex +48  lbl 16047  spx 116  0.0s
+  it    4  z   44012.3116  lb   44012.3116  minrc    -0.0000  lp  3059/ 12803  rows  767  ex +0  lbl 16047  spx 2  0.1s
+  cut round 1: +7 RCC (max viol 0.222), z 44012.3116
+  it    7  z   44015.8135  lb   44015.8135  minrc    -0.0000  lp  3080/ 12824  rows  774  ex +0  lbl 16047  spx 1  0.3s
+  cut round 2: +2 RCC (max viol 0.123), z 44015.8135
+  it    9  z   44016.1486  lb   44016.1486  minrc    -0.0000  lp  3081/ 12825  rows  776  ex +0  lbl 16047  spx 5  0.4s
+  cut round 3: +2 RCC (max viol 0.105), z 44016.1486
+node    86 d9   lb  44016.149 lp  44016.778 glb  43923.980 ub 44051 open 38 lp 3083/12827 rows 778 it 10 107.9s
+  enumeration: gap 155.564 -> 5272 routes (0.0s) [filtered]
+  branch on edge (22,145) = 0.493  probes -1.000 | -1.000  score 132.219
+  it    1  z   44071.8583  lb   36168.2872  minrc  -211.3045  lp  3000/ 12827  rows  780  ex +51  lbl 16047  spx 408  0.1s
+  it    3  z   44068.8010  lb   44068.8010  minrc    -0.0000  lp  3066/ 12893  rows  780  ex +0  lbl 16047  spx 39  0.2s
+node    88 d10  lb  44068.801 lp  44068.801 glb  43923.980 ub 44051 open 39 lp 3066/12893 rows 780 it 3 108.1s
+  it    1  z   43943.9895  lb   42153.5186  minrc   -48.3911  lp  3000/ 12893  rows  780  ex +77  lbl 16047  spx 893  0.3s
+  it    4  z   43927.2027  lb   43927.2027  minrc    -0.0000  lp  3122/ 13015  rows  780  ex +0  lbl 16047  spx 5  0.6s
+  cut round 1: +1 RCC (max viol 0.149), z 43927.2027
+node    75 d4   lb  43927.203 lp  43927.302 glb  43923.980 ub 44051 open 38 lp 3124/13017 rows 781 it 5 108.8s
+  enumeration: gap 122.883 -> 100692 routes (0.0s) [filtered]
+  branch on edge (22,145) = 0.270  probes -1.000 | -1.000  score 324.240
+  it    1  z   43946.1951  lb   42299.8368  minrc   -44.4962  lp  3000/ 13017  rows  783  ex +44  lbl 16047  spx 326  0.1s
+  it    3  z   43940.6089  lb   43940.6089  minrc    -0.0000  lp  3048/ 13065  rows  783  ex +0  lbl 16047  spx 1  0.2s
+  cut round 1: +3 RCC (max viol 0.192), z 43940.6089
+  it    5  z   43941.7289  lb   43941.7289  minrc    -0.0000  lp  3053/ 13070  rows  786  ex +0  lbl 16047  spx 5  0.3s
+  cut round 2: +2 RCC (max viol 0.269), z 43941.7289
+  it    6  z   43942.2538  lb   43942.2538  minrc    -0.0000  lp  3053/ 13070  rows  788  ex +0  lbl 16047  spx 47  0.4s
+  cut round 3: +1 RCC (max viol 0.116), z 43942.2538
+  it    7  z   43942.5837  lb   43942.5837  minrc    -0.0000  lp  3053/ 13070  rows  789  ex +0  lbl 16047  spx 46  0.5s
+node    90 d5   lb  43942.584 lp  43942.584 glb  43926.448 ub 44051 open 39 lp 3053/13070 rows 789 it 7 109.3s
+  enumeration: gap 107.416 -> 64144 routes (0.0s) [filtered]
+  branch on edge (37,138) = 0.273  probes -1.000 | -1.000  score 185.623
+  it    1  z   43982.9135  lb   43210.9270  minrc   -20.8645  lp  3000/ 13070  rows  791  ex +16  lbl 16047  spx 368  0.1s
+  it    4  z   43981.2241  lb   43981.2241  minrc    -0.0000  lp  3023/ 13093  rows  791  ex +0  lbl 16047  spx 1  0.2s
+  cut round 1: +1 RCC (max viol 0.438), z 43981.2241
+  it    7  z   43982.4099  lb   43982.4099  minrc    -0.0000  lp  3029/ 13099  rows  792  ex +0  lbl 16047  spx 1  0.3s
+node    92 d6   lb  43982.410 lp  43982.410 glb  43926.448 ub 44051 open 40 lp 3029/13099 rows 792 it 7 109.8s
+  enumeration: gap 67.590 -> 16015 routes (0.0s) [filtered]
+  branch on edge (38,148) = 0.421  probes -1.000 | -1.000  score 127.809
+  it    1  z   44003.8830  lb   44003.8830  minrc    -0.0000  lp  3000/ 13099  rows  794  ex +0  lbl 16047  spx 218  0.1s
+  cut round 1: +1 RCC (max viol 0.213), z 44003.8830
+  it    4  z   44004.3714  lb   44004.3714  minrc    -0.0000  lp  3007/ 13106  rows  795  ex +0  lbl 16047  spx 1  0.2s
+node    94 d7   lb  44004.371 lp  44004.371 glb  43926.448 ub 44051 open 41 lp 3007/13106 rows 795 it 4 110.0s
+  enumeration: gap 45.629 -> 6636 routes (0.0s) [filtered]
+  branch on edge (0,2) = 0.501  probes -1.000 | -1.000  score 126.998
+  it    1  z   44006.2285  lb   43673.2285  minrc    -9.0000  lp  3000/ 13106  rows  797  ex +5  lbl 16047  spx 55  0.0s
+  it    2  z   44006.2285  lb   44006.2285  minrc    -0.0000  lp  3005/ 13111  rows  797  ex +0  lbl 16047  spx 2  0.1s
+  cut round 1: +1 RCC (max viol 0.241), z 44006.2285
+node    96 d8   lb  44006.228 lp  44006.722 glb  43926.448 ub 44051 open 42 lp 3014/13120 rows 798 it 4 110.2s
+  enumeration: gap 167.703 -> 6636 routes (0.0s) [filtered]
+  branch on edge (43,115) = 0.500  probes -1.000 | -1.000  score 124.698
+  it    1  z   44016.7361  lb   42545.4415  minrc   -39.7647  lp  3000/ 13120  rows  800  ex +22  lbl 16047  spx 245  0.1s
+  it    3  z   44016.1082  lb   44016.1082  minrc    -0.0000  lp  3024/ 13144  rows  800  ex +0  lbl 16047  spx 11  0.2s
+  cut round 1: +2 RCC (max viol 0.195), z 44016.1082
+  it    4  z   44016.9470  lb   44016.9470  minrc    -0.0000  lp  3024/ 13144  rows  802  ex +0  lbl 16047  spx 61  0.3s
+node    98 d9   lb  44016.947 lp  44016.947 glb  43926.448 ub 44051 open 43 lp 3024/13144 rows 802 it 4 110.5s
+  enumeration: gap 33.053 -> 3715 routes (0.0s) [filtered]
+  enum MIP: optimal, bound 44041.000, solution (13.6s)
+* incumbent 44041 from enumeration MIP (124.1s)
+  it    1  z   43964.2059  lb   42876.7315  minrc   -29.3912  lp  3000/ 13144  rows  802  ex +89  lbl 16047  spx 918  0.3s
+  it    3  z   43938.2656  lb   43938.2656  minrc    -0.0000  lp  3102/ 13246  rows  802  ex +0  lbl 16047  spx 5  0.4s
+  cut round 1: +1 RCC (max viol 0.141), z 43938.2656
+  it    4  z   43938.5036  lb   43938.5036  minrc    -0.0000  lp  3102/ 13246  rows  803  ex +0  lbl 16047  spx 30  0.5s
+node    63 d4   lb  43938.504 lp  43938.504 glb  43926.448 ub 44041 open 42 lp 3102/13246 rows 803 it 4 124.7s
+  enumeration: gap 101.496 -> 57447 routes (0.0s) [filtered]
+  branch on edge (38,148) = 0.484  probes -1.000 | -1.000  score 143.025
+  it    1  z   43954.9123  lb   43611.0915  minrc    -9.2925  lp  3000/ 13246  rows  805  ex +16  lbl 16047  spx 136  0.1s
+  it    3  z   43954.2449  lb   43954.2449  minrc    -0.0000  lp  3018/ 13264  rows  805  ex +0  lbl 16047  spx 1  0.1s
+  cut round 1: +2 RCC (max viol 0.117), z 43954.2449
+  it    4  z   43954.5613  lb   43954.5613  minrc    -0.0000  lp  3018/ 13264  rows  807  ex +0  lbl 16047  spx 36  0.2s
+node   100 d5   lb  43954.561 lp  43954.561 glb  43927.203 ub 44041 open 43 lp 3018/13264 rows 807 it 4 124.9s
+  enumeration: gap 85.439 -> 31917 routes (0.0s) [filtered]
+  branch on edge (18,105) = 0.415  probes -1.000 | -1.000  score 136.510
+  it    1  z   44022.4322  lb   41232.7682  minrc   -75.3963  lp  3000/ 13264  rows  809  ex +91  lbl 16047  spx 262  0.1s
+  it    3  z   43988.4955  lb   43988.4955  minrc    -0.0000  lp  3095/ 13359  rows  809  ex +0  lbl 16047  spx 1  0.2s
+  cut round 1: +2 RCC (max viol 0.491), z 43988.4955
+  it    5  z   43989.1546  lb   43989.1546  minrc    -0.0000  lp  3096/ 13360  rows  811  ex +0  lbl 16047  spx 1  0.3s
+node   102 d6   lb  43989.155 lp  43989.155 glb  43927.203 ub 44041 open 44 lp 3096/13360 rows 811 it 5 125.3s
+  enumeration: gap 50.845 -> 8338 routes (0.0s) [filtered]
+  branch on edge (22,145) = 0.366  probes -1.000 | -1.000  score 241.200
+  it    1  z   44001.4356  lb   43747.6052  minrc    -6.8603  lp  3000/ 13360  rows  813  ex +5  lbl 16047  spx 203  0.1s
+  it    3  z   44001.4241  lb   44001.4241  minrc    -0.0000  lp  3007/ 13367  rows  813  ex +0  lbl 16047  spx 1  0.1s
+  cut round 1: +2 RCC (max viol 0.168), z 44001.4241
+  it    5  z   44002.9540  lb   44002.9540  minrc    -0.0000  lp  3009/ 13369  rows  815  ex +0  lbl 16047  spx 34  0.2s
+node   104 d7   lb  44002.954 lp  44002.954 glb  43927.203 ub 44041 open 45 lp 3009/13369 rows 815 it 5 125.6s
+  enumeration: gap 37.046 -> 4216 routes (0.0s) [filtered]
+  enum MIP: infeasible, bound 44040.500, no solution (22.8s)
+  it    1  z   43935.9281  lb   43322.8362  minrc   -16.5701  lp  3000/ 13369  rows  815  ex +8  lbl 16047  spx 795  0.3s
+  it    4  z   43928.8045  lb   43928.8045  minrc    -0.0000  lp  3028/ 13397  rows  815  ex +0  lbl 16047  spx 23  0.4s
+node    89 d5   lb  43928.805 lp  43928.805 glb  43927.203 ub 44041 open 44 lp 3028/13397 rows 815 it 4 148.8s
+  enumeration: gap 111.195 -> 70985 routes (0.0s) [filtered]
+  branch on edge (132,147) = 0.547  probes -1.000 | -1.000  score 154.447
+  it    1  z   43936.2329  lb   43791.4467  minrc    -3.9131  lp  3000/ 13397  rows  817  ex +8  lbl 16047  spx 150  0.1s
+  it    3  z   43936.2126  lb   43936.2126  minrc    -0.0000  lp  3010/ 13407  rows  817  ex +0  lbl 16047  spx 1  0.1s
+  cut round 1: +2 RCC (max viol 0.213), z 43936.2126
+  it    4  z   43936.4875  lb   43936.4875  minrc    -0.0000  lp  3010/ 13407  rows  819  ex +0  lbl 16047  spx 46  0.2s
+node   106 d6   lb  43936.487 lp  43936.487 glb  43928.106 ub 44041 open 45 lp 3010/13407 rows 819 it 4 149.1s
+  enumeration: gap 103.513 -> 56843 routes (0.0s) [filtered]
+  branch on edge (0,59) = 0.502  probes -1.000 | -1.000  score 119.547
+  it    1  z   43938.3831  lb   42835.0601  minrc   -29.8195  lp  3000/ 13407  rows  821  ex +70  lbl 16047  spx 111  0.1s
+  it    3  z   43938.1740  lb   43938.1740  minrc    -0.0000  lp  3072/ 13479  rows  821  ex +0  lbl 16047  spx 6  0.2s
+  cut round 1: +1 RCC (max viol 0.165), z 43938.1740
+  it    4  z   43938.5240  lb   43938.5240  minrc    -0.0000  lp  3072/ 13479  rows  822  ex +0  lbl 16047  spx 54  0.2s
+node   108 d7   lb  43938.524 lp  43938.524 glb  43928.106 ub 44041 open 46 lp 3072/13479 rows 822 it 4 149.4s
+  enumeration: gap 101.476 -> 49045 routes (0.0s) [filtered]
+  branch on edge (38,53) = 0.511  probes -1.000 | -1.000  score 117.535
+  it    1  z   43948.5044  lb   43495.1170  minrc   -12.2537  lp  3000/ 13479  rows  824  ex +17  lbl 16047  spx 194  0.1s
+  it    3  z   43948.2509  lb   43948.2509  minrc    -0.0000  lp  3018/ 13497  rows  824  ex +0  lbl 16047  spx 3  0.1s
+  cut round 1: +7 RCC (max viol 0.411), z 43948.2509
+  it    5  z   43952.7592  lb   43952.7592  minrc    -0.0000  lp  3035/ 13514  rows  831  ex +0  lbl 16047  spx 215  0.4s
+  cut round 2: +9 RCC (max viol 0.222), z 43952.7592
+  it    7  z   43953.8965  lb   43953.8965  minrc    -0.0000  lp  3037/ 13516  rows  840  ex +0  lbl 16047  spx 1  0.6s
+node   110 d8   lb  43953.897 lp  43953.897 glb  43928.106 ub 44041 open 47 lp 3037/13516 rows 840 it 7 150.0s
+  enumeration: gap 86.103 -> 30437 routes (0.0s) [filtered]
+  branch on edge (81,86) = 0.477  probes -1.000 | -1.000  score 117.407
+  it    1  z   43990.0000  lb   41698.6963  minrc   -61.9271  lp  3000/ 13516  rows  842  ex +77  lbl 16047  spx 136  0.1s
+  it    3  z   43980.0000  lb   43980.0000  minrc    -0.0000  lp  3121/ 13637  rows  842  ex +0  lbl 16047  spx 139  0.2s
+node   112 d9   lb  43980.000 lp  43980.000 glb  43928.106 ub 44041 open 48 lp 3121/13637 rows 842 it 3 150.3s
+* incumbent 43980 from node LP (150.3s)
+  it    1  z   43933.3720  lb   43436.7277  minrc   -13.4228  lp  3000/ 13637  rows  842  ex +13  lbl 16047  spx 670  0.2s
+  it    3  z   43931.4148  lb   43931.4148  minrc    -0.0000  lp  3019/ 13656  rows  842  ex +0  lbl 16047  spx 18  0.3s
+node    77 d5   lb  43931.415 lp  43931.415 glb  43928.106 ub 43980 open 47 lp 3019/13656 rows 842 it 3 150.7s
+  enumeration: gap 47.585 -> 7242 routes (0.0s) [filtered]
+  branch on edge (81,86) = 0.436  probes -1.000 | -1.000  score 198.989
+  it    1  z   43944.9248  lb   43430.2363  minrc   -13.9105  lp  3000/ 13656  rows  844  ex +5  lbl 16047  spx 148  0.1s
+  it    2  z   43944.3410  lb   43944.3410  minrc    -0.0000  lp  3005/ 13661  rows  844  ex +0  lbl 16047  spx 182  0.1s
+  cut round 1: +3 RCC (max viol 0.164), z 43944.3410
+  it    4  z   43945.3888  lb   43945.3888  minrc    -0.0000  lp  3012/ 13668  rows  847  ex +0  lbl 16047  spx 4  0.2s
+node   114 d6   lb  43945.389 lp  43945.389 glb  43928.400 ub 43980 open 48 lp 3012/13668 rows 847 it 4 150.9s
+  enumeration: gap 33.611 -> 3919 routes (0.0s) [filtered]
+  enum MIP: optimal, bound 43979.000, solution (15.6s)
+* incumbent 43979 from enumeration MIP (166.5s)
+  it    1  z   43954.4033  lb   42741.0725  minrc   -32.7927  lp  3000/ 13668  rows  847  ex +28  lbl 16047  spx 557  0.2s
+  it    3  z   43938.7367  lb   43938.7367  minrc    -0.0000  lp  3033/ 13701  rows  847  ex +0  lbl 16047  spx 2  0.4s
+  cut round 1: +1 RCC (max viol 0.109), z 43938.7367
+  it    4  z   43938.9959  lb   43938.9959  minrc    -0.0000  lp  3033/ 13701  rows  848  ex +0  lbl 16047  spx 23  0.4s
+  cut round 2: +1 RCC (max viol 0.162), z 43938.9959
+  it    5  z   43939.0323  lb   43939.0323  minrc    -0.0000  lp  3033/ 13701  rows  849  ex +0  lbl 16047  spx 13  0.5s
+node    39 d4   lb  43939.032 lp  43939.032 glb  43928.400 ub 43979 open 47 lp 3033/13701 rows 849 it 5 167.0s
+  enumeration: gap 38.968 -> 4390 routes (0.0s) [filtered]
+  enum MIP: infeasible, bound 43978.500, no solution (22.2s)
+  it    1  z   43938.5624  lb   43830.1227  minrc    -2.9308  lp  3000/ 13701  rows  849  ex +7  lbl 16047  spx 437  0.1s
+  it    3  z   43938.5421  lb   43938.5421  minrc    -0.0000  lp  3008/ 13709  rows  849  ex +0  lbl 16047  spx 1  0.2s
+node   105 d6   lb  43938.542 lp  43938.542 glb  43928.805 ub 43979 open 46 lp 3008/13709 rows 849 it 3 189.5s
+  enumeration: gap 39.458 -> 4950 routes (0.0s) [filtered]
+  enum MIP: optimal, bound 43976.000, solution (20.4s)
+* incumbent 43976 from enumeration MIP (209.9s)
+  it    1  z   43951.7782  lb   42637.4276  minrc   -35.5230  lp  3000/ 13709  rows  849  ex +25  lbl 16047  spx 631  0.3s
+  it    4  z   43949.3335  lb   43949.3335  minrc    -0.0000  lp  3037/ 13746  rows  849  ex +0  lbl 16047  spx 7  0.4s
+node    65 d5   lb  43949.333 lp  43949.333 glb  43930.920 ub 43976 open 45 lp 3037/13746 rows 849 it 4 210.3s
+  enumeration: gap 25.667 -> 2439 routes (0.0s) [filtered]
+  enum MIP: infeasible, bound 43975.500, no solution (7.1s)
+  it    1  z   43956.2256  lb -1000000000.0000  minrc     0.0000  lp  3071/ 13746  rows  849  pl +71  lbl 16047  spx 599  0.4s
+  it    4  z   43938.4877  lb   43938.4877  minrc    -0.0000  lp  3091/ 13746  rows  849  ex +0  lbl 5701  spx 1  0.6s
+node     5 d3   lb  43938.488 lp  43938.488 glb  43931.255 ub 43976 open 44 lp 3091/13746 rows 849 it 4 218.1s
+  enumeration: gap 36.512 -> 4117 routes (0.1s)
+  enum MIP: infeasible, bound 43975.500, no solution (24.9s)
+  it    1  z   43933.8078  lb   43906.3126  minrc    -0.7431  lp  3000/ 13746  rows  849  ex +2  lbl 15316  spx 419  0.2s
+  it    2  z   43933.8078  lb   43933.8078  minrc    -0.0000  lp  3002/ 13748  rows  849  ex +0  lbl 15316  spx 1  0.2s
+  cut round 1: +5 RCC (max viol 0.156), z 43933.8078
+  it    4  z   43934.9581  lb   43934.9581  minrc    -0.0000  lp  3010/ 13756  rows  854  ex +0  lbl 15316  spx 18  0.3s
+node   113 d6   lb  43934.958 lp  43934.958 glb  43931.415 ub 43976 open 43 lp 3010/13756 rows 854 it 4 243.5s
+  enumeration: gap 40.042 -> 4585 routes (0.0s) [filtered]
+  enum MIP: infeasible, bound 43975.500, no solution (21.8s)
+  it    1  z   43938.1134  lb   42982.6742  minrc   -25.8227  lp  3000/ 13756  rows  854  ex +11  lbl 15316  spx 415  0.2s
+  it    3  z   43937.8926  lb   43937.8926  minrc    -0.0000  lp  3013/ 13769  rows  854  ex +0  lbl 15316  spx 1  0.3s
+  cut round 1: +4 RCC (max viol 0.210), z 43937.8926
+  it    4  z   43937.9883  lb   43937.9883  minrc    -0.0000  lp  3013/ 13769  rows  858  ex +0  lbl 15316  spx 15  0.4s
+node   107 d7   lb  43937.988 lp  43937.988 glb  43936.487 ub 43976 open 42 lp 3013/13769 rows 858 it 4 265.6s
+  enumeration: gap 37.012 -> 4528 routes (0.0s) [filtered]
+  enum MIP: infeasible, bound 43975.500, no solution (22.9s)
+  it    1  z   43950.4986  lb   43835.3103  minrc    -3.1132  lp  3000/ 13769  rows  858  ex +3  lbl 15316  spx 737  0.3s
+  it    2  z   43950.4771  lb   43950.4771  minrc    -0.0000  lp  3003/ 13772  rows  858  ex +0  lbl 15316  spx 14  0.3s
+node    99 d5   lb  43950.477 lp  43950.477 glb  43938.504 ub 43976 open 41 lp 3003/13772 rows 858 it 2 288.9s
+  enumeration: gap 24.523 -> 2415 routes (0.0s) [filtered]
+  enum MIP: infeasible, bound 43975.500, no solution (9.5s)
+  it    1  z   43963.8592  lb   41668.7606  minrc   -62.0297  lp  3000/ 13772  rows  858  ex +149  lbl 15316  spx 668  0.3s
+  it    3  z   43957.1004  lb   43957.1004  minrc    -0.0000  lp  3153/ 13925  rows  858  ex +0  lbl 15316  spx 10  0.4s
+node   109 d8   lb  43957.100 lp  43957.100 glb  43938.524 ub 43976 open 40 lp 3153/13925 rows 858 it 3 298.8s
+  enumeration: gap 17.900 -> 1694 routes (0.0s) [filtered]
+  enum MIP: infeasible, bound 43975.500, no solution (4.4s)
+times: pricing 7.9 master 16.9 cuts 12.3 rmip 5.0 branch 0.7 switch 0.0 enum 258.6 (3 tries, 15 closed) total 303.2
+probes: 0  solve 0.0 (0 iters avg)  purged 10995 repriced 223 lp cols 3153 pool 13925
+RESULT XML150_1121_01 status time_limit lb 43940 ub 43976 published -1 nodes 75 depth 10 cols 13925 rows 858 rootlp 43905.343 rootlb 43905.343 kmin 37 kmax 38 fleetcap 0 time 303.22s root 9.54s 
+Route #1: 96 77 56
+Route #2: 125 95 63
+Route #3: 42 35 40
+Route #4: 150 60 85 21
+Route #5: 46 2 105
+Route #6: 28 1 101
+Route #7: 64 17 37
+Route #8: 104 41 120 10 107
+Route #9: 113 66 36 55 78
+Route #10: 98 80 90
+Route #11: 141 25 13
+Route #12: 76 100 88
+Route #13: 102 32 7
+Route #14: 89 117 68
+Route #15: 130 48 126
+Route #16: 22 18 72 145
+Route #17: 121 94 108 149
+Route #18: 84 132 119
+Route #19: 140 123 106 136 127 143
+Route #20: 147 52 99 82 91
+Route #21: 26 114 109 62
+Route #22: 57 137 92 6 33
+Route #23: 45 31 9
+Route #24: 67 128 30
+Route #25: 103 146 54
+Route #26: 138 29 139 87
+Route #27: 3 133 71 4
+Route #28: 97 51 23 24
+Route #29: 50 74 70 19 124
+Route #30: 112 111 47 73 14
+Route #31: 49 11 118 16
+Route #32: 69 115 43 15
+Route #33: 148 144 53 38 39
+Route #34: 110 131 44 5 135 116 83
+Route #35: 75 81 86 58 12 93
+Route #36: 65 8 122 129 20
+Route #37: 142 79 27 34 134 59 61
+Cost 43976
