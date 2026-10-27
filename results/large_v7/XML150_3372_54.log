@@ -1,0 +1,42 @@
+node     0 d0   lb  41660.426 lp  41660.426 glb      0.000 ub - open 0 lp 3114/13635 rows 203 it 419 18.2s
+node    18 d9   lb  41834.313 lp  41834.313 glb  41665.729 ub - open 9 lp 3001/21084 rows 373 it 31 97.9s
+node    38 d19  lb  41961.848 lp  41961.848 glb  41665.729 ub - open 19 lp 3000/24070 rows 548 it 90 121.2s
+node    58 d29  lb  42274.342 lp  42274.749 glb  41665.729 ub - open 29 lp 3034/30614 rows 321 it 28 214.1s
+node    78 d39  lb  42381.437 lp  42381.534 glb  41665.729 ub - open 39 lp 3002/32521 rows 468 it 20 257.8s
+node    98 d49  lb  42707.177 lp  42707.530 glb  41665.729 ub - open 49 lp 3006/44091 rows 671 it 41 351.4s
+node   118 d9   lb  41980.049 lp  41980.049 glb  41701.743 ub - open 59 lp 3089/46213 rows 503 it 5 368.6s
+* incumbent 42339 from dive (395.3s)
+node   138 d19  lb  42069.866 lp  42069.866 glb  41701.743 ub 42339 open 69 lp 3025/53828 rows 569 it 15 408.7s
+node   158 d29  lb  42269.112 lp  42269.112 glb  41701.743 ub 42339 open 79 lp 3034/55965 rows 335 it 26 428.4s
+node   176 d8   lb  41798.155 lp  41798.155 glb  41701.743 ub 42339 open 87 lp 3012/57918 rows 761 it 36 466.9s
+node   196 d18  lb  41974.144 lp  41974.144 glb  41701.743 ub 42339 open 97 lp 3052/59283 rows 885 it 17 486.2s
+node   216 d28  lb  42175.520 lp  42175.520 glb  41701.743 ub 42339 open 107 lp 3103/61588 rows 555 it 19 538.4s
+node   236 d38  lb  42266.848 lp  42266.848 glb  41701.743 ub 42339 open 117 lp 3005/63533 rows 680 it 12 569.0s
+times: pricing 661.4 master 84.9 cuts 12.3 rmip 7.0 dive 118.0 branch 1.2 switch 0.0 enum 11.6 (label 11.3 in 5 tries, mip 0.3 in 1 solves, 1 nodes closed) total 905.0
+probes: 0  solve 0.0 (0 iters avg)  purged 134058 repriced 71194 lp cols 3064 pool 65853
+RESULT XML150_3372_54 status time_limit lb 41702 ub 42339 published -1 nodes 126 depth 50 cols 65853 rows 501 rootlp 41660.426 rootlb 41660.426 kmin 24 kmax 25 fleetcap 0 time 905.03s root 18.17s 
+Route #1: 116 128
+Route #2: 139 125
+Route #3: 65 94
+Route #4: 41 49
+Route #5: 24 31 110 25 89 105
+Route #6: 53 18
+Route #7: 36 39 51
+Route #8: 68 38 48 19 23 103 45 15 32 66
+Route #9: 43 96 42 47 50 88 75 121
+Route #10: 8 5 62 84 108 104 70 9 119 35 12
+Route #11: 118 58 102 120 92 60 117 148 3 73 113 54 127
+Route #12: 145 52 91
+Route #13: 44 106 55
+Route #14: 57 95 87 97 77 114
+Route #15: 86 85 83 112
+Route #16: 126 46 81 74 64 99 6 80
+Route #17: 140 135 69 138 107 28 26 76 115 1
+Route #18: 150 61 16 10
+Route #19: 101 149 136 40 56 13 7 109 71 143
+Route #20: 133 82 111 147 17 124 129 98
+Route #21: 67 14 78 33 29 4 132 2 79 131
+Route #22: 123 11 59 144 20 27 134 142 63
+Route #23: 146 22 21 93 90 100
+Route #24: 72 30 137 122 37 141 34 130
+Cost 42339

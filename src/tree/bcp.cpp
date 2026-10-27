@@ -209,15 +209,17 @@ BcpResult solve_bcp(const Instance &I, const BcpParams &P)
     // delete branch rows no open node refers to, and cut rows whose dual has
     // been zero for many solves (they can be separated again later)
     auto cleanup_rows = [&](int cur) {
-        std::vector<char> ref(M.rows().size() + 4096, 0);
-        auto mark = [&](const Node &N) { for (int id : N.rows) if (id < (int)ref.size()) ref[id] = 1; };
+        // ids are never reused: index the reference marks by the id bound,
+        // not by the row count (a branch row of an open node must survive)
+        std::vector<char> ref(M.row_id_bound(), 0);
+        auto mark = [&](const Node &N) { for (int id : N.rows) ref[id] = 1; };
         for (int i : open) mark(nodes[i]);
         if (cur >= 0) mark(nodes[cur]);
         std::vector<int> del;
         size_t ncut = 0;
         for (const RobustRow &r : M.rows()) {
             if (r.kind == RobustRow::EDGE) {
-                if (!r.active && (r.id >= (int)ref.size() || !ref[r.id])) del.push_back(r.id);
+                if (!r.active && !ref[r.id]) del.push_back(r.id);
             } else if (r.zero_streak >= P.cut_age_limit) {
                 del.push_back(r.id);
                 ncut++;

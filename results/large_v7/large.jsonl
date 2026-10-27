@@ -1,0 +1,2 @@
+{"instance":"X-n101-k25","n":100,"status":"optimal","lb":27591,"ub":27591,"published":27591,"nodes":9,"cols":2424,"rows":249,"root_lp":27554.4829,"root_lb":27554.4829,"kmin":25,"kmax":27,"fleet_cap_binding":false,"time":8.37,"time_root":0.79,"scale":1,"bplex":"0.2.0 (git 0a7ba67)"}
+{"instance":"XML150_3372_54","n":150,"status":"time_limit","lb":41702,"ub":42339,"published":-1,"nodes":126,"cols":65853,"rows":501,"root_lp":41660.4260,"root_lb":41660.4260,"kmin":24,"kmax":25,"fleet_cap_binding":false,"time":905.03,"time_root":18.17,"scale":1,"bplex":"0.2.0 (git 0a7ba67)"}

@@ -7,6 +7,8 @@
 #include <chrono>
 #include <climits>
 #include <cmath>
+#include <cstdio>
+#include <cstring>
 #include <stdexcept>
 
 namespace cvrpbcp {
@@ -52,6 +54,16 @@ Master::Master(const Instance &I, int kmin, int kmax, const Params &P) : I_(I), 
     bp_ = bplex_create();
     if (!bp_) throw std::runtime_error("bplex_create failed");
     bplex_set_param(bp_, "log_level", 0);
+    // bplex's own warnings and errors (level 0) go to our log with a prefix;
+    // everything else only at log level >= 4
+    bplex_set_log_callback(
+        bp_,
+        [](bplex_s *, int level, const char *msg, void *user) {
+            const Params *p = static_cast<const Params *>(user);
+            if (level == 0 || p->log_level >= 4) std::printf("bplex[%d]: %s%s", level, msg,
+                                                            (msg[0] && msg[std::strlen(msg) - 1] == '\n') ? "" : "\n");
+        },
+        const_cast<Params *>(&P_));
     bplex_set_param(bp_, "threads", P.threads);
     bplex_set_param(bp_, "presolve", 0);
 
@@ -257,12 +269,21 @@ std::vector<int> Master::add_rows(const std::vector<RobustRow> &rs)
 
 void Master::set_row_active(int id, bool active)
 {
+    if (!row_exists(id)) throw std::runtime_error("set_row_active: row id " + std::to_string(id) + " was deleted");
     RobustRow &r = rows_[pos_[id]];
     if (r.active == active) return;
     r.active = active;
     int rc = active ? bplex_chg_row_bounds(bp_, r.row, r.lo, r.up)
                     : bplex_chg_row_bounds(bp_, r.row, -BPLEX_INF, BPLEX_INF);
-    if (rc != 0) throw std::runtime_error("bplex_chg_row_bounds failed");
+    if (rc != 0) row_edit_failed("set_row_active", rc, r.row);
+}
+
+void Master::row_edit_failed(const char *what, int rc, int row) const
+{
+    std::printf("bplex row edit failed: %s rc %d row %d of %d (ours) status %d; dumping cvrpbcp_rowedit_fail.mps\n",
+                what, rc, row, nrows_, bplex_status(bp_));
+    bplex_write_mps(bp_, "cvrpbcp_rowedit_fail.mps");
+    throw std::runtime_error(std::string("bplex_chg_row_bounds failed in ") + what + " rc " + std::to_string(rc));
 }
 
 void Master::delete_rows(const std::vector<int> &ids)
@@ -318,7 +339,8 @@ void Master::set_fleet_bounds(int klo, int khi)
     if (klo == klo_ && khi == khi_) return;
     klo_ = klo;
     khi_ = khi;
-    if (bplex_chg_row_bounds(bp_, I_.n, klo, khi) != 0) throw std::runtime_error("bplex_chg_row_bounds failed");
+    int rc = bplex_chg_row_bounds(bp_, I_.n, klo, khi);
+    if (rc != 0) row_edit_failed("set_fleet_bounds", rc, I_.n);
 }
 
 int Master::solve()

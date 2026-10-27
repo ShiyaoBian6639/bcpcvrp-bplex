@@ -70,6 +70,7 @@ public:
     const std::vector<RobustRow> &rows() const { return rows_; } // position order
     const RobustRow &row_by_id(int id) const { return rows_[pos_[id]]; }
     bool row_exists(int id) const { return id >= 0 && id < (int)pos_.size() && pos_[id] >= 0; }
+    int row_id_bound() const { return (int)pos_.size(); } // every id ever issued is < this
 
     // returns the number of columns that entered the LP (duplicates of
     // routes already in the LP are skipped)
@@ -133,6 +134,7 @@ private:
     int last_iters_ = 0;
     double lp_time_limit_ = 1e30;
     void append_lp_columns(const std::vector<int> &route_idx);
+    [[noreturn]] void row_edit_failed(const char *what, int rc, int row) const;
     void delete_dynamic_columns(const std::vector<int> &js);
 };
 

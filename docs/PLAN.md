@@ -186,8 +186,12 @@ Progress (2026-10-27, details in `STATUS.md`):
   13-20 s, XML150_1121_01 (n = 150, k = 37) in 100 s. `results.jsonl` via
   `--jsonl`, `usable.csv` via `scripts/summarize.py`.
 * Milestone 4: bidirectional labeling, lm-SRC and enumeration + MIP are in;
-  bucket graph, reduced-cost arc fixing, proper dual stabilization and the
-  n = 200 master-LP size are open (XML200_2251_68 not closed in 900 s).
+  a q-route completion bound prunes labels and arc extensions in every
+  pricing stage (2026-10-27), cut rows go in one batch per round, LP
+  columns are purged inside the node, and the pricing stages are tuned at
+  n = 150 (root of X-n153-k22 92 -> 9 s). Bucket graph, reduced-cost arc
+  fixing and proper dual stabilization are open; the n = 200 tree is being
+  re-measured (`results/large_v7`).
 * Milestone 5 (CVRPTW): time resource in the labeling and enumeration
   (mono-directional exact pass, time-free enumeration bound). Solomon
   100-customer C101, C102, C201, R101, RC101, R201 proven to the published

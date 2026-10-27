@@ -1,0 +1,22 @@
+debug: loaded solution ../xltw/benchmarks/CVRP/X-n153-k22.sol cost 21220
+node     0 d0   lb  21111.327 lp  21111.522 glb      0.000 ub - open 0 lp 3061/15720 rows 317 it 475 17.8s
+node    18 d9   lb  21150.832 lp  21150.832 glb  21113.019 ub - open 9 lp 3082/27166 rows 405 it 18 72.9s
+node    38 d19  lb  21218.642 lp  21218.642 glb  21113.019 ub - open 19 lp 3041/28766 rows 496 it 11 87.2s
+node    58 d29  lb  21306.810 lp  21306.810 glb  21113.019 ub - open 29 lp 3204/37923 rows 314 it 9 149.8s
+node    78 d39  lb  21677.076 lp  21677.076 glb  21113.019 ub - open 39 lp 3071/41061 rows 527 it 46 171.3s
+node    98 d49  lb  22180.737 lp  22180.737 glb  21113.019 ub - open 49 lp 3040/51974 rows 1217 it 91 306.0s
+node   118 d9   lb  21443.429 lp  21443.429 glb  21113.019 ub - open 59 lp 3056/57502 rows 1216 it 14 389.1s
+* incumbent 21504 from dive (452.9s)
+node   138 d19  lb  21493.365 lp  21493.365 glb  21113.019 ub 21504 open 69 lp 3040/62281 rows 1294 it 11 495.0s
+node   156 d9   lb  21206.407 lp  21206.407 glb  21113.337 ub 21504 open 77 lp 3049/64528 rows 392 it 14 526.4s
+node   176 d19  lb  21280.814 lp  21280.814 glb  21113.337 ub 21504 open 87 lp 3216/68529 rows 427 it 77 549.4s
+node   196 d29  lb  21338.163 lp  21338.163 glb  21113.337 ub 21504 open 97 lp 3040/70081 rows 495 it 30 560.0s
+node   216 d39  lb  21409.000 lp  21409.000 glb  21113.337 ub 21504 open 107 lp 3091/75001 rows 425 it 39 581.0s
+* incumbent 21409 from node LP (581.0s)
+node   234 d12  lb  21259.008 lp  21259.008 glb  21118.706 ub 21409 open 115 lp 3174/75468 rows 842 it 6 594.6s
+node   252 d7   lb  21207.365 lp  21207.365 glb  21120.771 ub 21409 open 123 lp 3074/77234 rows 555 it 26 612.3s
+node   272 d17  lb  21250.050 lp  21250.050 glb  21120.771 ub 21409 open 133 lp 3049/78511 rows 592 it 23 622.2s
+node   292 d27  lb  21309.648 lp  21309.648 glb  21120.771 ub 21409 open 143 lp 3110/81222 rows 654 it 79 636.7s
+node   312 d37  lb  21382.333 lp  21382.333 glb  21120.771 ub 21409 open 153 lp 3075/84391 rows 480 it 55 649.9s
+node   330 d11  lb  21268.075 lp  21268.075 glb  21121.546 ub 21409 open 161 lp 3089/86040 rows 783 it 24 665.5s
+node   350 d21  lb  21365.732 lp  21365.732 glb  21121.546 ub 21409 open 171 lp 3065/87720 rows 558 it 23 686.8s
