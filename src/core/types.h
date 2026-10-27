@@ -17,11 +17,11 @@ struct Params {
     // pricing
     int ng_size = 8;              // ng-neighbourhood size (<= 16)
     bool bidirectional = true;    // labeling to Q/2 from both ends, then concatenation
-    int heur_knn = 10;            // successors per vertex in heuristic pricing
+    int heur_knn = 5;             // successors per vertex in heuristic pricing (5: best root time at n=150)
     int heur_label_cap = 40;      // alive labels per vertex in heuristic pricing
     int heur_min_cols = 1;        // below this many columns from the sparse pass, try the full graph (capped)
     bool savings_init = true;     // seed the master (and the incumbent) with Clarke-Wright routes
-    int max_cols_per_iter = 150;  // columns added per CG iteration
+    int max_cols_per_iter = 75;   // columns added per CG iteration
     double rc_eps = 1e-6;         // a route prices out when rc < -rc_eps
     int qbound_stage = 0;         // q-route completion bound prunes labels from this pricing stage on (3 = off)
     // master
@@ -30,6 +30,7 @@ struct Params {
     bool early_stop = true;       // stop CG once ceil(LB) == ceil(z)
     int purge_age = 6;            // LP columns nonbasic with rc > 0 for this many solves are purged (node start)
     int purge_min_cols_per_cust = 20; // never purge below this many LP columns per customer
+    int purge_every = 10;         // also purge every this many CG iterations within a node (0: node start only)
     // cuts
     bool rcc = true;
     int rcc_max_per_round = 50;

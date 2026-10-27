@@ -1,0 +1,94 @@
+== instances/cvrplib/E/E-n13-k4.vrp (n=12)
+* incumbent 275 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/cvrplib/E/E-n13-k4.sol cost 247
+node     0 d0   lb    247.000 lp    247.000 glb      0.000 ub 275 open 0 lp 148/147 rows 0 it 4 0.0s
+* incumbent 247 from restricted master MIP (0.1s)
+times: pricing 0.0 master 0.0 cuts 0.0 rmip 0.1 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 0.1
+probes: 0  solve 0.0 (0 iters avg)  purged 0 repriced 0 lp cols 148 pool 147
+RESULT E-n13-k4 status optimal lb 247 ub 247 published 247 nodes 1 depth 0 cols 147 rows 0 rootlp 247.000 rootlb 247.000 kmin 4 kmax 4 fleetcap 0 time 0.10s root 0.01s MATCHES published optimum
+Route #1: 1
+Route #2: 3 5 8
+Route #3: 6 10 12 9
+Route #4: 2 7 4 11
+Cost 247
+== instances/cvrplib/E/E-n22-k4.vrp (n=21)
+* incumbent 387 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/cvrplib/E/E-n22-k4.sol cost 375
+node     0 d0   lb    375.000 lp    375.000 glb      0.000 ub 387 open 0 lp 432/460 rows 26 it 14 0.0s
+* incumbent 375 from node LP (0.0s)
+times: pricing 0.0 master 0.0 cuts 0.0 rmip 0.0 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 0.0
+probes: 0  solve 0.0 (0 iters avg)  purged 28 repriced 0 lp cols 432 pool 460
+RESULT E-n22-k4 status optimal lb 375 ub 375 published 375 nodes 1 depth 0 cols 460 rows 26 rootlp 375.000 rootlb 375.000 kmin 4 kmax 4 fleetcap 0 time 0.03s root 0.03s MATCHES published optimum
+Route #1: 6 1 2 5 7 9
+Route #2: 10 8 3 4 11 13
+Route #3: 12 15 18 20 17
+Route #4: 16 19 21 14
+Cost 375
+== instances/cvrplib/E/E-n23-k3.vrp (n=22)
+* incumbent 621 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/cvrplib/E/E-n23-k3.sol cost 569
+node     0 d0   lb    569.000 lp    569.000 glb      0.000 ub 621 open 0 lp 455/2150 rows 7 it 64 0.4s
+* incumbent 569 from node LP (0.4s)
+times: pricing 0.4 master 0.0 cuts 0.0 rmip 0.0 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 0.4
+probes: 0  solve 0.0 (0 iters avg)  purged 1722 repriced 27 lp cols 455 pool 2150
+RESULT E-n23-k3 status optimal lb 569 ub 569 published 569 nodes 1 depth 0 cols 2150 rows 7 rootlp 569.000 rootlb 569.000 kmin 3 kmax 3 fleetcap 0 time 0.45s root 0.44s MATCHES published optimum
+Route #1: 10 13
+Route #2: 18 19 20 22 17 14 15 16 3 2 1 6 11 12
+Route #3: 21 4 5 8 9 7
+Cost 569
+== instances/cvrplib/E/E-n30-k3.vrp (n=29)
+debug: loaded solution instances/cvrplib/E/E-n30-k3.sol cost 534
+node     0 d0   lb    519.250 lp    519.546 glb      0.000 ub - open 0 lp 598/3214 rows 74 it 130 0.5s
+* incumbent 607 from dive (2.2s)
+* incumbent 559 from node LP (7.6s)
+* incumbent 543 from node LP (19.1s)
+* incumbent 534 from node LP (25.0s)
+times: pricing 17.8 master 0.7 cuts 0.0 rmip 1.1 dive 1.6 branch 0.0 switch 0.0 enum 3.6 (label 3.6 in 2 tries, mip 0.0 in 0 solves, 0 nodes closed) total 25.0
+probes: 0  solve 0.0 (0 iters avg)  purged 15827 repriced 6082 lp cols 637 pool 10381
+RESULT E-n30-k3 status optimal lb 534 ub 534 published 534 nodes 9 depth 4 cols 10381 rows 161 rootlp 519.546 rootlb 519.250 kmin 3 kmax 3 fleetcap 0 time 24.96s root 0.53s MATCHES published optimum
+Route #1: 20 3 4 1 5 2 22
+Route #2: 21 6 24 25 29 27 28 26
+Route #3: 18 23 10 11 12 8 14 9 17 7 13 16 15 19
+Cost 534
+== instances/cvrplib/E/E-n31-k7.vrp (n=30)
+* incumbent 642 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/cvrplib/E/E-n31-k7.sol cost 379
+node     0 d0   lb    379.000 lp    379.000 glb      0.000 ub 642 open 0 lp 644/1002 rows 29 it 29 0.0s
+* incumbent 379 from restricted master MIP (0.4s)
+times: pricing 0.0 master 0.0 cuts 0.0 rmip 0.4 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 0.4
+probes: 0  solve 0.0 (0 iters avg)  purged 404 repriced 1 lp cols 600 pool 1002
+RESULT E-n31-k7 status optimal lb 379 ub 379 published 379 nodes 1 depth 0 cols 1002 rows 29 rootlp 379.000 rootlb 379.000 kmin 7 kmax 7 fleetcap 0 time 0.42s root 0.04s MATCHES published optimum
+Route #1: 30
+Route #2: 23 29
+Route #3: 10 18 12 7 27
+Route #4: 21 11 13 9 28 15
+Route #5: 19 2 8 22 6 20
+Route #6: 16 5 17 4 26
+Route #7: 24 3 14 1 25
+Cost 379
+== instances/cvrplib/E/E-n33-k4.vrp (n=32)
+* incumbent 841 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/cvrplib/E/E-n33-k4.sol cost 835
+node     0 d0   lb    834.777 lp    835.000 glb      0.000 ub 841 open 0 lp 652/2514 rows 44 it 73 0.6s
+* incumbent 835 from node LP (0.6s)
+times: pricing 0.5 master 0.0 cuts 0.0 rmip 0.0 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 0.6
+probes: 0  solve 0.0 (0 iters avg)  purged 1972 repriced 110 lp cols 652 pool 2514
+RESULT E-n33-k4 status optimal lb 835 ub 835 published 835 nodes 1 depth 0 cols 2514 rows 44 rootlp 835.000 rootlb 834.777 kmin 4 kmax 4 fleetcap 0 time 0.55s root 0.55s MATCHES published optimum
+Route #1: 4 7 9 8 32 11 12 2
+Route #2: 29 16 28 27 26 15 1
+Route #3: 30 14 31
+Route #4: 3 5 6 10 18 19 21 20 22 23 24 25 17 13
+Cost 835
+== instances/cvrplib/E/E-n51-k5.vrp (n=50)
+debug: loaded solution instances/cvrplib/E/E-n51-k5.sol cost 521
+node     0 d0   lb    521.000 lp    521.000 glb      0.000 ub - open 0 lp 1004/2570 rows 125 it 94 0.5s
+* incumbent 521 from node LP (0.5s)
+times: pricing 0.3 master 0.1 cuts 0.0 rmip 0.0 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 0.5
+probes: 0  solve 0.0 (0 iters avg)  purged 1575 repriced 9 lp cols 1004 pool 2570
+RESULT E-n51-k5 status optimal lb 521 ub 521 published 521 nodes 1 depth 0 cols 2570 rows 125 rootlp 521.000 rootlb 521.000 kmin 5 kmax 5 fleetcap 0 time 0.49s root 0.49s MATCHES published optimum
+Route #1: 46 5 49 10 39 33 45 15 44 37 12
+Route #2: 6 14 25 24 43 7 23 48 27
+Route #3: 11 2 29 21 16 50 34 30 9 38
+Route #4: 8 26 31 28 3 36 35 20 22 1 32
+Route #5: 47 4 17 42 40 19 41 13 18
+Cost 521

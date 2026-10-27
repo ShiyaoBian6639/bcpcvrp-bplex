@@ -23,6 +23,7 @@ struct NodeResult {
     int ncols = 0, ncuts = 0;
     double time = 0, time_pricing = 0, time_master = 0, time_cuts = 0;
     double time_src = 0;     // part of time_cuts spent in SRC separation
+    double time_sep = 0;     // part of time_cuts spent in RCC separation (CVRPSEP)
     bool integral = false;   // an integer feasible solution was read off the LP
     bool fleet_binding = false; // sum lambda == khi
     bool early_stopped = false; // CG stopped on ceil(lb) == ceil(lp): duals are not LP-optimal

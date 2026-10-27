@@ -1,0 +1,77 @@
+debug: loaded solution ../xltw/benchmarks/VRPTW/Solomon/RC102.sol cost 14574
+node     0 d0   lb  14372.097 lp  14372.097 glb      0.000 ub - open 0 lp 2040/4313 rows 114 it 154 5.0s
+* incumbent 15396 from dive (8.8s)
+node    18 d9   lb  14764.108 lp  14764.108 glb  14372.097 ub 15396 open 9 lp 2002/6990 rows 136 it 31 19.3s
+node    38 d19  lb  15106.600 lp  15106.600 glb  14372.097 ub 15396 open 19 lp 2000/7573 rows 152 it 10 23.0s
+* incumbent 15274 from node LP (24.8s)
+node    56 d6   lb  14775.698 lp  14775.698 glb  14374.128 ub 15274 open 27 lp 2000/8488 rows 161 it 10 29.0s
+node    47 d2   lb  14395.743 lp  14395.743 glb  14374.128 ub 15274 open 35 lp 2019/9862 rows 182 it 15 33.9s
+node    94 d12  lb  14986.816 lp  14986.816 glb  14375.750 ub 15274 open 45 lp 2037/10669 rows 203 it 5 38.0s
+node   112 d4   lb  14572.315 lp  14572.315 glb  14395.743 ub 15274 open 53 lp 2042/11968 rows 213 it 28 47.5s
+node   132 d14  lb  14995.133 lp  14995.133 glb  14395.743 ub 15274 open 63 lp 2016/12728 rows 231 it 16 51.0s
+node   150 d6   lb  14473.078 lp  14473.078 glb  14395.743 ub 15274 open 71 lp 2024/13221 rows 241 it 8 57.1s
+node   170 d16  lb  14828.426 lp  14828.426 glb  14395.743 ub 15274 open 81 lp 2002/13662 rows 263 it 12 59.8s
+node   190 d26  lb  15240.843 lp  15240.843 glb  14395.743 ub 15274 open 91 lp 2018/15015 rows 284 it 35 63.7s
+node   208 d12  lb  14960.299 lp  14960.299 glb  14417.521 ub 15274 open 99 lp 2000/16185 rows 299 it 10 68.3s
+node   226 d6   lb  14620.047 lp  14620.047 glb  14417.521 ub 15274 open 107 lp 2004/17158 rows 316 it 11 73.4s
+node   246 d16  lb  15045.953 lp  15045.953 glb  14417.521 ub 15274 open 117 lp 2015/17696 rows 330 it 4 78.6s
+* incumbent 15178 from node LP (80.6s)
+node   264 d6   lb  14559.022 lp  14559.022 glb  14417.521 ub 15178 open 125 lp 2129/18199 rows 347 it 9 81.8s
+node   284 d16  lb  15044.194 lp  15044.194 glb  14417.521 ub 15178 open 135 lp 2001/18564 rows 370 it 11 85.1s
+node   302 d12  lb  14803.597 lp  14803.597 glb  14418.013 ub 15178 open 143 lp 2005/19246 rows 382 it 5 88.6s
+node   320 d7   lb  14455.011 lp  14455.011 glb  14424.066 ub 15178 open 151 lp 2023/19846 rows 401 it 5 92.0s
+node   340 d17  lb  14961.185 lp  14961.185 glb  14424.066 ub 15178 open 161 lp 2017/20501 rows 416 it 18 95.3s
+node   358 d10  lb  14870.592 lp  14870.592 glb  14424.066 ub 15178 open 169 lp 2006/21433 rows 434 it 14 99.6s
+node   376 d9   lb  14765.192 lp  14765.192 glb  14425.594 ub 15178 open 177 lp 2009/21729 rows 453 it 13 102.8s
+node   394 d9   lb  14769.006 lp  14769.006 glb  14425.594 ub 15178 open 185 lp 2029/22191 rows 465 it 5 106.7s
+* incumbent 14789 from node LP (107.2s)
+node   410 d7   lb  14694.577 lp  14694.577 glb  14428.778 ub 14789 open 191 lp 2015/22461 rows 484 it 15 110.3s
+node   147 d5   lb  14445.808 lp  14445.808 glb  14431.545 ub 14789 open 197 lp 2003/22773 rows 495 it 22 113.9s
+node   442 d5   lb  14490.913 lp  14490.913 glb  14435.846 ub 14789 open 203 lp 2077/23092 rows 511 it 8 118.1s
+node   458 d8   lb  14669.556 lp  14669.556 glb  14438.713 ub 14789 open 209 lp 2127/23277 rows 528 it 7 121.6s
+node   472 d7   lb  14709.604 lp  14709.604 glb  14446.443 ub 14789 open 213 lp 2005/23769 rows 534 it 11 126.7s
+node   486 d8   lb  14788.814 lp  14788.814 glb  14455.011 ub 14789 open 217 lp 2280/24032 rows 548 it 8 133.1s
+node   223 d5   lb  14607.794 lp  14607.794 glb  14460.093 ub 14789 open 219 lp 2035/24238 rows 552 it 15 136.9s
+node   514 d11  lb  14798.264 lp  14798.264 glb  14482.459 ub 14789 open 225 lp 2296/24518 rows 568 it 9 140.9s
+node   532 d16  lb  14760.506 lp  14760.506 glb  14486.284 ub 14789 open 233 lp 2029/24778 rows 589 it 15 145.1s
+node   546 d7   lb  14578.112 lp  14578.112 glb  14492.335 ub 14789 open 237 lp 2109/24950 rows 592 it 7 148.8s
+node   564 d12  lb  14625.785 lp  14625.785 glb  14493.057 ub 14789 open 245 lp 2220/25312 rows 614 it 8 153.2s
+node   582 d12  lb  14620.877 lp  14620.877 glb  14496.066 ub 14789 open 253 lp 2095/26367 rows 623 it 19 159.3s
+node   451 d8   lb  14608.057 lp  14608.057 glb  14496.119 ub 14789 open 259 lp 2009/27256 rows 642 it 12 167.6s
+node   475 d6   lb  14516.773 lp  14516.773 glb  14502.104 ub 14789 open 265 lp 2233/27731 rows 660 it 19 175.0s
+node   630 d6   lb  14619.002 lp  14619.002 glb  14509.707 ub 14789 open 271 lp 2095/27945 rows 665 it 4 179.7s
+node   646 d10  lb  14659.588 lp  14659.588 glb  14514.505 ub 14789 open 277 lp 2034/28224 rows 685 it 7 184.0s
+node   664 d10  lb  14781.383 lp  14781.383 glb  14515.054 ub 14789 open 285 lp 2100/28458 rows 695 it 7 190.2s
+node   682 d14  lb  14774.318 lp  14774.318 glb  14515.588 ub 14789 open 293 lp 2046/28807 rows 713 it 19 194.7s
+node   698 d11  lb  14863.776 lp  14895.558 glb  14517.335 ub 14789 open 299 lp 2023/29208 rows 729 it 13 200.4s
+node   714 d11  lb  14705.404 lp  14705.404 glb  14519.435 ub 14789 open 305 lp 2000/29497 rows 738 it 10 205.2s
+node   732 d16  lb  14910.788 lp  14924.788 glb  14519.459 ub 14789 open 313 lp 2022/29958 rows 760 it 23 209.8s
+node   744 d10  lb  14729.603 lp  14729.603 glb  14537.024 ub 14789 open 315 lp 2011/30261 rows 761 it 14 215.8s
+node   457 d8   lb  14665.756 lp  14665.756 glb  14553.084 ub 14789 open 319 lp 2063/30742 rows 777 it 15 221.7s
+node   774 d11  lb  14570.750 lp  14570.750 glb  14554.357 ub 14789 open 325 lp 2000/31016 rows 793 it 1 227.1s
+* incumbent 14604 from node LP (227.9s)
+node   784 d10  lb  14576.896 lp  14576.896 glb  14560.354 ub 14604 open 325 lp 2029/31302 rows 793 it 16 234.0s
+node   798 d4   lb  14760.216 lp  14760.216 glb  14563.055 ub 14604 open 329 lp 2406/31815 rows 810 it 9 240.2s
+node   517 d9   lb  14662.688 lp  14662.688 glb  14569.189 ub 14604 open 325 lp 2002/31897 rows 802 it 11 246.0s
+node   816 d13  lb  14624.000 lp  14624.000 glb  14571.469 ub 14604 open 327 lp 2016/32542 rows 814 it 24 253.4s
+* incumbent 14576 from node LP (256.7s)
+node   828 d15  lb  14579.288 lp  14579.288 glb  14572.315 ub 14576 open 329 lp 2099/32632 rows 826 it 6 258.2s
+* incumbent 14574 from node LP (260.6s)
+times: pricing 185.2 master 50.5 cuts 2.4 rmip 11.0 dive 3.8 branch 0.4 switch 0.0 enum 7.6 (label 7.6 in 6 tries, mip 0.0 in 0 solves, 0 nodes closed) total 262.0
+probes: 0  solve 0.0 (0 iters avg)  purged 149242 repriced 118663 lp cols 2157 pool 32736
+RESULT RC102 status optimal lb 14574 ub 14574 published 14574 nodes 505 depth 27 cols 32736 rows 813 rootlp 14372.097 rootlb 14372.097 kmin 9 kmax 25 fleetcap 0 time 262.00s root 4.99s MATCHES published optimum
+Route #1: 90
+Route #2: 14 47 11 15 16 9 10 13 17 12
+Route #3: 96 71 67 84 56 66
+Route #4: 19 23 21 18 48 25 77
+Route #5: 98 73 79 78 60 100 70
+Route #6: 65 99 87 59 97 75 58
+Route #7: 33 28 27 26 31 34 50 93 94 80
+Route #8: 85 63 76 51 22 49 20 24 83
+Route #9: 69 88 53 55 68
+Route #10: 1 3 45 5 8 7 6 46 4 2
+Route #11: 42 44 61 81 54
+Route #12: 92 95 62 29 30 32 89
+Route #13: 39 36 40 38 41 43 35 37 72
+Route #14: 91 64 57 86 74 52 82
+Cost 1457.4

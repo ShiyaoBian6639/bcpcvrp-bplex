@@ -32,7 +32,7 @@ static int usage()
                  "  cvrpbcp solve <inst.vrp> [options] [--out sol.sol] [--jsonl results.jsonl]\n"
                  "options: --K k --ng s --knn k --cols c --alpha a --no-rcc --no-early --time T --log L\n"
                  "         --ub u --no-rmip --rmip-time s --rmip-every n --nodes n\n"
-                 "         --purge-age a --purge-min c --sb k --sb-iters i --sb-rel r\n"
+                 "         --purge-age a --purge-min c --purge-every n --qbound s --sb k --sb-iters i --sb-rel r\n"
                  "         --free-fleet (ignore the instance's vehicle count) --fleet exact|max\n"
                  "         --no-src --src-max m\n");
     return 2;
@@ -78,6 +78,7 @@ static void parse_opts(int argc, char **argv, int from, BcpParams &P, std::strin
         else if (o == "--plunge") P.plunge_depth = std::stoi(val());
         else if (o == "--heur-cap") P.heur_label_cap = std::stoi(val());
         else if (o == "--qbound") P.qbound_stage = std::stoi(val());
+        else if (o == "--purge-every") P.purge_every = std::stoi(val());
         else if (o == "--no-enum") P.enumerate = false;
         else if (o == "--enum-time") P.enum_mip_time = std::stod(val());
         else if (o == "--enum-mip-max") P.enum_mip_max_routes = (size_t)std::stoll(val());
@@ -168,10 +169,10 @@ static int cmd_root(int argc, char **argv)
         return 1;
     }
     std::printf("ROOT %s lp %.4f lb %.4f lbint %lld opt %lld gap %.3f%% iters %d cutrounds %d cols %d rows %d "
-                "integral %d fleetbind %d time %.2fs (pricing %.2f master %.2f cuts %.2f of which src %.2f)\n",
+                "integral %d fleetbind %d time %.2fs (pricing %.2f master %.2f cuts %.2f: rccsep %.2f src %.2f)\n",
                 I.name.c_str(), R.lp, R.lb, R.lb_int, opt, opt > 0 ? 100.0 * (opt - R.lb) / opt : 0.0,
                 R.cg_iters, R.cut_rounds, R.ncols, R.ncuts, (int)R.integral, (int)R.fleet_binding, R.time,
-                R.time_pricing, R.time_master, R.time_cuts, R.time_src);
+                R.time_pricing, R.time_master, R.time_cuts, R.time_sep, R.time_src);
     if (R.integral) std::printf("%s", format_sol(R.sol, I.scale).c_str());
     if (opt > 0 && R.lb_int > opt) { std::printf("BUG: lower bound exceeds the published optimum\n"); return 1; }
     return 0;

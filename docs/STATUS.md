@@ -3,6 +3,62 @@
 Newest first. Numbers are from WSL Ubuntu 22.04, gcc 11 -O3, single thread,
 bplex built with MKL off.
 
+## 2026-10-27 (later): repository, q-route completion bound, bplex 0.2
+
+* Code pushed to `github.com/ShiyaoBian6639/bcpcvrp-bplex` (branch `main`;
+  cvrpsep vendored as plain files, `build/`, binaries and large MPS dumps
+  ignored, `results/solomon/set1` symlinks ignored).
+* **q-route completion bound in pricing** (`Pricer::compute_qbound`): the
+  cheapest 2-cycle-free walk depot -> v with load <= L, O(Q n^2) per dual
+  vector, SRC ignored. Labels and arc extensions with rc + bound > 0 are
+  dropped in every stage (`--qbound s` sets the first stage, 3 = off); the
+  enumeration's ng bounding pass prunes with threshold gap + vpay[v]. Root
+  relaxation, free fleet, same bounds in all runs:
+
+  | instance | before | bound from stage 1 | bound in all stages (default) |
+  |---|---|---|---|
+  | X-n153-k22 | 92 s (pricing 46) | 58 s (pricing 13) | 48 s (pricing 11) |
+  | XML150_3372_54 | 76 s (pricing 54) | 42 s (pricing 18) | 41 s (pricing 16) |
+
+  `results/v6` (DEBUGSOL=1): 64/64 A/B/E/F/P n <= 60 proven = published,
+  zero debug reports, total 427 s (v5: 454 s; single instances swing both
+  ways with the tree, P-n55-k10 40 -> 96 s, P-n55-k7 83 -> 40 s).
+  Regression passes. The remaining root time at n = 150 is master LP
+  (~45 ms per solve, ~17 s) and cut separation (~20 s); the ROOT line now
+  prints `cuts` and `src` times.
+* **bplex API 0.2** (round 2 delivered: package, `bplex_version()`, pool
+  getters, log callback, bulk bounds, error contract). cvrpbcp builds with
+  `find_package(bplex 0.2 CONFIG)` against `cmake --install` output
+  (`build/bplex-install`), no reference to the bplex source tree remains;
+  `info` prints the version and every JSONL line carries `"bplex"`.
+  Regression and selftest pass on the new library.
+* **Heuristic-pricing / master tuning at n = 150** (root, free fleet, two
+  runs at a time; `results/pr/s2b,s3,s4`). A grid run concurrently with the
+  bench was too noisy (wall times 2x) and was discarded. Findings:
+  - sparse stage with 5 nearest successors instead of 10 (`--knn 5`): fewer
+    labels and fewer CG iterations; 3 is too sparse (pricing time doubles),
+    20 is worse than 10;
+  - 75 columns per iteration instead of 150 (`--cols 75`): smaller LP, same
+    iteration count; 50 and 100 are no better;
+  - label cap 20 vs 40: neutral;
+  - **cut rows were added one bplex edit at a time**: at 30k LP columns the
+    per-row edits cost 20 s of the 47 s root on X-n153-k22 ("cuts" time);
+    now one `add_rows` batch per round: 1.7 s (CVRPSEP itself 0.3 s);
+  - purging LP columns every 10 CG iterations inside the node
+    (`--purge-every 10`, age 6, floor 20 per customer) halves the master
+    time again; every 5 is the same.
+
+  Root time with the new defaults (knn 5, cols 75, purge every 10, batched
+  rows): X-n153-k22 92 -> 9 s, XML150_3372_54 76 -> 15 s. The root bound
+  varies by a few units between configurations because the SRC rounds and
+  the tail-off see different LP solutions.
+* `results/v7` (new defaults, DEBUGSOL=1): **64/64 proven = published, zero
+  debug reports, total 315 s (v6 427 s, v5 454 s), slowest 35 s** (P-n50-k8;
+  P-n55-k10 96 -> 34 s, F-n45-k4 33 -> 8 s, E-n30-k3 10 -> 25 s).
+  Solomon (300 s, five concurrent): C101, R101, R105, RC101 proven as before,
+  **RC102 now proven (14574, 262 s; open before)**, R104 open (lb 9653 /
+  ub 9859, published 9715). Regression passes.
+
 ## 2026-10-28: verified benchmark, CVRPTW (milestone 5 started)
 
 * `results/v5` (fixed enumeration, dive, savings, cut aging; run with

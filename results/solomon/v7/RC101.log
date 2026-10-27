@@ -1,0 +1,23 @@
+debug: loaded solution ../xltw/benchmarks/VRPTW/Solomon/RC101.sol cost 16198
+node     0 d0   lb  16181.074 lp  16181.074 glb      0.000 ub - open 0 lp 2002/3000 rows 106 it 101 1.8s
+* incumbent 16899 from dive (2.4s)
+* incumbent 16198 from restricted master MIP (3.9s)
+times: pricing 2.4 master 0.5 cuts 0.1 rmip 1.3 dive 0.6 branch 0.0 switch 0.0 enum 5.3 (label 5.3 in 2 tries, mip 0.0 in 0 solves, 0 nodes closed) total 10.3
+probes: 0  solve 0.0 (0 iters avg)  purged 2043 repriced 384 lp cols 2041 pool 3700
+RESULT RC101 status optimal lb 16198 ub 16198 published 16198 nodes 9 depth 3 cols 3700 rows 112 rootlp 16181.074 rootlb 16181.074 kmin 9 kmax 25 fleetcap 0 time 10.25s root 1.77s MATCHES published optimum
+Route #1: 90
+Route #2: 82 11 15 16 9 10 13 17
+Route #3: 69 98 88 53 78 60
+Route #4: 64 51 85 84 56 66
+Route #5: 95 62 67 71 94 96 54
+Route #6: 63 33 28 30 34 50 91 80
+Route #7: 65 52 99 57 86 74
+Route #8: 23 21 18 49 22 20 25 24
+Route #9: 59 75 87 97 58 77
+Route #10: 39 42 44 61 81 68 55
+Route #11: 92 31 29 27 26 32 93
+Route #12: 72 36 38 41 40 43 37 35
+Route #13: 83 19 76 89 48
+Route #14: 14 47 12 73 79 46 4 100
+Route #15: 5 45 2 7 6 8 3 1 70
+Cost 1619.8

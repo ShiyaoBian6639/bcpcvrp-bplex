@@ -38,7 +38,9 @@ so always go through `scripts/wsl.sh`, which handles both.
 Options: `--K k --ng s --knn k --cols c --alpha a --no-rcc --no-src --no-early
 --mono --time T --log L --ub u --no-rmip --rmip-time s --rmip-every n --nodes n
 --sb k --purge-age a --no-enum --enum-mip-max r --enum-dump prefix --no-dive
---dive-time s --no-savings --cut-age n --plunge d --out f.sol`.
+--dive-time s --no-savings --cut-age n --plunge d --qbound s --purge-every n --out f.sol`.
+Defaults tuned 2026-10-27 at n=150: knn 5, 75 cols/iteration, purge every 10 CG
+iterations, q-route bound in all stages (`--qbound 3` turns it off).
 Fleet: CVRPLIB files state "No of trucks"; by default exactly that many are
 used (matches the published optima). `--fleet max` allows fewer,
 `--free-fleet` ignores it (pipeline instances: X, XML; use `--free-fleet`).

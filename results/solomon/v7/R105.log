@@ -1,0 +1,24 @@
+debug: loaded solution ../xltw/benchmarks/VRPTW/Solomon/R105.sol cost 13553
+node     0 d0   lb  13538.683 lp  13538.683 glb      0.000 ub - open 0 lp 2015/2753 rows 100 it 84 1.6s
+* incumbent 13862 from dive (2.3s)
+* incumbent 13553 from restricted master MIP (5.0s)
+node     7 d4   lb  13558.000 lp  13558.000 glb  13549.373 ub 13553 open 1 lp 2009/4197 rows 106 it 13 12.0s
+times: pricing 2.2 master 0.6 cuts 0.0 rmip 2.5 dive 0.8 branch 0.0 switch 0.0 enum 6.1 (label 6.1 in 3 tries, mip 0.0 in 0 solves, 0 nodes closed) total 12.3
+probes: 0  solve 0.0 (0 iters avg)  purged 3106 repriced 820 lp cols 2010 pool 4296
+RESULT R105 status optimal lb 13553 ub 13553 published 13553 nodes 11 depth 5 cols 4296 rows 106 rootlp 13538.683 rootlb 13538.683 kmin 8 kmax 25 fleetcap 0 time 12.28s root 1.59s MATCHES published optimum
+Route #1: 53 40 26
+Route #2: 33 65 71 66 20 32 70
+Route #3: 47 36 19 49 46 48
+Route #4: 62 88 7 18
+Route #5: 72 39 23 67 55 54 4 25
+Route #6: 2 15 57 87 97 13
+Route #7: 21 73 75 22 41 56 74 58
+Route #8: 42 14 44 38 86 43 100 91 93
+Route #9: 63 64 11 90 10
+Route #10: 28 12 29 79 78 34 35 77
+Route #11: 31 30 51 9 81 3 68 24 80
+Route #12: 27 69 76 50 1
+Route #13: 59 95 92 98 16 61 85 37 96
+Route #14: 5 45 83 99 94 6
+Route #15: 52 82 8 84 17 60 89
+Cost 1355.3

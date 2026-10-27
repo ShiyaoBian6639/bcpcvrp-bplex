@@ -124,7 +124,8 @@ NodeResult solve_node(const Instance &I, const Params &P, Master &M, Pricer &pri
             misprice = false;
 
             double tp = now();
-            if (R.cg_iters == 1) M.purge(P.purge_age, P.purge_min_cols_per_cust * I.n); // node start only
+            if (R.cg_iters == 1 || (P.purge_every > 0 && R.cg_iters % P.purge_every == 0))
+                M.purge(P.purge_age, P.purge_min_cols_per_cust * I.n);
             pricer.set_duals(pi_sep, M.rows(), y_sep);
             double min_rc = 0;
             std::vector<Route> cols;
@@ -221,7 +222,11 @@ NodeResult solve_node(const Instance &I, const Params &P, Master &M, Pricer &pri
             std::vector<const std::vector<char> *> existing;
             for (const RobustRow &r : M.rows())
                 if (r.kind == RobustRow::RCC) existing.push_back(&r.in_s);
+            const double ts = now();
             auto cuts = rcc->separate(R.x, existing, P.rcc_max_per_round, P.rcc_min_violation, integer_feasible);
+            R.time_sep += now() - ts;
+            std::vector<RobustRow> rows;
+            rows.reserve(cuts.size());
             for (const auto &c : cuts) {
                 RobustRow r;
                 r.kind = RobustRow::RCC;
@@ -230,8 +235,9 @@ NodeResult solve_node(const Instance &I, const Params &P, Master &M, Pricer &pri
                 r.lo = 2.0 * c.k;
                 r.up = BPLEX_INF;
                 r.active = true;
-                M.add_row(r);
+                rows.push_back(std::move(r));
             }
+            M.add_rows(rows); // one batch: one bplex edit for the round
             added = cuts.size();
             if (added) maxviol = cuts.front().violation;
         }
@@ -256,6 +262,8 @@ NodeResult solve_node(const Instance &I, const Params &P, Master &M, Pricer &pri
                 const double ts = now();
                 auto cuts = separate_src(I, M, existing, room, P.src_min_violation);
                 R.time_src += now() - ts;
+                std::vector<RobustRow> rows;
+                rows.reserve(cuts.size());
                 for (const auto &c : cuts) {
                     RobustRow r;
                     r.kind = RobustRow::SRC;
@@ -264,8 +272,9 @@ NodeResult solve_node(const Instance &I, const Params &P, Master &M, Pricer &pri
                     r.lo = -BPLEX_INF;
                     r.up = 1.0;
                     r.active = true;
-                    M.add_row(r);
+                    rows.push_back(std::move(r));
                 }
+                M.add_rows(rows);
                 added = cuts.size();
                 what = "SRC";
                 if (added) {
