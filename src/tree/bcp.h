@@ -57,6 +57,7 @@ struct BcpResult {
     double t_pr[6] = {0, 0, 0, 0, 0, 0}; // pricing split, NodeResult::PR_*
     int n_pr[6] = {0, 0, 0, 0, 0, 0};
     int cg_iters = 0;
+    int n_sep = 0, n_sep_hit = 0;
     bool fleet_cap_binding = false; // the incumbent uses kmax vehicles (re-run with larger kmax)
     int kmin = 0, kmax = 0;
     std::string error;

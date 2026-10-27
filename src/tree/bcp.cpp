@@ -25,6 +25,8 @@ static void add_times(BcpResult &R, const NodeResult &res)
     R.t_sep += res.time_sep;
     R.t_src += res.time_src;
     R.cg_iters += res.cg_iters;
+    R.n_sep += res.sep_calls;
+    R.n_sep_hit += res.sep_hits;
     for (int k = 0; k < NodeResult::PR_N; k++) { R.t_pr[k] += res.time_pr[k]; R.n_pr[k] += res.calls_pr[k]; }
 }
 
@@ -309,7 +311,13 @@ BcpResult solve_bcp(const Instance &I, const BcpParams &P)
         add_times(R, res);
         R.depth_max = std::max(R.depth_max, N.depth);
         if (!res.ok) {
-            if (res.error == "time limit") { stop = "time_limit"; break; }
+            // a node stopped by the clock (its own check or an LP solve cut
+            // off by the remaining budget) ends the run as a time limit
+            if (res.error == "time limit" || res.error.find("time limit") != std::string::npos ||
+                now() - t0 >= P.time_limit) {
+                stop = "time_limit";
+                break;
+            }
             R.error = res.error;
             stop = "error";
             break;
@@ -490,7 +498,9 @@ BcpResult solve_bcp(const Instance &I, const BcpParams &P)
             c1.khi = (int)std::floor(f);
             c2.klo = (int)std::ceil(f);
             branched = true;
-            if (P.log_level >= 2) std::printf("  branch on fleet %.3f: <= %d | >= %d\n", f, c1.khi, c2.klo);
+            if (P.log_level >= 2)
+                std::printf("  branch on fleet %.3f: <= %d | >= %d  (node [%d,%d] master [%d,%d] art %.6f)\n", f, c1.khi,
+                            c2.klo, N.klo, N.khi, M.klo(), M.khi(), M.artificial_mass());
         } else {
             struct Cand { int u, v; double x, score; bool reliable; };
             std::vector<Cand> cands;
@@ -601,10 +611,13 @@ BcpResult solve_bcp(const Instance &I, const BcpParams &P)
         nodes.push_back(c2);
         int i1 = (int)nodes.size() - 2, i2 = (int)nodes.size() - 1;
         int dive = plunge_second ? i2 : i1, other = plunge_second ? i1 : i2;
-        push_open(other);
-        bool dive_ok = (N.depth + 1 <= P.plunge_depth) && !(ub < 1e299 && std::ceil(nodes[dive].lb - 1e-6) >= ub);
+        // a fleet child with an empty vehicle range is infeasible: drop it
+        auto feasible = [&](int i) { return nodes[i].klo <= nodes[i].khi; };
+        if (feasible(other)) push_open(other);
+        bool dive_ok = feasible(dive) && (N.depth + 1 <= P.plunge_depth) &&
+                       !(ub < 1e299 && std::ceil(nodes[dive].lb - 1e-6) >= ub);
         if (dive_ok) cur = dive;
-        else { push_open(dive); cur = -1; }
+        else { if (feasible(dive)) push_open(dive); cur = -1; }
     }
 
     R.time = now() - t0;
@@ -640,9 +653,10 @@ BcpResult solve_bcp(const Instance &I, const BcpParams &P)
                     R.t_pricing, R.t_master, R.t_cuts, R.t_rmip, R.t_dive, R.t_branch, R.t_switch, R.t_enum,
                     R.t_enum_label, R.enum_tries, R.t_enum_mip, R.enum_mips, R.enum_closed, R.time);
         std::printf("split: cg iters %d; pricing setup %.1f pool %.1f/%d s0 %.1f/%d s1 %.1f/%d exact %.1f/%d scan %.1f/%d; "
-                    "cuts rccsep %.1f src %.1f rows %.1f\n",
+                    "cuts rccsep %.1f/%d (%d with cuts) src %.1f rows %.1f\n",
                     R.cg_iters, R.t_pr[0], R.t_pr[1], R.n_pr[1], R.t_pr[2], R.n_pr[2], R.t_pr[3], R.n_pr[3], R.t_pr[4],
-                    R.n_pr[4], R.t_pr[5], R.n_pr[5], R.t_sep, R.t_src, R.t_cuts - R.t_sep - R.t_src);
+                    R.n_pr[4], R.t_pr[5], R.n_pr[5], R.t_sep, R.n_sep, R.n_sep_hit, R.t_src,
+                    R.t_cuts - R.t_sep - R.t_src);
         const auto &ps = M.probe_stats;
         std::printf("probes: %d  solve %.1f (%.0f iters avg)  purged %ld repriced %ld lp cols %d pool %d\n", ps.n,
                     ps.t_solve, ps.n ? ps.iters / ps.n : 0.0, M.purged_total, M.repriced_total, M.nlpcols(),

@@ -32,7 +32,8 @@ static int usage()
                  "  cvrpbcp solve <inst.vrp> [options] [--out sol.sol] [--jsonl results.jsonl]\n"
                  "options: --K k --ng s --knn k --cols c --alpha a --no-rcc --no-early --time T --log L\n"
                  "         --ub u --no-rmip --rmip-time s --rmip-every n --nodes n\n"
-                 "         --purge-age a --purge-min c --purge-every n --qbound s --sb k --sb-iters i --sb-rel r\n"
+                 "         --purge-age a --purge-min c --purge-every n --qbound s --stage-skip n --cleanup-every n\n"
+                 "         --sb k --sb-iters i --sb-rel r\n"
                  "         --free-fleet (ignore the instance's vehicle count) --fleet exact|max\n"
                  "         --no-src --src-max m\n");
     return 2;
@@ -79,6 +80,9 @@ static void parse_opts(int argc, char **argv, int from, BcpParams &P, std::strin
         else if (o == "--heur-cap") P.heur_label_cap = std::stoi(val());
         else if (o == "--qbound") P.qbound_stage = std::stoi(val());
         else if (o == "--purge-every") P.purge_every = std::stoi(val());
+        else if (o == "--stage-skip") P.stage_skip_after = std::stoi(val());
+        else if (o == "--rcc-exist-all") P.rcc_existing_all = true;
+        else if (o == "--cleanup-every") P.cleanup_every = std::stoi(val());
         else if (o == "--no-enum") P.enumerate = false;
         else if (o == "--enum-time") P.enum_mip_time = std::stod(val());
         else if (o == "--enum-mip-max") P.enum_mip_max_routes = (size_t)std::stoll(val());

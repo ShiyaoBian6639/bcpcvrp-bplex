@@ -24,6 +24,7 @@ struct Params {
     int max_cols_per_iter = 75;   // columns added per CG iteration
     double rc_eps = 1e-6;         // a route prices out when rc < -rc_eps
     int qbound_stage = 0;         // q-route completion bound prunes labels from this pricing stage on (3 = off)
+    int stage_skip_after = 100;   // a heuristic pricing stage empty this many times in a row is skipped for the rest of the node (100: off; 2 was not better)
     // master
     double smoothing_alpha = 0.0; // Wentges dual smoothing (0 = off); with smoothing_auto this is the start value
     bool smoothing_auto = true;   // adjust alpha by the subgradient angle rule (Pessoa et al. 2018)
@@ -36,13 +37,15 @@ struct Params {
     int rcc_max_per_round = 50;
     double rcc_min_violation = 0.05;
     int rcc_max_rounds = 100;         // total cut rounds per node (RCC and SRC)
+    bool rcc_existing_all = false;    // hand CVRPSEP every RCC row as "existing" (true) or only the rows with a
+                                      // nonzero dual at the last solve (false; duplicates are filtered here)
     bool src = true;                  // limited-memory subset-row cuts on customer triples
     int src_max_per_round = 30;
     int src_max_active = 100;         // active SRC rows (each adds a state to the labels)
     double src_min_violation = 0.1;
     double cut_tailoff = 0.0005;      // stop SRC rounds when z improves less than this fraction twice
     int cut_age_limit = 30;           // delete a cut row after this many LP solves with a zero dual
-    int cleanup_every = 25;           // nodes between row cleanups
+    int cleanup_every = 5;            // nodes between row cleanups (5: medium set 7% faster than 25)
     // limits
     double time_limit = 3600;
     int log_level = 1;

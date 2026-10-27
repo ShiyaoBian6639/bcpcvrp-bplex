@@ -1,0 +1,25 @@
+* incumbent 18237 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/xml100/medium/XML100_3314_15.sol cost 16728
+node     0 d0   lb  16700.634 lp  16700.780 glb      0.000 ub 18237 open 0 lp 2221/14309 rows 437 it 488 12.6s
+* incumbent 16764 from dive (29.2s)
+* incumbent 16741 from node LP (50.5s)
+node    16 d3   lb  16731.431 lp  16731.431 glb  16703.696 ub 16741 open 7 lp 2010/21159 rows 460 it 14 55.5s
+node    21 d3   lb  16711.362 lp  16711.362 glb  16705.785 ub 16741 open 13 lp 2060/22322 rows 485 it 36 66.8s
+node    48 d4   lb  16727.332 lp  16727.816 glb  16710.804 ub 16741 open 19 lp 2189/25023 rows 259 it 27 83.0s
+node     7 d4   lb  16724.420 lp  16724.564 glb  16712.603 ub 16741 open 23 lp 2054/27277 rows 286 it 17 95.9s
+node    67 d4   lb  16728.283 lp  16728.283 glb  16721.792 ub 16741 open 25 lp 2034/29211 rows 304 it 38 110.4s
+* incumbent 16728 from node LP (126.8s)
+node    47 d4   lb  16726.976 lp  16726.976 glb  16725.523 ub 16728 open 25 lp 2000/31171 rows 311 it 20 130.6s
+times: pricing 27.6 master 66.2 cuts 1.5 rmip 7.0 dive 16.5 branch 0.3 switch 0.0 enum 15.2 (label 15.2 in 16 tries, mip 0.0 in 0 solves, 0 nodes closed) total 136.8
+split: cg iters 2033; pricing setup 0.0 pool 10.1/1945 s0 1.4/323 s1 9.7/546 exact 4.5/209 scan 0.1/88; cuts rccsep 1.1/103 (51 with cuts) src 0.0 rows 0.4
+probes: 0  solve 0.0 (0 iters avg)  purged 70297 repriced 40143 lp cols 2302 pool 31673
+RESULT XML100_3314_15 status optimal lb 16728 ub 16728 published 16728 nodes 65 depth 8 cols 31673 rows 313 rootlp 16700.780 rootlb 16700.634 kmin 8 kmax 9 fleetcap 0 time 136.77s root 12.64s MATCHES published optimum
+Route #1: 87 13 10 56 14 53 80 62 41 89 99 32 1
+Route #2: 82 9 2 3 22 7 72 50 15 84 75 58 67
+Route #3: 60 77 23 44 59 26 24 78 93 8 86 36 71
+Route #4: 31 33 96 52 39 69 74 100 63 94 48 42 38
+Route #5: 92 54 5 73 17 35 55 29 70
+Route #6: 16 43 88 12 90 6 20 61 46 45 21 40 19
+Route #7: 85 79 91 66 11 49 18 28 81 30 65 97 4
+Route #8: 68 64 47 34 51 25 37 57 95 83 98 76 27
+Cost 16728

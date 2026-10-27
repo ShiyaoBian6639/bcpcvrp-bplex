@@ -1,0 +1,1 @@
+{"instance":"F-n45-k4","n":44,"status":"optimal","lb":724,"ub":724,"published":724,"nodes":1,"cols":17404,"rows":79,"root_lp":724.0000,"root_lb":723.1266,"kmin":4,"kmax":4,"fleet_cap_binding":false,"time":46.18,"time_root":46.17,"scale":1,"bplex":"0.2.0 (git 0a7ba67)"}

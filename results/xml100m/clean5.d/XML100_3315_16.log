@@ -1,0 +1,22 @@
+* incumbent 15641 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/xml100/medium/XML100_3315_16.sol cost 13864
+node     0 d0   lb  13810.616 lp  13810.616 glb      0.000 ub 15641 open 0 lp 2070/18816 rows 218 it 877 11.6s
+* incumbent 13908 from dive (25.3s)
+node    18 d9   lb  64442.635 lp  64442.635 glb  13812.871 ub 13908 open 9 lp 2133/39775 rows 156 it 4 52.9s
+node    36 d10  lb  13888.590 lp  13888.742 glb  13815.741 ub 13908 open 17 lp 2018/45949 rows 201 it 74 75.0s
+* incumbent 13895 from node LP (111.0s)
+node    52 d3   lb  13833.756 lp  13833.800 glb  13822.708 ub 13895 open 23 lp 2105/53776 rows 262 it 24 117.6s
+node    70 d10  lb  13897.000 lp  13897.000 glb  13825.240 ub 13895 open 31 lp 2225/60813 rows 209 it 5 162.6s
+node    86 d6   lb  13872.501 lp  13872.501 glb  13830.097 ub 13895 open 37 lp 2039/66836 rows 260 it 24 237.6s
+node   104 d10  lb  13887.476 lp  13887.476 glb  13830.434 ub 13895 open 45 lp 2037/73912 rows 289 it 87 295.7s
+times: pricing 201.6 master 61.2 cuts 2.0 rmip 6.6 dive 13.7 branch 0.2 switch 0.0 enum 11.5 (label 11.5 in 6 tries, mip 0.0 in 0 solves, 0 nodes closed) total 300.0
+split: cg iters 5053; pricing setup 0.0 pool 51.5/5044 s0 5.5/729 s1 44.8/1514 exact 97.9/574 scan 0.0/9; cuts rccsep 1.4/186 (103 with cuts) src 0.1 rows 0.5
+probes: 0  solve 0.0 (0 iters avg)  purged 135107 repriced 62557 lp cols 2600 pool 75020
+RESULT XML100_3315_16 status time_limit lb 13831 ub 13895 published 13864 nodes 62 depth 11 cols 75020 rows 165 rootlp 13810.616 rootlb 13810.616 kmin 6 kmax 7 fleetcap 0 time 300.02s root 11.59s 
+Route #1: 42 36 17 55 37 33 41 86 61 83 94 8 97 9 49 63 50 1 12
+Route #2: 39 90 3 25 82
+Route #3: 91 77 21 53 48 6 92 28 73 78 19 57 4 13 16 69 60 96 23
+Route #4: 85 40 24 31 7 100 64 15 87 89 71 29 65 5 93 66 59 35 34
+Route #5: 20 68 2 58 95 54 38 27 76 79 56 32 70 45 81 46 22 80 84
+Route #6: 72 10 47 30 43 67 98 62 99 11 44 75 88 74 18 26 51 14 52
+Cost 13895

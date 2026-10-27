@@ -1,0 +1,26 @@
+* incumbent 18237 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/xml100/medium/XML100_3314_15.sol cost 16728
+node     0 d0   lb  16684.040 lp  16684.522 glb      0.000 ub 18237 open 0 lp 2013/14820 rows 378 it 520 10.1s
+* incumbent 16749 from dive (15.8s)
+* incumbent 16747 from node LP (33.3s)
+node    16 d3   lb  16723.172 lp  16723.172 glb  16698.434 ub 16747 open 7 lp 2010/22376 rows 427 it 43 37.8s
+node    13 d2   lb  16706.210 lp  16706.210 glb  16699.933 ub 16747 open 13 lp 2001/25789 rows 458 it 41 54.8s
+* incumbent 16738 from node LP (66.7s)
+node     5 d3   lb  16722.642 lp  16722.642 glb  16705.768 ub 16738 open 19 lp 2016/29293 rows 230 it 32 68.6s
+node    35 d4   lb  16727.262 lp  16727.425 glb  16712.244 ub 16738 open 23 lp 2025/31096 rows 251 it 35 81.6s
+* incumbent 16728 from node LP (92.8s)
+node    45 d4   lb  16725.414 lp  16725.414 glb  16722.740 ub 16728 open 21 lp 2058/32781 rows 262 it 16 95.6s
+node    29 d6   lb  16741.218 lp  16741.218 glb  16726.722 ub 16728 open 13 lp 2079/34258 rows 215 it 39 108.1s
+times: pricing 29.4 master 55.4 cuts 1.2 rmip 5.0 dive 5.7 branch 0.2 switch 0.0 enum 8.8 (label 8.8 in 9 tries, mip 0.0 in 0 solves, 0 nodes closed) total 108.1
+split: cg iters 2378; pricing setup 0.0 pool 11.5/2341 s0 0.9/217 s1 8.3/437 exact 6.8/369 scan 0.1/37; cuts rccsep 0.9/96 (48 with cuts) src 0.0 rows 0.4
+probes: 0  solve 0.0 (0 iters avg)  purged 78400 repriced 45791 lp cols 2079 pool 34258
+RESULT XML100_3314_15 status optimal lb 16728 ub 16728 published 16728 nodes 60 depth 8 cols 34258 rows 215 rootlp 16684.522 rootlb 16684.040 kmin 8 kmax 9 fleetcap 0 time 108.12s root 10.11s MATCHES published optimum
+Route #1: 1 32 99 89 41 62 80 53 14 56 10 13 87
+Route #2: 71 36 86 8 93 78 24 26 59 44 23 77 60
+Route #3: 31 33 96 52 39 69 74 100 63 94 48 42 38
+Route #4: 82 9 2 3 22 7 72 50 15 84 75 58 67
+Route #5: 92 54 5 73 17 35 55 29 70
+Route #6: 85 79 91 66 11 49 18 28 81 30 65 97 4
+Route #7: 16 43 88 12 90 6 20 61 46 45 21 40 19
+Route #8: 27 76 98 83 95 57 37 25 51 34 47 64 68
+Cost 16728

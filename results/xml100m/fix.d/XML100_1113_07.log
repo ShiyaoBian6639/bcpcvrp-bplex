@@ -1,0 +1,30 @@
+* incumbent 15553 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/xml100/medium/XML100_1113_07.sol cost 14550
+node     0 d0   lb  14489.946 lp  14489.946 glb      0.000 ub 15553 open 0 lp 2113/5550 rows 227 it 169 1.9s
+* incumbent 14596 from dive (3.5s)
+node    16 d8   lb  14555.500 lp  14555.500 glb  14491.167 ub 14596 open 7 lp 2002/7926 rows 248 it 21 15.3s
+node    34 d8   lb  14584.406 lp  14584.406 glb  14497.984 ub 14596 open 15 lp 2273/10029 rows 293 it 6 21.3s
+node    50 d6   lb  14550.188 lp  14550.188 glb  14503.160 ub 14596 open 21 lp 2036/11305 rows 271 it 25 27.1s
+node    66 d6   lb  14538.282 lp  14538.282 glb  14516.066 ub 14596 open 27 lp 2062/13093 rows 314 it 17 35.0s
+* incumbent 14574 from node LP (38.2s)
+node    82 d8   lb  14574.948 lp  14576.375 glb  14520.200 ub 14574 open 33 lp 2342/14286 rows 354 it 6 43.1s
+node    96 d10  lb  14574.789 lp  14585.205 glb  14525.420 ub 14574 open 37 lp 2208/15324 rows 272 it 4 50.0s
+node    49 d6   lb  14553.539 lp  14553.539 glb  14529.938 ub 14574 open 37 lp 2001/16011 rows 294 it 24 57.9s
+node   118 d7   lb  14573.592 lp  14573.592 glb  14539.552 ub 14574 open 39 lp 2245/16824 rows 287 it 5 66.2s
+* incumbent 14550 from node LP (71.2s)
+node   115 d8   lb  14549.803 lp  14549.803 glb  14544.778 ub 14550 open 33 lp 2121/17636 rows 306 it 16 75.4s
+times: pricing 17.8 master 39.3 cuts 1.7 rmip 5.0 dive 1.7 branch 0.2 switch 0.0 enum 10.5 (label 10.4 in 15 tries, mip 0.1 in 2 solves, 2 nodes closed) total 77.3
+split: cg iters 1964; pricing setup 0.0 pool 7.2/1874 s0 1.4/449 s1 5.9/564 exact 2.2/200 scan 0.1/90; cuts rccsep 1.4/163 (88 with cuts) src 0.0 rows 0.3
+probes: 0  solve 0.0 (0 iters avg)  purged 46643 repriced 29882 lp cols 2012 pool 17719
+RESULT XML100_1113_07 status optimal lb 14550 ub 14550 published 14550 nodes 93 depth 11 cols 17719 rows 306 rootlp 14489.946 rootlb 14489.946 kmin 10 kmax 11 fleetcap 0 time 77.32s root 1.85s MATCHES published optimum
+Route #1: 7 51 88 28 24 27 21 94 91 52
+Route #2: 39 71 22 30 83 14 95 76 36 47
+Route #3: 49 98 9 69 89 70 45 35 18 53
+Route #4: 15 56 80 5 55 96 54 86 90 3
+Route #5: 58 82 61 1 41 20 44 40 93 57
+Route #6: 67 65 2 4 92 32 37 10 17 12
+Route #7: 73 43 75 85 46 38 77 84 66 48
+Route #8: 97 25 100 13 34 31 64 63 62 29
+Route #9: 42 72 50 74 19 99 59 11 6 87
+Route #10: 79 78 60 68 23 26 81 8 33 16
+Cost 14550

@@ -3,6 +3,49 @@
 Newest first. Numbers are from WSL Ubuntu 22.04, gcc 11 -O3, single thread,
 bplex built with MKL off.
 
+## 2026-10-28: duplicate-column bug, node-level tuning on a medium set
+
+* **Bug (ours): a route listed twice in one `Master::add_routes` batch got
+  two LP columns.** The dedupe only looked at routes already in the pool;
+  within a batch the second copy of a new route was "found" with
+  `col_of_ = -1` and queued again. The tree reads the pool-indexed lambda,
+  which keeps only one column's value, so the fleet sum was under-counted:
+  on XML100_3313_15 (kmin 12) the root reported 11.089 vehicles, branched
+  on the fleet, the "<= 11" child was infeasible and the ">= 12" child was
+  the same LP, forever (8000+ nodes, then the per-node enumeration sets ran
+  the process out of memory). Edge flows and the integrality test read the
+  same lambda. Fix: a `-2` "queued in this batch" mark in `col_of_`; the
+  master now throws when a pool route has two LP columns (cheap invariant
+  per solve) or when the fleet row's activity leaves its bounds; a fleet
+  child with an empty vehicle range is dropped instead of being pushed.
+  XML100_3313_15: optimal 22311 in 9 s. A standalone check of
+  `bplex_chg_row_bounds` on ranged rows (`tests/bplex_rowbounds.c`) passes:
+  bplex was not at fault.
+* Node-level changes, measured on the 12-instance XML100 medium set
+  (`instances/xml100/medium`, `scripts/pbench.sh`, 300 s, four at a time):
+  - CVRPSEP's "existing cuts" list now holds only the RCC rows with a
+    nonzero dual at the last solve; duplicates of the others are filtered by
+    a set hash. Separation time per call in the tree dropped from ~64 ms to
+    ~20 ms on XML200; medium set 1768 -> 1327 s (same 8 solved).
+  - lazy pool pricing (a pool route with clearly positive reduced cost is
+    skipped for 2/6/15 scans), adaptive heuristic stages (a stage empty
+    twice in a row is skipped for the rest of the node, `--stage-skip`),
+    CG-iteration and separation counters in the `split:` line.
+  - row cleanup every 5 nodes instead of 25 (`--cleanup-every`): medium set
+    1327 -> 1214 s and 1344 -> 1255 s in two pairs; adopted.
+  - `--stage-skip 1` was worse (1964 s) and hit the LP time limit at the end
+    of two runs (reported as "error"; now any node stopped by the clock ends
+    the run as `time_limit`). Skipping after 2 empty results vs never:
+    medium set 1255 vs 1229 s, CVRPLIB n <= 60 set 321 vs 263 s (both
+    64/64 proven, zero debug reports) -> stage skipping is off by default
+    (`stage_skip_after` 100).
+* Verified state of the defaults (knn 5, 75 cols, purge every 10, q-bound
+  all stages, RCC existing = binding rows, lazy pool, cleanup every 5, no
+  stage skipping): `results/v9b` 64/64 CVRPLIB n <= 60 proven = published,
+  total 263 s, slowest E-n30-k3 40 s; medium set 9/12 in 300 s (class-6
+  instances with ~20-customer routes stay open: pricing, not the tree).
+  Regression passes.
+
 ## 2026-10-27 (night): tree bug fixed, large instances re-measured
 
 * **Bug (ours, not bplex):** `cleanup_rows` marked the branch rows that open

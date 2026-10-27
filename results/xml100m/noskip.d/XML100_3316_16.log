@@ -1,0 +1,10 @@
+* incumbent 10306 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/xml100/medium/XML100_3316_16.sol cost 9112
+times: pricing 241.9 master 52.5 cuts 0.2 rmip 0.0 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 300.7
+split: cg iters 7352; pricing setup 0.0 pool 43.5/7352 s0 35.8/3531 s1 95.7/1179 exact 64.7/174 scan 0.0/0; cuts rccsep 0.0/15 (11 with cuts) src 0.0 rows 0.1
+probes: 0  solve 0.0 (0 iters avg)  purged 131884 repriced 46312 lp cols 2077 pool 87552
+RESULT XML100_3316_16 status time_limit lb 0 ub 10306 published 9112 nodes 1 depth 0 cols 87552 rows 327 rootlp 0.000 rootlb 0.000 kmin 3 kmax 4 fleetcap 0 time 300.72s root 0.00s 
+Route #1: 27 93 49 15 71 86 37 29 62 81 89 32 90 21 25 70 40 83 38 77 78 7 19 14 73 30 16 34 26 43
+Route #2: 33 76 74 79 75 9 100 67 18 41 52 95 20 99 97 45 12 59 91 55 54 4 46 13 11 10 17 68 48 50 88 3 98 80 94
+Route #3: 36 66 57 31 44 72 96 63 39 8 61 6 47 53 22 92 28 85 42 35 87 5 51 1 64 2 58 24 69 60 65 56 84 23 82
+Cost 10306

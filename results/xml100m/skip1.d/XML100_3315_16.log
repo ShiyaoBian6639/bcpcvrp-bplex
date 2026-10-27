@@ -1,0 +1,20 @@
+* incumbent 15641 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/xml100/medium/XML100_3315_16.sol cost 13864
+node     0 d0   lb  13810.014 lp  13810.354 glb      0.000 ub 15641 open 0 lp 2281/18225 rows 219 it 597 9.6s
+node    18 d9   lb  13881.477 lp  13881.477 glb  13812.020 ub 15641 open 9 lp 2090/30991 rows 278 it 19 149.2s
+node    38 d19  lb  14054.000 lp  14054.000 glb  13812.020 ub 15641 open 19 lp 2000/38354 rows 332 it 20 161.9s
+* incumbent 14054 from node LP (161.9s)
+node    56 d10  lb  13976.218 lp  13976.218 glb  13817.620 ub 14054 open 27 lp 2023/43715 rows 204 it 31 179.4s
+node    74 d4   lb  13911.536 lp  13911.536 glb  13820.351 ub 14054 open 35 lp 2024/53116 rows 264 it 73 200.0s
+times: pricing 32.0 master 132.1 cuts 0.8 rmip 5.0 dive 123.0 branch 0.1 switch 0.0 enum 5.0 (label 4.8 in 5 tries, mip 0.1 in 1 solves, 1 nodes closed) total 301.8
+split: cg iters 2950; pricing setup 0.0 pool 11.0/2941 s0 1.9/268 s1 12.9/673 exact 5.0/350 scan 0.0/8; cuts rccsep 0.6/96 (46 with cuts) src 0.0 rows 0.2
+probes: 0  solve 0.0 (0 iters avg)  purged 96525 repriced 44323 lp cols 2150 pool 54281
+RESULT XML100_3315_16 status error lb 13821 ub 14054 published 13864 nodes 44 depth 19 cols 54281 rows 276 rootlp 13810.354 rootlb 13810.014 kmin 6 kmax 7 fleetcap 0 time 301.82s root 9.57s 
+ERROR: master LP status time limit
+Route #1: 42 36 17 55 37 33 41 86 61 83 94 8 97 9 49 63 50 1 12
+Route #2: 39 90 3 25 82
+Route #3: 20 52 14 51 26 18 74 88 75 44 11 99 62 98 67 43 10 34 72
+Route #4: 84 80 22 89 46 81 45 70 32 56 79 76 27 78 73 28 69 60 96
+Route #5: 30 47 59 66 93 5 65 29 71 100 87 15 64 7 31 24 40 85 35
+Route #6: 91 77 21 53 48 6 92 16 13 4 57 19 38 54 95 58 2 68 23
+Cost 14054

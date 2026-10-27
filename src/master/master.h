@@ -75,7 +75,10 @@ public:
     // returns the number of columns that entered the LP (duplicates of
     // routes already in the LP are skipped)
     int add_routes(const std::vector<Route> &rs);
-    int price_pool(const Pricer &pr, double eps, int max_cols);
+    // fresh: new duals of a new node, every pool route is looked at again;
+    // otherwise a route whose reduced cost was clearly positive at its last
+    // scan is skipped for a few scans (exact pricing remains the fallback)
+    int price_pool(const Pricer &pr, double eps, int max_cols, bool fresh = false);
     int purge(int age, int min_cols);
 
     std::vector<int> add_rows(const std::vector<RobustRow> &rs);
@@ -124,6 +127,7 @@ private:
     std::vector<int> lp_route_;    // dynamic column j -> pool route, -1 for a row artificial
     std::vector<int> lp_art_row_;  // dynamic column j -> row id of its artificial, -1 for routes
     std::vector<int> col_of_;      // pool route -> dynamic column j, -1 if out
+    std::vector<int> pool_skip_;   // pool route -> scans to skip (lazy pool pricing)
     std::vector<int> age_;         // per dynamic column: consecutive solves with rc > 0
     int nlp_routes_ = 0;
     std::vector<RobustRow> rows_;  // position order

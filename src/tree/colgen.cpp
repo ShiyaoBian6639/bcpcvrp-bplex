@@ -7,6 +7,7 @@
 #include <chrono>
 #include <cmath>
 #include <cstdio>
+#include <unordered_set>
 
 namespace cvrpbcp {
 
@@ -95,6 +96,7 @@ NodeResult solve_node(const Instance &I, const Params &P, Master &M, Pricer &pri
     bool pruned = false;
     int src_rounds = 0;
     double lp_before_src = -1, lp_before_src2 = -1;
+    int fail_s0 = 0, fail_s1 = 0; // consecutive empty results of the heuristic stages (node-wide)
 
     while (true) {
         // ---- column generation to convergence for the current rows ----
@@ -140,13 +142,21 @@ NodeResult solve_node(const Instance &I, const Params &P, Master &M, Pricer &pri
                 exact = true;
                 lap(NodeResult::PR_SCAN);
             } else {
-                from_pool = M.price_pool(pricer, P.rc_eps, P.max_cols_per_iter);
+                from_pool = M.price_pool(pricer, P.rc_eps, P.max_cols_per_iter, R.cg_iters == 1);
                 lap(NodeResult::PR_POOL);
                 if (from_pool == 0) {
-                    cols = pricer.price(0, P.max_cols_per_iter, min_rc);
-                    lap(NodeResult::PR_S0);
-                    if ((int)cols.size() < P.heur_min_cols) {
+                    // adaptive stages: near convergence the sparse and the
+                    // capped passes mostly come back empty; after
+                    // stage_skip_after empty results in a row a stage is
+                    // skipped for the rest of the node
+                    if (fail_s0 < P.stage_skip_after) {
+                        cols = pricer.price(0, P.max_cols_per_iter, min_rc);
+                        lap(NodeResult::PR_S0);
+                        fail_s0 = cols.empty() ? fail_s0 + 1 : 0;
+                    }
+                    if ((int)cols.size() < P.heur_min_cols && fail_s1 < P.stage_skip_after) {
                         std::vector<Route> more = pricer.price(1, P.max_cols_per_iter, min_rc);
+                        fail_s1 = more.empty() ? fail_s1 + 1 : 0;
                         if (more.size() > cols.size()) cols.swap(more);
                         lap(NodeResult::PR_S1);
                     }
@@ -227,12 +237,31 @@ NodeResult solve_node(const Instance &I, const Params &P, Master &M, Pricer &pri
         const char *what = "RCC";
         double maxviol = 0;
         if (rcc && P.rcc) {
+            // CVRPSEP's "existing cuts" list costs time per entry; in the tree
+            // the master holds many RCC rows, most with a zero dual, so only
+            // the binding ones are handed over and duplicates of the rest
+            // are filtered by the set hash
             std::vector<const std::vector<char> *> existing;
+            std::unordered_set<uint64_t> have;
+            auto set_hash = [](const std::vector<char> &s) {
+                uint64_t h = 1469598103934665603ull;
+                for (char c : s) h = (h ^ (uint64_t)(unsigned char)c) * 1099511628211ull;
+                return h;
+            };
             for (const RobustRow &r : M.rows())
-                if (r.kind == RobustRow::RCC) existing.push_back(&r.in_s);
+                if (r.kind == RobustRow::RCC) {
+                    if (P.rcc_existing_all || r.zero_streak == 0) existing.push_back(&r.in_s);
+                    else have.insert(set_hash(r.in_s));
+                }
             const double ts = now();
             auto cuts = rcc->separate(R.x, existing, P.rcc_max_per_round, P.rcc_min_violation, integer_feasible);
             R.time_sep += now() - ts;
+            R.sep_calls++;
+            if (!have.empty())
+                cuts.erase(std::remove_if(cuts.begin(), cuts.end(),
+                                          [&](const RccCut &c) { return have.count(set_hash(c.in_s)) > 0; }),
+                           cuts.end());
+            if (!cuts.empty()) R.sep_hits++;
             std::vector<RobustRow> rows;
             rows.reserve(cuts.size());
             for (const auto &c : cuts) {

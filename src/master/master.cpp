@@ -132,23 +132,31 @@ int Master::add_routes(const std::vector<Route> &rs)
         for (auto it = range.first; it != range.second; ++it)
             if (routes_[it->second].seq == r.seq) { found = it->second; break; }
         if (found >= 0) {
-            if (col_of_[found] < 0) idx.push_back(found);
+            // -2: queued in this batch already (a route listed twice must
+            // get one column, or the pool-indexed lambda loses its value)
+            if (col_of_[found] == -1) { idx.push_back(found); col_of_[found] = -2; }
             continue;
         }
         route_index_.emplace(h, (int)routes_.size());
         idx.push_back((int)routes_.size());
         routes_.push_back(r);
-        col_of_.push_back(-1);
+        col_of_.push_back(-2);
         lambda_.push_back(0.0);
+        pool_skip_.push_back(0);
     }
     append_lp_columns(idx);
     return (int)idx.size();
 }
 
-int Master::price_pool(const Pricer &pr, double eps, int max_cols)
+int Master::price_pool(const Pricer &pr, double eps, int max_cols, bool fresh)
 {
     struct C { double rc; int r; };
     std::vector<C> cand;
+    if (fresh) std::fill(pool_skip_.begin(), pool_skip_.end(), 0);
+    // dual scale for the skip rule: the average customer dual
+    double dscale = 0;
+    for (int i = 1; i <= I_.n; i++) dscale += std::fabs(pi_[i]);
+    dscale = std::max(dscale / I_.n, 1.0);
     // active SRC rows with negative duals only add (-y * coef >= 0) to a
     // route's reduced cost, so the arc part alone decides whether to look
     std::vector<int> srcrows;
@@ -156,6 +164,7 @@ int Master::price_pool(const Pricer &pr, double eps, int max_cols)
         if (rows_[c].kind == RobustRow::SRC && rows_[c].active && yrow_[c] < -1e-9) srcrows.push_back((int)c);
     for (size_t r = 0; r < routes_.size(); r++) {
         if (col_of_[r] >= 0) continue;
+        if (pool_skip_[r] > 0) { pool_skip_[r]--; continue; }
         const Route &rt = routes_[r];
         double rc = 0;
         int prev = 0;
@@ -167,7 +176,10 @@ int Master::price_pool(const Pricer &pr, double eps, int max_cols)
         }
         if (bad || pr.forbidden(prev, 0)) continue;
         rc += pr.arc_rc(prev, 0);
-        if (rc >= -eps) continue;
+        if (rc >= -eps) {
+            pool_skip_[r] = rc < dscale ? 2 : rc < 4 * dscale ? 6 : 15;
+            continue;
+        }
         for (int c : srcrows) rc -= yrow_[c] * rows_[c].coef(rt);
         if (rc < -eps) cand.push_back({rc, (int)r});
     }
@@ -337,6 +349,7 @@ void Master::fix_route(int r, bool fixed)
 void Master::set_fleet_bounds(int klo, int khi)
 {
     if (klo == klo_ && khi == khi_) return;
+    if (klo > khi) throw std::runtime_error("set_fleet_bounds: klo " + std::to_string(klo) + " > khi " + std::to_string(khi));
     klo_ = klo;
     khi_ = khi;
     int rc = bplex_chg_row_bounds(bp_, I_.n, klo, khi);
@@ -351,10 +364,28 @@ int Master::solve()
     if (st != BPLEX_OPTIMAL) return st;
     const int n = I_.n;
     const int ncols = nfix_ + (int)lp_route_.size();
-    std::vector<double> x(ncols), y(nrows_);
+    std::vector<double> x(ncols), y(nrows_), act(nrows_);
     redcost_.assign(ncols, 0.0);
-    if (bplex_get_solution(bp_, x.data(), nullptr, y.data(), redcost_.data()) != 0)
+    if (bplex_get_solution(bp_, x.data(), act.data(), y.data(), redcost_.data()) != 0)
         throw std::runtime_error("bplex_get_solution failed after OPTIMAL");
+    // invariants: one LP column per pool route (the tree reads the
+    // pool-indexed lambda, so a duplicate column would lose its value) and
+    // the fleet row satisfied by the LP optimum
+    double sl = 0;
+    for (size_t j = 0; j < lp_route_.size(); j++) if (lp_route_[j] >= 0) sl += x[nfix_ + j];
+    {
+        std::vector<char> seen(routes_.size(), 0);
+        for (int r : lp_route_)
+            if (r >= 0 && seen[r]++) throw std::runtime_error("master: pool route " + std::to_string(r) + " has two LP columns");
+    }
+    if (act[n] < klo_ - 1e-6 || act[n] > khi_ + 1e-6 || std::fabs(act[n] - sl - x[n]) > 1e-6) {
+        // the fleet row is not satisfied by the reported optimum: our bounds
+        // or bplex's warm start are wrong; dump and stop
+        std::printf("FLEET ROW VIOLATED: activity %.6f bounds [%d, %d] sum lambda %.6f artificial x[n] %.6f iters %d; "
+                    "dumping cvrpbcp_fleet_fail.mps\n", act[n], klo_, khi_, sl, x[n], last_iters_);
+        bplex_write_mps(bp_, "cvrpbcp_fleet_fail.mps");
+        throw std::runtime_error("fleet row violated after an OPTIMAL solve");
+    }
     obj_ = bplex_objval(bp_);
     art_mass_ = 0;
     for (int j = 0; j < nfix_; j++) art_mass_ += x[j];

@@ -1,0 +1,105 @@
+== instances/cvrplib/E/E-n13-k4.vrp (n=12)
+* incumbent 275 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/cvrplib/E/E-n13-k4.sol cost 247
+node     0 d0   lb    247.000 lp    247.000 glb      0.000 ub 275 open 0 lp 147/147 rows 0 it 4 0.0s
+* incumbent 247 from node LP (0.0s)
+times: pricing 0.0 master 0.0 cuts 0.0 rmip 0.0 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 0.0
+split: cg iters 4; pricing setup 0.0 pool 0.0/4 s0 0.0/4 s1 0.0/1 exact 0.0/1 scan 0.0/0; cuts rccsep 0.0/1 (0 with cuts) src 0.0 rows 0.0
+probes: 0  solve 0.0 (0 iters avg)  purged 0 repriced 0 lp cols 147 pool 147
+RESULT E-n13-k4 status optimal lb 247 ub 247 published 247 nodes 1 depth 0 cols 147 rows 0 rootlp 247.000 rootlb 247.000 kmin 4 kmax 4 fleetcap 0 time 0.01s root 0.01s MATCHES published optimum
+Route #1: 1
+Route #2: 3 5 8
+Route #3: 6 10 12 9
+Route #4: 2 7 4 11
+Cost 247
+== instances/cvrplib/E/E-n22-k4.vrp (n=21)
+* incumbent 387 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/cvrplib/E/E-n22-k4.sol cost 375
+node     0 d0   lb    375.000 lp    375.000 glb      0.000 ub 387 open 0 lp 432/460 rows 26 it 14 0.0s
+* incumbent 375 from node LP (0.0s)
+times: pricing 0.0 master 0.0 cuts 0.0 rmip 0.0 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 0.0
+split: cg iters 14; pricing setup 0.0 pool 0.0/14 s0 0.0/14 s1 0.0/5 exact 0.0/2 scan 0.0/0; cuts rccsep 0.0/2 (1 with cuts) src 0.0 rows 0.0
+probes: 0  solve 0.0 (0 iters avg)  purged 28 repriced 0 lp cols 432 pool 460
+RESULT E-n22-k4 status optimal lb 375 ub 375 published 375 nodes 1 depth 0 cols 460 rows 26 rootlp 375.000 rootlb 375.000 kmin 4 kmax 4 fleetcap 0 time 0.03s root 0.03s MATCHES published optimum
+Route #1: 6 1 2 5 7 9
+Route #2: 10 8 3 4 11 13
+Route #3: 12 15 18 20 17
+Route #4: 16 19 21 14
+Cost 375
+== instances/cvrplib/E/E-n23-k3.vrp (n=22)
+* incumbent 621 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/cvrplib/E/E-n23-k3.sol cost 569
+node     0 d0   lb    569.000 lp    569.000 glb      0.000 ub 621 open 0 lp 462/1980 rows 7 it 54 0.4s
+* incumbent 569 from node LP (0.4s)
+times: pricing 0.4 master 0.0 cuts 0.0 rmip 0.0 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 0.4
+split: cg iters 54; pricing setup 0.0 pool 0.0/54 s0 0.4/52 s1 0.0/15 exact 0.0/2 scan 0.0/0; cuts rccsep 0.0/2 (1 with cuts) src 0.0 rows 0.0
+probes: 0  solve 0.0 (0 iters avg)  purged 1533 repriced 10 lp cols 462 pool 1980
+RESULT E-n23-k3 status optimal lb 569 ub 569 published 569 nodes 1 depth 0 cols 1980 rows 7 rootlp 569.000 rootlb 569.000 kmin 3 kmax 3 fleetcap 0 time 0.40s root 0.39s MATCHES published optimum
+Route #1: 10 13
+Route #2: 18 19 20 22 17 14 15 16 3 2 1 6 11 12
+Route #3: 21 4 5 8 9 7
+Cost 569
+== instances/cvrplib/E/E-n30-k3.vrp (n=29)
+debug: loaded solution instances/cvrplib/E/E-n30-k3.sol cost 534
+node     0 d0   lb    518.857 lp    519.000 glb      0.000 ub - open 0 lp 628/2984 rows 75 it 107 0.4s
+* incumbent 607 from dive (1.8s)
+* incumbent 595 from restricted master MIP (2.3s)
+* incumbent 543 from node LP (5.2s)
+node    12 d4   lb    530.272 lp    530.272 glb    527.021 ub 543 open 3 lp 585/8235 rows 76 it 11 9.3s
+* incumbent 540 from node LP (9.7s)
+* incumbent 534 from node LP (17.4s)
+node    17 d4   lb    532.174 lp    532.174 glb    529.583 ub 534 open 5 lp 604/10386 rows 138 it 34 20.2s
+node    19 d5   lb    533.181 lp    535.661 glb    531.876 ub 534 open 1 lp 646/12831 rows 80 it 12 40.4s
+times: pricing 18.7 master 1.4 cuts 0.0 rmip 0.4 dive 1.4 branch 0.0 switch 0.0 enum 18.3 (label 18.3 in 6 tries, mip 0.0 in 2 solves, 2 nodes closed) total 40.4
+split: cg iters 881; pricing setup 0.0 pool 1.2/852 s0 1.3/432 s1 2.7/308 exact 13.3/92 scan 0.0/29; cuts rccsep 0.0/43 (13 with cuts) src 0.0 rows 0.0
+probes: 0  solve 0.0 (0 iters avg)  purged 23008 repriced 10518 lp cols 913 pool 13025
+RESULT E-n30-k3 status optimal lb 534 ub 534 published 534 nodes 31 depth 7 cols 13025 rows 64 rootlp 519.000 rootlb 518.857 kmin 3 kmax 3 fleetcap 0 time 40.39s root 0.39s MATCHES published optimum
+Route #1: 20 3 4 1 5 2 22
+Route #2: 26 28 27 29 25 24 6 21
+Route #3: 18 23 10 11 12 8 14 9 17 7 13 16 15 19
+Cost 534
+== instances/cvrplib/E/E-n31-k7.vrp (n=30)
+* incumbent 642 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/cvrplib/E/E-n31-k7.sol cost 379
+node     0 d0   lb    379.000 lp    379.000 glb      0.000 ub 642 open 0 lp 644/1002 rows 27 it 29 0.0s
+* incumbent 379 from node LP (0.0s)
+times: pricing 0.0 master 0.0 cuts 0.0 rmip 0.0 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 0.0
+split: cg iters 29; pricing setup 0.0 pool 0.0/29 s0 0.0/28 s1 0.0/11 exact 0.0/4 scan 0.0/0; cuts rccsep 0.0/4 (1 with cuts) src 0.0 rows 0.0
+probes: 0  solve 0.0 (0 iters avg)  purged 359 repriced 1 lp cols 644 pool 1002
+RESULT E-n31-k7 status optimal lb 379 ub 379 published 379 nodes 1 depth 0 cols 1002 rows 27 rootlp 379.000 rootlb 379.000 kmin 7 kmax 7 fleetcap 0 time 0.04s root 0.04s MATCHES published optimum
+Route #1: 30
+Route #2: 23 29
+Route #3: 24 3 14 5 26
+Route #4: 10 18 12 7 27
+Route #5: 21 11 13 9 28 15
+Route #6: 19 2 8 22 6 20
+Route #7: 16 4 17 1 25
+Cost 379
+== instances/cvrplib/E/E-n33-k4.vrp (n=32)
+* incumbent 841 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/cvrplib/E/E-n33-k4.sol cost 835
+node     0 d0   lb    834.429 lp    835.000 glb      0.000 ub 841 open 0 lp 722/2917 rows 46 it 97 0.6s
+* incumbent 835 from node LP (0.6s)
+times: pricing 0.6 master 0.1 cuts 0.0 rmip 0.0 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 0.6
+split: cg iters 97; pricing setup 0.0 pool 0.0/97 s0 0.4/73 s1 0.1/29 exact 0.0/4 scan 0.0/0; cuts rccsep 0.0/2 (1 with cuts) src 0.0 rows 0.0
+probes: 0  solve 0.0 (0 iters avg)  purged 2348 repriced 148 lp cols 722 pool 2917
+RESULT E-n33-k4 status optimal lb 835 ub 835 published 835 nodes 1 depth 0 cols 2917 rows 46 rootlp 835.000 rootlb 834.429 kmin 4 kmax 4 fleetcap 0 time 0.63s root 0.63s MATCHES published optimum
+Route #1: 4 7 9 8 32 11 12 2
+Route #2: 29 16 28 27 26 15 1
+Route #3: 30 14 31
+Route #4: 3 5 6 10 18 19 21 20 22 23 24 25 17 13
+Cost 835
+== instances/cvrplib/E/E-n51-k5.vrp (n=50)
+debug: loaded solution instances/cvrplib/E/E-n51-k5.sol cost 521
+node     0 d0   lb    521.000 lp    521.000 glb      0.000 ub - open 0 lp 1024/2634 rows 121 it 98 0.5s
+* incumbent 521 from node LP (0.5s)
+times: pricing 0.3 master 0.1 cuts 0.0 rmip 0.0 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 0.5
+split: cg iters 98; pricing setup 0.0 pool 0.0/98 s0 0.2/90 s1 0.1/31 exact 0.0/13 scan 0.0/0; cuts rccsep 0.0/12 (8 with cuts) src 0.0 rows 0.0
+probes: 0  solve 0.0 (0 iters avg)  purged 1661 repriced 49 lp cols 1024 pool 2634
+RESULT E-n51-k5 status optimal lb 521 ub 521 published 521 nodes 1 depth 0 cols 2634 rows 121 rootlp 521.000 rootlb 521.000 kmin 5 kmax 5 fleetcap 0 time 0.49s root 0.49s MATCHES published optimum
+Route #1: 46 5 49 10 39 33 45 15 44 37 12
+Route #2: 6 14 25 24 43 7 23 48 27
+Route #3: 8 26 31 28 3 36 35 20 22 1 32
+Route #4: 11 16 2 29 21 50 34 30 9 38
+Route #5: 47 4 17 42 40 19 41 13 18
+Cost 521

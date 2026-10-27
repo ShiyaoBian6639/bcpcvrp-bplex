@@ -1,0 +1,35 @@
+* incumbent 14351 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/xml100/medium/XML100_1114_07.sol cost 13786
+node     0 d0   lb  13732.495 lp  13732.939 glb      0.000 ub 14351 open 0 lp 2026/9253 rows 280 it 282 3.8s
+* incumbent 13895 from dive (8.1s)
+node    18 d9   lb  13843.777 lp  13843.777 glb  13732.939 ub 13895 open 9 lp 2091/14587 rows 337 it 29 23.2s
+node    36 d7   lb  13800.455 lp  13800.685 glb  13741.211 ub 13895 open 17 lp 2043/16670 rows 399 it 27 30.5s
+* incumbent 13889 from node LP (34.6s)
+node    54 d6   lb  13805.158 lp  13805.158 glb  13745.237 ub 13889 open 25 lp 2045/19467 rows 277 it 19 38.7s
+node    72 d3   lb  13776.723 lp  13776.723 glb  13751.978 ub 13889 open 33 lp 2172/21741 rows 354 it 9 49.0s
+node    90 d4   lb  13803.114 lp  13803.278 glb  13754.327 ub 13889 open 41 lp 2036/23961 rows 385 it 36 58.9s
+* incumbent 13821 from node LP (62.1s)
+node   106 d4   lb  13790.706 lp  13790.764 glb  13757.463 ub 13821 open 47 lp 2031/25140 rows 302 it 14 67.0s
+node   122 d6   lb  13809.092 lp  13809.092 glb  13759.896 ub 13821 open 53 lp 2040/26405 rows 356 it 23 73.4s
+* incumbent 13799 from node LP (79.6s)
+node   111 d5   lb  13768.870 lp  13768.870 glb  13762.285 ub 13799 open 57 lp 2096/27933 rows 304 it 25 80.9s
+node   105 d4   lb  13777.354 lp  13777.354 glb  13767.124 ub 13799 open 59 lp 2004/28870 rows 328 it 31 88.1s
+node   143 d5   lb  13778.245 lp  13778.245 glb  13773.723 ub 13799 open 61 lp 2006/29976 rows 368 it 21 96.7s
+node   172 d5   lb  13815.576 lp  13815.576 glb  13777.354 ub 13799 open 63 lp 2358/31179 rows 349 it 7 106.7s
+* incumbent 13790 from node LP (115.2s)
+node   141 d5   lb  13784.197 lp  13784.516 glb  13780.266 ub 13790 open 61 lp 2006/32070 rows 367 it 31 119.3s
+* incumbent 13786 from node LP (125.1s)
+times: pricing 32.7 master 69.4 cuts 2.4 rmip 5.0 dive 4.3 branch 0.4 switch 0.0 enum 11.7 (label 11.3 in 22 tries, mip 0.4 in 3 solves, 3 nodes closed) total 128.2
+split: cg iters 3185; pricing setup 0.0 pool 14.2/3082 s0 0.8/290 s1 8.4/596 exact 7.0/520 scan 0.1/103; cuts rccsep 1.8/240 (126 with cuts) src 0.0 rows 0.6
+probes: 0  solve 0.0 (0 iters avg)  purged 95725 repriced 62771 lp cols 2330 pool 33260
+RESULT XML100_1114_07 status optimal lb 13786 ub 13786 published 13786 nodes 128 depth 14 cols 33260 rows 346 rootlp 13732.939 rootlb 13732.495 kmin 9 kmax 10 fleetcap 0 time 128.16s root 3.78s MATCHES published optimum
+Route #1: 10 87 60 76 53 13 16 4 7 98 18 73
+Route #2: 82 67 74 29
+Route #3: 58 44 71 25 66 100 70 57 59 85 56 21
+Route #4: 12 86 41 27 24 79 61 68 9 64 63 97
+Route #5: 6 23 22 48 92 49 69 42 78 93 80 11
+Route #6: 65 91 88 32 90 43 84 51 37 5 47 54
+Route #7: 39 2 31 96 1 50 75 36 81 30 52 38
+Route #8: 33 3 34 28 62 46 40 45 14 89 55 15
+Route #9: 17 19 77 8 83 20 94 72 35 99 26 95
+Cost 13786
