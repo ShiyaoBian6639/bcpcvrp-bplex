@@ -28,6 +28,14 @@ so always go through `scripts/wsl.sh`, which handles both.
     bash scripts/wsl.sh scripts/build_wsl.sh Debug -DCVRPBCP_SANITIZE=ON   # ASan/UBSan -> build/cvrpbcp-Debug
     bash scripts/wsl.sh env REBUILD_BPLEX=1 scripts/build_wsl.sh            # after a bplex update
 
+## Tuning set (medium, parallel)
+    bash scripts/wsl.sh env JOBS=4 scripts/pbench.sh instances/xml100/medium 300 results/<tag> [solve options]
+12 XML100 instances (two per route-size class, known optima, .sol loaded as
+the known solution) run four at a time; one JSON line per run in
+`results/<tag>.jsonl`, logs in `results/<tag>.d/`. Compare variants by
+solved count and total time; keep the 900 s X-n153-k22 / XML200_2251_68
+runs for the final check only (their trees are too noisy to rank variants).
+
 ## Run
     B=build/cvrpbcp-Release/cvrpbcp
     bash scripts/wsl.sh $B selftest 12                     # brute force vs bplex MIP vs BCP, tiny instances
@@ -38,7 +46,8 @@ so always go through `scripts/wsl.sh`, which handles both.
 Options: `--K k --ng s --knn k --cols c --alpha a --no-rcc --no-src --no-early
 --mono --time T --log L --ub u --no-rmip --rmip-time s --rmip-every n --nodes n
 --sb k --purge-age a --no-enum --enum-mip-max r --enum-dump prefix --no-dive
---dive-time s --no-savings --cut-age n --plunge d --qbound s --purge-every n --out f.sol`.
+--dive-time s --no-savings --cut-age n --cleanup-every n --plunge d --qbound s
+--purge-every n --stage-skip n --out f.sol`.
 Defaults tuned 2026-10-27 at n=150: knn 5, 75 cols/iteration, purge every 10 CG
 iterations, q-route bound in all stages (`--qbound 3` turns it off).
 Fleet: CVRPLIB files state "No of trucks"; by default exactly that many are

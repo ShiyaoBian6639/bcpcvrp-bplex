@@ -1,0 +1,1 @@
+Twelve XML100 instances (Queiroga, Sadykov, Uchoa, Vidal 2021; https://github.com/vidalt/XML-CVRP style set from ../data/xml100), two per route-size class (4th digit 1..6), with the published optimal solutions (.sol). Used by scripts/pbench.sh as the medium-size tuning set.
