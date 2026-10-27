@@ -131,21 +131,29 @@ NodeResult solve_node(const Instance &I, const Params &P, Master &M, Pricer &pri
             std::vector<Route> cols;
             bool exact = false;
             int from_pool = 0;
+            double tq = now();
+            auto lap = [&](int what) { double t = now(); R.time_pr[what] += t - tq; R.calls_pr[what]++; tq = t; };
+            lap(NodeResult::PR_SETUP);
             if (enum_set) {
                 // the subtree's improving solutions only use these routes
                 cols = scan_routes(*enum_set, pricer, P.rc_eps, P.max_cols_per_iter, min_rc);
                 exact = true;
+                lap(NodeResult::PR_SCAN);
             } else {
                 from_pool = M.price_pool(pricer, P.rc_eps, P.max_cols_per_iter);
+                lap(NodeResult::PR_POOL);
                 if (from_pool == 0) {
                     cols = pricer.price(0, P.max_cols_per_iter, min_rc);
+                    lap(NodeResult::PR_S0);
                     if ((int)cols.size() < P.heur_min_cols) {
                         std::vector<Route> more = pricer.price(1, P.max_cols_per_iter, min_rc);
                         if (more.size() > cols.size()) cols.swap(more);
+                        lap(NodeResult::PR_S1);
                     }
                     if (cols.empty()) {
                         cols = pricer.price(2, P.max_cols_per_iter, min_rc);
                         exact = true;
+                        lap(NodeResult::PR_S2);
                     }
                 }
             }

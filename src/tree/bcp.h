@@ -53,6 +53,10 @@ struct BcpResult {
     double t_pricing = 0, t_master = 0, t_cuts = 0, t_rmip = 0, t_branch = 0, t_switch = 0, t_enum = 0;
     double t_enum_label = 0, t_enum_mip = 0, t_dive = 0;
     int enum_tries = 0, enum_closed = 0, enum_mips = 0;
+    double t_sep = 0, t_src = 0;      // parts of t_cuts
+    double t_pr[6] = {0, 0, 0, 0, 0, 0}; // pricing split, NodeResult::PR_*
+    int n_pr[6] = {0, 0, 0, 0, 0, 0};
+    int cg_iters = 0;
     bool fleet_cap_binding = false; // the incumbent uses kmax vehicles (re-run with larger kmax)
     int kmin = 0, kmax = 0;
     std::string error;

@@ -17,6 +17,17 @@
 
 namespace cvrpbcp {
 
+static void add_times(BcpResult &R, const NodeResult &res)
+{
+    R.t_pricing += res.time_pricing;
+    R.t_master += res.time_master;
+    R.t_cuts += res.time_cuts;
+    R.t_sep += res.time_sep;
+    R.t_src += res.time_src;
+    R.cg_iters += res.cg_iters;
+    for (int k = 0; k < NodeResult::PR_N; k++) { R.t_pr[k] += res.time_pr[k]; R.n_pr[k] += res.calls_pr[k]; }
+}
+
 namespace {
 
 double now()
@@ -295,9 +306,7 @@ BcpResult solve_bcp(const Instance &I, const BcpParams &P)
         double budget = P.time_limit - (now() - t0);
         NodeResult res = solve_node(I, P, M, pricer, &rcc, budget, ub < 1e299 ? ub : 1e300, N.enum_set.get());
         R.nodes++;
-        R.t_pricing += res.time_pricing;
-        R.t_master += res.time_master;
-        R.t_cuts += res.time_cuts;
+        add_times(R, res);
         R.depth_max = std::max(R.depth_max, N.depth);
         if (!res.ok) {
             if (res.error == "time limit") { stop = "time_limit"; break; }
@@ -338,8 +347,7 @@ BcpResult solve_bcp(const Instance &I, const BcpParams &P)
             // the node so the duals, bound and edge flows are current again
             NodeResult again = solve_node(I, P, M, pricer, &rcc, P.time_limit - (now() - t0),
                                           ub < 1e299 ? ub : 1e300, N.enum_set.get());
-            R.t_pricing += again.time_pricing;
-            R.t_master += again.time_master;
+            add_times(R, again);
             if (again.ok) {
                 res = again;
                 nodes[cur].lb = std::max(nodes[cur].lb, res.lb);
@@ -631,6 +639,10 @@ BcpResult solve_bcp(const Instance &I, const BcpParams &P)
                     "(label %.1f in %d tries, mip %.1f in %d solves, %d nodes closed) total %.1f\n",
                     R.t_pricing, R.t_master, R.t_cuts, R.t_rmip, R.t_dive, R.t_branch, R.t_switch, R.t_enum,
                     R.t_enum_label, R.enum_tries, R.t_enum_mip, R.enum_mips, R.enum_closed, R.time);
+        std::printf("split: cg iters %d; pricing setup %.1f pool %.1f/%d s0 %.1f/%d s1 %.1f/%d exact %.1f/%d scan %.1f/%d; "
+                    "cuts rccsep %.1f src %.1f rows %.1f\n",
+                    R.cg_iters, R.t_pr[0], R.t_pr[1], R.n_pr[1], R.t_pr[2], R.n_pr[2], R.t_pr[3], R.n_pr[3], R.t_pr[4],
+                    R.n_pr[4], R.t_pr[5], R.n_pr[5], R.t_sep, R.t_src, R.t_cuts - R.t_sep - R.t_src);
         const auto &ps = M.probe_stats;
         std::printf("probes: %d  solve %.1f (%.0f iters avg)  purged %ld repriced %ld lp cols %d pool %d\n", ps.n,
                     ps.t_solve, ps.n ? ps.iters / ps.n : 0.0, M.purged_total, M.repriced_total, M.nlpcols(),

@@ -24,6 +24,10 @@ struct NodeResult {
     double time = 0, time_pricing = 0, time_master = 0, time_cuts = 0;
     double time_src = 0;     // part of time_cuts spent in SRC separation
     double time_sep = 0;     // part of time_cuts spent in RCC separation (CVRPSEP)
+    // pricing split: duals/purge setup, pool scan, stages 0/1/2, enumeration-set scan
+    enum { PR_SETUP, PR_POOL, PR_S0, PR_S1, PR_S2, PR_SCAN, PR_N };
+    double time_pr[PR_N] = {0, 0, 0, 0, 0, 0};
+    int calls_pr[PR_N] = {0, 0, 0, 0, 0, 0};
     bool integral = false;   // an integer feasible solution was read off the LP
     bool fleet_binding = false; // sum lambda == khi
     bool early_stopped = false; // CG stopped on ceil(lb) == ceil(lp): duals are not LP-optimal

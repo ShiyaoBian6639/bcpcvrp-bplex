@@ -3,6 +3,36 @@
 Newest first. Numbers are from WSL Ubuntu 22.04, gcc 11 -O3, single thread,
 bplex built with MKL off.
 
+## 2026-10-27 (night): tree bug fixed, large instances re-measured
+
+* **Bug (ours, not bplex):** `cleanup_rows` marked the branch rows that open
+  nodes still reference in an array sized "rows + 4096" but indexed by row
+  id; ids are never reused, so after a few hundred nodes an inactive branch
+  row of an open node was deleted, and the next switch to that node asked
+  bplex to change the bounds of a stale row index (`BPLEX_ERR_ARG`, seen as
+  `bplex_chg_row_bounds failed` after 390-455 s on XML200_2251_68 and
+  X-n153-k22). The bug predates today; it only surfaced because nodes are
+  now fast enough to reach that many ids within the time limit. Fix: marks
+  indexed by `Master::row_id_bound()`, `set_row_active` rejects deleted
+  ids, failed row edits print rc/row and dump the model, bplex's warnings
+  and errors (level 0) reach our log via `bplex_set_log_callback`.
+  Regression passes. Earlier 900 s results on these instances were not
+  wrong (a relaxed node keeps a valid bound) but the search degraded.
+* 900 s, free fleet, with the fix (`results/large_v7/*.fix.log`):
+
+  | instance | lb | ub | nodes | note |
+  |---|---|---|---|---|
+  | X-n101-k25 | 27591 | 27591 | 9 | proven in 8.4 s (published 27591) |
+  | X-n153-k22 | 21136 | 21313 | 268 | published 21220; before today lb 21112 / ub 21415 |
+  | XML150_3372_54 | 41702 | 42339 | 126 | before: 41699 / 42821 |
+  | XML200_2251_68 | 31355 | 31461 | 1023 | before: 31338 / 31484 |
+
+  Time split X-n153-k22: pricing 423 s, master 253 s, dive 139 s, enum 26 s;
+  XML200: pricing 266 s, master 279 s, cuts 222 s, enum 100 s (115 tries,
+  18 MIPs, 18 nodes closed). Node throughput, not the root, is now the
+  limit; a per-stage split (`split:` line after `times:`) was added and the
+  two instances are being re-run to pick the next lever.
+
 ## 2026-10-27 (later): repository, q-route completion bound, bplex 0.2
 
 * Code pushed to `github.com/ShiyaoBian6639/bcpcvrp-bplex` (branch `main`;
