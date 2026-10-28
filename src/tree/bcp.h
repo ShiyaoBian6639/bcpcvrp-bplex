@@ -56,6 +56,7 @@ struct BcpResult {
     double t_sep = 0, t_src = 0;      // parts of t_cuts
     double t_pr[6] = {0, 0, 0, 0, 0, 0}; // pricing split, NodeResult::PR_*
     int n_pr[6] = {0, 0, 0, 0, 0, 0};
+    int h_pr[6] = {0, 0, 0, 0, 0, 0}; // calls with columns
     int cg_iters = 0;
     int n_sep = 0, n_sep_hit = 0;
     bool fleet_cap_binding = false; // the incumbent uses kmax vehicles (re-run with larger kmax)

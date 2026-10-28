@@ -1,0 +1,44 @@
+* incumbent 16136 from Clarke-Wright savings (0.0s)
+debug: loaded solution ../xltw/benchmarks/CVRP/X-n110-k13.sol cost 14971
+node     0 d0   lb  14892.035 lp  14892.035 glb      0.000 ub 16136 open 0 lp 2192/4187 rows 237 it 137 2.0s
+* incumbent 15107 from dive (5.0s)
+node    18 d9   lb  15032.861 lp  15032.861 glb  14892.035 ub 15107 open 9 lp 2194/7755 rows 248 it 33 18.5s
+node    36 d5   lb  14950.571 lp  14950.571 glb  14894.383 ub 15107 open 17 lp 2184/9010 rows 259 it 11 24.6s
+node    56 d15  lb  15062.262 lp  15062.262 glb  14894.383 ub 15107 open 27 lp 2198/9857 rows 203 it 16 29.2s
+node    74 d9   lb  15034.233 lp  15034.233 glb  14894.383 ub 15107 open 35 lp 2183/10648 rows 280 it 23 34.9s
+node    92 d7   lb  14971.102 lp  14971.279 glb  14899.362 ub 15107 open 43 lp 2216/11227 rows 332 it 9 40.4s
+node   110 d7   lb  14990.412 lp  14990.412 glb  14901.728 ub 15107 open 51 lp 2193/12550 rows 349 it 15 47.7s
+node   128 d5   lb  14983.743 lp  14983.767 glb  14902.629 ub 15107 open 59 lp 2189/13326 rows 354 it 13 54.0s
+node   146 d6   lb  14937.984 lp  14937.984 glb  14904.787 ub 15107 open 67 lp 2180/14213 rows 349 it 10 60.7s
+* incumbent 15037 from node LP (64.0s)
+node   164 d6   lb  15019.026 lp  15019.026 glb  14914.347 ub 15037 open 75 lp 2262/14770 rows 338 it 4 67.2s
+node   143 d5   lb  14938.174 lp  14938.174 glb  14918.628 ub 15037 open 81 lp 2182/15302 rows 377 it 22 75.0s
+node   198 d7   lb  15028.197 lp  15028.197 glb  14928.474 ub 15037 open 89 lp 2331/15804 rows 435 it 8 84.2s
+node   212 d7   lb  14978.071 lp  14978.792 glb  14935.476 ub 15037 open 93 lp 2182/16355 rows 418 it 10 93.6s
+node     9 d5   lb  14991.178 lp  14991.178 glb  14936.192 ub 15037 open 99 lp 2180/17008 rows 423 it 40 101.5s
+node   244 d9   lb  15016.181 lp  15016.181 glb  14937.984 ub 15037 open 105 lp 2410/17558 rows 407 it 8 109.4s
+* incumbent 15009 from node LP (113.6s)
+node   260 d9   lb  15004.444 lp  15004.577 glb  14940.758 ub 15009 open 111 lp 2306/18110 rows 436 it 7 117.6s
+* incumbent 14996 from node LP (122.0s)
+node    37 d6   lb  14969.311 lp  14969.311 glb  14950.571 ub 14996 open 113 lp 2322/18612 rows 446 it 28 127.2s
+* incumbent 14971 from node LP (127.7s)
+node   255 d7   lb  14965.858 lp  14965.858 glb  14958.274 ub 14971 open 107 lp 2207/18711 rows 401 it 18 135.6s
+node    11 d6   lb  14987.374 lp  14987.374 glb  14969.269 ub 14971 open 97 lp 2189/19349 rows 382 it 23 142.1s
+times: pricing 58.9 master 44.7 cuts 7.5 rmip 7.0 dive 2.9 branch 0.3 switch 0.0 enum 20.6 (label 20.0 in 29 tries, mip 0.6 in 13 solves, 13 nodes closed) total 143.5
+split: cg iters 3418; pricing setup 0.0 pool 12.9/3045 s0 8.8/1571 s1 15.2/1258 exact 19.4/632 scan 0.6/373; cuts rccsep 6.6/500 (295 with cuts) src 0.1 rows 0.9
+probes: 0  solve 0.0 (0 iters avg)  purged 53146 repriced 31975 lp cols 2359 pool 19572
+RESULT X-n110-k13 status optimal lb 14971 ub 14971 published 14971 nodes 182 depth 17 cols 19572 rows 390 rootlp 14892.035 rootlb 14892.035 kmin 13 kmax 14 fleetcap 0 time 143.52s root 2.03s MATCHES published optimum
+Route #1: 52 50 39 28 31 17 95 59 27
+Route #2: 40 47 48 82 107 57 13 23
+Route #3: 1 90 16 29 78 74 32 79
+Route #4: 73 35 7 37 94 81 44 70
+Route #5: 105 20 92 97 42 106 67 34 45
+Route #6: 71 93 104 60 61 22 83 76 55 30
+Route #7: 19 63 72 10 86 100 62 8 49
+Route #8: 56 102 9 33 101 4 24 103 25 69
+Route #9: 68 54 96 88 75 21 41 12 58
+Route #10: 109 18 84 87 26 53 15 66 98
+Route #11: 5 46 89 51 85 11 77 6
+Route #12: 80 2 43 64 36 65 99
+Route #13: 14 3 108 38 91
+Cost 14971

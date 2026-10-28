@@ -64,6 +64,7 @@ static void parse_opts(int argc, char **argv, int from, BcpParams &P, std::strin
         else if (o == "--nodes") P.node_limit = std::stoi(val());
         else if (o == "--purge-age") P.purge_age = std::stoi(val());
         else if (o == "--purge-min") P.purge_min_cols_per_cust = std::stoi(val());
+        else if (o == "--purge-len") P.purge_len_ref = std::stoi(val());
         else if (o == "--sb") P.sb_cands = std::stoi(val());
         else if (o == "--sb-iters") P.sb_iters = std::stoi(val());
         else if (o == "--sb-rel") P.sb_reliable = std::stoi(val());
@@ -78,6 +79,12 @@ static void parse_opts(int argc, char **argv, int from, BcpParams &P, std::strin
         else if (o == "--dive-time") P.dive_time = std::stod(val());
         else if (o == "--plunge") P.plunge_depth = std::stoi(val());
         else if (o == "--heur-cap") P.heur_label_cap = std::stoi(val());
+        else if (o == "--heur-cap1") P.heur_label_cap1 = std::stoi(val());
+        else if (o == "--heur-relax") P.heur_relax = std::stoi(val());
+        else if (o == "--buckets") P.load_buckets = std::stoi(val());
+        else if (o == "--scan-threads") P.scan_threads = std::stoi(val());
+        else if (o == "--lp-stall") P.lp_stall_factor = std::stod(val());
+        else if (o == "--fleet-slack") P.fleet_slack = std::stoi(val());
         else if (o == "--qbound") P.qbound_stage = std::stoi(val());
         else if (o == "--purge-every") P.purge_every = std::stoi(val());
         else if (o == "--stage-skip") P.stage_skip_after = std::stoi(val());

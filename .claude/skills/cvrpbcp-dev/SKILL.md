@@ -47,7 +47,12 @@ Options: `--K k --ng s --knn k --cols c --alpha a --no-rcc --no-src --no-early
 --mono --time T --log L --ub u --no-rmip --rmip-time s --rmip-every n --nodes n
 --sb k --purge-age a --no-enum --enum-mip-max r --enum-dump prefix --no-dive
 --dive-time s --no-savings --cut-age n --cleanup-every n --plunge d --qbound s
---purge-every n --stage-skip n --out f.sol`.
+--purge-every n --purge-len r --stage-skip n --heur-relax 0|1 --heur-cap1 c
+--buckets b --scan-threads t --fleet-slack k --lp-stall f --out f.sol`.
+`--qbound -1` (default) uses the q-route bound from stage 0 when (Q+1) n^2 <= 5e6,
+else from stage 1; `--fleet-slack 3` is the free-fleet cap above max(ffd, kmin)
+(X-n172-k51's optimum needs ffd + 2: a result with `fleetcap 1` is not proven).
+pbench: `UBSOL=1` passes the .sol cost as `--ub` (prove-optimality protocol).
 Defaults tuned 2026-10-27 at n=150: knn 5, 75 cols/iteration, purge every 10 CG
 iterations, q-route bound in all stages (`--qbound 3` turns it off).
 Fleet: CVRPLIB files state "No of trucks"; by default exactly that many are
@@ -56,6 +61,17 @@ used (matches the published optima). `--fleet max` allows fewer,
 `solve` prints one `RESULT ...` line (status, lb, ub, published, nodes, time,
 verdict), a `times:` breakdown, and exits 1 when a proven value differs from
 the published one. `--log 2` adds per-node, cut-round and enumeration lines.
+
+## LP trace and replay (is the LP solver the bottleneck?)
+    CVRPBCP_LPTRACE=results/traces/x.trace build/cvrpbcp-Release/cvrpbcp solve ... # records every LP op
+    build/cvrpbcp-Release/lpreplay results/traces/x.trace [max_solves] [-v]     # replays on bplex
+The replay repeats the exact operation sequence (warm starts included) and
+prints recorded vs replayed seconds per solve kind and objective mismatches.
+CPLEX backend: compile `tools/lpreplay.c -DLPREPLAY_CPLEX` on Windows with a
+C compiler (MSVC, or `pip install ziglang` then
+`python -m ziglang cc -O2 -DLPREPLAY_CPLEX -I"C:\Program Files\IBM\ILOG\CPLEX_Studio221\cplex\include" tools\lpreplay.c -o lpreplay_cplex.exe`),
+run with `cplex2210.dll` on PATH; traces under `results/traces/` are plain files
+readable from both sides.
 
 ## Regression before and after any solver change
     bash scripts/wsl.sh scripts/regress.sh 300

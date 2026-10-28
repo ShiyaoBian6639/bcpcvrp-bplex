@@ -1,0 +1,17 @@
+* incumbent 15553 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/xml100/medium/XML100_1113_07.sol cost 14550
+node     0 d0   lb  14486.519 lp  14486.519 glb      0.000 ub 15553 open 0 lp 2036/5453 rows 237 it 283 2.8s
+* incumbent 14622 from dive (9.5s)
+node    14 d3   lb  14613.378 lp  14613.378 glb  14503.108 ub 14622 open 5 lp 2002/10374 rows 173 it 11 23.9s
+node    32 d11  lb  14579.300 lp  14579.505 glb  14503.630 ub 14622 open 13 lp 2089/11810 rows 177 it 25 31.1s
+node    50 d9   lb  14606.045 lp  14606.045 glb  14506.241 ub 14622 open 21 lp 2009/13909 rows 246 it 32 42.4s
+* incumbent 14621 from node LP (43.3s)
+node    19 d5   lb  14522.606 lp  14522.848 glb  14508.289 ub 14621 open 27 lp 2037/16102 rows 235 it 46 52.7s
+* incumbent 14611 from node LP (59.4s)
+node    84 d7   lb  14558.401 lp  14558.800 glb  14509.157 ub 14611 open 35 lp 2008/17795 rows 265 it 12 63.9s
+* incumbent 14583 from node LP (66.3s)
+node    98 d5   lb  14549.262 lp  14550.000 glb  14522.606 ub 14583 open 39 lp 2022/19430 rows 264 it 24 77.9s
+* incumbent 14550 from node LP (77.9s)
+node    97 d5   lb  14549.864 lp  14549.864 glb  14530.612 ub 14550 open 33 lp 2006/20132 rows 241 it 11 90.5s
+  LP stall: warm solve cut after 2.0s (average 0.015s, 2442 cols, 355 rows); retrying with the primal simplex
+Terminated

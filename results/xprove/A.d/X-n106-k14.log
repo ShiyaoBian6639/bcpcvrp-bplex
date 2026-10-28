@@ -1,0 +1,75 @@
+* incumbent 27277 from Clarke-Wright savings (0.0s)
+debug: loaded solution ../xltw/benchmarks/CVRP/X-n106-k14.sol cost 26362
+node     0 d0   lb  26307.430 lp  26307.430 glb      0.000 ub 27277 open 0 lp 2119/3866 rows 184 it 113 3.2s
+node    18 d9   lb  26357.522 lp  26357.522 glb  26313.545 ub 27277 open 9 lp 2123/9666 rows 164 it 28 34.9s
+node    38 d19  lb  26444.171 lp  26444.389 glb  26313.545 ub 27277 open 19 lp 2104/12912 rows 206 it 81 51.2s
+node    58 d29  lb  26521.564 lp  26521.564 glb  26313.545 ub 27277 open 29 lp 2100/14967 rows 183 it 30 59.6s
+* incumbent 26564 from node LP (61.5s)
+node    76 d8   lb  26353.438 lp  26353.438 glb  26313.545 ub 26564 open 37 lp 2180/16498 rows 222 it 16 79.6s
+node    96 d18  lb  26402.425 lp  26402.474 glb  26313.545 ub 26564 open 47 lp 2118/17905 rows 226 it 30 89.9s
+node   116 d28  lb  26462.104 lp  26462.104 glb  26313.545 ub 26564 open 57 lp 2236/19785 rows 234 it 9 104.4s
+node   134 d6   lb  26325.965 lp  26325.965 glb  26313.545 ub 26564 open 65 lp 2186/21280 rows 339 it 9 118.2s
+node   154 d16  lb  26402.568 lp  26402.568 glb  26313.545 ub 26564 open 75 lp 2180/22112 rows 293 it 14 127.2s
+node   174 d26  lb  26457.019 lp  26457.019 glb  26313.545 ub 26564 open 85 lp 2102/23691 rows 313 it 11 138.6s
+node   192 d5   lb  26342.155 lp  26342.155 glb  26313.545 ub 26564 open 93 lp 2117/26374 rows 382 it 15 154.6s
+node   212 d15  lb  26416.411 lp  26416.411 glb  26313.545 ub 26564 open 103 lp 2106/27053 rows 353 it 32 166.5s
+node   232 d25  lb  26527.843 lp  26527.843 glb  26313.545 ub 26564 open 113 lp 2101/29322 rows 424 it 71 181.7s
+node   250 d10  lb  26359.915 lp  26359.915 glb  26315.292 ub 26564 open 121 lp 2191/30396 rows 384 it 8 198.3s
+node   270 d20  lb  26450.578 lp  26450.578 glb  26315.292 ub 26564 open 131 lp 2113/31850 rows 408 it 36 217.0s
+node   290 d30  lb  26542.119 lp  26542.119 glb  26315.292 ub 26564 open 141 lp 2100/33370 rows 437 it 40 238.7s
+node   308 d12  lb  26371.664 lp  26371.664 glb  26315.605 ub 26564 open 149 lp 2140/34099 rows 445 it 8 250.7s
+node   326 d8   lb  26370.696 lp  26370.696 glb  26316.606 ub 26564 open 157 lp 2107/34623 rows 474 it 12 263.3s
+node   344 d10  lb  26394.126 lp  26394.126 glb  26316.979 ub 26564 open 165 lp 2210/35150 rows 489 it 9 280.0s
+node     3 d2   lb  26320.798 lp  26320.798 glb  26317.176 ub 26564 open 171 lp 2101/35745 rows 504 it 31 298.1s
+node   378 d7   lb  26356.055 lp  26356.055 glb  26320.089 ub 26564 open 179 lp 2122/36233 rows 503 it 14 318.1s
+node   396 d8   lb  26381.754 lp  26381.754 glb  26320.798 ub 26564 open 187 lp 2120/36538 rows 517 it 8 334.4s
+node   414 d11  lb  26373.134 lp  26373.134 glb  26322.885 ub 26564 open 195 lp 2123/37092 rows 536 it 13 350.6s
+* incumbent 26465 from node LP (361.1s)
+node   432 d5   lb  26349.621 lp  26349.621 glb  26323.955 ub 26465 open 203 lp 2121/38589 rows 584 it 17 364.2s
+node   450 d7   lb  26353.002 lp  26353.662 glb  26324.113 ub 26465 open 211 lp 2162/39275 rows 582 it 16 384.5s
+node   468 d9   lb  26402.619 lp  26402.619 glb  26324.761 ub 26465 open 219 lp 2204/39927 rows 605 it 17 405.1s
+node   486 d10  lb  26351.780 lp  26351.780 glb  26325.932 ub 26465 open 227 lp 2159/40981 rows 636 it 25 420.9s
+node   506 d20  lb  26432.244 lp  26432.244 glb  26325.932 ub 26465 open 237 lp 2128/42934 rows 639 it 34 440.7s
+node   524 d10  lb  26377.786 lp  26377.942 glb  26325.965 ub 26465 open 245 lp 2120/43758 rows 655 it 17 453.1s
+* incumbent 26398 from node LP (458.6s)
+node   542 d11  lb  26386.084 lp  26386.084 glb  26326.088 ub 26398 open 253 lp 2213/44313 rows 687 it 4 464.8s
+node   558 d5   lb  26347.223 lp  26347.650 glb  26326.227 ub 26398 open 259 lp 2107/44889 rows 719 it 12 481.4s
+node   576 d8   lb  26350.434 lp  26350.490 glb  26328.320 ub 26398 open 267 lp 2155/45335 rows 705 it 18 496.3s
+node   594 d11  lb  26388.450 lp  26388.450 glb  26329.051 ub 26398 open 275 lp 2135/46184 rows 724 it 13 515.9s
+node   610 d8   lb  26376.137 lp  26376.137 glb  26329.791 ub 26398 open 281 lp 2265/46472 rows 747 it 8 532.0s
+node   626 d9   lb  26360.606 lp  26360.606 glb  26331.062 ub 26398 open 287 lp 2127/46744 rows 751 it 16 548.8s
+node   644 d9   lb  26359.013 lp  26359.474 glb  26331.435 ub 26398 open 295 lp 2102/47290 rows 757 it 20 558.9s
+node   662 d8   lb  26361.485 lp  26361.585 glb  26332.095 ub 26398 open 303 lp 2113/48113 rows 781 it 43 575.3s
+node   680 d11  lb  26381.931 lp  26381.931 glb  26332.095 ub 26398 open 311 lp 2245/48832 rows 791 it 8 592.0s
+node   698 d14  lb  26399.223 lp  26399.498 glb  26332.124 ub 26398 open 319 lp 2181/50093 rows 840 it 4 617.0s
+node   714 d8   lb  26378.272 lp  26378.272 glb  26332.993 ub 26398 open 325 lp 2288/50563 rows 815 it 8 637.1s
+node   730 d6   lb  26342.273 lp  26342.273 glb  26333.322 ub 26398 open 331 lp 2217/50944 rows 821 it 7 652.9s
+node   748 d10  lb  26382.909 lp  26382.909 glb  26333.465 ub 26398 open 339 lp 2100/51325 rows 853 it 10 668.0s
+node   764 d9   lb  26363.683 lp  26363.683 glb  26333.635 ub 26398 open 345 lp 2128/51582 rows 888 it 16 680.8s
+node   191 d5   lb  26349.551 lp  26349.551 glb  26334.739 ub 26398 open 351 lp 2148/52169 rows 878 it 36 697.6s
+node   798 d11  lb  26395.536 lp  26395.600 glb  26335.791 ub 26398 open 359 lp 2127/52422 rows 896 it 17 722.6s
+node   816 d15  lb  26392.277 lp  26392.277 glb  26336.020 ub 26398 open 367 lp 2114/52812 rows 913 it 13 735.6s
+node   832 d8   lb  26359.828 lp  26359.828 glb  26336.168 ub 26398 open 373 lp 2154/53212 rows 926 it 7 748.2s
+node   848 d9   lb  26379.015 lp  26379.015 glb  26337.059 ub 26398 open 379 lp 2102/53545 rows 938 it 11 760.3s
+node   864 d10  lb  26371.022 lp  26371.022 glb  26337.106 ub 26398 open 385 lp 2100/53751 rows 991 it 20 778.1s
+node   880 d11  lb  26349.072 lp  26349.072 glb  26337.225 ub 26398 open 391 lp 2218/54063 rows 976 it 9 842.9s
+node   898 d12  lb  26364.133 lp  26364.133 glb  26337.225 ub 26398 open 399 lp 2112/55328 rows 983 it 23 880.0s
+times: pricing 619.1 master 144.2 cuts 19.9 rmip 9.0 dive 7.3 branch 0.9 switch 0.0 enum 94.9 (label 94.6 in 34 tries, mip 0.3 in 10 solves, 10 nodes closed) total 900.1
+split: cg iters 11161; pricing setup 0.0 pool 87.2/10935 s0 126.8/5269 s1 75.4/4625 exact 323.5/2305 scan 0.6/226; cuts rccsep 17.9/1223 (569 with cuts) src 0.2 rows 1.8
+probes: 0  solve 0.0 (0 iters avg)  purged 177579 repriced 121253 lp cols 2106 pool 55840
+RESULT X-n106-k14 status time_limit lb 26338 ub 26398 published 26362 nodes 506 depth 33 cols 55840 rows 971 rootlp 26307.430 rootlb 26307.430 kmin 14 kmax 15 fleetcap 0 time 900.06s root 3.19s 
+Route #1: 78 19 27 37 79 71 46 66
+Route #2: 7 75 84 9 12 104 1
+Route #3: 56 20 16 10 41 18 86
+Route #4: 39 50 81 6 70 4 98 55
+Route #5: 59 89 30 42 23 3 32 73 35
+Route #6: 62 26 90 24 102 92 52
+Route #7: 25 47 61 80 65 38 95 68
+Route #8: 33 22
+Route #9: 99 21 67 77 83 85 54 13
+Route #10: 49 58 48 2 17 31 40 63 57
+Route #11: 94 64 105 69 91 8 36 88 14
+Route #12: 53 103 101 28 93 97 43 15
+Route #13: 5 45 100 44 76 87 60 96
+Route #14: 82 29 72 34 11 74 51
+Cost 26398

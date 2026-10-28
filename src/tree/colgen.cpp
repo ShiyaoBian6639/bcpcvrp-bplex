@@ -91,6 +91,13 @@ NodeResult solve_node(const Instance &I, const Params &P, Master &M, Pricer &pri
     std::vector<double> pi_sep, y_sep;
     double alpha = P.smoothing_alpha;
     bool misprice = false;
+    // the number of useful LP columns grows with the route length: X-n143-k7
+    // (20 customers per route) stalls at the 20 n floor, X-n153-k22 (7) is
+    // fastest there
+    const int purge_len_factor =
+        P.purge_len_ref > 0 ? std::clamp((int)std::lround((double)I.n / std::max(1, M.khi()) / P.purge_len_ref), 1, 5) : 1;
+    bool center_valid = false; // pi_in comes from an exact pricing (a valid Lagrangian bound)
+    double center_est = -1e300; // before that: best heuristic Lagrangian estimate used as the centre
     R.lb = -1e300;
     bool integer_feasible = false;
     bool pruned = false;
@@ -127,23 +134,30 @@ NodeResult solve_node(const Instance &I, const Params &P, Master &M, Pricer &pri
 
             double tp = now();
             if (R.cg_iters == 1 || (P.purge_every > 0 && R.cg_iters % P.purge_every == 0))
-                M.purge(P.purge_age, P.purge_min_cols_per_cust * I.n);
+                M.purge(P.purge_age, P.purge_min_cols_per_cust * I.n * purge_len_factor);
             pricer.set_duals(pi_sep, M.rows(), y_sep);
             double min_rc = 0;
             std::vector<Route> cols;
             bool exact = false;
             int from_pool = 0;
             double tq = now();
-            auto lap = [&](int what) { double t = now(); R.time_pr[what] += t - tq; R.calls_pr[what]++; tq = t; };
+            auto lap = [&](int what, size_t found = 0) {
+                double t = now();
+                R.time_pr[what] += t - tq;
+                R.calls_pr[what]++;
+                R.hits_pr[what] += found > 0;
+                tq = t;
+            };
             lap(NodeResult::PR_SETUP);
             if (enum_set) {
                 // the subtree's improving solutions only use these routes
                 cols = scan_routes(*enum_set, pricer, P.rc_eps, P.max_cols_per_iter, min_rc);
                 exact = true;
-                lap(NodeResult::PR_SCAN);
+                lap(NodeResult::PR_SCAN, cols.size());
             } else {
+                M.scan_threads = P.scan_threads;
                 from_pool = M.price_pool(pricer, P.rc_eps, P.max_cols_per_iter, R.cg_iters == 1);
-                lap(NodeResult::PR_POOL);
+                lap(NodeResult::PR_POOL, (size_t)from_pool);
                 if (from_pool == 0) {
                     // adaptive stages: near convergence the sparse and the
                     // capped passes mostly come back empty; after
@@ -151,23 +165,36 @@ NodeResult solve_node(const Instance &I, const Params &P, Master &M, Pricer &pri
                     // skipped for the rest of the node
                     if (fail_s0 < P.stage_skip_after) {
                         cols = pricer.price(0, P.max_cols_per_iter, min_rc);
-                        lap(NodeResult::PR_S0);
+                        lap(NodeResult::PR_S0, cols.size());
                         fail_s0 = cols.empty() ? fail_s0 + 1 : 0;
                     }
                     if ((int)cols.size() < P.heur_min_cols && fail_s1 < P.stage_skip_after) {
                         std::vector<Route> more = pricer.price(1, P.max_cols_per_iter, min_rc);
                         fail_s1 = more.empty() ? fail_s1 + 1 : 0;
+                        lap(NodeResult::PR_S1, more.size());
                         if (more.size() > cols.size()) cols.swap(more);
-                        lap(NodeResult::PR_S1);
                     }
                     if (cols.empty()) {
                         cols = pricer.price(2, P.max_cols_per_iter, min_rc);
                         exact = true;
-                        lap(NodeResult::PR_S2);
+                        lap(NodeResult::PR_S2, cols.size());
                     }
                 }
             }
             R.time_pricing += now() - tp;
+            if (!exact && alpha > 0 && !center_valid && from_pool == 0 && !cols.empty()) {
+                // no exact pricing yet (long-route instances can spend the
+                // whole root in the heuristic stages): the duals with the
+                // best heuristic Lagrangian estimate serve as the stability
+                // centre; it is not a bound and is replaced by the first
+                // exact one
+                double est = M.lagrangian_bound(pi_sep, y_sep, min_rc);
+                if (est > center_est) {
+                    center_est = est;
+                    pi_in = pi_sep;
+                    y_in = y_sep;
+                }
+            }
             if (exact) {
                 double lb = M.lagrangian_bound(pi_sep, y_sep, min_rc);
                 R.lb_last = lb;
@@ -176,6 +203,7 @@ NodeResult solve_node(const Instance &I, const Params &P, Master &M, Pricer &pri
                     R.lb = lb;
                     pi_in = pi_sep;
                     y_in = y_sep;
+                    center_valid = true;
                 }
                 // automatic alpha: compare the in-out direction with a
                 // subgradient of the Lagrangian at pi_sep (customer part)

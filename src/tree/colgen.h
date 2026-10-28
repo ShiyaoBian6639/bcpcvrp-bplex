@@ -28,6 +28,7 @@ struct NodeResult {
     enum { PR_SETUP, PR_POOL, PR_S0, PR_S1, PR_S2, PR_SCAN, PR_N };
     double time_pr[PR_N] = {0, 0, 0, 0, 0, 0};
     int calls_pr[PR_N] = {0, 0, 0, 0, 0, 0};
+    int hits_pr[PR_N] = {0, 0, 0, 0, 0, 0}; // calls that returned at least one column
     int sep_calls = 0, sep_hits = 0; // RCC separation calls / calls that found a cut
     bool integral = false;   // an integer feasible solution was read off the LP
     bool fleet_binding = false; // sum lambda == khi

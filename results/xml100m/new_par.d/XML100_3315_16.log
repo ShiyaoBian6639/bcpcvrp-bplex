@@ -1,0 +1,15 @@
+* incumbent 15641 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/xml100/medium/XML100_3315_16.sol cost 13864
+node     0 d0   lb  13812.767 lp  13812.767 glb      0.000 ub 15641 open 0 lp 4014/18789 rows 218 it 1024 23.0s
+node    18 d9   lb  13927.334 lp  13927.334 glb  13814.476 ub 15641 open 9 lp 4032/37345 rows 194 it 22 205.2s
+times: pricing 24.4 master 133.5 cuts 1.0 rmip 5.0 dive 128.2 branch 0.2 switch 0.0 enum 1.8 (label 1.8 in 1 tries, mip 0.0 in 0 solves, 0 nodes closed) total 304.8
+split: cg iters 2166; pricing setup 0.0 pool 9.9/2165/610 s0 2.0/1555/560 s1 2.6/995/691 exact 8.1/304/269 scan 0.0/0/0 (time/calls/with cols); cuts rccsep 0.5/51 (28 with cuts) src 0.1 rows 0.5
+probes: 0  solve 0.0 (0 iters avg)  purged 49524 repriced 12268 lp cols 4105 pool 41351
+RESULT XML100_3315_16 status time_limit lb 13815 ub 15641 published 13864 nodes 15 depth 14 cols 41351 rows 177 rootlp 13812.767 rootlb 13812.767 kmin 6 kmax 7 fleetcap 0 time 304.83s root 22.99s 
+Route #1: 34 10 35 47 30 43 67 98 62 99 52 20 23 91 12 1 36 42 90
+Route #2: 72 25 3 39 82
+Route #3: 13 4 57 19 38 54 70 32 56 79 76 33 41 86 37 83 94 8 97
+Route #4: 11 44 51 18 75 88 74 26 14 68 96 21 77 60 53 63 55 17 50
+Route #5: 22 46 81 45 95 58 2 69 16 92 78 27 61 73 28 6 48 9 49
+Route #6: 93 66 59 85 40 24 5 65 71 7 31 64 15 87 100 89 29 80 84
+Cost 15641

@@ -43,7 +43,11 @@ Pricer::Pricer(const Instance &I, const Params &P) : I_(I), P_(P), nv_(I.nv())
     removed_.assign(nv_, 0);
     inC_.assign(nv_, {});
     memmask_.assign((size_t)nv_ * 2, 0);
-    at_.assign(nv_, {});
+    nb_ = std::max(1, std::min(P.load_buckets, I.capacity + 1));
+    bstep_ = (I.capacity + 1 + nb_ - 1) / nb_;
+    nb_ = I.capacity / bstep_ + 1;
+    at_.assign((size_t)nv_ * nb_, {});
+    nalive_.assign(nv_, 0);
 }
 
 void Pricer::set_duals(const std::vector<double> &pi, const std::vector<RobustRow> &rows,
@@ -95,6 +99,11 @@ void Pricer::set_forbidden(const std::vector<std::pair<int, int>> &edges)
 // load exactly q and no 2-cycle; then prefix minima over the load.
 void Pricer::compute_qbound()
 {
+    // Pull form: the entry (nq, w) is the minimum over the predecessors v of
+    // row q = nq - demand[w], a contiguous row, so the inner loop vectorizes.
+    // val[v] is the candidate through v (second best of v when v's best
+    // predecessor is w, which keeps the walk 2-cycle-free); the best two
+    // candidates with different predecessors become (b1, p1) and b2.
     const int n = I_.n, Q = I_.capacity;
     const double INF = 1e300;
     const size_t stride = (size_t)Q + 1;
@@ -109,31 +118,35 @@ void Pricer::compute_qbound()
             b1[(size_t)I_.demand[v] * nv_ + v] = arc_rc(0, v);
             p1[(size_t)I_.demand[v] * nv_ + v] = 0;
         }
-    for (int q = 1; q <= Q; q++) {
-        const size_t row = (size_t)q * nv_;
-        for (int v : all) {
-            const double c1 = b1[row + v];
-            if (c1 >= INF) continue;
-            const double c2 = b2[row + v];
-            const int pv = p1[row + v];
-            const char *fb = &forbid_[(size_t)v * nv_];
-            const double *rcv = &rc_[(size_t)v * nv_];
-            for (int w : all) {
-                if (w == v || fb[w]) continue;
-                const int nq = q + I_.demand[w];
-                if (nq > Q) continue;
-                const double c = (pv == w) ? c2 : c1;
-                if (c >= INF) continue;
-                const double val = c + rcv[w];
-                const size_t t = (size_t)nq * nv_ + w;
-                if (val < b1[t]) {
-                    if (p1[t] != v) b2[t] = b1[t];
-                    b1[t] = val;
-                    p1[t] = v;
-                } else if (val < b2[t] && p1[t] != v) {
-                    b2[t] = val;
-                }
+    std::vector<double> val(nv_);
+    std::vector<char> blocked((size_t)nv_ * nv_, 0); // blocked[w][v]: v -> w not allowed
+    for (int w = 1; w <= n; w++)
+        for (int v = 0; v <= n; v++)
+            blocked[(size_t)w * nv_ + v] = (v == w || v == 0 || removed_[v] || forbidden(v, w)) ? 1 : 0;
+    for (int nq = 1; nq <= Q; nq++) {
+        for (int w : all) {
+            const int q = nq - I_.demand[w];
+            if (q <= 0) continue; // q == 0: only the depot arc, seeded above
+            const double *r1 = &b1[(size_t)q * nv_], *r2 = &b2[(size_t)q * nv_];
+            const int *pp = &p1[(size_t)q * nv_];
+            const double *rcw = &rc_[(size_t)w * nv_]; // rc is symmetric
+            const char *bl = &blocked[(size_t)w * nv_];
+            double *vp = val.data();
+            for (int v = 0; v <= n; v++) {
+                const double c = (pp[v] == w) ? r2[v] : r1[v];
+                vp[v] = bl[v] ? INF : c + rcw[v];
             }
+            const size_t t = (size_t)nq * nv_ + w;
+            double best = b1[t], second = b2[t];
+            int bv = p1[t];
+            for (int v = 1; v <= n; v++) {
+                const double x = vp[v];
+                if (x < best) { second = best; best = x; bv = v; }
+                else if (x < second) second = x;
+            }
+            b1[t] = best;
+            b2[t] = second;
+            p1[t] = bv;
         }
     }
     for (int v : all) {
@@ -181,40 +194,61 @@ void Pricer::src_enter(Label &N, int w) const
 
 bool Pricer::insert(Label L)
 {
-    auto &list = at_[L.v];
-    for (int idx : list) {
-        const Label &o = arena_[idx];
-        if (o.dead) continue;
-        if (o.load <= L.load && o.time <= L.time && (o.mem & ~L.mem) == 0) {
-            double orc = o.rc;
-            if (nsrc_) orc += penalty(o.s[0] & ~L.s[0], o.s[1] & ~L.s[1]);
-            if (orc <= L.rc + 1e-9) return false;
+    const int b = L.load / bstep_;
+    std::vector<int> *bk = &at_[(size_t)L.v * nb_];
+    // 1. dominated by an existing label? Only buckets <= b, and within a
+    //    bucket only labels with rc <= L.rc (lists sorted by rc; the SRC
+    //    penalty only adds to the dominating label's rc).
+    for (int bb = 0; bb <= b; bb++)
+        for (int idx : bk[bb]) {
+            const Label &o = arena_[idx];
+            if (o.rc > L.rc + 1e-9) break;
+            if (o.dead) continue;
+            if (o.load <= L.load && o.time <= L.time && (relax_dom_ || (o.mem & ~L.mem) == 0)) {
+                double orc = o.rc;
+                if (nsrc_ && !relax_dom_) orc += penalty(o.s[0] & ~L.s[0], o.s[1] & ~L.s[1]);
+                if (orc <= L.rc + 1e-9) return false;
+            }
         }
-    }
-    size_t w = 0;
-    for (size_t k = 0; k < list.size(); k++) {
-        Label &o = arena_[list[k]];
-        if (o.dead) continue;
-        if (L.load <= o.load && L.time <= o.time && (L.mem & ~o.mem) == 0) {
-            double lrc = L.rc;
-            if (nsrc_) lrc += penalty(L.s[0] & ~o.s[0], L.s[1] & ~o.s[1]);
-            if (lrc <= o.rc) { o.dead = true; continue; }
+    // 2. drop the labels L dominates: buckets >= b, rc >= L.rc
+    for (int bb = b; bb < nb_; bb++) {
+        std::vector<int> &list = bk[bb];
+        size_t w = 0;
+        for (size_t k = 0; k < list.size(); k++) {
+            Label &o = arena_[list[k]];
+            if (o.dead) continue;
+            if (o.rc >= L.rc && L.load <= o.load && L.time <= o.time && (relax_dom_ || (L.mem & ~o.mem) == 0)) {
+                double lrc = L.rc;
+                if (nsrc_ && !relax_dom_) lrc += penalty(L.s[0] & ~o.s[0], L.s[1] & ~o.s[1]);
+                if (lrc <= o.rc) {
+                    o.dead = true;
+                    nalive_[L.v]--;
+                    continue;
+                }
+            }
+            list[w++] = list[k];
         }
-        list[w++] = list[k];
+        list.resize(w);
     }
-    list.resize(w);
-    if (cap_ > 0 && (int)list.size() >= cap_) {
-        // heuristic pricing: bounded label count per vertex, keep the best by rc
-        size_t worst = 0;
-        for (size_t k = 1; k < list.size(); k++)
-            if (arena_[list[k]].rc > arena_[list[worst]].rc) worst = k;
-        if (arena_[list[worst]].rc <= L.rc) return false;
-        arena_[list[worst]].dead = true;
-        list[worst] = list.back();
-        list.pop_back();
+    if (cap_ > 0 && nalive_[L.v] >= cap_) {
+        // heuristic pricing: bounded label count per vertex, keep the best by
+        // rc (the worst of a bucket is its last entry)
+        int wb = -1;
+        double wr = -1e300;
+        for (int bb = 0; bb < nb_; bb++)
+            if (!bk[bb].empty() && arena_[bk[bb].back()].rc > wr) { wr = arena_[bk[bb].back()].rc; wb = bb; }
+        if (wb < 0 || wr <= L.rc) return false;
+        arena_[bk[wb].back()].dead = true;
+        bk[wb].pop_back();
+        nalive_[L.v]--;
     }
     arena_.push_back(L);
-    list.push_back((int)arena_.size() - 1);
+    const int id = (int)arena_.size() - 1;
+    std::vector<int> &list = bk[b];
+    auto pos = std::upper_bound(list.begin(), list.end(), L.rc,
+                                [&](double r, int idx) { return r < arena_[idx].rc; });
+    list.insert(pos, id);
+    nalive_[L.v]++;
     return true;
 }
 
@@ -236,6 +270,7 @@ void Pricer::label_pass(bool heuristic, int extend_limit, int cap)
     cap_ = cap;
     arena_.clear();
     for (auto &l : at_) l.clear();
+    std::fill(nalive_.begin(), nalive_.end(), 0);
     std::vector<std::vector<int>> by_load(Q + 1);
     for (int j = 1; j <= n; j++) {
         if (I_.demand[j] > Q || forbidden(0, j) || removed_[j]) continue;
@@ -310,19 +345,31 @@ std::vector<Route> Pricer::price(int stage, int max_routes, double &min_rc)
 {
     // completion-bound pruning from stage qbound_stage on; the bound is
     // computed once per set of duals (O(Q n^2))
-    if (stage >= P_.qbound_stage && qb_dirty_) compute_qbound();
-    prune_thr_ = (!qb_dirty_ && stage >= P_.qbound_stage) ? -1e-9 : 1e300;
+    // auto (-1): from stage 0 unless the O(Q n^2) DP is expensive relative
+    // to a capped heuristic pass (X-n143-k7: Q 1190, 70 ms per call), then
+    // from stage 1 on
+    int qstage = P_.qbound_stage;
+    if (qstage < 0) qstage = (double)(I_.capacity + 1) * I_.n * I_.n <= P_.qbound_auto_work ? 0 : 1;
+    if (stage >= qstage && qb_dirty_) compute_qbound();
+    prune_thr_ = (!qb_dirty_ && stage >= qstage) ? -1e-9 : 1e300;
     prune_vpay_ = nullptr;
     std::vector<Route> out;
+    // heuristic stages (VRPSolver's "light"/"heavy" pricing): the ng rules
+    // still shape the extensions, but dominance ignores the ng memory and
+    // the SRC states, so few labels survive and the pass is cheap; every
+    // route found is a valid ng-route with its exact reduced cost
+    relax_dom_ = P_.heur_relax != 0;
     if (stage == 0) { stage_cap_ = P_.heur_label_cap; out = price_mono(true, max_routes, min_rc); }
-    else if (stage == 1) { stage_cap_ = P_.heur_label_cap; out = price_mono(false, max_routes, min_rc); }
+    else if (stage == 1) { stage_cap_ = P_.heur_label_cap1; out = price_mono(false, max_routes, min_rc); }
     else {
+        relax_dom_ = false;
         stage_cap_ = 0;
         // the bidirectional join relies on symmetric half-paths: not with time windows
         out = (P_.bidirectional && !I_.has_tw) ? price_bidir(false, max_routes, min_rc)
                                                 : price_mono(false, max_routes, min_rc);
     }
     prune_thr_ = 1e300;
+    relax_dom_ = false;
     return out;
 }
 
@@ -335,13 +382,13 @@ std::vector<Route> Pricer::price_mono(bool heuristic, int max_routes, double &mi
     const double eps = P_.rc_eps;
     for (int v = 1; v <= I_.n; v++) {
         if (forbidden(v, 0)) continue;
-        for (int idx : at_[v]) {
+        each_label(v, [&](int idx) {
             const Label &L = arena_[idx];
-            if (L.dead || !can_return(v, L.time)) continue;
+            if (L.dead || !can_return(v, L.time)) return;
             double total = L.rc + arc_rc(v, 0);
             if (total < min_rc) min_rc = total;
             if (total < -eps) cands.push_back({total, idx});
-        }
+        });
     }
     std::sort(cands.begin(), cands.end(), [](const Cand &a, const Cand &b) { return a.rc < b.rc; });
     std::vector<Route> out;
@@ -371,8 +418,9 @@ std::vector<Route> Pricer::price_bidir(bool heuristic, int max_routes, double &m
     std::vector<std::vector<int>> lab(nv_);
     std::vector<std::vector<double>> pmin(nv_);
     for (int v = 1; v <= n; v++) {
-        for (int idx : at_[v])
+        each_label(v, [&](int idx) {
             if (!arena_[idx].dead) lab[v].push_back(idx);
+        });
         std::sort(lab[v].begin(), lab[v].end(), [&](int a, int b) { return arena_[a].load < arena_[b].load; });
         pmin[v].resize(lab[v].size());
         double m = 1e300;
@@ -481,10 +529,10 @@ bool Pricer::enumerate(double gap, size_t max_labels, size_t max_routes, std::ve
     std::vector<std::vector<double>> bound(nv_);
     for (int v = 1; v <= n; v++) {
         bound[v].assign(Q + 1, 1e300);
-        for (int idx : at_[v]) {
+        each_label(v, [&](int idx) {
             const Label &L = arena_[idx];
             if (!L.dead && L.rc < bound[v][L.load]) bound[v][L.load] = L.rc;
-        }
+        });
         for (int L = 1; L <= Q; L++) bound[v][L] = std::min(bound[v][L], bound[v][L - 1]);
     }
     auto completion = [&](int v, int q) {
@@ -597,10 +645,10 @@ void Pricer::debug_trace_route(const Route &r, double gap)
     std::vector<std::vector<double>> bound(nv_);
     for (int v = 1; v <= n; v++) {
         bound[v].assign(Q + 1, 1e300);
-        for (int idx : at_[v]) {
+        each_label(v, [&](int idx) {
             const Label &L = arena_[idx];
             if (!L.dead && L.rc < bound[v][L.load]) bound[v][L.load] = L.rc;
-        }
+        });
         for (int L = 1; L <= Q; L++) bound[v][L] = std::min(bound[v][L], bound[v][L - 1]);
     }
     // prefix reduced costs (with SRC) and suffix costs (route order)
@@ -680,17 +728,16 @@ void Pricer::debug_trace_route(const Route &r, double gap)
                     }
                     G = N;
                 }
-                int dom = -1;
-                for (int idx : at_[G.v]) {
+                int dom = -1, alive = 0;
+                each_label(G.v, [&](int idx) {
                     const Label &o = arena_[idx];
-                    if (o.dead) continue;
-                    if (o.load <= G.load && (o.mem & ~G.mem) == 0) {
+                    if (o.dead) return;
+                    alive++;
+                    if (dom < 0 && o.load <= G.load && (o.mem & ~G.mem) == 0) {
                         double orc = o.rc + (nsrc_ ? penalty(o.s[0] & ~G.s[0], o.s[1] & ~G.s[1]) : 0.0);
-                        if (orc <= G.rc + 1e-9) { dom = idx; break; }
+                        if (orc <= G.rc + 1e-9) dom = idx;
                     }
-                }
-                int alive = 0;
-                for (int idx : at_[G.v]) alive += !arena_[idx].dead;
+                });
                 std::printf("  TRACE     reversed suffix at %3d: load %4d rc %9.4f mem %04x s %llx; alive here %d, min rc (load<=%d) %.4f; ",
                             G.v, G.load, G.rc, G.mem, (unsigned long long)G.s[0], alive, G.load, bound[G.v][G.load]);
                 if (dom >= 0)

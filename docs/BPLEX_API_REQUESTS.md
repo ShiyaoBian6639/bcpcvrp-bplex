@@ -374,6 +374,34 @@ matter for the standalone split; R2-1 is used from milestone 3.
   few pivots after adding columns; the node LP is 20-50 ms with 2-4k columns
   and 300-1500 rows, which is now the dominant tree cost on n = 200.
 
+## Bug report 2026-10-28: warm dual simplex stall on a 2.1k x 254 master LP
+
+Reproducible with the LP trace of XML100_1113_07 (`results/traces/xml1113.trace`,
+14 MB, 2856 solves; replay with `build/cvrpbcp-Release/lpreplay <trace> -v`):
+solve 2854, an LP with ~2100 columns and 254 rows that the warm dual simplex
+reaches after a column deletion/addition step like the 2853 before it (each
+taking 15 ms on average), does not finish: recorded 99 s / 51204 iterations
+until the time limit, replayed 99 s / 59364 iterations, status TIME_LIMIT.
+The LP itself is harmless: `results/traces/xml1113_stall.mps` is that model
+(dumped when the stall guard cut the solve after 2 s), a cold solve of it is
+instant. The same run with the old build took 4 s in total, so the stall is
+specific to this warm-start path (degenerate stalling or cycling of the dual
+with the DSE weights it inherited).
+
+Second observation: the first version of our guard retried the cut solve with
+`method = BPLEX_METHOD_PRIMAL` and `time_limit` = remaining budget (150 s).
+That warm primal solve ran for more than 12 minutes at 100 % CPU without
+returning (killed), i.e. the primal warm path does not honour `time_limit`
+(or loops). The guard now restarts the dual from the all-slack basis
+(`bplex_set_basis`) instead.
+
+Asked from bplex: (1) anti-stalling in the warm dual (perturbation /
+bound shifting, or a cycling detector that re-factorizes and perturbs);
+(2) `time_limit` and `iter_limit` honoured by the warm primal simplex too;
+(3) optionally a `bplex_get_info("ncols")`/`("nrows")`. The trace format is
+documented in `src/master/lptrace.h`; `tools/lpreplay.c` also has a CPLEX
+backend for a like-for-like comparison once a Windows C compiler is at hand.
+
 ## Suggested acceptance tests on the bplex side
 
 * Load a 3x3 LP, solve, add one column with negative reduced cost, solve

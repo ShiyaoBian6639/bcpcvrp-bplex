@@ -1,0 +1,46 @@
+debug: loaded solution ../xltw/benchmarks/CVRP/X-n153-k22.sol cost 21220
+node     0 d0   lb  21107.825 lp  21107.960 glb      0.000 ub - open 0 lp 3127/13678 rows 322 it 439 10.1s
+* incumbent 22657 from dive (50.5s)
+node    18 d9   lb  21160.332 lp  21160.332 glb  21110.102 ub 22657 open 9 lp 3057/28164 rows 205 it 15 66.3s
+node    38 d19  lb  21674.528 lp  21674.528 glb  21110.102 ub 22657 open 19 lp 3070/32817 rows 272 it 5 81.8s
+node    58 d29  lb  21747.847 lp  21747.847 glb  21110.102 ub 22657 open 29 lp 3197/36058 rows 206 it 8 93.2s
+node    78 d39  lb  21831.003 lp  21831.084 glb  21110.102 ub 22657 open 39 lp 3053/40445 rows 234 it 18 105.9s
+* incumbent 21891 from node LP (120.8s)
+node    96 d2   lb  21105.418 lp  21105.418 glb  21110.102 ub 21891 open 47 lp 3042/44552 rows 446 it 12 127.6s
+node   116 d12  lb  21192.011 lp  21192.011 glb  21110.102 ub 21891 open 57 lp 3040/46373 rows 296 it 11 144.9s
+node   136 d22  lb  21272.018 lp  21272.367 glb  21110.102 ub 21891 open 67 lp 3111/48209 rows 354 it 39 160.9s
+* incumbent 21766 from node LP (185.2s)
+node   154 d3   lb  21174.520 lp  21174.957 glb  21110.102 ub 21766 open 75 lp 3063/53710 rows 486 it 35 194.3s
+node   174 d13  lb  21240.120 lp  21240.305 glb  21110.102 ub 21766 open 85 lp 3105/55214 rows 338 it 27 211.0s
+* incumbent 21276 from node LP (223.1s)
+node   192 d4   lb  21165.850 lp  21165.850 glb  21112.776 ub 21276 open 93 lp 3046/57196 rows 509 it 37 235.3s
+node   212 d14  lb  21272.208 lp  21272.391 glb  21112.776 ub 21276 open 103 lp 3077/58653 rows 374 it 27 268.1s
+node   230 d10  lb  21253.099 lp  21253.323 glb  21114.032 ub 21276 open 111 lp 3051/60408 rows 395 it 22 296.9s
+times: pricing 140.5 master 71.0 cuts 14.5 rmip 5.1 dive 40.4 branch 0.7 switch 0.1 enum 17.1 (label 17.1 in 6 tries, mip 0.0 in 0 solves, 0 nodes closed) total 300.0
+split: cg iters 4894; pricing setup 0.0 pool 43.0/4894/2160 s0 27.9/2734/469 s1 22.5/2265/1262 exact 42.6/1003/661 scan 0.0/0/0 (time/calls/with cols); cuts rccsep 11.2/430 (254 with cuts) src 0.2 rows 3.1
+probes: 0  solve 0.0 (0 iters avg)  purged 111289 repriced 53247 lp cols 3055 pool 60823
+RESULT X-n153-k22 status time_limit lb 21115 ub 21276 published 21220 nodes 121 depth 47 cols 60823 rows 363 rootlp 21107.960 rootlb 21107.825 kmin 22 kmax 23 fleetcap 1 time 300.01s root 10.11s 
+Route #1: 21
+Route #2: 8 83
+Route #3: 13 34
+Route #4: 9 29
+Route #5: 4 6
+Route #6: 5 15 111 131 65
+Route #7: 26 12 121
+Route #8: 56 132 96 22 3
+Route #9: 33 63 68 138 2 58 69 84 71
+Route #10: 36 7 11
+Route #11: 117 45 148 98 50 85 76 114 18 97 118 151 43 127 81 37
+Route #12: 53 57 104 64 82 25 95
+Route #13: 74 105 110 14 39
+Route #14: 120 78 101 62 27 32 67 35 106 125 147
+Route #15: 116 133 126 119 91 137 100 70 59 122 51 10 152 143
+Route #16: 17 140 31
+Route #17: 129 49 113 123 136 79 24 80 61 107
+Route #18: 48 77 135 20 44 54 142 73 128 90
+Route #19: 23 60 86 92 150 99 141 149 87 102
+Route #20: 124 134 94 108 46 19 72 103 52
+Route #21: 42 115 75 38 112 55 93 16 146 130
+Route #22: 139 89 109 28 30
+Route #23: 88 41 144 66 145 1 40 47
+Cost 21276

@@ -1,0 +1,30 @@
+* incumbent 15553 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/xml100/medium/XML100_1113_07.sol cost 14550
+node     0 d0   lb  14486.519 lp  14486.519 glb      0.000 ub 15553 open 0 lp 2036/5453 rows 237 it 283 3.8s
+* incumbent 14622 from dive (12.3s)
+node    14 d3   lb  14613.378 lp  14613.378 glb  14503.108 ub 14622 open 5 lp 2002/10374 rows 173 it 11 30.5s
+node    32 d11  lb  14579.300 lp  14579.505 glb  14503.630 ub 14622 open 13 lp 2089/11810 rows 177 it 25 41.0s
+node    50 d9   lb  14606.045 lp  14606.045 glb  14506.241 ub 14622 open 21 lp 2009/13909 rows 246 it 32 57.8s
+* incumbent 14621 from node LP (59.2s)
+node    19 d5   lb  14522.606 lp  14522.848 glb  14508.289 ub 14621 open 27 lp 2037/16102 rows 235 it 46 73.9s
+* incumbent 14611 from node LP (84.3s)
+node    84 d7   lb  14558.401 lp  14558.800 glb  14509.157 ub 14611 open 35 lp 2008/17795 rows 265 it 12 91.3s
+* incumbent 14583 from node LP (94.9s)
+node    98 d5   lb  14549.262 lp  14550.000 glb  14522.606 ub 14583 open 39 lp 2022/19430 rows 264 it 24 113.1s
+* incumbent 14550 from node LP (113.1s)
+node    97 d5   lb  14549.864 lp  14549.864 glb  14530.612 ub 14550 open 33 lp 2006/20132 rows 241 it 11 131.5s
+times: pricing 46.5 master 216.9 cuts 3.6 rmip 7.0 dive 8.5 branch 0.2 switch 0.0 enum 15.4 (label 15.2 in 12 tries, mip 0.2 in 3 solves, 3 nodes closed) total 302.6
+split: cg iters 2497; pricing setup 0.0 pool 23.9/2444/1205 s0 1.0/1239/201 s1 2.2/1038/404 exact 17.6/634/465 scan 0.0/52/46 (time/calls/with cols); cuts rccsep 2.9/202 (120 with cuts) src 0.0 rows 0.6
+probes: 0  solve 0.0 (0 iters avg)  purged 55045 repriced 35448 lp cols 2225 pool 20909
+RESULT XML100_1113_07 status time_limit lb 14546 ub 14550 published 14550 nodes 78 depth 13 cols 20909 rows 254 rootlp 14486.519 rootlb 14486.519 kmin 10 kmax 11 fleetcap 0 time 302.64s root 3.77s 
+Route #1: 7 51 88 28 24 27 21 94 91 52
+Route #2: 42 72 50 74 19 99 59 11 6 87
+Route #3: 47 36 76 95 14 83 30 22 71 39
+Route #4: 79 78 60 68 23 26 81 8 33 16
+Route #5: 3 90 86 54 96 55 5 80 56 15
+Route #6: 53 18 35 45 70 89 69 9 98 49
+Route #7: 57 93 40 44 20 41 1 61 82 58
+Route #8: 29 62 63 64 31 34 13 100 25 97
+Route #9: 67 65 2 4 92 32 37 10 17 12
+Route #10: 48 66 84 77 38 46 85 75 43 73
+Cost 14550

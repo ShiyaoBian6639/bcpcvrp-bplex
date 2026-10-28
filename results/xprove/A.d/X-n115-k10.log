@@ -1,0 +1,38 @@
+* incumbent 13487 from Clarke-Wright savings (0.0s)
+debug: loaded solution ../xltw/benchmarks/CVRP/X-n115-k10.sol cost 12747
+node     0 d0   lb  12659.696 lp  12659.739 glb      0.000 ub 13487 open 0 lp 2300/22066 rows 352 it 1345 20.3s
+* incumbent 12968 from dive (38.1s)
+node    18 d9   lb  12720.896 lp  12720.896 glb  12659.736 ub 12968 open 9 lp 2402/30720 rows 177 it 19 72.9s
+node    36 d2   lb  12665.957 lp  12665.957 glb  12661.343 ub 12968 open 17 lp 2295/39049 rows 328 it 24 134.7s
+node    56 d12  lb  12840.914 lp  12840.914 glb  12661.343 ub 12968 open 27 lp 2280/43375 rows 273 it 30 179.9s
+* incumbent 12850 from node LP (180.5s)
+node    74 d10  lb  12812.490 lp  12812.490 glb  12661.518 ub 12850 open 35 lp 2280/46291 rows 256 it 20 211.6s
+node    92 d8   lb  12749.823 lp  12750.000 glb  12665.957 ub 12850 open 43 lp 2292/50403 rows 327 it 82 281.7s
+* incumbent 12750 from node LP (281.7s)
+node     7 d4   lb  12702.240 lp  12702.719 glb  12675.764 ub 12750 open 47 lp 2329/53612 rows 323 it 43 358.4s
+node   122 d8   lb  12748.000 lp  12748.000 glb  12681.141 ub 12750 open 53 lp 2294/55989 rows 351 it 24 437.9s
+* incumbent 12748 from node LP (437.9s)
+node   136 d7   lb  12735.639 lp  12735.713 glb  12693.560 ub 12748 open 57 lp 2321/57699 rows 304 it 18 490.5s
+node   101 d4   lb  12714.354 lp  12714.354 glb  12699.022 ub 12748 open 61 lp 2344/59149 rows 399 it 58 538.3s
+* incumbent 12747 from enumeration MIP (589.6s)
+node    93 d4   lb  12732.454 lp  12732.993 glb  12706.018 ub 12747 open 63 lp 2346/61572 rows 399 it 55 597.3s
+node   131 d6   lb  12709.290 lp  12709.290 glb  12710.171 ub 12747 open 65 lp 2299/62880 rows 377 it 25 641.8s
+node   190 d9   lb  12737.827 lp  12737.827 glb  12710.804 ub 12747 open 71 lp 2284/64055 rows 339 it 12 681.1s
+node   202 d8   lb  12744.013 lp  12744.013 glb  12714.354 ub 12747 open 73 lp 2294/65864 rows 333 it 23 739.9s
+node   216 d9   lb  12747.500 lp  12747.500 glb  12715.246 ub 12747 open 77 lp 2400/67638 rows 384 it 4 807.5s
+node   226 d7   lb  12728.481 lp  12728.764 glb  12717.350 ub 12747 open 77 lp 2328/70361 rows 476 it 38 891.7s
+times: pricing 665.9 master 151.8 cuts 6.9 rmip 5.0 dive 17.8 branch 0.4 switch 0.0 enum 46.3 (label 46.2 in 18 tries, mip 0.1 in 3 solves, 3 nodes closed) total 900.0
+split: cg iters 8166; pricing setup 0.0 pool 170.2/8103 s0 59.9/3617 s1 208.8/2691 exact 222.2/1039 scan 0.0/63; cuts rccsep 5.1/437 (263 with cuts) src 0.2 rows 1.5
+probes: 0  solve 0.0 (0 iters avg)  purged 187521 repriced 118354 lp cols 2430 pool 70771
+RESULT X-n115-k10 status time_limit lb 12718 ub 12747 published 12747 nodes 152 depth 17 cols 70771 rows 311 rootlp 12659.739 rootlb 12659.696 kmin 10 kmax 11 fleetcap 0 time 900.04s root 20.31s 
+Route #1: 10
+Route #2: 50 29 53 78 9 54 114 30 44 27 105 88 82 21 52
+Route #3: 13 70 56 31 11 81 33 61 103 69
+Route #4: 46 26 34 98 37 90 39 67 40 43 68 14 8 83 75 84 112 110 111
+Route #5: 15 32 3 93 18 109 47 79 49 99 35 42 59
+Route #6: 36 65 23 22 96 45 12 113 58 77 38 97 80 55 76 71 24 102 72
+Route #7: 85 74 1 7 63 64
+Route #8: 6 5 16
+Route #9: 28 100 62 94 20 101 4 92 57 107 95
+Route #10: 104 41 91 2 25 51 19 108 48 60 86 87 73 106 66 17 89
+Cost 12747

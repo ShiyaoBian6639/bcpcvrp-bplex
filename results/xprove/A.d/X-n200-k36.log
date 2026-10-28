@@ -1,0 +1,10 @@
+* incumbent 61167 from Clarke-Wright savings (0.0s)
+debug: loaded solution ../xltw/benchmarks/CVRP/X-n200-k36.sol cost 58578
+node     0 d0   lb  58423.171 lp  58423.171 glb      0.000 ub 61167 open 0 lp 3980/7022 rows 333 it 220 23.6s
+* incumbent 58911 from dive (51.8s)
+node    18 d9   lb  58472.373 lp  58472.373 glb  58427.150 ub 58911 open 9 lp 3995/11436 rows 235 it 18 80.8s
+node    38 d19  lb  58538.336 lp  58538.468 glb  58427.150 ub 58911 open 19 lp 4019/11907 rows 239 it 9 94.2s
+node    58 d29  lb  58615.413 lp  58615.413 glb  58427.150 ub 58911 open 29 lp 4054/12903 rows 259 it 17 112.4s
+node    78 d39  lb  58734.763 lp  58734.763 glb  58427.150 ub 58911 open 39 lp 3980/14333 rows 265 it 10 134.9s
+node    98 d49  lb  58830.799 lp  58830.799 glb  58427.150 ub 58911 open 49 lp 4031/15413 rows 289 it 14 153.7s
+node   118 d9   lb  58481.278 lp  58481.278 glb  58427.150 ub 58911 open 59 lp 4016/15917 rows 296 it 8 170.5s

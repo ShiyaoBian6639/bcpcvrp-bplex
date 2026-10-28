@@ -19,6 +19,7 @@ endif()
 option(CVRPBCP_SANITIZE "Build with ASan/UBSan" OFF)
 
 find_package(Threads REQUIRED)
+find_package(OpenMP)
 
 # ---- bplex (installed CMake package: target bplex::bplex) ----
 find_package(bplex 0.2 CONFIG REQUIRED)
@@ -36,6 +37,13 @@ add_library(cvrpbcp STATIC ${CVRPBCP_SRC})
 target_include_directories(cvrpbcp PUBLIC "${CMAKE_SOURCE_DIR}/src")
 target_link_libraries(cvrpbcp PUBLIC bplex::bplex cvrpsep)
 target_compile_options(cvrpbcp PRIVATE -Wall -Wextra -Wpedantic)
+if(OpenMP_CXX_FOUND)
+  target_link_libraries(cvrpbcp PRIVATE OpenMP::OpenMP_CXX)
+endif()
+option(CVRPBCP_NATIVE "compile cvrpbcp for the build machine's CPU (-march=native)" ON)
+if(CVRPBCP_NATIVE)
+  target_compile_options(cvrpbcp PRIVATE -march=native)
+endif()
 if(CVRPBCP_SANITIZE)
   target_compile_options(cvrpbcp PUBLIC -fsanitize=address,undefined -fno-omit-frame-pointer)
   target_link_options(cvrpbcp PUBLIC -fsanitize=address,undefined)
@@ -43,6 +51,10 @@ endif()
 
 # ---- executable ----
 add_executable(cvrpbcp_cli src/app/main.cpp)
+
+# LP trace replay (bplex backend; see tools/lpreplay.c for the CPLEX build)
+add_executable(lpreplay tools/lpreplay.c)
+target_link_libraries(lpreplay PRIVATE bplex::bplex m)
 target_link_libraries(cvrpbcp_cli PRIVATE cvrpbcp)
 set_target_properties(cvrpbcp_cli PROPERTIES OUTPUT_NAME cvrpbcp)
 

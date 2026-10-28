@@ -27,6 +27,9 @@
 #include "instance/instance.h"
 
 #include <cstdint>
+#include "master/lptrace.h"
+
+#include <memory>
 #include <unordered_map>
 #include <vector>
 
@@ -66,6 +69,7 @@ public:
     int khi() const { return khi_; }
     int nroutes() const { return (int)routes_.size(); } // pool size
     int nlpcols() const { return nlp_routes_; }          // routes in the LP
+    int scan_threads = 1;                                 // OpenMP threads for price_pool
     const Route &route(int r) const { return routes_[r]; }
     const std::vector<RobustRow> &rows() const { return rows_; } // position order
     const RobustRow &row_by_id(int id) const { return rows_[pos_[id]]; }
@@ -116,6 +120,27 @@ public:
     void write_mps(const std::string &path) const;
 
 private:
+    // every LP operation goes through these thin wrappers, which also feed
+    // the optional LP trace (CVRPBCP_LPTRACE=<file>, see lptrace.h)
+    int bp_load(int ncols, int nrows, const double *obj, const double *lo, const double *up, const double *rlo,
+                const double *rup, const int *cs, const int *ri, const double *v);
+    int bp_add_cols(int n, const double *obj, const double *lo, const double *up, const int *cs, const int *ri,
+                    const double *v);
+    int bp_add_rows(int n, const double *lo, const double *up, const int *rs, const int *ci, const double *v);
+    int bp_del_cols(int n, const int *idx);
+    int bp_del_rows(int n, const int *idx);
+    int bp_chg_col(int j, double lo, double up);
+    int bp_chg_row(int i, double lo, double up);
+    int bp_chg_type(int j, int is_integer);
+    void bp_param(const char *name, double value);
+    void bp_slack_basis(); // all columns at their lower bound, all slacks basic
+    int bp_solve(int kind); // 0 LP, 1 MIP, 2 probe; records status/objective/iterations/time
+    std::unique_ptr<LpTrace> trace_;
+    double lp_time_sum_ = 0; // warm LP solve statistics for the stall guard
+    long lp_solves_ = 0;
+  public:
+    int lp_stalls = 0;       // warm solves cut off and retried
+  private:
     const Instance &I_;
     const Params &P_;
     int klo_, khi_;
@@ -123,6 +148,7 @@ private:
     double bigM_;
     bplex_s *bp_ = nullptr;
     std::vector<Route> routes_;    // pool
+    std::vector<int> pool_off_{0}, pool_seq_; // the same sequences, flat (CSR) for the scan
     std::unordered_multimap<uint64_t, int> route_index_; // sequence hash -> pool index
     std::vector<int> lp_route_;    // dynamic column j -> pool route, -1 for a row artificial
     std::vector<int> lp_art_row_;  // dynamic column j -> row id of its artificial, -1 for routes

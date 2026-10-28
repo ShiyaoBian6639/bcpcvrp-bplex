@@ -1,0 +1,5 @@
+* incumbent 18237 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/xml100/medium/XML100_3314_15.sol cost 16728
+node     0 d0   lb  16700.617 lp  16700.617 glb      0.000 ub 18237 open 0 lp 2000/13106 rows 337 it 810 15.4s
+  LP stall: warm solve cut after 2.0s (average 0.014s, 2386 cols, 438 rows); restarting from the slack basis
+node    18 d9   lb  16764.097 lp  16764.452 glb  16700.617 ub 18237 open 9 lp 2016/19693 rows 191 it 41 175.9s

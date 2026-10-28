@@ -6,6 +6,7 @@
 # instance's .sol loaded as the known solution when present (DEBUGSOL=0
 # disables that). One JSON line per run goes to <prefix>.jsonl, per-instance
 # logs to <prefix>.d/<name>.log, DEBUG lines are counted at the end.
+# UBSOL=1 passes the .sol cost as --ub (prove-optimality protocol).
 # The binary is copied to <prefix>.bin first (BIN=... overrides the source).
 set -u
 SET=${1:?instance dir or list}; TL=${2:?time limit}; OUT=${3:?output prefix}; shift 3
@@ -24,7 +25,14 @@ run_one() {
   name=$(basename "$f" .vrp)
   sol="${f%.vrp}.sol"
   if [ "$DEBUGSOL" = 1 ] && [ -f "$sol" ]; then export CVRPBCP_DEBUGSOL="$sol"; else unset CVRPBCP_DEBUGSOL; fi
-  timeout $((TL + 60)) "$B" solve "$f" --time "$TL" --log 1 --jsonl "$OUT.jsonl" $OPTS > "$OUT.d/$name.log" 2>&1
+  # UBSOL=1: start from the published value as the upper bound (the usual
+  # "prove optimality" protocol of the exact-solver literature)
+  ub=""
+  if [ "${UBSOL:-0}" = 1 ] && [ -f "$sol" ]; then
+    c=$(grep -i -m1 '^cost' "$sol" | tr -dc '0-9.')
+    [ -n "$c" ] && ub="--ub $c"
+  fi
+  timeout $((TL + 60)) "$B" solve "$f" --time "$TL" --log 1 --jsonl "$OUT.jsonl" $ub $OPTS > "$OUT.d/$name.log" 2>&1
   grep "^RESULT" "$OUT.d/$name.log" | tail -1 | cut -c1-120
 }
 export -f run_one

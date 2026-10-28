@@ -27,7 +27,7 @@ static void add_times(BcpResult &R, const NodeResult &res)
     R.cg_iters += res.cg_iters;
     R.n_sep += res.sep_calls;
     R.n_sep_hit += res.sep_hits;
-    for (int k = 0; k < NodeResult::PR_N; k++) { R.t_pr[k] += res.time_pr[k]; R.n_pr[k] += res.calls_pr[k]; }
+    for (int k = 0; k < NodeResult::PR_N; k++) { R.t_pr[k] += res.time_pr[k]; R.n_pr[k] += res.calls_pr[k]; R.h_pr[k] += res.hits_pr[k]; }
 }
 
 namespace {
@@ -64,7 +64,7 @@ BcpResult solve_bcp(const Instance &I, const BcpParams &P)
     BcpResult R;
     const double t0 = now();
     int kmin = I.min_vehicles();
-    int kmax = P.kmax > 0 ? P.kmax : std::max(I.ffd_vehicles(), kmin) + 1;
+    int kmax = P.kmax > 0 ? P.kmax : std::max(I.ffd_vehicles(), kmin) + P.fleet_slack;
     // time windows can force many more vehicles than capacity does: use the
     // stated fleet (Solomon: VEHICLES) or no cap at all
     if (I.has_tw && P.kmax <= 0) kmax = I.vehicles > 0 ? I.vehicles : I.n;
@@ -197,6 +197,7 @@ BcpResult solve_bcp(const Instance &I, const BcpParams &P)
         if (P.log_level >= 2)
             std::printf("  dive from node %d: %zu fixings, %s (%.1fs)\n", N.id, fixed.size(),
                         found ? "solution" : "no solution", now() - t);
+        return found;
     };
 
     int cols_at_last_rmip = 0;
@@ -262,6 +263,7 @@ BcpResult solve_bcp(const Instance &I, const BcpParams &P)
     };
 
     int next_id = 1, last_rmip_node = 0, last_cleanup = 0, last_dive_node = -1000000;
+    int dive_fails = 0; // consecutive dives without a solution: each doubles the wait (X-n313-k71 spent 1105 of 1800 s in failed dives)
     double enum_fail_gap_any = 1e300; // smallest gap at which an enumeration attempt failed anywhere
     int cur = -1; // node being plunged into (child kept out of the heap)
     double global_lb = 0;
@@ -315,6 +317,10 @@ BcpResult solve_bcp(const Instance &I, const BcpParams &P)
             // off by the remaining budget) ends the run as a time limit
             if (res.error == "time limit" || res.error.find("time limit") != std::string::npos ||
                 now() - t0 >= P.time_limit) {
+                // keep the node's valid Lagrangian bound so that an
+                // unfinished root still reports what it proved
+                nodes[cur].lb = std::max(nodes[cur].lb, res.lb);
+                if (N.id == 0) { R.root_lp = res.lp; R.root_lb = res.lb; }
                 stop = "time_limit";
                 break;
             }
@@ -347,9 +353,10 @@ BcpResult solve_bcp(const Instance &I, const BcpParams &P)
         if (ub < 1e299 && std::ceil(nlb - 1e-6) >= ub) { cur = -1; continue; }
         if (res.integral && (double)res.sol.cost <= std::ceil(nlb - 1e-6) + 1e-9) { cur = -1; continue; }
 
-        if (P.dive && (N.id == 0 || (ub >= 1e299 && R.nodes - last_dive_node >= P.dive_every))) {
+        if (P.dive && (N.id == 0 || (ub >= 1e299 && R.nodes - last_dive_node >= (P.dive_every << std::min(dive_fails, 4))))) {
             last_dive_node = R.nodes;
-            run_dive(N, std::min(P.dive_time, P.time_limit - (now() - t0)));
+            const bool dived = run_dive(N, std::min(P.dive_time, P.time_limit - (now() - t0)));
+            dive_fails = dived ? 0 : dive_fails + 1;
             if (ub < 1e299 && std::ceil(nlb - 1e-6) >= ub) { cur = -1; continue; }
             // the dive changed the LP (new columns, bounds restored): re-solve
             // the node so the duals, bound and edge flows are current again
@@ -652,10 +659,10 @@ BcpResult solve_bcp(const Instance &I, const BcpParams &P)
                     "(label %.1f in %d tries, mip %.1f in %d solves, %d nodes closed) total %.1f\n",
                     R.t_pricing, R.t_master, R.t_cuts, R.t_rmip, R.t_dive, R.t_branch, R.t_switch, R.t_enum,
                     R.t_enum_label, R.enum_tries, R.t_enum_mip, R.enum_mips, R.enum_closed, R.time);
-        std::printf("split: cg iters %d; pricing setup %.1f pool %.1f/%d s0 %.1f/%d s1 %.1f/%d exact %.1f/%d scan %.1f/%d; "
+        std::printf("split: cg iters %d; pricing setup %.1f pool %.1f/%d/%d s0 %.1f/%d/%d s1 %.1f/%d/%d exact %.1f/%d/%d scan %.1f/%d/%d (time/calls/with cols); "
                     "cuts rccsep %.1f/%d (%d with cuts) src %.1f rows %.1f\n",
-                    R.cg_iters, R.t_pr[0], R.t_pr[1], R.n_pr[1], R.t_pr[2], R.n_pr[2], R.t_pr[3], R.n_pr[3], R.t_pr[4],
-                    R.n_pr[4], R.t_pr[5], R.n_pr[5], R.t_sep, R.n_sep, R.n_sep_hit, R.t_src,
+                    R.cg_iters, R.t_pr[0], R.t_pr[1], R.n_pr[1], R.h_pr[1], R.t_pr[2], R.n_pr[2], R.h_pr[2], R.t_pr[3],
+                    R.n_pr[3], R.h_pr[3], R.t_pr[4], R.n_pr[4], R.h_pr[4], R.t_pr[5], R.n_pr[5], R.h_pr[5], R.t_sep, R.n_sep, R.n_sep_hit, R.t_src,
                     R.t_cuts - R.t_sep - R.t_src);
         const auto &ps = M.probe_stats;
         std::printf("probes: %d  solve %.1f (%.0f iters avg)  purged %ld repriced %ld lp cols %d pool %d\n", ps.n,

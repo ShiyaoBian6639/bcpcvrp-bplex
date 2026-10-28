@@ -1,0 +1,770 @@
+* incumbent 15553 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/xml100/medium/XML100_1113_07.sol cost 14550
+  it    1  z   15553.0000  lb -1000000000.0000  minrc -11481.0000  lp   110/   110  rows    0  hr +75  lbl 1328  spx 10  0.0s
+  it   11  z   15553.0000  lb -1000000000.0000  minrc  -744.4604  lp   860/   860  rows    0  hr +75  lbl 1164  spx 75  0.1s
+  it   21  z   15535.8782  lb -1000000000.0000  minrc -2011.1995  lp  1610/  1610  rows    0  hr +75  lbl 1184  spx 309  0.3s
+  it   31  z   14867.6676  lb -1000000000.0000  minrc   -72.1489  lp  2047/  2302  rows    0  hr +38  lbl 1189  spx 95  0.4s
+  it   41  z   14722.5904  lb -1000000000.0000  minrc  -176.5804  lp  2025/  2524  rows    0  hr +28  lbl 988  spx 88  0.5s
+  it   51  z   14673.4068  lb -1000000000.0000  minrc  -421.6488  lp  2001/  2657  rows    0  hr +75  lbl 2535  spx 3  0.6s
+  it   61  z   14636.2631  lb -1000000000.0000  minrc  -262.5121  lp  2001/  2855  rows    0  hr +75  lbl 2058  spx 5  0.6s
+  it   71  z   14547.2202  lb -1000000000.0000  minrc    -9.3410  lp  2015/  3133  rows    0  hr +7  lbl 1005  spx 40  0.7s
+  it   81  z   14506.5971  lb -1000000000.0000  minrc   -23.3495  lp  2004/  3332  rows    0  hr +10  lbl 935  spx 17  0.8s
+  it   91  z   14445.9867  lb -1000000000.0000  minrc   -21.3767  lp  2004/  3492  rows    0  hr +4  lbl 860  spx 6  0.8s
+  it  101  z   14403.1876  lb -1000000000.0000  minrc   -50.0802  lp  2033/  3642  rows    0  hr +10  lbl 845  spx 110  0.9s
+  it  111  z   14388.5420  lb -1000000000.0000  minrc   -16.0736  lp  2004/  3765  rows    0  hr +14  lbl 1053  spx 4  1.0s
+  it  121  z   14373.9611  lb   14219.9611  minrc   -14.0000  lp  2002/  3888  rows    0  ex +75  lbl 3383  spx 1  1.0s
+  it  129  z   14367.4583  lb   14367.4583  minrc    -0.0000  lp  2141/  4027  rows    0  ex +0  lbl 3304  spx 2  1.1s
+  cut round 1: +45 RCC (max viol 1.000), z 14367.4583
+  it  131  z   14410.6015  lb   14367.4583  minrc   -53.7401  lp  2001/  4028  rows   45  hr +39  lbl 1170  spx 1  1.1s
+  it  141  z   14395.3738  lb   14367.4583  minrc    -1.0071  lp  2004/  4104  rows   45  hr +1  lbl 714  spx 6  1.2s
+  it  151  z   14390.9628  lb   14390.9628  minrc    -0.0000  lp  2003/  4243  rows   45  ex +0  lbl 3463  spx 1  1.3s
+  cut round 2: +40 RCC (max viol 1.107), z 14390.9628
+  it  161  z   14411.9625  lb   14390.9628  minrc    -5.0000  lp  2075/  4356  rows   85  hr +2  lbl 934  spx 90  1.5s
+  it  166  z   14411.3587  lb   14411.3587  minrc    -0.0000  lp  2119/  4400  rows   85  ex +0  lbl 3170  spx 1  1.6s
+  cut round 3: +19 RCC (max viol 0.529), z 14411.3587
+  it  171  z   14422.9406  lb   14411.3587  minrc     0.0000  lp  2013/  4416  rows  104  pl +1  lbl 1046  spx 28  1.7s
+  it  176  z   14421.6090  lb   14421.6090  minrc    -0.0000  lp  2060/  4463  rows  104  ex +0  lbl 3105  spx 32  1.7s
+  cut round 4: +16 RCC (max viol 0.648), z 14421.6090
+  it  181  z   14433.8286  lb   14421.6090  minrc   -12.3162  lp  2041/  4524  rows  120  ex +8  lbl 3146  spx 48  1.9s
+  it  186  z   14432.6758  lb   14432.6758  minrc    -0.0000  lp  2066/  4549  rows  120  ex +0  lbl 3053  spx 5  1.9s
+  cut round 5: +5 RCC (max viol 0.267), z 14432.6758
+  it  191  z   14436.5176  lb   14432.6758  minrc    -3.8000  lp  2018/  4572  rows  125  ex +4  lbl 3283  spx 31  2.1s
+  it  193  z   14436.0646  lb   14436.0646  minrc    -0.0000  lp  2026/  4580  rows  125  ex +0  lbl 3304  spx 2  2.1s
+  cut round 6: +3 RCC (max viol 0.228), z 14436.0646
+  it  197  z   14438.0152  lb   14438.0152  minrc    -0.0000  lp  2054/  4608  rows  128  ex +0  lbl 3194  spx 1  2.2s
+  cut round 7: +30 SRC (max viol 0.474), z 14438.0152
+  it  201  z   14465.3977  lb   14438.0152  minrc   -57.2070  lp  2003/  4608  rows  158  hr +29  lbl 1009  spx 43  2.4s
+  it  211  z   14460.1489  lb   14438.0152  minrc    -0.5148  lp  2005/  4772  rows  158  hr +1  lbl 1172  spx 5  2.6s
+  it  221  z   14457.7193  lb   14457.7193  minrc    -0.0000  lp  2006/  4895  rows  158  ex +0  lbl 4089  spx 3  2.7s
+  cut round 8: +4 RCC (max viol 0.250), z 14457.7193
+  it  226  z   14460.7613  lb   14460.7613  minrc    -0.0000  lp  2028/  4916  rows  162  ex +0  lbl 4225  spx 13  2.8s
+  cut round 9: +3 RCC (max viol 0.190), z 14460.7613
+  it  231  z   14461.7442  lb   14460.7613  minrc    -0.9774  lp  2004/  4934  rows  165  ex +10  lbl 4149  spx 17  2.9s
+  it  232  z   14461.7269  lb   14461.7269  minrc    -0.0000  lp  2014/  4944  rows  165  ex +0  lbl 4232  spx 13  3.0s
+  cut round 10: +30 SRC (max viol 0.500), z 14461.7269
+  it  241  z   14472.6653  lb   14461.7269  minrc    -3.0000  lp  2004/  4972  rows  195  hr +3  lbl 1248  spx 34  3.2s
+  it  251  z   14471.3470  lb   14461.7269  minrc    -4.6333  lp  2002/  5075  rows  195  ex +12  lbl 5484  spx 1  3.4s
+  it  254  z   14471.2485  lb   14471.2485  minrc    -0.0000  lp  2028/  5101  rows  195  ex +0  lbl 5598  spx 4  3.5s
+  cut round 11: +1 RCC (max viol 0.110), z 14471.2485
+  cut round 12: +1 RCC (max viol 0.123), z 14471.2995
+  cut round 13: +30 SRC (max viol 0.357), z 14471.3855
+  it  261  z   14488.4508  lb   14471.2485  minrc    -0.4754  lp  2008/  5131  rows  227  hr +1  lbl 904  spx 74  3.7s
+  it  271  z   14485.0144  lb   14471.2485  minrc    -1.2235  lp  2004/  5310  rows  227  hr +3  lbl 1292  spx 3  4.1s
+  it  278  z   14484.8075  lb   14484.8075  minrc    -0.0000  lp  2112/  5417  rows  227  ex +0  lbl 7879  spx 2  4.3s
+  cut round 14: +10 SRC (max viol 0.314), z 14484.8075
+  it  281  z   14486.5195  lb   14484.8075  minrc    -0.7143  lp  2024/  5441  rows  237  ex +8  lbl 7331  spx 30  4.4s
+  it  283  z   14486.5195  lb   14486.5195  minrc    -0.0000  lp  2036/  5453  rows  237  ex +0  lbl 7369  spx 2  4.5s
+node     0 d0   lb  14486.519 lp  14486.519 glb      0.000 ub 15553 open 0 lp 2036/5453 rows 237 it 283 4.5s
+* incumbent 14622 from dive (13.5s)
+  dive from node 0: 7 fixings, solution (9.0s)
+  it    1  z   14622.0000  lb -1000000000.0000  minrc     0.0000  lp  2075/  8106  rows  237  pl +75  lbl 9185  spx 664  0.2s
+  it   11  z   14486.5195  lb -1000000000.0000  minrc     0.0000  lp  2019/  8106  rows  237  pl +6  lbl 9185  spx 13  1.1s
+  it   21  z   14486.5195  lb -1000000000.0000  minrc   -15.9327  lp  2001/  8190  rows  237  hr +5  lbl 1321  spx 3  1.2s
+  it   31  z   14486.5195  lb   14486.0584  minrc    -0.0419  lp  2006/  8270  rows  237  ex +4  lbl 7090  spx 3  1.5s
+  rmip (root): status time limit obj 0.0 in 5.1s
+  enumeration: gap 134.900 -> FAILED, >0 routes (2.2s)
+  branch on edge (4,37) = 0.500  probes -1.000 | -1.000  score 0.250
+  it    1  z   14508.3354  lb -1000000000.0000  minrc     0.0000  lp  2075/  8274  rows  239  pl +75  lbl 19360  spx 235  0.1s
+  it    9  z   14488.5195  lb   14488.5195  minrc    -0.0000  lp  2235/  8391  rows  239  ex +0  lbl 7805  spx 11  0.4s
+node     2 d1   lb  14488.519 lp  14488.519 glb  14486.519 ub 14622 open 1 lp 2235/8391 rows 239 it 9 22.7s
+  branch on edge (19,74) = 0.500  probes -1.000 | -1.000  score 1.000
+  it    1  z   14587.4646  lb -1000000000.0000  minrc     0.0000  lp  2075/  8391  rows  241  pl +75  lbl 7805  spx 347  0.1s
+  it   11  z   14511.6770  lb -1000000000.0000  minrc     0.0000  lp  2004/  8402  rows  241  pl +2  lbl 959  spx 11  0.6s
+  it   21  z   14511.6225  lb -1000000000.0000  minrc   -10.0000  lp  2001/  8476  rows  241  hr +11  lbl 1428  spx 6  0.7s
+  it   31  z   14510.9575  lb   13803.3251  minrc    -9.2963  lp  2001/  8604  rows  241  hr +1  lbl 1346  spx 1  1.0s
+  it   41  z   14507.5539  lb   14248.2289  minrc   -23.5750  lp  2002/  8683  rows  241  ex +40  lbl 6445  spx 7  1.3s
+  it   47  z   14507.4273  lb   14507.4273  minrc    -0.0000  lp  2069/  8748  rows  241  ex +0  lbl 6385  spx 1  1.4s
+  cut round 1: +4 RCC (max viol 0.347), z 14507.4273
+  it   51  z   14509.1568  lb   14507.4273  minrc   -15.1441  lp  2008/  8748  rows  245  ex +22  lbl 7079  spx 2  1.5s
+  it   53  z   14509.1568  lb   14509.1568  minrc    -0.0000  lp  2040/  8780  rows  245  ex +0  lbl 7162  spx 3  1.6s
+  cut round 2: +3 RCC (max viol 0.171), z 14509.1568
+node     4 d2   lb  14509.157 lp  14509.370 glb  14486.519 ub 14622 open 2 lp 2044/8784 rows 248 it 54 24.4s
+  branch on edge (0,96) = 0.504  probes -1.000 | -1.000  score 5.712
+  it    1  z   14540.5155  lb -1000000000.0000  minrc     0.0000  lp  2065/  8784  rows  250  pl +65  lbl 7065  spx 287  0.1s
+  it   11  z   14525.4920  lb -1000000000.0000  minrc   -21.4538  lp  2008/  8803  rows  250  hr +12  lbl 1405  spx 21  0.4s
+  it   21  z   14522.5418  lb   14322.6860  minrc    -1.0000  lp  2003/  8894  rows  250  hr +3  lbl 1365  spx 2  0.8s
+  it   26  z   14522.5314  lb   14522.5314  minrc    -0.0000  lp  2082/  8973  rows  250  ex +0  lbl 7554  spx 1  1.0s
+  cut round 1: +4 RCC (max viol 0.281), z 14522.5314
+  it   31  z   14523.3471  lb   14523.3471  minrc    -0.0000  lp  2002/  8988  rows  254  ex +0  lbl 7380  spx 1  1.2s
+node     6 d3   lb  14523.347 lp  14523.347 glb  14486.519 ub 14622 open 3 lp 2002/8988 rows 254 it 31 25.6s
+  branch on fleet 10.001: <= 10 | >= 11  (node [10,11] master [10,11] art 0.000000)
+  it    1  z   14992.3186  lb -1000000000.0000  minrc     0.0000  lp  2075/  8988  rows  254  pl +75  lbl 7380  spx 447  0.2s
+  it   11  z   14628.3419  lb -1000000000.0000  minrc   -16.5350  lp  2001/  9028  rows  254  hr +7  lbl 1171  spx 7  0.6s
+  it   21  z   14628.3265  lb -1000000000.0000  minrc    -1.2563  lp  2001/  9049  rows  254  hr +2  lbl 1163  spx 1  0.7s
+  it   29  z   14627.8508  lb   14627.8508  minrc    -0.0000  lp  2139/  9183  rows  254  ex +0  lbl 6844  spx 2  0.9s
+node     8 d4   lb  14627.851 lp  14627.851 glb  14486.519 ub 14622 open 4 lp 2139/9183 rows 254 it 29 26.5s
+  cleanup: deleted 140 rows (140 aged cuts), 114 left
+  it    1  z   14527.7691  lb -1000000000.0000  minrc     0.0000  lp  2075/  9183  rows  114  pl +75  lbl 6844  spx 480  0.1s
+  it   11  z   14501.4803  lb -1000000000.0000  minrc     0.0000  lp  2058/  9233  rows  114  pl +11  lbl 1465  spx 27  0.3s
+  it   21  z   14484.7565  lb -1000000000.0000  minrc     0.0000  lp  2015/  9290  rows  114  pl +9  lbl 1434  spx 38  0.5s
+  it   31  z   14484.7013  lb   14484.7013  minrc    -0.0000  lp  2012/  9368  rows  114  ex +0  lbl 6869  spx 22  0.7s
+  cut round 1: +5 RCC (max viol 0.510), z 14484.7013
+  it   41  z   14489.6775  lb   14489.6775  minrc    -0.0000  lp  2009/  9416  rows  119  ex +0  lbl 6812  spx 3  0.8s
+  cut round 2: +4 RCC (max viol 0.337), z 14489.6775
+  it   51  z   14493.3542  lb   14493.3542  minrc    -0.0000  lp  2004/  9468  rows  123  ex +0  lbl 6151  spx 2  1.1s
+  cut round 3: +1 RCC (max viol 0.125), z 14493.3542
+  cut round 4: +30 SRC (max viol 0.260), z 14493.4416
+  it   61  z   14500.2251  lb   14493.3542  minrc    -1.7784  lp  2002/  9482  rows  154  hr +1  lbl 1349  spx 6  1.4s
+  it   71  z   14499.7428  lb   14499.7428  minrc    -0.0000  lp  2004/  9604  rows  154  ex +0  lbl 7717  spx 8  1.7s
+  cut round 5: +3 RCC (max viol 0.208), z 14499.7428
+  it   77  z   14500.0381  lb   14500.0381  minrc    -0.0000  lp  2019/  9610  rows  157  ex +0  lbl 7667  spx 2  1.8s
+  cut round 6: +11 SRC (max viol 0.272), z 14500.0381
+  it   81  z   14503.7309  lb   14500.0381  minrc     0.0000  lp  2011/  9610  rows  168  pl +5  lbl 7667  spx 46  2.0s
+  it   88  z   14503.6303  lb   14503.6303  minrc    -0.0000  lp  2043/  9637  rows  168  ex +0  lbl 7712  spx 6  2.2s
+node     1 d1   lb  14503.630 lp  14503.630 glb  14486.519 ub 14622 open 3 lp 2043/9637 rows 168 it 88 28.7s
+  branch on fleet 10.002: <= 10 | >= 11  (node [10,11] master [10,11] art 0.000000)
+  it    1  z   14616.0604  lb -1000000000.0000  minrc     0.0000  lp  2049/  9637  rows  168  pl +49  lbl 7712  spx 300  0.1s
+  it   11  z   14613.2880  lb -1000000000.0000  minrc     0.0000  lp  2004/  9657  rows  168  pl +1  lbl 1262  spx 23  0.3s
+  it   21  z   14612.0803  lb   14612.0803  minrc    -0.0000  lp  2004/  9841  rows  168  ex +0  lbl 9546  spx 1  0.6s
+  cut round 1: +3 RCC (max viol 0.405), z 14612.0803
+  it   31  z   14614.2886  lb   14612.0803  minrc    -0.2509  lp  2032/  9955  rows  171  ex +10  lbl 8310  spx 32  0.9s
+  it   32  z   14614.2886  lb   14614.2886  minrc    -0.0000  lp  2042/  9965  rows  171  ex +0  lbl 8424  spx 10  0.9s
+node    10 d2   lb  14614.289 lp  14614.289 glb  14488.519 ub 14622 open 4 lp 2042/9965 rows 171 it 32 29.7s
+  enumeration: gap 6.711 -> 2792 routes (0.5s)
+  branch on edge (19,74) = 0.626  probes -1.000 | -1.000  score 334.160
+  it    1  z   14637.6819  lb   14533.5446  minrc    -9.4670  lp  2000/  9965  rows  173  ex +75  lbl 18138  spx 338  0.1s
+node    12 d3   lb  14621.579 lp  14636.246 glb  14488.519 ub 14622 open 5 lp 2092/10045 rows 173 it 3 30.3s
+  it    1  z   14631.8897  lb -1000000000.0000  minrc     0.0000  lp  2075/ 10045  rows  173  pl +75  lbl 18138  spx 974  0.3s
+  it   11  z   14504.3778  lb -1000000000.0000  minrc    -4.9228  lp  2004/ 10063  rows  173  hr +2  lbl 1379  spx 23  0.7s
+  it   21  z   14503.2286  lb   14373.9496  minrc     0.0000  lp  2085/ 10224  rows  173  pl +10  lbl 9855  spx 159  1.2s
+  it   25  z   14503.1080  lb   14503.1080  minrc    -0.0000  lp  2147/ 10266  rows  173  ex +0  lbl 9036  spx 34  1.3s
+node     3 d2   lb  14503.108 lp  14503.108 glb  14488.519 ub 14622 open 4 lp 2147/10266 rows 173 it 25 31.6s
+  branch on fleet 10.007: <= 10 | >= 11  (node [10,11] master [10,11] art 0.000000)
+  it    1  z   14690.4271  lb -1000000000.0000  minrc     0.0000  lp  2075/ 10266  rows  173  pl +75  lbl 9036  spx 392  0.2s
+  it   11  z   14613.3776  lb   14613.3776  minrc    -0.0000  lp  2002/ 10374  rows  173  ex +0  lbl 10522  spx 2  0.6s
+node    14 d3   lb  14613.378 lp  14613.378 glb  14503.108 ub 14622 open 5 lp 2002/10374 rows 173 it 11 32.2s
+  enumeration: gap 7.622 -> 2750 routes (0.8s)
+  branch on edge (0,54) = 0.490  probes -1.000 | -1.000  score 262.511
+  cleanup: deleted 43 rows (42 aged cuts), 132 left
+  it    1  z   14642.3482  lb   13665.8363  minrc   -88.7738  lp  2000/ 10374  rows  132  ex +75  lbl 23918  spx 294  0.1s
+  it    4  z   14628.5955  lb   14628.5955  minrc    -0.0000  lp  2133/ 10481  rows  132  ex +0  lbl 23918  spx 64  0.2s
+node    16 d4   lb  14628.595 lp  14628.595 glb  14503.108 ub 14622 open 6 lp 2133/10481 rows 132 it 4 33.2s
+  it    1  z   14526.2636  lb -1000000000.0000  minrc     0.0000  lp  2075/ 10481  rows  132  pl +75  lbl 23918  spx 555  0.1s
+  it   11  z   14503.1530  lb   14503.1530  minrc    -0.0000  lp  2002/ 10491  rows  132  ex +0  lbl 9185  spx 1  0.5s
+  cut round 1: +18 SRC (max viol 0.275), z 14503.1530
+  it   21  z   14506.2534  lb   14503.1530  minrc    -0.8547  lp  2002/ 10543  rows  150  hr +1  lbl 1487  spx 1  0.7s
+  it   23  z   14506.2413  lb   14506.2413  minrc    -0.0000  lp  2019/ 10560  rows  150  ex +0  lbl 9051  spx 7  0.8s
+node    13 d3   lb  14506.241 lp  14506.241 glb  14503.108 ub 14622 open 5 lp 2019/10560 rows 150 it 23 34.0s
+  branch on edge (53,56) = 0.507  probes -1.000 | -1.000  score 257.356
+  it    1  z   14508.5071  lb -1000000000.0000  minrc     0.0000  lp  2017/ 10560  rows  152  pl +17  lbl 9051  spx 137  0.0s
+  it   11  z   14508.2890  lb   14508.2890  minrc    -0.0000  lp  2006/ 10619  rows  152  ex +0  lbl 9713  spx 1  0.3s
+node    18 d4   lb  14508.289 lp  14508.289 glb  14503.630 ub 14622 open 6 lp 2006/10619 rows 152 it 11 34.3s
+  branch on edge (20,72) = 0.508  probes -1.000 | -1.000  score 219.932
+  it    1  z   14511.7610  lb -1000000000.0000  minrc     0.0000  lp  2018/ 10619  rows  154  pl +18  lbl 9713  spx 166  0.1s
+  it    8  z   14510.9135  lb   14510.9135  minrc    -0.0000  lp  2125/ 10701  rows  154  ex +0  lbl 9640  spx 2  0.2s
+  cut round 1: +1 RCC (max viol 0.201), z 14510.9135
+  it   11  z   14511.0578  lb   14511.0578  minrc    -0.0000  lp  2008/ 10717  rows  155  ex +0  lbl 9283  spx 3  0.4s
+node    20 d5   lb  14511.058 lp  14511.058 glb  14503.630 ub 14622 open 7 lp 2008/10717 rows 155 it 11 34.7s
+  branch on edge (0,54) = 0.316  probes -1.000 | -1.000  score 204.721
+  it    1  z   14551.6583  lb -1000000000.0000  minrc     0.0000  lp  2075/ 10717  rows  157  pl +75  lbl 9283  spx 281  0.1s
+  it   11  z   14530.0764  lb -1000000000.0000  minrc   -18.5897  lp  2003/ 10736  rows  157  hr +4  lbl 1594  spx 4  0.4s
+  it   20  z   14525.2765  lb   14525.2765  minrc    -0.0000  lp  2000/ 10847  rows  157  ex +0  lbl 8972  spx 2  0.7s
+  cut round 1: +2 RCC (max viol 0.157), z 14525.2765
+  it   21  z   14526.2580  lb   14525.2765  minrc     0.0000  lp  2017/ 10847  rows  159  pl +17  lbl 8972  spx 84  0.7s
+  cut round 2: +2 RCC (max viol 0.200), z 14525.9135
+  it   28  z   14526.8564  lb   14526.8564  minrc    -0.0000  lp  2049/ 10872  rows  161  ex +0  lbl 8970  spx 1  0.9s
+node    22 d6   lb  14526.856 lp  14526.856 glb  14503.630 ub 14622 open 8 lp 2049/10872 rows 161 it 28 35.7s
+  branch on edge (8,78) = 0.501  probes -1.000 | -1.000  score 193.471
+  cleanup: deleted 27 rows (26 aged cuts), 136 left
+  it    1  z   14536.1645  lb -1000000000.0000  minrc     0.0000  lp  2057/ 10872  rows  136  pl +57  lbl 8970  spx 188  0.0s
+  it   11  z   14530.8490  lb   14530.8490  minrc    -0.0000  lp  2004/ 10917  rows  136  ex +0  lbl 9190  spx 25  0.3s
+  cut round 1: +1 RCC (max viol 0.184), z 14530.8490
+  it   13  z   14531.4363  lb   14531.4363  minrc    -0.0000  lp  2006/ 10919  rows  137  ex +0  lbl 9018  spx 1  0.4s
+  cut round 2: +18 SRC (max viol 0.441), z 14531.4363
+  it   21  z   14556.4416  lb   14531.4363  minrc   -35.1413  lp  2001/ 10931  rows  155  hr +18  lbl 1566  spx 1  0.8s
+  it   31  z   14550.0153  lb   14531.4363  minrc    -0.4959  lp  2001/ 10972  rows  155  hr +1  lbl 1529  spx 2  1.0s
+  it   41  z   14545.6463  lb   14531.4363  minrc    -2.0000  lp  2001/ 11062  rows  155  hr +2  lbl 1486  spx 18  1.2s
+  it   47  z   14544.1254  lb   14544.1254  minrc    -0.0000  lp  2073/ 11120  rows  155  ex +0  lbl 9630  spx 3  1.4s
+  cut round 3: +1 RCC (max viol 0.133), z 14544.1254
+node    24 d7   lb  14544.125 lp  14544.451 glb  14503.630 ub 14622 open 9 lp 2077/11124 rows 156 it 48 37.2s
+  branch on edge (0,84) = 0.495  probes -1.000 | -1.000  score 203.001
+  it    1  z   14565.1640  lb -1000000000.0000  minrc     0.0000  lp  2075/ 11124  rows  158  pl +75  lbl 9552  spx 263  0.1s
+  it   11  z   14556.1608  lb -1000000000.0000  minrc    -6.6995  lp  2001/ 11136  rows  158  hr +4  lbl 1488  spx 1  0.3s
+  it   20  z   14553.1099  lb   14553.1099  minrc    -0.0000  lp  2000/ 11201  rows  158  ex +0  lbl 8968  spx 16  0.6s
+  cut round 1: +4 RCC (max viol 0.185), z 14553.1099
+  it   21  z   14554.1580  lb   14553.1099  minrc     0.0000  lp  2011/ 11201  rows  162  pl +11  lbl 8968  spx 94  0.7s
+  it   28  z   14554.0314  lb   14554.0314  minrc    -0.0000  lp  2088/ 11262  rows  162  ex +0  lbl 9698  spx 4  0.8s
+node    26 d8   lb  14554.031 lp  14554.031 glb  14503.630 ub 14622 open 10 lp 2088/11262 rows 162 it 28 38.0s
+  enumeration: gap 66.969 -> FAILED, >0 routes (2.1s)
+  branch on edge (9,82) = 0.502  probes -1.000 | -1.000  score 197.757
+  it    1  z   14564.8328  lb -1000000000.0000  minrc     0.0000  lp  2075/ 11262  rows  164  pl +75  lbl 24391  spx 281  0.1s
+  it   11  z   14563.6281  lb   14432.1519  minrc     0.0000  lp  2081/ 11358  rows  164  pl +6  lbl 11190  spx 94  0.3s
+  it   18  z   14563.5579  lb   14563.5579  minrc    -0.0000  lp  2119/ 11393  rows  164  ex +0  lbl 10432  spx 3  0.5s
+node    28 d9   lb  14563.558 lp  14563.558 glb  14503.630 ub 14622 open 11 lp 2119/11393 rows 164 it 18 40.6s
+  branch on edge (0,66) = 0.498  probes -1.000 | -1.000  score 193.565
+  it    1  z   14579.7920  lb -1000000000.0000  minrc     0.0000  lp  2075/ 11393  rows  166  pl +75  lbl 10432  spx 297  0.1s
+  it   11  z   14572.7456  lb -1000000000.0000  minrc     0.0000  lp  2033/ 11424  rows  166  pl +2  lbl 1548  spx 9  0.3s
+  it   21  z   14569.5890  lb   14461.7627  minrc   -10.7826  lp  2003/ 11459  rows  166  ex +48  lbl 10870  spx 5  0.5s
+  it   23  z   14569.5618  lb   14569.5618  minrc    -0.0000  lp  2063/ 11519  rows  166  ex +0  lbl 11144  spx 6  0.6s
+  cut round 1: +6 RCC (max viol 0.355), z 14569.5618
+  it   31  z   14571.2840  lb   14569.5618  minrc     0.0000  lp  2058/ 11568  rows  172  pl +14  lbl 10781  spx 88  0.8s
+  it   34  z   14571.2840  lb   14571.2840  minrc    -0.0000  lp  2063/ 11573  rows  172  ex +0  lbl 10524  spx 3  0.8s
+node    30 d10  lb  14571.284 lp  14571.284 glb  14503.630 ub 14622 open 12 lp 2063/11573 rows 172 it 34 41.5s
+  branch on edge (78,79) = 0.501  probes -1.000 | -1.000  score 187.598
+  it    1  z   14582.4962  lb -1000000000.0000  minrc     0.0000  lp  2059/ 11573  rows  174  pl +59  lbl 10524  spx 266  0.1s
+  it   11  z   14580.7127  lb -1000000000.0000  minrc   -12.4596  lp  2005/ 11620  rows  174  hr +2  lbl 1577  spx 2  0.3s
+  it   20  z   14579.2997  lb   14579.2997  minrc    -0.0000  lp  2000/ 11739  rows  174  ex +0  lbl 11357  spx 4  0.5s
+  cut round 1: +2 RCC (max viol 0.119), z 14579.2997
+  it   21  z   14579.6113  lb   14579.2997  minrc     0.0000  lp  2008/ 11739  rows  176  pl +8  lbl 11357  spx 68  0.6s
+  cut round 2: +1 RCC (max viol 0.154), z 14579.5839
+node    32 d11  lb  14579.300 lp  14579.505 glb  14503.630 ub 14622 open 13 lp 2089/11810 rows 177 it 25 42.3s
+  branch on edge (0,33) = 0.505  probes -1.000 | -1.000  score 183.192
+  cleanup: deleted 36 rows (36 aged cuts), 143 left
+  it    1  z   17309.9180  lb -1000000000.0000  minrc     0.0000  lp  2075/ 11810  rows  143  pl +75  lbl 11025  spx 930  0.2s
+  it   11  z   14644.4339  lb -1000000000.0000  minrc    -1.0000  lp  2004/ 11816  rows  143  hr +1  lbl 1171  spx 3  0.6s
+  it   21  z   14636.6230  lb -1000000000.0000  minrc     0.0000  lp  2022/ 11897  rows  143  pl +5  lbl 1840  spx 170  0.9s
+  it   31  z   14611.5572  lb   14395.0513  minrc   -21.6506  lp  2002/ 11929  rows  143  ex +64  lbl 11322  spx 3  1.2s
+  it   33  z   14611.5075  lb   14611.5075  minrc    -0.0000  lp  2074/ 12001  rows  143  ex +0  lbl 11386  spx 3  1.3s
+  cut round 1: +3 RCC (max viol 0.225), z 14611.5075
+  cut round 2: +27 SRC (max viol 0.304), z 14611.9925
+  it   41  z   14621.1793  lb   14611.5075  minrc     0.0000  lp  2090/ 12048  rows  173  pl +31  lbl 10912  spx 566  1.8s
+  it   51  z   14617.5043  lb   14611.5075  minrc   -14.9457  lp  2011/ 12134  rows  173  hr +2  lbl 1815  spx 11  2.1s
+  it   56  z   14617.4546  lb   14617.4546  minrc    -0.0000  lp  2064/ 12185  rows  173  ex +0  lbl 11660  spx 9  2.3s
+node    34 d12  lb  14617.455 lp  14617.455 glb  14503.630 ub 14622 open 14 lp 2064/12185 rows 173 it 56 44.6s
+  enumeration: gap 3.545 -> 1055 routes (0.5s)
+  branch on edge (6,70) = 0.492  probes -1.000 | -1.000  score 213.472
+  it    1  z   14628.4930  lb   14388.1432  minrc   -24.0350  lp  2000/ 12185  rows  175  ex +61  lbl 21446  spx 211  0.1s
+  it    4  z   14626.5000  lb   14626.5000  minrc    -0.0000  lp  2081/ 12252  rows  175  ex +0  lbl 21446  spx 1  0.1s
+node    36 d13  lb  14626.500 lp  14626.500 glb  14503.630 ub 14622 open 15 lp 2081/12252 rows 175 it 4 45.3s
+  it    1  z   14584.7257  lb -1000000000.0000  minrc     0.0000  lp  2075/ 12252  rows  175  pl +75  lbl 21446  spx 667  0.2s
+  it   11  z   14509.9369  lb -1000000000.0000  minrc     0.0000  lp  2010/ 12259  rows  175  pl +4  lbl 1520  spx 28  0.8s
+  it   19  z   14509.0710  lb   14509.0710  minrc    -0.0000  lp  2218/ 12388  rows  175  ex +0  lbl 9876  spx 3  1.1s
+  cut round 1: +4 RCC (max viol 0.235), z 14509.0710
+  it   21  z   14509.2327  lb   14509.0710  minrc    -0.3333  lp  2002/ 12388  rows  179  ex +4  lbl 10016  spx 2  1.2s
+node     9 d2   lb  14509.071 lp  14509.233 glb  14503.630 ub 14622 open 14 lp 2006/12392 rows 179 it 21 46.5s
+  branch on edge (19,74) = 0.687  probes -1.000 | -1.000  score 314.720
+  it    1  z   14538.6682  lb -1000000000.0000  minrc     0.0000  lp  2075/ 12392  rows  181  pl +75  lbl 10016  spx 385  0.1s
+  it   11  z   14518.9927  lb   14275.2607  minrc   -24.3732  lp  2006/ 12432  rows  181  ex +75  lbl 9061  spx 11  0.5s
+  it   21  z   14518.0929  lb   14447.7083  minrc    -7.0385  lp  2002/ 12511  rows  181  ex +44  lbl 9938  spx 4  0.8s
+  it   26  z   14518.0114  lb   14518.0114  minrc    -0.0000  lp  2067/ 12567  rows  181  ex +0  lbl 9922  spx 2  1.0s
+  cut round 1: +6 RCC (max viol 0.261), z 14518.0114
+  it   31  z   14519.8321  lb   14518.0114  minrc     0.0000  lp  2003/ 12567  rows  187  pl +1  lbl 9922  spx 1  1.2s
+  it   34  z   14519.8140  lb   14519.8140  minrc    -0.0000  lp  2012/ 12576  rows  187  ex +0  lbl 10052  spx 17  1.2s
+  cut round 2: +1 RCC (max viol 0.188), z 14519.8140
+node    38 d3   lb  14519.814 lp  14519.960 glb  14506.241 ub 14622 open 15 lp 2034/12597 rows 188 it 37 47.8s
+  branch on edge (0,33) = 0.106  probes -1.000 | -1.000  score 229.957
+  it    1  z   14559.6781  lb -1000000000.0000  minrc     0.0000  lp  2075/ 12597  rows  190  pl +75  lbl 10114  spx 304  0.1s
+  it   11  z   14528.4753  lb -1000000000.0000  minrc     0.0000  lp  2063/ 12615  rows  190  pl +1  lbl 1531  spx 170  0.5s
+  it   21  z   14527.9915  lb   14527.9915  minrc    -0.0000  lp  2002/ 12670  rows  190  ex +0  lbl 9329  spx 1  0.7s
+  cut round 1: +4 RCC (max viol 0.362), z 14527.9915
+  it   26  z   14528.3989  lb   14528.3989  minrc    -0.0000  lp  2023/ 12676  rows  194  ex +0  lbl 9179  spx 4  0.9s
+node    40 d4   lb  14528.399 lp  14528.399 glb  14506.241 ub 14622 open 16 lp 2023/12676 rows 194 it 26 48.7s
+  branch on edge (0,96) = 0.468  probes -1.000 | -1.000  score 222.216
+  cleanup: deleted 38 rows (37 aged cuts), 158 left
+  it    1  z   14569.9490  lb -1000000000.0000  minrc     0.0000  lp  2075/ 12676  rows  158  pl +75  lbl 9179  spx 418  0.1s
+  it   11  z   14543.6004  lb   14394.0983  minrc     0.0000  lp  2115/ 12762  rows  158  pl +40  lbl 10210  spx 133  0.4s
+  it   17  z   14543.4961  lb   14543.4961  minrc    -0.0000  lp  2155/ 12801  rows  158  ex +0  lbl 9999  spx 3  0.6s
+  cut round 1: +24 RCC (max viol 0.807), z 14543.4961
+  it   21  z   14549.2163  lb   14543.4961  minrc     0.0000  lp  2019/ 12801  rows  182  pl +6  lbl 9999  spx 243  0.8s
+  it   30  z   14548.9624  lb   14548.9624  minrc    -0.0000  lp  2000/ 12874  rows  182  ex +0  lbl 8656  spx 7  1.0s
+  cut round 2: +3 RCC (max viol 0.308), z 14548.9624
+  it   31  z   14553.2613  lb   14548.9624  minrc     0.0000  lp  2015/ 12874  rows  185  pl +15  lbl 8656  spx 125  1.1s
+  it   40  z   14552.4508  lb   14552.4508  minrc    -0.0000  lp  2000/ 12953  rows  185  ex +0  lbl 9134  spx 1  1.4s
+  cut round 3: +1 RCC (max viol 0.197), z 14552.4508
+  it   41  z   14552.5302  lb   14552.4508  minrc    -0.2499  lp  2000/ 12953  rows  186  ex +2  lbl 9025  spx 15  1.4s
+  cut round 4: +18 SRC (max viol 0.293), z 14552.5302
+  it   48  z   14553.2319  lb   14553.2319  minrc    -0.0000  lp  2031/ 12968  rows  204  ex +0  lbl 8985  spx 6  1.7s
+  cut round 5: +3 RCC (max viol 0.121), z 14553.2319
+  it   50  z   14553.3077  lb   14553.3077  minrc    -0.0000  lp  2000/ 12968  rows  207  ex +0  lbl 9068  spx 35  1.8s
+  cut round 6: +1 RCC (max viol 0.173), z 14553.3077
+  it   51  z   14553.6818  lb   14553.3077  minrc     0.0000  lp  2002/ 12968  rows  208  pl +2  lbl 9068  spx 46  1.8s
+node    42 d5   lb  14553.308 lp  14553.561 glb  14506.241 ub 14622 open 17 lp 2008/12974 rows 208 it 52 50.6s
+  branch on edge (36,47) = 0.499  probes -1.000 | -1.000  score 213.983
+  it    1  z   16917.7766  lb -1000000000.0000  minrc     0.0000  lp  2075/ 12974  rows  210  pl +75  lbl 8916  spx 890  0.3s
+  it   11  z   14574.5366  lb -1000000000.0000  minrc   -57.4788  lp  2004/ 13049  rows  210  hr +38  lbl 2029  spx 5  0.8s
+  it   21  z   14574.4000  lb -1000000000.0000  minrc   -28.1250  lp  2007/ 13127  rows  210  hr +3  lbl 1792  spx 12  1.0s
+  it   31  z   14574.2055  lb   13840.9222  minrc     0.0000  lp  2008/ 13214  rows  210  pl +2  lbl 9341  spx 7  1.3s
+  it   41  z   14573.6780  lb   14558.2896  minrc    -1.5388  lp  2002/ 13336  rows  210  ex +6  lbl 9967  spx 1  1.6s
+  it   43  z   14573.6780  lb   14573.6780  minrc    -0.0000  lp  2010/ 13344  rows  210  ex +0  lbl 9682  spx 1  1.7s
+  cut round 1: +7 RCC (max viol 0.818), z 14573.6780
+  it   50  z   14582.3896  lb   14582.3896  minrc    -0.0000  lp  2000/ 13409  rows  217  ex +0  lbl 10371  spx 5  2.0s
+  cut round 2: +3 RCC (max viol 0.219), z 14582.3896
+  it   51  z   14585.6374  lb   14582.3896  minrc     0.0000  lp  2023/ 13409  rows  220  pl +23  lbl 10371  spx 100  2.1s
+  it   61  z   14585.2211  lb   14582.3896  minrc     0.0000  lp  2009/ 13446  rows  220  pl +3  lbl 9957  spx 10  2.4s
+  it   67  z   14585.2173  lb   14585.2173  minrc    -0.0000  lp  2026/ 13461  rows  220  ex +0  lbl 10170  spx 3  2.5s
+  cut round 3: +4 RCC (max viol 0.238), z 14585.2173
+  it   71  z   14586.6901  lb   14585.2173  minrc     0.0000  lp  2020/ 13466  rows  224  pl +15  lbl 1807  spx 167  2.7s
+  it   77  z   14586.6337  lb   14586.6337  minrc    -0.0000  lp  2043/ 13488  rows  224  ex +0  lbl 9668  spx 8  2.9s
+  cut round 4: +1 RCC (max viol 0.150), z 14586.6337
+  it   81  z   14587.6897  lb   14586.6337  minrc    -4.2699  lp  2002/ 13490  rows  225  ex +6  lbl 9963  spx 10  3.0s
+  it   85  z   14587.6821  lb   14587.6821  minrc    -0.0000  lp  2021/ 13505  rows  225  ex +0  lbl 10032  spx 3  3.1s
+  cut round 5: +2 RCC (max viol 0.173), z 14587.6821
+  it   86  z   14587.9050  lb   14587.9050  minrc    -0.0000  lp  2021/ 13505  rows  227  ex +0  lbl 10070  spx 26  3.2s
+  cut round 6: +6 RCC (max viol 0.222), z 14587.9050
+  it   90  z   14588.7309  lb   14588.7309  minrc    -0.0000  lp  2000/ 13511  rows  233  ex +0  lbl 9456  spx 1  3.3s
+node    44 d6   lb  14588.731 lp  14588.731 glb  14506.241 ub 14622 open 18 lp 2000/13511 rows 233 it 90 54.0s
+  enumeration: gap 32.269 -> FAILED, >0 routes (2.8s)
+  branch on edge (48,66) = 0.525  probes -1.000 | -1.000  score 231.430
+  it    1  z   14592.5212  lb -1000000000.0000  minrc     0.0000  lp  2042/ 13511  rows  235  pl +42  lbl 20569  spx 109  0.1s
+  it    6  z   14591.7270  lb   14591.7270  minrc    -0.0000  lp  2080/ 13529  rows  235  ex +0  lbl 9871  spx 7  0.3s
+  cut round 1: +1 RCC (max viol 0.233), z 14591.7270
+  it   11  z   14592.8164  lb   14591.7270  minrc    -5.1372  lp  2001/ 13533  rows  236  ex +8  lbl 9669  spx 2  0.4s
+  it   14  z   14592.4072  lb   14592.4072  minrc    -0.0000  lp  2023/ 13545  rows  236  ex +0  lbl 9955  spx 10  0.5s
+  cut round 2: +1 RCC (max viol 0.126), z 14592.4072
+  cut round 3: +1 RCC (max viol 0.118), z 14592.6716
+node    46 d7   lb  14592.407 lp  14592.804 glb  14506.241 ub 14622 open 19 lp 2045/13563 rows 238 it 18 57.5s
+  branch on edge (70,89) = 0.490  probes -1.000 | -1.000  score 223.703
+  it    1  z   14604.8507  lb -1000000000.0000  minrc     0.0000  lp  2075/ 13563  rows  240  pl +75  lbl 9942  spx 319  0.1s
+  it   11  z   14595.1451  lb   14532.3190  minrc   -19.0314  lp  2032/ 13660  rows  240  ex +24  lbl 9144  spx 7  0.5s
+  it   15  z   14595.1451  lb   14595.1451  minrc    -0.0000  lp  2064/ 13686  rows  240  ex +0  lbl 8928  spx 2  0.7s
+  cut round 1: +1 RCC (max viol 0.161), z 14595.1451
+node    48 d8   lb  14595.145 lp  14595.421 glb  14506.241 ub 14622 open 20 lp 2070/13690 rows 241 it 17 58.3s
+  branch on edge (0,73) = 0.516  probes -1.000 | -1.000  score 214.854
+  it    1  z   14607.4915  lb -1000000000.0000  minrc     0.0000  lp  2075/ 13690  rows  243  pl +75  lbl 8973  spx 292  0.1s
+  it   11  z   14603.8988  lb   14484.0564  minrc     0.0000  lp  2088/ 13784  rows  243  pl +13  lbl 9069  spx 157  0.4s
+  cut round 1: +1 RCC (max viol 0.203), z 14603.8418
+  it   21  z   14605.2506  lb   14603.8064  minrc    -3.1316  lp  2003/ 13851  rows  244  ex +14  lbl 8691  spx 10  0.7s
+  it   24  z   14605.2237  lb   14605.2237  minrc    -0.0000  lp  2032/ 13871  rows  244  ex +0  lbl 8470  spx 6  0.8s
+  cut round 2: +1 RCC (max viol 0.344), z 14605.2237
+  cut round 3: +1 RCC (max viol 0.127), z 14605.8460
+  it   31  z   14606.0485  lb   14605.2237  minrc    -0.3427  lp  2001/ 13901  rows  246  ex +8  lbl 9904  spx 1  1.1s
+  it   32  z   14606.0448  lb   14606.0448  minrc    -0.0000  lp  2009/ 13909  rows  246  ex +0  lbl 9755  spx 6  1.1s
+node    50 d9   lb  14606.045 lp  14606.045 glb  14506.241 ub 14622 open 21 lp 2009/13909 rows 246 it 32 59.4s
+  enumeration: gap 14.955 -> 9033 routes (0.9s)
+  branch on edge (9,69) = 0.498  probes -1.000 | -1.000  score 213.194
+  cleanup: deleted 88 rows (88 aged cuts), 160 left
+  it    1  z   14666.4814  lb    4767.4602  minrc  -989.9021  lp  2000/ 13909  rows  160  ex +75  lbl 19202  spx 605  0.2s
+node    52 d10  lb  14620.737 lp  14621.000 glb  14506.241 ub 14622 open 22 lp 2358/14207 rows 160 it 7 60.8s
+* incumbent 14621 from node LP (60.8s)
+  it    1  z  402050.7389  lb -1000000000.0000  minrc     0.0000  lp  2075/ 14207  rows  160  pl +75  lbl 19202  spx 954  0.3s
+  it   11  z   14508.0231  lb -1000000000.0000  minrc     0.0000  lp  2070/ 14207  rows  160  pl +16  lbl 19202  spx 42  0.9s
+  it   21  z   14507.2626  lb   14341.8877  minrc    -1.5299  lp  2001/ 14297  rows  160  hr +1  lbl 1470  spx 6  1.1s
+  it   25  z   14507.1956  lb   14507.1956  minrc    -0.0000  lp  2020/ 14314  rows  160  ex +0  lbl 10365  spx 10  1.2s
+  cut round 1: +7 RCC (max viol 0.916), z 14507.1956
+  it   31  z   14512.5187  lb   14507.1956  minrc     0.0000  lp  2039/ 14337  rows  167  pl +17  lbl 11993  spx 63  1.4s
+  it   36  z   14512.5178  lb   14512.5178  minrc    -0.0000  lp  2058/ 14350  rows  167  ex +0  lbl 11479  spx 1  1.6s
+  cut round 2: +30 SRC (max viol 0.294), z 14512.5178
+  it   41  z   14517.1474  lb   14512.5178  minrc     0.0000  lp  2053/ 14350  rows  197  pl +15  lbl 11479  spx 74  1.9s
+  it   50  z   14516.8517  lb   14516.8517  minrc    -0.0000  lp  2000/ 14477  rows  197  ex +0  lbl 12442  spx 10  2.4s
+  cut round 3: +5 RCC (max viol 0.361), z 14516.8517
+  it   51  z   14525.2622  lb   14516.8517  minrc     0.0000  lp  2034/ 14477  rows  202  pl +34  lbl 12442  spx 205  2.5s
+  it   61  z   14522.4047  lb   14516.8517  minrc    -0.8617  lp  2002/ 14523  rows  202  hr +2  lbl 1479  spx 1  2.8s
+  it   64  z   14522.3985  lb   14522.3985  minrc    -0.0000  lp  2020/ 14541  rows  202  ex +0  lbl 11865  spx 1  2.9s
+  cut round 4: +4 RCC (max viol 0.232), z 14522.3985
+  it   71  z   14524.2416  lb   14522.3985  minrc     0.0000  lp  2038/ 14576  rows  206  pl +6  lbl 11125  spx 47  3.1s
+  it   74  z   14524.2315  lb   14524.2315  minrc    -0.0000  lp  2045/ 14583  rows  206  ex +0  lbl 11121  spx 5  3.2s
+  cut round 5: +3 SRC (max viol 0.189), z 14524.2315
+  cut round 6: +2 RCC (max viol 0.109), z 14524.5455
+node    17 d4   lb  14524.232 lp  14524.756 glb  14506.241 ub 14621 open 21 lp 2076/14605 rows 211 it 78 64.1s
+  branch on edge (36,47) = 0.734  probes -1.000 | -1.000  score 456.569
+  it    1  z   14545.3174  lb -1000000000.0000  minrc     0.0000  lp  2075/ 14605  rows  213  pl +75  lbl 11916  spx 425  0.3s
+  it   11  z   14537.9106  lb   14285.3910  minrc     0.0000  lp  2044/ 14700  rows  213  pl +3  lbl 9688  spx 15  0.7s
+  it   18  z   14537.8615  lb   14537.8615  minrc    -0.0000  lp  2141/ 14795  rows  213  ex +0  lbl 9517  spx 4  0.9s
+  cut round 1: +15 RCC (max viol 0.223), z 14537.8615
+  it   21  z   14540.9161  lb   14537.8615  minrc     0.0000  lp  2013/ 14795  rows  228  pl +2  lbl 9517  spx 18  1.1s
+  it   27  z   14540.7968  lb   14540.7968  minrc    -0.0000  lp  2064/ 14834  rows  228  ex +0  lbl 9011  spx 15  1.3s
+  cut round 2: +7 RCC (max viol 0.338), z 14540.7968
+  it   31  z   14544.8197  lb   14540.7968  minrc   -21.9803  lp  2011/ 14845  rows  235  ex +74  lbl 9104  spx 10  1.5s
+  it   40  z   14544.6402  lb   14544.6402  minrc    -0.0000  lp  2000/ 14968  rows  235  ex +0  lbl 9450  spx 1  1.8s
+  cut round 3: +1 RCC (max viol 0.185), z 14544.6402
+  it   41  z   14544.8223  lb   14544.6402  minrc    -1.3832  lp  2000/ 14968  rows  236  ex +10  lbl 9332  spx 56  1.9s
+node    54 d5   lb  14544.640 lp  14544.822 glb  14508.289 ub 14621 open 22 lp 2010/14976 rows 236 it 41 66.1s
+  branch on edge (0,96) = 0.420  probes -1.000 | -1.000  score 305.927
+  it    1  z   14562.1241  lb -1000000000.0000  minrc     0.0000  lp  2075/ 14976  rows  238  pl +75  lbl 9332  spx 392  0.2s
+  it   11  z   14557.1444  lb   14557.1444  minrc    -0.0000  lp  2006/ 15070  rows  238  ex +0  lbl 11139  spx 2  0.5s
+node    56 d6   lb  14557.144 lp  14557.144 glb  14508.289 ub 14621 open 23 lp 2006/15070 rows 238 it 11 66.6s
+  branch on edge (8,78) = 0.478  probes -1.000 | -1.000  score 292.946
+  it    1  z   53443.2589  lb -1000000000.0000  minrc     0.0000  lp  2075/ 15070  rows  240  pl +75  lbl 11139  spx 637  0.2s
+  it   11  z   14567.1813  lb   14343.7007  minrc     0.0000  lp  2077/ 15198  rows  240  pl +2  lbl 11939  spx 24  0.8s
+  it   16  z   14567.0069  lb   14567.0069  minrc    -0.0000  lp  2110/ 15229  rows  240  ex +0  lbl 11929  spx 5  1.0s
+  cut round 1: +4 RCC (max viol 0.267), z 14567.0069
+  it   21  z   14570.7501  lb   14567.0069  minrc    -6.2709  lp  2002/ 15231  rows  244  ex +30  lbl 11957  spx 7  1.3s
+  it   26  z   14570.6906  lb   14570.6906  minrc    -0.0000  lp  2049/ 15270  rows  244  ex +0  lbl 11616  spx 3  1.5s
+  cut round 2: +4 RCC (max viol 0.221), z 14570.6906
+  it   31  z   14571.0984  lb   14570.6906  minrc     0.0000  lp  2014/ 15283  rows  248  pl +2  lbl 11412  spx 18  1.7s
+  it   33  z   14571.0972  lb   14571.0972  minrc    -0.0000  lp  2015/ 15284  rows  248  ex +0  lbl 11378  spx 12  1.8s
+node    58 d7   lb  14571.097 lp  14571.097 glb  14508.289 ub 14621 open 24 lp 2015/15284 rows 248 it 33 68.5s
+  branch on edge (79,86) = 0.502  probes -1.000 | -1.000  score 238.560
+  cleanup: deleted 75 rows (74 aged cuts), 175 left
+  it    1  z   14591.1637  lb -1000000000.0000  minrc     0.0000  lp  2075/ 15284  rows  175  pl +75  lbl 11378  spx 277  0.1s
+  it   11  z   14585.0363  lb -1000000000.0000  minrc     0.0000  lp  2005/ 15311  rows  175  pl +4  lbl 2104  spx 2  0.4s
+  it   21  z   14582.3382  lb   14374.8893  minrc     0.0000  lp  2109/ 15408  rows  175  pl +34  lbl 11596  spx 220  0.6s
+  it   26  z   14582.2553  lb   14582.2553  minrc    -0.0000  lp  2140/ 15434  rows  175  ex +0  lbl 10827  spx 1  0.7s
+  cut round 1: +6 RCC (max viol 0.514), z 14582.2553
+  cut round 2: +2 RCC (max viol 0.582), z 14582.7807
+  it   31  z   14584.8913  lb   14582.2553  minrc    -2.9570  lp  2002/ 15442  rows  183  hr +4  lbl 1903  spx 1  0.9s
+  it   34  z   14584.8592  lb   14584.8592  minrc    -0.0000  lp  2021/ 15460  rows  183  ex +0  lbl 9689  spx 10  1.0s
+  cut round 3: +25 SRC (max viol 0.285), z 14584.8592
+  it   41  z   14588.5151  lb   14584.8592  minrc    -2.1862  lp  2003/ 15464  rows  208  hr +2  lbl 1924  spx 1  1.2s
+  it   47  z   14587.8768  lb   14587.8768  minrc    -0.0000  lp  2049/ 15496  rows  208  ex +0  lbl 10953  spx 2  1.5s
+  cut round 4: +4 RCC (max viol 0.104), z 14587.8768
+  it   51  z   14588.3644  lb   14588.3644  minrc    -0.0000  lp  2006/ 15502  rows  212  ex +0  lbl 11305  spx 10  1.6s
+node    60 d8   lb  14588.364 lp  14588.364 glb  14508.289 ub 14621 open 25 lp 2006/15502 rows 212 it 51 70.1s
+  branch on edge (0,69) = 0.475  probes -1.000 | -1.000  score 239.818
+  it    1  z   14613.2578  lb -1000000000.0000  minrc     0.0000  lp  2075/ 15502  rows  214  pl +75  lbl 11305  spx 326  0.1s
+  it   11  z   14600.7267  lb -1000000000.0000  minrc     0.0000  lp  2007/ 15529  rows  214  pl +1  lbl 2101  spx 33  0.4s
+  it   20  z   14600.1646  lb   14600.1646  minrc    -0.0000  lp  2000/ 15598  rows  214  ex +0  lbl 11416  spx 6  0.8s
+  cut round 1: +2 RCC (max viol 0.102), z 14600.1646
+  it   21  z   14600.3079  lb   14600.1646  minrc     0.0000  lp  2004/ 15598  rows  216  pl +4  lbl 11416  spx 38  0.8s
+node    62 d9   lb  14600.165 lp  14600.305 glb  14508.289 ub 14621 open 26 lp 2022/15614 rows 216 it 22 71.0s
+  branch on edge (61,82) = 0.488  probes -1.000 | -1.000  score 238.465
+  it    1  z   14654.7815  lb -1000000000.0000  minrc     0.0000  lp  2075/ 15614  rows  218  pl +75  lbl 11407  spx 479  0.1s
+  it   11  z   14615.1626  lb   14457.2695  minrc    -3.0000  lp  2007/ 15701  rows  218  hr +2  lbl 2084  spx 7  0.6s
+  it   18  z   14614.9196  lb   14614.9196  minrc    -0.0000  lp  2080/ 15764  rows  218  ex +0  lbl 10982  spx 1  0.8s
+  cut round 1: +8 RCC (max viol 0.385), z 14614.9196
+  it   21  z   14616.1255  lb   14614.9196  minrc    -2.8256  lp  2006/ 15764  rows  226  hr +5  lbl 2014  spx 7  0.9s
+  it   27  z   14616.0028  lb   14616.0028  minrc    -0.0000  lp  2058/ 15813  rows  226  ex +0  lbl 10486  spx 2  1.1s
+node    64 d10  lb  14616.003 lp  14616.003 glb  14508.289 ub 14621 open 27 lp 2058/15813 rows 226 it 27 72.1s
+  enumeration: gap 3.997 -> 1080 routes (0.5s)
+  branch on edge (0,90) = 0.492  probes -1.000 | -1.000  score 239.111
+  it    1  z   14628.3593  lb   14329.2361  minrc   -29.9123  lp  2000/ 15813  rows  228  ex +24  lbl 20059  spx 217  0.1s
+  it    4  z   14626.0998  lb   14626.0998  minrc    -0.0000  lp  2032/ 15840  rows  228  ex +0  lbl 20059  spx 2  0.1s
+node    66 d11  lb  14626.100 lp  14626.100 glb  14508.289 ub 14621 open 28 lp 2032/15840 rows 228 it 4 72.7s
+  it    1  z  246878.4595  lb -1000000000.0000  minrc     0.0000  lp  2075/ 15840  rows  228  pl +75  lbl 20059  spx 713  0.2s
+  it   11  z   14518.4496  lb -1000000000.0000  minrc     0.0000  lp  2115/ 15840  rows  228  pl +40  lbl 20059  spx 122  1.0s
+  it   21  z   14518.1648  lb   14414.5934  minrc   -10.3571  lp  2002/ 15882  rows  228  ex +75  lbl 10934  spx 5  1.3s
+  it   29  z   14517.8692  lb   14517.8692  minrc    -0.0000  lp  2198/ 16034  rows  228  ex +0  lbl 12392  spx 10  1.7s
+  cut round 1: +3 RCC (max viol 0.608), z 14517.8692
+  it   31  z   14522.0411  lb   14517.8692  minrc     0.0000  lp  2146/ 16034  rows  231  pl +75  lbl 12392  spx 284  1.9s
+  it   39  z   14521.9245  lb   14521.9245  minrc    -0.0000  lp  2236/ 16084  rows  231  ex +0  lbl 12545  spx 3  2.4s
+  cut round 2: +2 RCC (max viol 0.105), z 14521.9245
+  it   41  z   14522.6092  lb   14521.9245  minrc     0.0000  lp  2017/ 16084  rows  233  pl +8  lbl 12545  spx 63  2.5s
+  it   43  z   14522.6058  lb   14522.6057  minrc    -0.0000  lp  2025/ 16092  rows  233  ex +0  lbl 12399  spx 5  2.7s
+  cut round 3: +2 RCC (max viol 0.192), z 14522.6058
+node    19 d5   lb  14522.606 lp  14522.848 glb  14508.289 ub 14621 open 27 lp 2037/16102 rows 235 it 46 75.6s
+  branch on edge (36,47) = 0.654  probes -1.000 | -1.000  score 529.009
+  cleanup: deleted 64 rows (63 aged cuts), 173 left
+  it    1  z   14546.6847  lb -1000000000.0000  minrc     0.0000  lp  2075/ 16102  rows  173  pl +75  lbl 12431  spx 391  0.1s
+  it   11  z   14541.4698  lb   14526.5284  minrc     0.0000  lp  2002/ 16216  rows  173  pl +1  lbl 1765  spx 12  0.4s
+  it   13  z   14541.4571  lb   14541.4571  minrc    -0.0000  lp  2004/ 16218  rows  173  ex +0  lbl 11828  spx 18  0.6s
+  cut round 1: +4 RCC (max viol 0.390), z 14541.4571
+  it   21  z   14543.2075  lb   14541.4571  minrc    -0.2135  lp  2002/ 16254  rows  177  ex +2  lbl 12713  spx 2  1.0s
+  it   22  z   14543.2075  lb   14543.2075  minrc    -0.0000  lp  2004/ 16256  rows  177  ex +0  lbl 12805  spx 2  1.1s
+  cut round 2: +4 RCC (max viol 0.584), z 14543.2075
+  it   26  z   14545.7428  lb   14545.7428  minrc    -0.0000  lp  2031/ 16266  rows  181  ex +0  lbl 11921  spx 5  1.4s
+  cut round 3: +1 RCC (max viol 0.110), z 14545.7428
+  it   30  z   14546.0821  lb   14546.0821  minrc    -0.0000  lp  2000/ 16274  rows  182  ex +0  lbl 12280  spx 6  1.7s
+  cut round 4: +1 RCC (max viol 0.123), z 14546.0821
+  it   31  z   14546.3142  lb   14546.0821  minrc     0.0000  lp  2010/ 16274  rows  183  pl +10  lbl 12280  spx 31  1.7s
+  it   32  z   14546.2411  lb   14546.2411  minrc    -0.0000  lp  2010/ 16274  rows  183  ex +0  lbl 12244  spx 31  1.8s
+  cut round 5: +22 SRC (max viol 0.320), z 14546.2411
+  it   41  z   14547.5000  lb   14547.5000  minrc    -0.0000  lp  2008/ 16362  rows  205  ex +0  lbl 12609  spx 4  2.3s
+  cut round 6: +2 RCC (max viol 1.000), z 14547.5000
+  it   45  z   14550.2286  lb   14550.2286  minrc    -0.0000  lp  2097/ 16366  rows  207  ex +0  lbl 11801  spx 3  2.7s
+node    68 d6   lb  14550.229 lp  14550.229 glb  14509.071 ub 14621 open 28 lp 2097/16366 rows 207 it 45 78.3s
+  branch on edge (79,86) = 0.396  probes -1.000 | -1.000  score 266.542
+  it    1  z   14572.4516  lb -1000000000.0000  minrc     0.0000  lp  2075/ 16366  rows  209  pl +75  lbl 11801  spx 394  0.1s
+  it   11  z   14562.8337  lb   14558.6462  minrc    -0.4188  lp  2006/ 16470  rows  209  ex +4  lbl 11760  spx 5  0.6s
+  it   12  z   14562.8337  lb   14562.8337  minrc    -0.0000  lp  2010/ 16474  rows  209  ex +0  lbl 11952  spx 2  0.7s
+  cut round 1: +6 RCC (max viol 0.291), z 14562.8337
+  it   19  z   14564.4078  lb   14564.4078  minrc    -0.0000  lp  2079/ 16511  rows  215  ex +0  lbl 12463  spx 7  1.2s
+  cut round 2: +4 RCC (max viol 0.222), z 14564.4078
+node    70 d7   lb  14564.408 lp  14564.979 glb  14509.071 ub 14621 open 29 lp 2008/16519 rows 219 it 20 79.6s
+  branch on edge (0,96) = 0.535  probes -1.000 | -1.000  score 257.604
+  it    1  z   14584.6899  lb -1000000000.0000  minrc     0.0000  lp  2075/ 16519  rows  221  pl +75  lbl 11867  spx 326  0.1s
+  it   11  z   14575.8899  lb   14480.9383  minrc     0.0000  lp  2048/ 16555  rows  221  pl +16  lbl 12357  spx 186  0.6s
+  it   16  z   14575.8582  lb   14575.8582  minrc    -0.0000  lp  2075/ 16580  rows  221  ex +0  lbl 11527  spx 7  0.9s
+  cut round 1: +4 RCC (max viol 0.253), z 14575.8582
+  it   19  z   14576.6583  lb   14576.6583  minrc    -0.0000  lp  2101/ 16600  rows  225  ex +0  lbl 11308  spx 6  1.1s
+  cut round 2: +1 RCC (max viol 0.308), z 14576.6583
+  it   21  z   14578.0924  lb   14576.6583  minrc     0.0000  lp  2016/ 16600  rows  226  pl +2  lbl 11308  spx 78  1.1s
+  it   26  z   14577.9356  lb   14577.9356  minrc    -0.0000  lp  2032/ 16614  rows  226  ex +0  lbl 11667  spx 5  1.4s
+node    72 d8   lb  14577.936 lp  14577.936 glb  14509.071 ub 14621 open 30 lp 2032/16614 rows 226 it 26 81.0s
+  branch on edge (61,82) = 0.510  probes -1.000 | -1.000  score 246.306
+  it    1  z   14613.6588  lb -1000000000.0000  minrc     0.0000  lp  2075/ 16614  rows  228  pl +75  lbl 11667  spx 440  0.1s
+  it   11  z   14593.0218  lb   14563.5183  minrc     0.0000  lp  2012/ 16690  rows  228  pl +2  lbl 12192  spx 19  0.7s
+  it   13  z   14593.0209  lb   14593.0209  minrc    -0.0000  lp  2020/ 16698  rows  228  ex +0  lbl 11860  spx 11  0.9s
+  cut round 1: +4 RCC (max viol 0.249), z 14593.0209
+  it   19  z   14594.2740  lb   14594.2740  minrc    -0.0000  lp  2143/ 16704  rows  232  ex +0  lbl 11705  spx 1  1.3s
+  cut round 2: +2 RCC (max viol 0.199), z 14594.2740
+  it   21  z   14594.8770  lb   14594.2740  minrc     0.0000  lp  2016/ 16704  rows  234  pl +2  lbl 11705  spx 34  1.4s
+node    74 d9   lb  14594.274 lp  14594.877 glb  14509.071 ub 14621 open 31 lp 2031/16719 rows 234 it 23 82.5s
+  branch on edge (12,46) = 0.496  probes -1.000 | -1.000  score 240.759
+  it    1  z   14613.0000  lb -1000000000.0000  minrc     0.0000  lp  2075/ 16719  rows  236  pl +75  lbl 12025  spx 314  0.1s
+  it   11  z   14611.1500  lb -1000000000.0000  minrc   -16.0527  lp  2014/ 16729  rows  236  hr +5  lbl 1238  spx 10  0.7s
+  it   21  z   14610.9162  lb -1000000000.0000  minrc     0.0000  lp  2004/ 16807  rows  236  pl +2  lbl 1163  spx 4  0.9s
+  it   31  z   14609.7391  lb   14425.0779  minrc     0.0000  lp  2149/ 16909  rows  236  pl +74  lbl 11690  spx 383  1.2s
+  it   41  z   14608.6667  lb   14494.6657  minrc     0.0000  lp  2004/ 16998  rows  236  pl +3  lbl 10720  spx 5  1.6s
+  it   48  z   14608.6667  lb   14608.6667  minrc    -0.0000  lp  2096/ 17090  rows  236  ex +0  lbl 10972  spx 1  2.0s
+  cut round 1: +1 RCC (max viol 0.667), z 14608.6667
+  it   51  z   14611.0000  lb   14608.6667  minrc     0.0000  lp  2010/ 17090  rows  237  pl +2  lbl 10972  spx 7  2.1s
+  it   60  z   14611.0000  lb   14611.0000  minrc    -0.0000  lp  2000/ 17145  rows  237  ex +0  lbl 11284  spx 8  2.6s
+node    76 d10  lb  14611.000 lp  14611.000 glb  14509.071 ub 14621 open 32 lp 2000/17145 rows 237 it 60 85.1s
+* incumbent 14611 from node LP (85.1s)
+  cleanup: deleted 66 rows (66 aged cuts), 171 left
+  it    1  z  401540.6968  lb -1000000000.0000  minrc     0.0000  lp  2075/ 17145  rows  171  pl +75  lbl 11284  spx 756  0.2s
+  it   11  z   14494.6061  lb -1000000000.0000  minrc     0.0000  lp  2150/ 17145  rows  171  pl +75  lbl 11284  spx 251  0.9s
+  it   21  z   14493.2240  lb   14134.0917  minrc     0.0000  lp  2121/ 17230  rows  171  pl +46  lbl 12266  spx 124  1.1s
+  it   31  z   14491.7694  lb   14391.7951  minrc     0.0000  lp  2037/ 17328  rows  171  pl +5  lbl 11283  spx 22  1.3s
+  it   34  z   14491.7684  lb   14491.7684  minrc    -0.0000  lp  2042/ 17333  rows  171  ex +0  lbl 11225  spx 3  1.4s
+  cut round 1: +29 RCC (max viol 0.862), z 14491.7684
+  it   41  z   14517.5223  lb   14491.7684  minrc     0.0000  lp  2035/ 17353  rows  200  pl +15  lbl 11151  spx 54  1.7s
+  it   43  z   14517.5079  lb   14517.5079  minrc    -0.0000  lp  2037/ 17355  rows  200  ex +0  lbl 11160  spx 2  1.8s
+  cut round 2: +8 RCC (max viol 0.485), z 14517.5079
+  it   49  z   14518.8756  lb   14518.8756  minrc    -0.0000  lp  2073/ 17366  rows  208  ex +0  lbl 11127  spx 10  2.0s
+  cut round 3: +2 RCC (max viol 0.205), z 14518.8756
+  it   51  z   14519.5924  lb   14518.8756  minrc     0.0000  lp  2015/ 17366  rows  210  pl +1  lbl 11127  spx 24  2.1s
+  it   54  z   14519.5355  lb   14519.5355  minrc    -0.0000  lp  2025/ 17372  rows  210  ex +0  lbl 10745  spx 2  2.2s
+  cut round 4: +30 SRC (max viol 0.493), z 14519.5355
+  it   61  z   14526.2611  lb   14519.5355  minrc    -3.0000  lp  2001/ 17388  rows  240  ex +4  lbl 11889  spx 2  2.5s
+  it   63  z   14526.2611  lb   14526.2611  minrc    -0.0000  lp  2011/ 17398  rows  240  ex +0  lbl 11845  spx 2  2.6s
+  cut round 5: +3 RCC (max viol 0.378), z 14526.2611
+node    37 d3   lb  14526.261 lp  14526.930 glb  14509.071 ub 14611 open 31 lp 2035/17404 rows 243 it 65 87.9s
+  branch on edge (36,47) = 0.699  probes -1.000 | -1.000  score 486.632
+  it    1  z   14554.7255  lb -1000000000.0000  minrc     0.0000  lp  2075/ 17404  rows  245  pl +75  lbl 12304  spx 344  0.1s
+  it   11  z   14539.1874  lb   14445.9421  minrc     0.0000  lp  2004/ 17462  rows  245  pl +2  lbl 11355  spx 2  0.5s
+  it   12  z   14539.1874  lb   14539.1874  minrc    -0.0000  lp  2004/ 17462  rows  245  ex +0  lbl 11222  spx 1  0.6s
+  cut round 1: +8 RCC (max viol 0.425), z 14539.1874
+  it   20  z   14542.8687  lb   14542.8687  minrc    -0.0000  lp  2000/ 17480  rows  253  ex +0  lbl 11323  spx 1  0.9s
+  cut round 2: +2 RCC (max viol 0.379), z 14542.8687
+  it   21  z   14543.8878  lb   14542.8687  minrc     0.0000  lp  2013/ 17480  rows  255  pl +13  lbl 11323  spx 78  1.0s
+  it   27  z   14543.8074  lb   14543.8074  minrc    -0.0000  lp  2044/ 17503  rows  255  ex +0  lbl 10939  spx 3  1.2s
+  cut round 3: +1 RCC (max viol 0.336), z 14543.8074
+  it   30  z   14544.4621  lb   14544.4621  minrc    -0.0000  lp  2000/ 17507  rows  256  ex +0  lbl 11150  spx 3  1.3s
+node    78 d4   lb  14544.462 lp  14544.462 glb  14509.157 ub 14611 open 32 lp 2000/17507 rows 256 it 30 89.2s
+  branch on edge (42,44) = 0.500  probes -1.000 | -1.000  score 237.679
+  it    1  z   14567.5857  lb -1000000000.0000  minrc     0.0000  lp  2075/ 17507  rows  258  pl +75  lbl 11150  spx 265  0.1s
+  it    9  z   14546.7069  lb   14546.7069  minrc    -0.0000  lp  2306/ 17555  rows  258  ex +0  lbl 10341  spx 2  0.5s
+node    80 d5   lb  14546.707 lp  14546.707 glb  14509.157 ub 14611 open 33 lp 2306/17555 rows 258 it 9 89.7s
+  branch on edge (15,56) = 0.495  probes -1.000 | -1.000  score 232.164
+  it    1  z   14555.8428  lb -1000000000.0000  minrc     0.0000  lp  2075/ 17555  rows  260  pl +75  lbl 10341  spx 287  0.1s
+  it   11  z   14551.5943  lb -1000000000.0000  minrc     0.0000  lp  2008/ 17579  rows  260  pl +7  lbl 1137  spx 21  0.4s
+  it   21  z   14551.0159  lb -1000000000.0000  minrc     0.0000  lp  2009/ 17596  rows  260  pl +4  lbl 2019  spx 18  0.6s
+  it   31  z   14550.5761  lb   14550.5761  minrc    -0.0000  lp  2006/ 17723  rows  260  ex +0  lbl 10566  spx 5  0.9s
+  cut round 1: +1 RCC (max viol 0.173), z 14550.5761
+  it   41  z   14551.2961  lb   14550.5761  minrc    -0.2763  lp  2010/ 17739  rows  261  ex +2  lbl 9942  spx 7  1.3s
+  it   42  z   14551.2961  lb   14551.2961  minrc    -0.0000  lp  2012/ 17741  rows  261  ex +0  lbl 9944  spx 1  1.3s
+node    82 d6   lb  14551.296 lp  14551.296 glb  14509.157 ub 14611 open 34 lp 2012/17741 rows 261 it 42 91.0s
+  branch on edge (84,97) = 0.502  probes -1.000 | -1.000  score 227.919
+  it    1  z   14569.1467  lb -1000000000.0000  minrc     0.0000  lp  2075/ 17741  rows  263  pl +75  lbl 9944  spx 309  0.1s
+  it   10  z   14558.4009  lb   14558.4009  minrc    -0.0000  lp  2000/ 17791  rows  263  ex +0  lbl 8672  spx 4  0.5s
+  cut round 1: +2 RCC (max viol 0.228), z 14558.4009
+  it   11  z   14558.8004  lb   14558.4009  minrc     0.0000  lp  2004/ 17791  rows  265  pl +4  lbl 8672  spx 63  0.5s
+node    84 d7   lb  14558.401 lp  14558.800 glb  14509.157 ub 14611 open 35 lp 2008/17795 rows 265 it 12 91.6s
+  branch on edge (0,33) = 0.395  probes -1.000 | -1.000  score 317.410
+  cleanup: deleted 81 rows (80 aged cuts), 186 left
+  it    1  z   14585.5142  lb -1000000000.0000  minrc     0.0000  lp  2075/ 17795  rows  186  pl +75  lbl 8964  spx 385  0.1s
+  it   10  z   14569.0331  lb   14569.0331  minrc    -0.0000  lp  2000/ 17880  rows  186  ex +0  lbl 8753  spx 6  0.5s
+  cut round 1: +30 SRC (max viol 0.243), z 14569.0331
+  it   11  z   14575.5520  lb   14569.0331  minrc     0.0000  lp  2075/ 17880  rows  216  pl +75  lbl 8753  spx 259  0.6s
+  it   21  z   14572.1395  lb   14569.0331  minrc    -4.1080  lp  2002/ 17956  rows  216  ex +12  lbl 10102  spx 1  1.0s
+  it   28  z   14571.8718  lb   14571.8718  minrc    -0.0000  lp  2056/ 17987  rows  216  ex +0  lbl 10594  spx 2  1.2s
+  cut round 2: +1 SRC (max viol 0.190), z 14571.8718
+  it   31  z   14572.4519  lb   14571.8718  minrc    -4.0809  lp  2001/ 17988  rows  217  ex +42  lbl 10896  spx 5  1.4s
+  it   34  z   14572.4238  lb   14572.4238  minrc    -0.0000  lp  2049/ 18036  rows  217  ex +0  lbl 10870  spx 1  1.6s
+node    86 d8   lb  14572.424 lp  14572.424 glb  14509.157 ub 14611 open 36 lp 2049/18036 rows 217 it 34 93.2s
+  branch on edge (61,82) = 0.606  probes -1.000 | -1.000  score 240.127
+  it    1  z   14587.9243  lb -1000000000.0000  minrc     0.0000  lp  2075/ 18036  rows  219  pl +75  lbl 10870  spx 393  0.2s
+  it   11  z   14583.0000  lb -1000000000.0000  minrc    -4.3853  lp  2009/ 18042  rows  219  hr +2  lbl 2217  spx 18  0.6s
+  it   21  z   14583.0000  lb   14424.2587  minrc    -7.1003  lp  2001/ 18121  rows  219  hr +1  lbl 1199  spx 1  1.0s
+  it   31  z   14582.6830  lb   14475.9024  minrc     0.0000  lp  2004/ 18208  rows  219  pl +3  lbl 1985  spx 87  1.7s
+  it   37  z   14582.5289  lb   14582.5289  minrc    -0.0000  lp  2186/ 18339  rows  219  ex +0  lbl 12302  spx 18  1.9s
+  cut round 1: +1 RCC (max viol 0.129), z 14582.5289
+node    88 d9   lb  14582.529 lp  14583.000 glb  14509.157 ub 14611 open 37 lp 2222/18375 rows 220 it 38 95.2s
+* incumbent 14583 from node LP (95.2s)
+  it    1  z  595178.1806  lb -1000000000.0000  minrc     0.0000  lp  2075/ 18375  rows  220  pl +75  lbl 12567  spx 869  0.3s
+  it   11  z   14534.3818  lb -1000000000.0000  minrc     0.0000  lp  2150/ 18375  rows  220  pl +75  lbl 12567  spx 302  1.1s
+  it   21  z   14531.7602  lb   14512.7370  minrc     0.0000  lp  2008/ 18527  rows  220  pl +6  lbl 10313  spx 14  1.5s
+  it   24  z   14531.7463  lb   14531.7463  minrc    -0.0000  lp  2030/ 18539  rows  220  ex +0  lbl 10134  spx 2  1.6s
+  cut round 1: +17 RCC (max viol 0.494), z 14531.7463
+  it   31  z   14540.3045  lb   14531.7463  minrc    -6.1425  lp  2002/ 18539  rows  237  hr +3  lbl 1529  spx 1  2.0s
+  it   41  z   14540.2242  lb   14538.9346  minrc    -0.1172  lp  2006/ 18570  rows  237  ex +4  lbl 9809  spx 19  2.2s
+  it   42  z   14540.2242  lb   14540.2242  minrc    -0.0000  lp  2010/ 18574  rows  237  ex +0  lbl 9887  spx 1  2.2s
+  cut round 2: +2 RCC (max viol 0.168), z 14540.2242
+  cut round 3: +2 RCC (max viol 0.425), z 14540.5363
+  it   51  z   14541.1895  lb   14540.2242  minrc    -3.2143  lp  2001/ 18593  rows  241  ex +18  lbl 10408  spx 1  2.6s
+  it   52  z   14541.1764  lb   14541.1764  minrc    -0.0000  lp  2019/ 18611  rows  241  ex +0  lbl 10079  spx 21  2.6s
+node     5 d3   lb  14541.176 lp  14541.176 glb  14509.157 ub 14583 open 36 lp 2019/18611 rows 241 it 52 97.8s
+  branch on fleet 10.014: <= 10 | >= 11  (node [10,11] master [10,11] art 0.000000)
+  it    1  z  142593.5781  lb -1000000000.0000  minrc     0.0000  lp  2075/ 18611  rows  241  pl +75  lbl 10079  spx 1054  0.2s
+node    90 d4   lb  14588.077 lp  14649.616 glb  14511.058 ub 14583 open 37 lp 2458/18611 rows 241 it 9 98.9s
+  it    1  z   76657.5362  lb -1000000000.0000  minrc     0.0000  lp  2075/ 18611  rows  241  pl +75  lbl 9964  spx 1612  0.4s
+  it   11  z   14525.5512  lb -1000000000.0000  minrc     0.0000  lp  2040/ 18611  rows  241  pl +12  lbl 9964  spx 63  1.2s
+  it   21  z   14525.1757  lb   14506.9644  minrc    -1.8469  lp  2001/ 18709  rows  241  ex +4  lbl 14485  spx 3  1.6s
+  it   23  z   14525.1757  lb   14525.1757  minrc    -0.0000  lp  2007/ 18715  rows  241  ex +0  lbl 14345  spx 1  1.7s
+  cut round 1: +4 RCC (max viol 0.203), z 14525.1757
+  cut round 2: +2 RCC (max viol 0.136), z 14525.7383
+  it   31  z   14526.6012  lb   14525.1757  minrc    -5.8567  lp  2058/ 18729  rows  247  ex +16  lbl 13072  spx 72  2.2s
+  it   33  z   14526.6012  lb   14526.6012  minrc    -0.0000  lp  2076/ 18747  rows  247  ex +0  lbl 13376  spx 3  2.3s
+  cut round 3: +1 RCC (max viol 0.132), z 14526.6012
+node    21 d6   lb  14526.601 lp  14526.782 glb  14511.058 ub 14583 open 36 lp 2088/18753 rows 248 it 35 101.4s
+  branch on edge (36,47) = 0.615  probes -1.000 | -1.000  score 639.078
+  cleanup: deleted 35 rows (34 aged cuts), 215 left
+  it    1  z   14543.1243  lb -1000000000.0000  minrc     0.0000  lp  2075/ 18753  rows  215  pl +75  lbl 13185  spx 279  0.1s
+  it   11  z   14542.0295  lb   14495.0444  minrc    -4.6985  lp  2004/ 18781  rows  215  ex +16  lbl 13389  spx 3  0.4s
+  it   12  z   14542.0295  lb   14542.0295  minrc    -0.0000  lp  2020/ 18797  rows  215  ex +0  lbl 13633  spx 5  0.5s
+  cut round 1: +10 RCC (max viol 0.636), z 14542.0295
+  it   20  z   14548.1099  lb   14548.1099  minrc    -0.0000  lp  2000/ 18822  rows  225  ex +0  lbl 13150  spx 2  0.9s
+  cut round 2: +2 RCC (max viol 0.243), z 14548.1099
+  it   21  z   14548.2774  lb   14548.1099  minrc     0.0000  lp  2016/ 18822  rows  227  pl +16  lbl 13150  spx 64  1.0s
+  cut round 3: +1 RCC (max viol 0.128), z 14548.2711
+  cut round 4: +5 SRC (max viol 0.205), z 14548.4068
+  it   31  z   14550.0476  lb   14548.1099  minrc    -1.8503  lp  2026/ 18856  rows  233  ex +12  lbl 13843  spx 33  1.6s
+  it   32  z   14550.0476  lb   14550.0476  minrc    -0.0000  lp  2038/ 18868  rows  233  ex +0  lbl 13879  spx 7  1.6s
+node    92 d7   lb  14550.048 lp  14550.048 glb  14519.814 ub 14583 open 37 lp 2038/18868 rows 233 it 32 103.0s
+  branch on edge (0,96) = 0.532  probes -1.000 | -1.000  score 489.532
+  it    1  z   14560.6930  lb -1000000000.0000  minrc     0.0000  lp  2075/ 18868  rows  235  pl +75  lbl 13879  spx 391  0.1s
+  it   11  z   14553.4001  lb   14553.4001  minrc    -0.0000  lp  2012/ 18939  rows  235  ex +0  lbl 13055  spx 4  0.7s
+  cut round 1: +3 RCC (max viol 0.310), z 14553.4001
+  it   14  z   14554.1557  lb   14554.1557  minrc    -0.0000  lp  2024/ 18949  rows  238  ex +0  lbl 14338  spx 3  0.8s
+  cut round 2: +5 RCC (max viol 0.251), z 14554.1557
+  it   21  z   14556.1945  lb   14554.1557  minrc    -2.7321  lp  2001/ 18950  rows  243  ex +20  lbl 14217  spx 8  1.2s
+  it   24  z   14556.0631  lb   14556.0631  minrc    -0.0000  lp  2033/ 18978  rows  243  ex +0  lbl 13697  spx 1  1.4s
+  cut round 3: +2 RCC (max viol 0.625), z 14556.0631
+  it   29  z   14558.6989  lb   14558.6989  minrc    -0.0000  lp  2085/ 18990  rows  245  ex +0  lbl 14014  spx 21  1.7s
+  cut round 4: +3 RCC (max viol 0.465), z 14558.6989
+  it   31  z   14559.1567  lb   14558.6989  minrc    -1.9333  lp  2004/ 18990  rows  248  ex +4  lbl 13975  spx 1  1.8s
+  it   32  z   14559.1439  lb   14559.1439  minrc    -0.0000  lp  2008/ 18994  rows  248  ex +0  lbl 13976  spx 12  1.9s
+node    94 d8   lb  14559.144 lp  14559.144 glb  14519.814 ub 14583 open 38 lp 2008/18994 rows 248 it 32 105.0s
+  branch on edge (12,46) = 0.443  probes -1.000 | -1.000  score 301.092
+  it    1  z   14589.0000  lb -1000000000.0000  minrc     0.0000  lp  2075/ 18994  rows  250  pl +75  lbl 13976  spx 245  0.1s
+  it   11  z   14583.0238  lb -1000000000.0000  minrc     0.0000  lp  2005/ 18997  rows  250  pl +4  lbl 1172  spx 3  0.8s
+  it   21  z   14582.2192  lb   14529.8716  minrc     0.0000  lp  2002/ 19154  rows  250  pl +1  lbl 2087  spx 12  1.3s
+  it   25  z   14582.2047  lb   14582.2047  minrc    -0.0000  lp  2089/ 19237  rows  250  ex +0  lbl 19545  spx 3  1.7s
+node    96 d9   lb  14582.205 lp  14582.205 glb  14519.814 ub 14583 open 39 lp 2089/19237 rows 250 it 25 106.6s
+  it    1  z  401666.0243  lb -1000000000.0000  minrc     0.0000  lp  2075/ 19237  rows  250  pl +75  lbl 19545  spx 1241  0.5s
+  it   11  z   14529.0143  lb -1000000000.0000  minrc     0.0000  lp  2150/ 19237  rows  250  pl +75  lbl 19545  spx 500  1.6s
+  it   21  z   14525.9553  lb -1000000000.0000  minrc    -1.7750  lp  2009/ 19246  rows  250  hr +4  lbl 1679  spx 7  2.0s
+  it   31  z   14525.0834  lb   14521.1968  minrc    -0.3887  lp  2001/ 19295  rows  250  ex +2  lbl 10958  spx 1  2.4s
+  it   33  z   14525.0834  lb   14525.0834  minrc    -0.0000  lp  2005/ 19297  rows  250  ex +0  lbl 10877  spx 1  2.5s
+  cut round 1: +6 RCC (max viol 0.859), z 14525.0834
+  it   39  z   14529.2479  lb   14529.2479  minrc    -0.0000  lp  2202/ 19313  rows  256  ex +0  lbl 10565  spx 22  2.9s
+  cut round 2: +3 RCC (max viol 0.226), z 14529.2479
+  it   41  z   14530.6566  lb   14529.2479  minrc     0.0000  lp  2150/ 19313  rows  259  pl +75  lbl 10565  spx 353  3.1s
+  it   50  z   14530.6119  lb   14530.6119  minrc    -0.0000  lp  2000/ 19342  rows  259  ex +0  lbl 10476  spx 1  3.4s
+node    39 d4   lb  14530.612 lp  14530.612 glb  14519.814 ub 14583 open 38 lp 2000/19342 rows 259 it 50 110.1s
+  branch on edge (36,47) = 0.586  probes -1.000 | -1.000  score 765.981
+  it    1  z   14557.0000  lb -1000000000.0000  minrc     0.0000  lp  2075/ 19342  rows  261  pl +75  lbl 10476  spx 310  0.1s
+  it   11  z   14548.5622  lb   14462.2236  minrc    -8.6339  lp  2001/ 19345  rows  261  ex +18  lbl 10777  spx 2  1.1s
+  it   14  z   14548.5614  lb   14548.5614  minrc    -0.0000  lp  2027/ 19365  rows  261  ex +0  lbl 10706  spx 1  1.3s
+  cut round 1: +3 RCC (max viol 0.326), z 14548.5614
+  it   21  z   14550.0000  lb   14548.5614  minrc     0.0000  lp  2003/ 19412  rows  264  pl +2  lbl 1517  spx 9  1.7s
+node    98 d5   lb  14549.262 lp  14550.000 glb  14522.606 ub 14583 open 39 lp 2022/19430 rows 264 it 24 111.9s
+* incumbent 14550 from node LP (111.9s)
+  cleanup: deleted 36 rows (35 aged cuts), 228 left
+  it    1  z 1224731.3801  lb -1000000000.0000  minrc     0.0000  lp  2075/ 19430  rows  228  pl +75  lbl 11887  spx 1539  0.3s
+  it   11  z   14535.2273  lb -1000000000.0000  minrc     0.0000  lp  2150/ 19430  rows  228  pl +75  lbl 11887  spx 305  1.5s
+  it   21  z   14534.0476  lb   14275.7242  minrc     0.0000  lp  2021/ 19507  rows  228  pl +4  lbl 12702  spx 28  1.9s
+  it   26  z   14534.0106  lb   14534.0106  minrc    -0.0000  lp  2112/ 19585  rows  228  ex +0  lbl 13185  spx 5  2.1s
+  cut round 1: +15 RCC (max viol 0.835), z 14534.0106
+  it   31  z   14541.6987  lb   14534.0106  minrc    -1.5995  lp  2021/ 19585  rows  243  hr +5  lbl 1646  spx 12  2.5s
+  it   39  z   14541.6977  lb   14541.6977  minrc    -0.0000  lp  2126/ 19677  rows  243  ex +0  lbl 11624  spx 2  2.8s
+  cut round 2: +4 SRC (max viol 0.300), z 14541.6977
+  it   41  z   14542.2589  lb   14541.6977  minrc     0.0000  lp  2006/ 19677  rows  247  pl +2  lbl 11624  spx 59  3.0s
+  it   47  z   14542.1141  lb   14542.1141  minrc    -0.0000  lp  2025/ 19684  rows  247  ex +0  lbl 11785  spx 1  3.2s
+node    67 d6   lb  14542.114 lp  14542.114 glb  14522.606 ub 14550 open 38 lp 2025/19684 rows 247 it 47 115.1s
+  enumeration: gap 6.886 -> 2389 routes (1.0s)
+  branch on edge (0,33) = 0.493  probes -1.000 | -1.000  score 910.968
+  it    1  z   14564.4810  lb   12843.6932  minrc  -172.0788  lp  2000/ 19684  rows  249  ex +75  lbl 24338  spx 175  0.0s
+node   100 d7   lb  14546.387 lp  14546.464 glb  14523.347 ub 14550 open 39 lp 2115/19741 rows 249 it 4 116.2s
+  rmip (periodic): status time limit obj 0.0 in 2.1s
+  enumeration: gap 2.605 -> 750 routes (0.0s) [filtered]
+  enum MIP: infeasible, bound 14549.500, no solution (0.1s)
+  it    1  z   14604.0011  lb -1000000000.0000  minrc     0.0000  lp  2075/ 19741  rows  249  pl +75  lbl 24338  spx 761  0.2s
+  it   11  z   14548.5366  lb -1000000000.0000  minrc     0.0000  lp  2024/ 19741  rows  249  pl +2  lbl 24338  spx 14  1.0s
+  it   15  z   14548.4875  lb   14548.4875  minrc    -0.0000  lp  2048/ 19757  rows  249  ex +0  lbl 11001  spx 1  1.1s
+  cut round 1: +6 RCC (max viol 0.397), z 14548.4875
+  it   21  z   14551.7076  lb   14548.4875  minrc    -0.6000  lp  2004/ 19780  rows  255  ex +2  lbl 10964  spx 6  1.4s
+  it   22  z   14551.7076  lb   14551.7076  minrc    -0.0000  lp  2006/ 19782  rows  255  ex +0  lbl 10993  spx 2  1.5s
+node     7 d4   lb  14551.708 lp  14551.708 glb  14523.347 ub 14550 open 38 lp 2006/19782 rows 255 it 22 119.9s
+  it    1  z   14584.7989  lb -1000000000.0000  minrc     0.0000  lp  2075/ 19782  rows  255  pl +75  lbl 10993  spx 669  0.3s
+  it   11  z   14542.9141  lb   14537.9141  minrc    -0.5000  lp  2002/ 19800  rows  255  ex +2  lbl 12913  spx 4  1.1s
+  it   12  z   14542.9141  lb   14542.9141  minrc    -0.0000  lp  2004/ 19802  rows  255  ex +0  lbl 12857  spx 2  1.1s
+  cut round 1: +1 RCC (max viol 0.141), z 14542.9141
+  it   16  z   14543.0302  lb   14543.0302  minrc    -0.0000  lp  2015/ 19806  rows  256  ex +0  lbl 13069  spx 9  1.4s
+node    53 d5   lb  14543.030 lp  14543.030 glb  14524.232 ub 14550 open 37 lp 2015/19806 rows 256 it 16 121.3s
+  enumeration: gap 5.970 -> 1887 routes (1.3s)
+  branch on edge (0,33) = 0.435  probes -1.000 | -1.000  score 724.760
+  it    1  z   14556.3172  lb   14483.4896  minrc    -7.2828  lp  2000/ 19806  rows  258  ex +75  lbl 25920  spx 198  0.0s
+  it    4  z   14555.8710  lb   14555.8710  minrc    -0.0000  lp  2122/ 19862  rows  258  ex +0  lbl 25920  spx 4  0.1s
+node   102 d6   lb  14555.871 lp  14555.871 glb  14526.261 ub 14550 open 38 lp 2122/19862 rows 258 it 4 122.7s
+  cleanup: deleted 31 rows (28 aged cuts), 227 left
+  it    1  z   14630.2411  lb -1000000000.0000  minrc     0.0000  lp  2075/ 19862  rows  227  pl +75  lbl 25920  spx 711  0.2s
+  it    9  z   14542.7434  lb   14542.7434  minrc    -0.0000  lp  2346/ 19871  rows  227  ex +0  lbl 12539  spx 5  1.0s
+  cut round 1: +10 SRC (max viol 0.295), z 14542.7434
+  it   11  z   14551.1809  lb   14542.7434  minrc     0.0000  lp  2150/ 19871  rows  237  pl +75  lbl 12539  spx 379  1.2s
+  it   17  z   14550.7685  lb   14550.7685  minrc    -0.0000  lp  2210/ 19899  rows  237  ex +0  lbl 13321  spx 1  1.5s
+node    77 d4   lb  14550.768 lp  14550.768 glb  14526.261 ub 14550 open 37 lp 2210/19899 rows 237 it 17 124.1s
+  it    1  z   14570.9406  lb -1000000000.0000  minrc     0.0000  lp  2075/ 19899  rows  237  pl +75  lbl 13321  spx 468  0.2s
+  it   11  z   14549.2882  lb   14539.4570  minrc    -0.9831  lp  2008/ 19922  rows  237  ex +10  lbl 13257  spx 5  0.9s
+  it   12  z   14549.2882  lb   14549.2882  minrc    -0.0000  lp  2018/ 19932  rows  237  ex +0  lbl 13313  spx 9  0.9s
+node    91 d7   lb  14549.288 lp  14549.288 glb  14526.601 ub 14550 open 36 lp 2018/19932 rows 237 it 12 125.0s
+  it    1  z   14616.1617  lb -1000000000.0000  minrc     0.0000  lp  2075/ 19932  rows  237  pl +75  lbl 13313  spx 565  0.2s
+  it   11  z   14554.4636  lb -1000000000.0000  minrc    -2.8521  lp  2002/ 19935  rows  237  hr +1  lbl 1686  spx 5  1.0s
+  it   18  z   14551.0061  lb   14551.0061  minrc    -0.0000  lp  2163/ 20001  rows  237  ex +0  lbl 12020  spx 2  1.3s
+node    23 d7   lb  14551.006 lp  14551.006 glb  14526.856 ub 14550 open 35 lp 2163/20001 rows 237 it 18 126.4s
+  it    1  z  401612.5337  lb -1000000000.0000  minrc     0.0000  lp  2075/ 20001  rows  237  pl +75  lbl 12020  spx 718  0.2s
+  it   11  z   14545.9770  lb   14399.3347  minrc   -14.6642  lp  2001/ 20001  rows  237  ex +54  lbl 11676  spx 2  1.0s
+  it   15  z   14545.9750  lb   14545.9750  minrc    -0.0000  lp  2065/ 20063  rows  237  ex +0  lbl 11867  spx 1  1.2s
+  cut round 1: +3 RCC (max viol 0.650), z 14545.9750
+  it   21  z   14546.9762  lb   14546.9762  minrc    -0.0000  lp  2004/ 20066  rows  240  ex +0  lbl 11620  spx 12  1.5s
+  cut round 2: +1 RCC (max viol 0.167), z 14546.9762
+  it   24  z   14547.0789  lb   14547.0789  minrc    -0.0000  lp  2018/ 20072  rows  241  ex +0  lbl 11498  spx 3  1.7s
+node    41 d5   lb  14547.079 lp  14547.079 glb  14528.399 ub 14550 open 34 lp 2018/20072 rows 241 it 24 128.0s
+  enumeration: gap 1.921 -> 607 routes (0.5s)
+  enum MIP: infeasible, bound 14549.500, no solution (0.1s)
+  it    1  z   14578.5337  lb -1000000000.0000  minrc     0.0000  lp  2075/ 20072  rows  241  pl +75  lbl 21564  spx 549  0.2s
+  it   11  z   14549.8640  lb   14549.8640  minrc    -0.0000  lp  2006/ 20132  rows  241  ex +0  lbl 11149  spx 12  0.7s
+node    97 d5   lb  14549.864 lp  14549.864 glb  14530.612 ub 14550 open 33 lp 2006/20132 rows 241 it 11 129.4s
+  cleanup: deleted 29 rows (24 aged cuts), 212 left
+  it    1  z   14618.7634  lb -1000000000.0000  minrc     0.0000  lp  2075/ 20132  rows  212  pl +75  lbl 11149  spx 590  0.2s
+  it   10  z   14542.8069  lb   14542.8069  minrc    -0.0000  lp  2000/ 20151  rows  212  ex +0  lbl 11941  spx 11  0.9s
+  cut round 1: +1 RCC (max viol 0.111), z 14542.8069
+  it   11  z   14542.9401  lb   14542.8069  minrc     0.0000  lp  2011/ 20151  rows  213  pl +11  lbl 11941  spx 51  1.0s
+  it   14  z   14542.9260  lb   14542.9260  minrc    -0.0000  lp  2022/ 20152  rows  213  ex +0  lbl 12329  spx 1  1.1s
+  cut round 2: +1 RCC (max viol 0.231), z 14542.9260
+  it   19  z   14543.3480  lb   14543.3480  minrc    -0.0000  lp  2057/ 20154  rows  214  ex +0  lbl 12510  spx 1  1.3s
+  cut round 3: +9 SRC (max viol 0.190), z 14543.3480
+  it   21  z   14545.6356  lb   14543.3480  minrc     0.0000  lp  2063/ 20154  rows  223  pl +14  lbl 12510  spx 112  1.5s
+  it   27  z   14545.4573  lb   14545.4573  minrc    -0.0000  lp  2090/ 20172  rows  223  ex +0  lbl 12400  spx 8  1.7s
+node    89 d4   lb  14545.457 lp  14545.457 glb  14541.176 ub 14550 open 32 lp 2090/20172 rows 223 it 27 131.1s
+  enumeration: gap 3.543 -> 1024 routes (0.7s)
+  branch on edge (0,33) = 0.382  probes -1.000 | -1.000  score 665.086
+  it    1  z   14548.8380  lb   14473.1866  minrc    -7.5651  lp  2000/ 20172  rows  225  ex +22  lbl 24364  spx 150  0.0s
+  cut round 1: +1 RCC (max viol 0.174), z 14548.8316
+  cut round 2: +2 RCC (max viol 0.109), z 14548.9104
+  it    4  z   14548.9606  lb   14548.9606  minrc    -0.0000  lp  2034/ 20187  rows  228  ex +0  lbl 24364  spx 91  0.1s
+node   104 d5   lb  14548.961 lp  14548.961 glb  14542.114 ub 14550 open 33 lp 2034/20187 rows 228 it 4 131.9s
+  enumeration: gap 0.039 -> 370 routes (0.0s) [filtered]
+  enum MIP: infeasible, bound 14549.500, no solution (0.0s)
+  it    1  z  362436.6988  lb -15264789.7354  minrc -1562722.6434  lp  2000/ 20187  rows  228  ex +75  lbl 24364  spx 887  0.2s
+  it    9  z   14552.5482  lb   14552.5482  minrc    -0.0000  lp  2453/ 20354  rows  228  ex +0  lbl 24364  spx 7  0.6s
+node    99 d7   lb  14552.548 lp  14552.548 glb  14542.114 ub 14550 open 32 lp 2453/20354 rows 228 it 9 132.5s
+  it    1  z   14567.0726  lb -3854472.0354  minrc -386903.9108  lp  2000/ 20354  rows  228  ex +75  lbl 24364  spx 435  0.2s
+node   101 d6   lb  14552.404 lp  14556.414 glb  14543.030 ub 14550 open 31 lp 2270/20467 rows 228 it 6 132.9s
+  it    1  z   14645.8989  lb -1000000000.0000  minrc     0.0000  lp  2075/ 20467  rows  228  pl +75  lbl 24364  spx 770  0.2s
+  it   11  z   14559.6369  lb -1000000000.0000  minrc     0.0000  lp  2076/ 20469  rows  228  pl +74  lbl 1029  spx 205  1.0s
+  it   21  z   14555.9777  lb   14245.4858  minrc     0.0000  lp  2014/ 20555  rows  228  pl +6  lbl 11441  spx 11  1.3s
+node    25 d8   lb  14553.178 lp  14555.825 glb  14544.125 ub 14550 open 30 lp 2104/20612 rows 228 it 29 134.6s
+  cleanup: deleted 31 rows (24 aged cuts), 197 left
+  it    1  z   14637.5497  lb -1000000000.0000  minrc     0.0000  lp  2075/ 20612  rows  197  pl +75  lbl 12696  spx 945  0.2s
+  it   11  z   14536.0321  lb -1000000000.0000  minrc     0.0000  lp  2051/ 20612  rows  197  pl +9  lbl 12696  spx 65  1.1s
+  it   20  z   14535.9457  lb   14535.9457  minrc    -0.0000  lp  2000/ 20701  rows  197  ex +0  lbl 11666  spx 3  1.5s
+  cut round 1: +32 RCC (max viol 0.941), z 14535.9457
+  it   21  z   14548.5505  lb   14535.9457  minrc     0.0000  lp  2075/ 20701  rows  229  pl +75  lbl 11666  spx 324  1.6s
+  it   31  z   14540.5397  lb   14540.5397  minrc    -0.0000  lp  2004/ 20728  rows  229  ex +0  lbl 11957  spx 1  2.1s
+  cut round 2: +7 RCC (max viol 0.623), z 14540.5397
+  it   39  z   14542.7564  lb   14542.7564  minrc    -0.0000  lp  2188/ 20739  rows  236  ex +0  lbl 10622  spx 1  2.6s
+  cut round 3: +3 RCC (max viol 0.142), z 14542.7564
+  it   41  z   14544.8671  lb   14542.7564  minrc     0.0000  lp  2033/ 20739  rows  239  pl +1  lbl 10622  spx 51  2.7s
+  it   43  z   14544.8671  lb   14544.8671  minrc    -0.0000  lp  2035/ 20739  rows  239  ex +0  lbl 11177  spx 6  2.8s
+  cut round 4: +3 RCC (max viol 0.129), z 14544.8671
+  it   48  z   14546.9955  lb   14546.9955  minrc    -0.0000  lp  2081/ 20743  rows  242  ex +0  lbl 10785  spx 2  3.1s
+  cut round 5: +2 RCC (max viol 0.141), z 14546.9955
+  cut round 6: +1 RCC (max viol 0.156), z 14547.1562
+  it   51  z   14548.6381  lb   14547.0965  minrc     0.0000  lp  2077/ 20745  rows  245  pl +75  lbl 10693  spx 144  3.3s
+  it   56  z   14548.2333  lb   14548.2333  minrc    -0.0000  lp  2095/ 20748  rows  245  ex +0  lbl 10169  spx 1  3.5s
+  cut round 7: +9 SRC (max viol 0.224), z 14548.2333
+  it   61  z   14549.9138  lb   14548.2333  minrc     0.0000  lp  2032/ 20776  rows  254  pl +4  lbl 12810  spx 37  3.8s
+  it   63  z   14549.9035  lb   14549.9035  minrc    -0.0000  lp  2038/ 20782  rows  254  ex +0  lbl 12831  spx 15  4.0s
+node    79 d5   lb  14549.904 lp  14549.904 glb  14544.462 ub 14550 open 29 lp 2038/20782 rows 254 it 63 138.5s
+  it    1  z   14675.1081  lb -1000000000.0000  minrc     0.0000  lp  2075/ 20782  rows  254  pl +75  lbl 12831  spx 703  0.2s
+  it   11  z   14558.7821  lb -1000000000.0000  minrc     0.0000  lp  2016/ 20788  rows  254  pl +8  lbl 1717  spx 7  1.2s
+  it   18  z   14558.1900  lb   14558.1900  minrc    -0.0000  lp  2113/ 20866  rows  254  ex +0  lbl 13148  spx 16  1.6s
+node    55 d6   lb  14558.190 lp  14558.190 glb  14544.640 ub 14550 open 28 lp 2113/20866 rows 254 it 18 140.2s
+  it    1  z  208143.2115  lb -3661934.6720  minrc -387007.7883  lp  2000/ 20866  rows  254  ex +75  lbl 13148  spx 853  0.3s
+times: pricing 45.5 master 155.5 cuts 3.8 rmip 7.1 dive 9.0 branch 0.3 switch 0.0 enum 13.9 (label 13.7 in 12 tries, mip 0.2 in 3 solves, 3 nodes closed) total 242.3
+split: cg iters 2497; pricing setup 0.0 pool 25.0/2444/1205 s0 0.9/1239/201 s1 1.9/1038/404 exact 15.8/634/465 scan 0.0/52/46 (time/calls/with cols); cuts rccsep 2.7/202 (120 with cuts) src 0.0 rows 1.0
+probes: 0  solve 0.0 (0 iters avg)  purged 55045 repriced 35448 lp cols 2225 pool 20909
+RESULT XML100_1113_07 status time_limit lb 14546 ub 14550 published 14550 nodes 78 depth 13 cols 20909 rows 254 rootlp 14486.519 rootlb 14486.519 kmin 10 kmax 11 fleetcap 0 time 242.25s root 4.49s 
+Route #1: 7 51 88 28 24 27 21 94 91 52
+Route #2: 42 72 50 74 19 99 59 11 6 87
+Route #3: 47 36 76 95 14 83 30 22 71 39
+Route #4: 79 78 60 68 23 26 81 8 33 16
+Route #5: 3 90 86 54 96 55 5 80 56 15
+Route #6: 53 18 35 45 70 89 69 9 98 49
+Route #7: 57 93 40 44 20 41 1 61 82 58
+Route #8: 29 62 63 64 31 34 13 100 25 97
+Route #9: 67 65 2 4 92 32 37 10 17 12
+Route #10: 48 66 84 77 38 46 85 75 43 73
+Cost 14550

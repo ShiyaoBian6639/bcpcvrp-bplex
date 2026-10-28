@@ -120,7 +120,18 @@ private:
     std::vector<std::vector<int>> inC_;     // per vertex: SRC indices whose triple contains it
     std::vector<uint64_t> memmask_;         // per vertex: 2 words, bit set if the vertex is in the cut's memory
     std::vector<Label> arena_;
-    std::vector<std::vector<int>> at_;      // alive label indices per vertex
+    // alive label indices per (vertex, load bucket), each list sorted by rc:
+    // at_[v*nb_ + load/bstep_]. A label can only be dominated by labels in
+    // its own or a lower bucket with rc <= its own, and can only dominate
+    // labels in its own or a higher bucket with rc >= its own.
+    std::vector<std::vector<int>> at_;
+    int nb_ = 1, bstep_ = 1;
+    std::vector<int> nalive_; // alive labels per vertex (heuristic cap)
+    template <class F> void each_label(int v, F f) const
+    {
+        for (int b = 0; b < nb_; b++)
+            for (int idx : at_[(size_t)v * nb_ + b]) f(idx);
+    }
     size_t labels_last_ = 0;
 
     // ng labeling from the depot; labels with load <= extend_limit are
@@ -128,6 +139,7 @@ private:
     // cap > 0: at most cap alive labels per vertex (heuristic pricing)
     void label_pass(bool heuristic, int extend_limit, int cap = 0);
     int cap_ = 0, stage_cap_ = 0;
+    bool relax_dom_ = false; // heuristic stages: dominance ignores ng memory and SRC states
     void src_enter(Label &N, int w) const;
     // ng extension of L (arena index idx, -1 if none) to w; false if forbidden by ng or capacity
     bool extend(const Label &L, int idx, int w, Label &N) const;

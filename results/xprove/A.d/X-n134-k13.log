@@ -1,0 +1,26 @@
+* incumbent 11672 from Clarke-Wright savings (0.0s)
+debug: loaded solution ../xltw/benchmarks/CVRP/X-n134-k13.sol cost 10916
+node     0 d0   lb  10822.497 lp  10822.497 glb      0.000 ub 11672 open 0 lp 2663/18219 rows 221 it 672 41.7s
+node    18 d9   lb  10878.110 lp  10878.110 glb  10825.793 ub 11672 open 9 lp 2759/33852 rows 208 it 98 163.8s
+node    38 d19  lb  10928.492 lp  10928.686 glb  10825.793 ub 11672 open 19 lp 2683/36006 rows 215 it 15 224.1s
+node    58 d29  lb  10982.228 lp  10982.228 glb  10825.793 ub 11672 open 29 lp 2725/39119 rows 206 it 7 373.8s
+node    78 d39  lb  11047.428 lp  11047.489 glb  10825.793 ub 11672 open 39 lp 2676/47718 rows 231 it 116 543.7s
+times: pricing 767.4 master 47.2 cuts 4.6 rmip 5.0 dive 63.2 branch 0.2 switch 0.0 enum 10.0 (label 10.0 in 1 tries, mip 0.0 in 0 solves, 0 nodes closed) total 900.0
+split: cg iters 2872; pricing setup 0.0 pool 21.8/2872 s0 78.4/1508 s1 154.4/1074 exact 510.3/377 scan 0.0/0; cuts rccsep 4.0/144 (80 with cuts) src 0.1 rows 0.5
+probes: 0  solve 0.0 (0 iters avg)  purged 86970 repriced 32818 lp cols 2815 pool 56784
+RESULT X-n134-k13 status time_limit lb 10826 ub 11672 published 10916 nodes 49 depth 48 cols 56784 rows 262 rootlp 10822.497 rootlb 10822.497 kmin 13 kmax 14 fleetcap 1 time 900.01s root 41.73s 
+Route #1: 2 39 73 59 6 108 90 36 43
+Route #2: 3 103 10 62 32 54 110 123
+Route #3: 23 7 63 15 81 68 30 8 84 107 44 70 27 22 4 67 55 126 20 28 75 98 65 42
+Route #4: 14 51 16 47 9 41 34
+Route #5: 17 19 130 38 50 35 26 74
+Route #6: 18 96 13 97 5 121 77 53 66 93 94 102 88 37 24
+Route #7: 118 91 95 40 100
+Route #8: 129 116 89 113 25 105 58 60
+Route #9: 76 115 125 127 114 11 52 122
+Route #10: 83 78 87 56 109 132
+Route #11: 79 120 111 104 99 46 21 45 106
+Route #12: 72 86 33 124 12 133 82 80 128
+Route #13: 85 119 57 61 71 49 117 64 48
+Route #14: 31 92 29 1 69 112 101 131
+Cost 11672

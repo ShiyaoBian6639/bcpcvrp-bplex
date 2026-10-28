@@ -1,0 +1,23 @@
+debug: loaded solution ../xltw/benchmarks/CVRP/X-n313-k71.sol cost 94043
+node     0 d0   lb  93659.096 lp  93659.426 glb      0.000 ub - open 0 lp 6333/7639 rows 283 it 217 22.7s
+node    18 d9   lb  93780.702 lp  93780.702 glb  93665.485 ub - open 9 lp 6264/11927 rows 258 it 7 175.4s
+node    38 d19  lb  93904.223 lp  93904.630 glb  93665.485 ub - open 19 lp 6267/12336 rows 237 it 7 206.6s
+node    58 d29  lb  93963.219 lp  93963.219 glb  93665.485 ub - open 29 lp 6348/16943 rows 235 it 9 362.3s
+node    78 d39  lb  94033.011 lp  94033.011 glb  93665.485 ub - open 39 lp 6323/17754 rows 262 it 9 408.1s
+node    98 d49  lb  94120.152 lp  94120.152 glb  93665.485 ub - open 49 lp 6249/21601 rows 290 it 3 570.2s
+node   118 d9   lb  93798.344 lp  93798.344 glb  93665.485 ub - open 59 lp 6263/21963 rows 351 it 7 601.6s
+node   138 d19  lb  93889.908 lp  93889.908 glb  93665.485 ub - open 69 lp 6266/22978 rows 314 it 7 747.6s
+node   158 d29  lb  93990.397 lp  93990.397 glb  93665.485 ub - open 79 lp 6247/23361 rows 394 it 25 781.1s
+node   178 d39  lb  94065.025 lp  94065.025 glb  93665.485 ub - open 89 lp 6264/25653 rows 379 it 13 936.7s
+node   198 d49  lb  94168.140 lp  94168.140 glb  93665.485 ub - open 99 lp 6270/26418 rows 398 it 5 968.3s
+node   218 d10  lb  93806.269 lp  93806.269 glb  93665.485 ub - open 109 lp 6275/26759 rows 452 it 9 1119.7s
+node   238 d20  lb  93948.940 lp  93948.940 glb  93665.485 ub - open 119 lp 6242/26886 rows 454 it 11 1149.1s
+node   258 d30  lb  94030.587 lp  94030.587 glb  93665.485 ub - open 129 lp 6271/29169 rows 464 it 9 1299.2s
+node   278 d40  lb  94108.599 lp  94108.599 glb  93665.485 ub - open 139 lp 6240/29572 rows 492 it 12 1323.6s
+node   298 d50  lb  94226.299 lp  94226.299 glb  93665.485 ub - open 149 lp 6251/32227 rows 526 it 4 1494.4s
+node   318 d12  lb  93866.391 lp  93866.391 glb  93665.485 ub - open 159 lp 6273/32351 rows 607 it 8 1542.8s
+node   338 d22  lb  93982.765 lp  93982.765 glb  93665.485 ub - open 169 lp 6255/33955 rows 563 it 4 1744.0s
+times: pricing 478.8 master 78.0 cuts 129.9 rmip 5.0 dive 1105.2 branch 1.0 switch 0.1 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 1800.9
+split: cg iters 2813; pricing setup 0.0 pool 9.7/2813 s0 140.7/1796 s1 72.6/1565 exact 242.7/894 scan 0.0/0; cuts rccsep 126.8/633 (405 with cuts) src 0.1 rows 3.0
+probes: 0  solve 0.0 (0 iters avg)  purged 75979 repriced 47613 lp cols 6250 pool 34121
+RESULT X-n313-k71 status time_limit lb 93666 ub -1 published 94043 nodes 176 depth 50 cols 34121 rows 573 rootlp 93659.426 rootlb 93659.096 kmin 71 kmax 72 fleetcap 0 time 1800.88s root 22.69s 

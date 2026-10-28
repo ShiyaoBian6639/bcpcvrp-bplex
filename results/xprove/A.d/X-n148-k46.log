@@ -1,0 +1,78 @@
+debug: loaded solution ../xltw/benchmarks/CVRP/X-n148-k46.sol cost 43448
+node     0 d0   lb  43359.995 lp  43359.995 glb      0.000 ub - open 0 lp 2180/2180 rows 382 it 97 1.4s
+* incumbent 43452 from dive (2.8s)
+node    16 d2   lb  43405.253 lp  43405.692 glb  43365.124 ub 43452 open 7 lp 2945/3492 rows 240 it 12 10.6s
+node    32 d8   lb  43425.174 lp  43425.174 glb  43375.283 ub 43452 open 13 lp 2950/3670 rows 376 it 6 12.9s
+node    15 d2   lb  43402.226 lp  43402.226 glb  43383.658 ub 43452 open 17 lp 2962/3800 rows 403 it 8 18.6s
+node    62 d7   lb  43406.976 lp  43406.976 glb  43389.559 ub 43452 open 23 lp 2940/3887 rows 241 it 1 20.3s
+node    39 d6   lb  43400.710 lp  43400.710 glb  43396.793 ub 43452 open 25 lp 2971/4013 rows 307 it 3 22.0s
+node    75 d7   lb  43410.164 lp  43410.164 glb  43400.710 ub 43452 open 29 lp 2950/4125 rows 358 it 4 24.1s
+node   104 d6   lb  43454.108 lp  43454.108 glb  43402.226 ub 43452 open 35 lp 2948/4229 rows 393 it 3 26.1s
+node    77 d8   lb  43415.638 lp  43415.638 glb  43403.811 ub 43452 open 37 lp 2974/4315 rows 365 it 9 30.6s
+node   128 d9   lb  43438.413 lp  43438.413 glb  43408.567 ub 43452 open 39 lp 2946/4414 rows 407 it 9 32.4s
+* incumbent 43451 from enumeration MIP (34.5s)
+node   140 d7   lb  43442.149 lp  43442.149 glb  43414.104 ub 43451 open 41 lp 2948/4526 rows 345 it 3 35.1s
+node   127 d9   lb  43430.654 lp  43430.654 glb  43420.146 ub 43451 open 39 lp 2942/4607 rows 316 it 2 43.3s
+node   157 d9   lb  43427.204 lp  43427.204 glb  43422.784 ub 43451 open 41 lp 2954/4659 rows 373 it 6 46.3s
+node   153 d9   lb  43435.795 lp  43435.795 glb  43424.691 ub 43451 open 37 lp 2949/4742 rows 407 it 5 51.9s
+node   131 d8   lb  43433.874 lp  43433.874 glb  43429.191 ub 43451 open 35 lp 2940/4763 rows 389 it 6 53.8s
+node   149 d10  lb  43432.341 lp  43432.341 glb  43430.654 ub 43451 open 31 lp 2942/4797 rows 386 it 2 58.6s
+node   113 d10  lb  43446.284 lp  43446.284 glb  43432.599 ub 43451 open 31 lp 2942/4808 rows 347 it 2 60.9s
+node   187 d12  lb  43435.025 lp  43435.025 glb  43434.488 ub 43451 open 27 lp 2940/4819 rows 362 it 1 64.0s
+node   167 d10  lb  43443.857 lp  43443.857 glb  43435.795 ub 43451 open 21 lp 2943/4826 rows 360 it 5 69.8s
+* incumbent 43450 from node LP (70.5s)
+node    73 d8   lb  43448.887 lp  43448.887 glb  43438.165 ub 43450 open 11 lp 2941/4834 rows 372 it 5 76.2s
+node   163 d10  lb  43442.712 lp  43442.712 glb  43441.641 ub 43450 open 1 lp 2944/4843 rows 381 it 7 78.1s
+* incumbent 43448 from enumeration MIP (78.5s)
+times: pricing 2.6 master 18.7 cuts 16.5 rmip 5.0 dive 1.5 branch 0.3 switch 0.0 enum 33.2 (label 0.2 in 1 tries, mip 33.0 in 52 solves, 52 nodes closed) total 78.7
+split: cg iters 1141; pricing setup 0.0 pool 0.0/103 s0 0.1/101 s1 0.1/67 exact 0.0/25 scan 0.4/1038; cuts rccsep 14.9/634 (340 with cuts) src 0.1 rows 1.5
+probes: 0  solve 0.0 (0 iters avg)  purged 2692 repriced 13 lp cols 2943 pool 4844
+RESULT X-n148-k46 status optimal lb 43448 ub 43448 published 43448 nodes 201 depth 13 cols 4844 rows 294 rootlp 43359.995 rootlb 43359.995 kmin 46 kmax 47 fleetcap 1 time 78.66s root 1.35s MATCHES published optimum
+Route #1: 99
+Route #2: 89 39
+Route #3: 104 32 82
+Route #4: 118 107
+Route #5: 1 59
+Route #6: 95 87
+Route #7: 30 56
+Route #8: 44 88
+Route #9: 106 136
+Route #10: 132 97
+Route #11: 137 110 85
+Route #12: 129 10 54 68
+Route #13: 93 21
+Route #14: 105 40
+Route #15: 113 35
+Route #16: 18 75
+Route #17: 34 139
+Route #18: 83 76 143
+Route #19: 46 47 23
+Route #20: 71 5 28
+Route #21: 108 74 16
+Route #22: 84 134 42
+Route #23: 27 55 22
+Route #24: 64 138 102 114
+Route #25: 86 122 2
+Route #26: 120 81 7
+Route #27: 72 58 43
+Route #28: 51 60 4
+Route #29: 78 41 94
+Route #30: 101 103 6 125 37
+Route #31: 65 144 131
+Route #32: 116 90 15
+Route #33: 26 130 57
+Route #34: 14 61 67 98
+Route #35: 140 121 124
+Route #36: 73 53 126
+Route #37: 100 115 135 31
+Route #38: 127 77 109 62
+Route #39: 17 112 70 142
+Route #40: 128 146 111
+Route #41: 38 69 29 25
+Route #42: 117 12 3 8
+Route #43: 147 141 133 19
+Route #44: 20 80 119 48 52
+Route #45: 96 33 36 13 66 145 49
+Route #46: 45 50 9 24 63 11
+Route #47: 123 91 79 92
+Cost 43448

@@ -1,4 +1,7 @@
 #include "master/master.h"
+#ifdef _OPENMP
+#include <omp.h>
+#endif
 
 #include "bplex.h"
 #include "pricing/labeling.h"
@@ -8,10 +11,78 @@
 #include <climits>
 #include <cmath>
 #include <cstdio>
+#include <cstdlib>
 #include <cstring>
 #include <stdexcept>
 
 namespace cvrpbcp {
+
+// ---- LP solver wrappers (bplex + optional trace) ----
+int Master::bp_load(int ncols, int nrows, const double *obj, const double *lo, const double *up, const double *rlo,
+                    const double *rup, const int *cs, const int *ri, const double *v)
+{
+    if (trace_) trace_->load(ncols, nrows, obj, lo, up, rlo, rup, cs, ri, v);
+    return bplex_load(bp_, ncols, nrows, obj, lo, up, nullptr, rlo, rup, cs, ri, v, 0.0, 1);
+}
+int Master::bp_add_cols(int n, const double *obj, const double *lo, const double *up, const int *cs, const int *ri,
+                        const double *v)
+{
+    if (trace_) trace_->add_cols(n, obj, lo, up, cs, ri, v);
+    return bplex_add_cols(bp_, n, obj, lo, up, cs, ri, v);
+}
+int Master::bp_add_rows(int n, const double *lo, const double *up, const int *rs, const int *ci, const double *v)
+{
+    if (trace_) trace_->add_rows(n, lo, up, rs, ci, v);
+    return bplex_add_rows(bp_, n, lo, up, rs, ci, v);
+}
+int Master::bp_del_cols(int n, const int *idx)
+{
+    if (trace_) trace_->del_cols(n, idx);
+    return bplex_del_cols(bp_, n, idx);
+}
+int Master::bp_del_rows(int n, const int *idx)
+{
+    if (trace_) trace_->del_rows(n, idx);
+    return bplex_del_rows(bp_, n, idx);
+}
+int Master::bp_chg_col(int j, double lo, double up)
+{
+    if (trace_) trace_->chg_col(j, lo, up);
+    return bplex_chg_col_bounds(bp_, j, lo, up);
+}
+int Master::bp_chg_row(int i, double lo, double up)
+{
+    if (trace_) trace_->chg_row(i, lo, up);
+    return bplex_chg_row_bounds(bp_, i, lo, up);
+}
+int Master::bp_chg_type(int j, int is_integer)
+{
+    if (trace_) trace_->chg_type(j, is_integer);
+    return bplex_chg_col_type(bp_, j, is_integer);
+}
+void Master::bp_slack_basis()
+{
+    if (trace_) trace_->slack_basis();
+    std::vector<int> cst(nfix_ + (int)lp_route_.size(), BPLEX_AT_LOWER), rst(nrows_, BPLEX_BASIC);
+    bplex_set_basis(bp_, cst.data(), rst.data());
+}
+void Master::bp_param(const char *name, double value)
+{
+    if (trace_) trace_->param(name, value);
+    bplex_set_param(bp_, name, value);
+}
+int Master::bp_solve(int kind)
+{
+    if (!trace_) return bplex_solve(bp_);
+    using namespace std::chrono;
+    trace_->solve(kind);
+    double t = duration<double>(steady_clock::now().time_since_epoch()).count();
+    int st = bplex_solve(bp_);
+    t = duration<double>(steady_clock::now().time_since_epoch()).count() - t;
+    double obj = (st == BPLEX_OPTIMAL || st == BPLEX_TIME_LIMIT || st == BPLEX_NODE_LIMIT) ? bplex_objval(bp_) : 0.0;
+    trace_->result(st, obj, bplex_get_info(bp_, "iterations"), t);
+    return st;
+}
 
 bool Route::elementary() const
 {
@@ -53,7 +124,8 @@ Master::Master(const Instance &I, int kmin, int kmax, const Params &P) : I_(I), 
 
     bp_ = bplex_create();
     if (!bp_) throw std::runtime_error("bplex_create failed");
-    bplex_set_param(bp_, "log_level", 0);
+    if (const char *tp = std::getenv("CVRPBCP_LPTRACE")) trace_.reset(new LpTrace(tp));
+    bp_param("log_level", 0);
     // bplex's own warnings and errors (level 0) go to our log with a prefix;
     // everything else only at log level >= 4
     bplex_set_log_callback(
@@ -64,8 +136,8 @@ Master::Master(const Instance &I, int kmin, int kmax, const Params &P) : I_(I), 
                                                             (msg[0] && msg[std::strlen(msg) - 1] == '\n') ? "" : "\n");
         },
         const_cast<Params *>(&P_));
-    bplex_set_param(bp_, "threads", P.threads);
-    bplex_set_param(bp_, "presolve", 0);
+    bp_param("threads", P.threads);
+    bp_param("presolve", 0);
 
     nrows_ = n + 1;
     std::vector<double> obj(nfix_, bigM_), lo(nfix_, 0.0), up(nfix_, BPLEX_INF), rlo(nrows_, 1.0), rup(nrows_, 1.0);
@@ -75,8 +147,8 @@ Master::Master(const Instance &I, int kmin, int kmax, const Params &P) : I_(I), 
     cs[nfix_] = nfix_;
     rlo[n] = kmin;
     rup[n] = kmax;
-    if (bplex_load(bp_, nfix_, nrows_, obj.data(), lo.data(), up.data(), nullptr, rlo.data(), rup.data(), cs.data(),
-                   ri.data(), v.data(), 0.0, 1) != 0)
+    if (bp_load(nfix_, nrows_, obj.data(), lo.data(), up.data(), rlo.data(), rup.data(), cs.data(), ri.data(),
+                v.data()) != 0)
         throw std::runtime_error("bplex_load failed");
     pi_.assign(n + 1, 0.0);
 }
@@ -113,7 +185,7 @@ void Master::append_lp_columns(const std::vector<int> &route_idx)
         age_.push_back(0);
         nlp_routes_++;
     }
-    int rc = bplex_add_cols(bp_, (int)route_idx.size(), obj.data(), nullptr, nullptr, cs.data(), ri.data(),
+    int rc = bp_add_cols((int)route_idx.size(), obj.data(), nullptr, nullptr, cs.data(), ri.data(),
                             vals.data());
     if (rc != 0) throw std::runtime_error("bplex_add_cols failed: " + std::to_string(rc));
 }
@@ -140,6 +212,8 @@ int Master::add_routes(const std::vector<Route> &rs)
         route_index_.emplace(h, (int)routes_.size());
         idx.push_back((int)routes_.size());
         routes_.push_back(r);
+        pool_seq_.insert(pool_seq_.end(), r.seq.begin(), r.seq.end());
+        pool_off_.push_back((int)pool_seq_.size());
         col_of_.push_back(-2);
         lambda_.push_back(0.0);
         pool_skip_.push_back(0);
@@ -162,14 +236,24 @@ int Master::price_pool(const Pricer &pr, double eps, int max_cols, bool fresh)
     std::vector<int> srcrows;
     for (size_t c = 0; c < rows_.size(); c++)
         if (rows_[c].kind == RobustRow::SRC && rows_[c].active && yrow_[c] < -1e-9) srcrows.push_back((int)c);
-    for (size_t r = 0; r < routes_.size(); r++) {
+    // flat sequences, one route per iteration, no shared writes besides the
+    // route's own skip counter: the scan splits over threads trivially
+    const int nr = (int)routes_.size();
+    const int T = std::max(1, scan_threads);
+    std::vector<std::vector<C>> cands(T);
+#ifdef _OPENMP
+#pragma omp parallel for schedule(static) num_threads(T) if (T > 1)
+#endif
+    for (int r = 0; r < nr; r++) {
         if (col_of_[r] >= 0) continue;
         if (pool_skip_[r] > 0) { pool_skip_[r]--; continue; }
-        const Route &rt = routes_[r];
+        const int *sq = &pool_seq_[pool_off_[r]];
+        const int len = pool_off_[r + 1] - pool_off_[r];
         double rc = 0;
         int prev = 0;
         bool bad = false;
-        for (int v : rt.seq) {
+        for (int k = 0; k < len; k++) {
+            const int v = sq[k];
             if (pr.forbidden(prev, v)) { bad = true; break; }
             rc += pr.arc_rc(prev, v);
             prev = v;
@@ -180,9 +264,16 @@ int Master::price_pool(const Pricer &pr, double eps, int max_cols, bool fresh)
             pool_skip_[r] = rc < dscale ? 2 : rc < 4 * dscale ? 6 : 15;
             continue;
         }
-        for (int c : srcrows) rc -= yrow_[c] * rows_[c].coef(rt);
-        if (rc < -eps) cand.push_back({rc, (int)r});
+        for (int c : srcrows) rc -= yrow_[c] * rows_[c].coef(routes_[r]);
+        if (rc < -eps) {
+#ifdef _OPENMP
+            cands[omp_get_thread_num()].push_back({rc, r});
+#else
+            cands[0].push_back({rc, r});
+#endif
+        }
     }
+    for (int t = 0; t < T; t++) cand.insert(cand.end(), cands[t].begin(), cands[t].end());
     if (cand.empty()) return 0;
     std::sort(cand.begin(), cand.end(), [](const C &a, const C &b) { return a.rc < b.rc; });
     if ((int)cand.size() > max_cols) cand.resize(max_cols);
@@ -198,7 +289,7 @@ void Master::delete_dynamic_columns(const std::vector<int> &js)
     if (js.empty()) return;
     std::vector<int> cols;
     for (int j : js) cols.push_back(nfix_ + j);
-    int rc = bplex_del_cols(bp_, (int)cols.size(), cols.data());
+    int rc = bp_del_cols((int)cols.size(), cols.data());
     if (rc != 0) throw std::runtime_error("bplex_del_cols failed: " + std::to_string(rc));
     std::vector<char> gone(lp_route_.size(), 0);
     for (int j : js) gone[j] = 1;
@@ -255,7 +346,7 @@ std::vector<int> Master::add_rows(const std::vector<RobustRow> &rs)
         yrow_.push_back(0.0);
         ids.push_back((int)pos_.size() - 1);
     }
-    int rc = bplex_add_rows(bp_, (int)rs.size(), lo.data(), up.data(), rstart.data(), ci.data(), vals.data());
+    int rc = bp_add_rows((int)rs.size(), lo.data(), up.data(), rstart.data(), ci.data(), vals.data());
     if (rc != 0) throw std::runtime_error("bplex_add_rows failed: " + std::to_string(rc));
     nrows_ += (int)rs.size();
     // one artificial column per ">=" row
@@ -273,7 +364,7 @@ std::vector<int> Master::add_rows(const std::vector<RobustRow> &rs)
         age_.push_back(INT_MIN);
     }
     if (!aobj.empty()) {
-        rc = bplex_add_cols(bp_, (int)aobj.size(), aobj.data(), nullptr, nullptr, acs.data(), ari.data(), avals.data());
+        rc = bp_add_cols((int)aobj.size(), aobj.data(), nullptr, nullptr, acs.data(), ari.data(), avals.data());
         if (rc != 0) throw std::runtime_error("bplex_add_cols (artificial) failed: " + std::to_string(rc));
     }
     return ids;
@@ -285,8 +376,8 @@ void Master::set_row_active(int id, bool active)
     RobustRow &r = rows_[pos_[id]];
     if (r.active == active) return;
     r.active = active;
-    int rc = active ? bplex_chg_row_bounds(bp_, r.row, r.lo, r.up)
-                    : bplex_chg_row_bounds(bp_, r.row, -BPLEX_INF, BPLEX_INF);
+    int rc = active ? bp_chg_row(r.row, r.lo, r.up)
+                    : bp_chg_row(r.row, -BPLEX_INF, BPLEX_INF);
     if (rc != 0) row_edit_failed("set_row_active", rc, r.row);
 }
 
@@ -318,7 +409,7 @@ void Master::delete_rows(const std::vector<int> &ids)
     for (size_t j = 0; j < lp_route_.size(); j++)
         if (lp_art_row_[j] >= 0 && delid[lp_art_row_[j]]) js.push_back((int)j);
     delete_dynamic_columns(js);
-    int rc = bplex_del_rows(bp_, (int)bprows.size(), bprows.data());
+    int rc = bp_del_rows((int)bprows.size(), bprows.data());
     if (rc != 0) throw std::runtime_error("bplex_del_rows failed: " + std::to_string(rc));
     std::vector<RobustRow> kept;
     std::vector<double> ykept;
@@ -340,7 +431,7 @@ void Master::fix_route(int r, bool fixed)
 {
     if (col_of_[r] < 0) append_lp_columns({r});
     int j = nfix_ + col_of_[r];
-    int rc = fixed ? bplex_chg_col_bounds(bp_, j, 1.0, 1.0) : bplex_chg_col_bounds(bp_, j, 0.0, BPLEX_INF);
+    int rc = fixed ? bp_chg_col(j, 1.0, 1.0) : bp_chg_col(j, 0.0, BPLEX_INF);
     if (rc != 0) throw std::runtime_error("bplex_chg_col_bounds failed");
     if (fixed) age_[col_of_[r]] = INT_MIN; // never purged while fixed
     else age_[col_of_[r]] = 0;
@@ -352,14 +443,41 @@ void Master::set_fleet_bounds(int klo, int khi)
     if (klo > khi) throw std::runtime_error("set_fleet_bounds: klo " + std::to_string(klo) + " > khi " + std::to_string(khi));
     klo_ = klo;
     khi_ = khi;
-    int rc = bplex_chg_row_bounds(bp_, I_.n, klo, khi);
+    int rc = bp_chg_row(I_.n, klo, khi);
     if (rc != 0) row_edit_failed("set_fleet_bounds", rc, I_.n);
 }
 
 int Master::solve()
 {
-    bplex_set_param(bp_, "time_limit", lp_time_limit_);
-    int st = bplex_solve(bp_);
+    using namespace std::chrono;
+    auto tnow = []() { return duration<double>(steady_clock::now().time_since_epoch()).count(); };
+    // A warm solve that takes far longer than the running average is a
+    // simplex stall (seen on XML100_1113_07: one 2100 x 254 LP ran for the
+    // rest of the budget). It is cut off and retried with the primal
+    // simplex; the first two cases are dumped for the bplex team (the LP
+    // trace, CVRPBCP_LPTRACE, reproduces the warm start itself).
+    const double avg = lp_solves_ > 20 ? lp_time_sum_ / (double)lp_solves_ : 0.0;
+    const double cap = (avg > 0 && P_.lp_stall_factor > 0) ? std::max(P_.lp_stall_min, P_.lp_stall_factor * avg)
+                                                            : lp_time_limit_;
+    const double t0 = tnow();
+    bp_param("time_limit", std::min(lp_time_limit_, cap));
+    int st = bp_solve(0);
+    if (st == BPLEX_TIME_LIMIT && cap < lp_time_limit_) {
+        // Restart the dual simplex from the slack basis with the remaining
+        // budget. (A retry with the primal simplex was tried first and ran
+        // past its time limit, see docs/BPLEX_API_REQUESTS.md.)
+        lp_stalls++;
+        const double used = tnow() - t0;
+        if (lp_stalls <= 2) write_mps("cvrpbcp_lp_stall" + std::to_string(lp_stalls) + ".mps");
+        std::printf("  LP stall: warm solve cut after %.1fs (average %.3fs, %d cols, %d rows); restarting from the slack basis\n",
+                    used, avg, nfix_ + (int)lp_route_.size(), nrows_);
+        std::fflush(stdout);
+        bp_slack_basis();
+        bp_param("time_limit", std::max(1.0, lp_time_limit_ - used));
+        st = bp_solve(0);
+    }
+    lp_time_sum_ += tnow() - t0;
+    lp_solves_++;
     last_iters_ = (int)bplex_get_info(bp_, "iterations");
     if (st != BPLEX_OPTIMAL) return st;
     const int n = I_.n;
@@ -445,17 +563,17 @@ int Master::solve_restricted_mip(double cutoff, double time_limit, std::vector<i
 {
     const int ncols = nfix_ + (int)lp_route_.size();
     routes_used.clear();
-    for (int j = 0; j < nfix_; j++) bplex_chg_col_bounds(bp_, j, 0.0, 0.0); // no artificials in the MIP
+    for (int j = 0; j < nfix_; j++) bp_chg_col(j, 0.0, 0.0); // no artificials in the MIP
     for (size_t j = 0; j < lp_route_.size(); j++) {
-        if (lp_route_[j] < 0) bplex_chg_col_bounds(bp_, nfix_ + (int)j, 0.0, 0.0);
-        else bplex_chg_col_type(bp_, nfix_ + (int)j, 1);
+        if (lp_route_[j] < 0) bp_chg_col(nfix_ + (int)j, 0.0, 0.0);
+        else bp_chg_type(nfix_ + (int)j, 1);
     }
-    bplex_set_param(bp_, "relax", 0);
-    bplex_set_param(bp_, "time_limit", time_limit);
-    bplex_set_param(bp_, "cutoff", cutoff);
-    bplex_set_param(bp_, "mip_abs_gap", 0.999); // integer costs
-    bplex_set_param(bp_, "mip_rel_gap", 0.0);
-    int st = bplex_solve(bp_);
+    bp_param("relax", 0);
+    bp_param("time_limit", time_limit);
+    bp_param("cutoff", cutoff);
+    bp_param("mip_abs_gap", 0.999); // integer costs
+    bp_param("mip_rel_gap", 0.0);
+    int st = bp_solve(1);
     std::vector<double> x(ncols);
     if ((st == BPLEX_OPTIMAL || st == BPLEX_TIME_LIMIT || st == BPLEX_NODE_LIMIT) &&
         bplex_get_solution(bp_, x.data(), nullptr, nullptr, nullptr) == 0) {
@@ -463,13 +581,13 @@ int Master::solve_restricted_mip(double cutoff, double time_limit, std::vector<i
         for (size_t j = 0; j < lp_route_.size(); j++)
             if (lp_route_[j] >= 0 && x[nfix_ + j] > 0.5) routes_used.push_back(lp_route_[j]);
     }
-    bplex_set_param(bp_, "relax", 1);
-    bplex_set_param(bp_, "cutoff", BPLEX_INF);
-    bplex_set_param(bp_, "time_limit", lp_time_limit_);
-    for (int j = 0; j < nfix_; j++) bplex_chg_col_bounds(bp_, j, 0.0, BPLEX_INF);
+    bp_param("relax", 1);
+    bp_param("cutoff", BPLEX_INF);
+    bp_param("time_limit", lp_time_limit_);
+    for (int j = 0; j < nfix_; j++) bp_chg_col(j, 0.0, BPLEX_INF);
     for (size_t j = 0; j < lp_route_.size(); j++) {
-        if (lp_route_[j] < 0) bplex_chg_col_bounds(bp_, nfix_ + (int)j, 0.0, BPLEX_INF);
-        else bplex_chg_col_type(bp_, nfix_ + (int)j, 0);
+        if (lp_route_[j] < 0) bp_chg_col(nfix_ + (int)j, 0.0, BPLEX_INF);
+        else bp_chg_type(nfix_ + (int)j, 0);
     }
     return st;
 }
@@ -480,10 +598,10 @@ double Master::probe(int id, int iter_limit)
     auto tnow = []() { return duration<double>(steady_clock::now().time_since_epoch()).count(); };
     set_row_active(id, true);
     double old_limit = bplex_get_param(bp_, "iter_limit");
-    bplex_set_param(bp_, "iter_limit", iter_limit);
-    bplex_set_param(bp_, "method", BPLEX_METHOD_DUAL);
+    bp_param("iter_limit", iter_limit);
+    bp_param("method", BPLEX_METHOD_DUAL);
     double t = tnow();
-    int st = bplex_solve(bp_);
+    int st = bp_solve(2);
     probe_stats.n++;
     probe_stats.t_solve += tnow() - t;
     probe_stats.iters += bplex_get_info(bp_, "iterations");
@@ -500,8 +618,8 @@ double Master::probe(int id, int iter_limit)
             if (a > 1e-6 || val > 0.5 * bigM_) val = -1;
         }
     }
-    bplex_set_param(bp_, "iter_limit", old_limit);
-    bplex_set_param(bp_, "method", BPLEX_METHOD_AUTO);
+    bp_param("iter_limit", old_limit);
+    bp_param("method", BPLEX_METHOD_AUTO);
     set_row_active(id, false);
     return val;
 }

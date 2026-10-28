@@ -1,0 +1,34 @@
+* incumbent 14548 from Clarke-Wright savings (0.0s)
+debug: loaded solution ../xltw/benchmarks/CVRP/X-n139-k10.sol cost 13590
+node     0 d0   lb  13443.128 lp  13443.128 glb      0.000 ub 14548 open 0 lp 2828/11938 rows 252 it 388 20.0s
+* incumbent 14041 from dive (56.9s)
+node    18 d9   lb  13495.174 lp  13495.203 glb  13443.128 ub 14041 open 9 lp 2856/23071 rows 170 it 14 80.8s
+node    38 d19  lb  13630.377 lp  13630.377 glb  13443.128 ub 14041 open 19 lp 2782/27528 rows 292 it 54 117.6s
+node    58 d29  lb  13732.533 lp  13732.952 glb  13443.128 ub 14041 open 29 lp 2791/30524 rows 220 it 18 144.4s
+node    78 d39  lb  13924.070 lp  13924.070 glb  13443.128 ub 14041 open 39 lp 2845/35887 rows 250 it 59 174.6s
+node    96 d2   lb  13442.390 lp  13442.554 glb  13443.128 ub 14041 open 47 lp 2799/43595 rows 348 it 19 254.8s
+node   116 d12  lb  13595.704 lp  13595.704 glb  13443.128 ub 14041 open 57 lp 2793/47631 rows 307 it 17 307.9s
+node   136 d22  lb  13783.705 lp  13783.705 glb  13443.128 ub 14041 open 67 lp 2762/51665 rows 339 it 21 418.3s
+node   156 d32  lb  13969.215 lp  13969.215 glb  13443.128 ub 14041 open 77 lp 2784/55836 rows 297 it 15 529.4s
+node   174 d7   lb  13565.006 lp  13565.006 glb  13443.128 ub 14041 open 85 lp 2760/59845 rows 410 it 50 622.1s
+node   194 d17  lb  13771.000 lp  13771.000 glb  13443.128 ub 14041 open 95 lp 2765/63590 rows 388 it 62 690.5s
+* incumbent 13771 from node LP (690.5s)
+node   212 d12  lb  13651.764 lp  13651.764 glb  13443.128 ub 13771 open 103 lp 2797/67140 rows 427 it 63 758.7s
+node   232 d22  lb  13751.281 lp  13751.281 glb  13443.128 ub 13771 open 113 lp 2880/70536 rows 408 it 28 801.8s
+node   250 d11  lb  13702.997 lp  13702.997 glb  13446.980 ub 13771 open 121 lp 2788/73435 rows 442 it 65 883.9s
+times: pricing 670.6 master 151.0 cuts 11.4 rmip 5.0 dive 36.9 branch 0.5 switch 0.0 enum 18.0 (label 18.0 in 7 tries, mip 0.0 in 1 solves, 1 nodes closed) total 900.1
+split: cg iters 6653; pricing setup 0.0 pool 96.7/6653 s0 63.4/3634 s1 286.9/2566 exact 216.7/879 scan 0.0/0; cuts rccsep 9.4/434 (252 with cuts) src 0.3 rows 1.7
+probes: 0  solve 0.0 (0 iters avg)  purged 135356 repriced 63414 lp cols 2761 pool 74568
+RESULT X-n139-k10 status time_limit lb 13447 ub 13771 published 13590 nodes 132 depth 47 cols 74568 rows 419 rootlp 13443.128 rootlb 13443.128 kmin 10 kmax 11 fleetcap 1 time 900.07s root 19.99s 
+Route #1: 98
+Route #2: 36 125 25 112 22 108 94 69 38 131 34 115 27 123
+Route #3: 124 88 70 10 74 50 31 97 13 58 35 110 45
+Route #4: 54 75 133 64 127 130 93 132 107 92 41 80 78 120 73
+Route #5: 7 30 84 51 39 8 15 60 59 42 67 100 71 91
+Route #6: 63 28 103 21 18 1 119 47 11 17 37 40 134 102
+Route #7: 79 121 20 109 62 4 23 26 9 137 114 32 16
+Route #8: 3 81 33 135 14 101 128 116 68 83 136 86 104 89
+Route #9: 29 12 90 113 6 5 96 53 129 49 2 99 24 85 118
+Route #10: 122 138 55 46 43 77 106 82 105 111 76 56
+Route #11: 57 44 65 48 61 19 66 72 117 87 52 126 95
+Cost 13771

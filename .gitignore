@@ -16,3 +16,5 @@ results/*.console
 Thumbs.db
 # symlink staging dirs created by bench.sh for out-of-tree instance sets
 results/solomon/set1/
+results/traces/*.trace
+!results/traces/*.mps

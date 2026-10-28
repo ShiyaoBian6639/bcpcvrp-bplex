@@ -1,0 +1,5 @@
+debug: loaded solution ../xltw/benchmarks/CVRP/X-n336-k84.sol cost 139111
+times: pricing 65.0 master 1734.9 cuts 0.0 rmip 0.0 dive 0.0 branch 0.0 switch 0.0 enum 0.0 (label 0.0 in 0 tries, mip 0.0 in 0 solves, 0 nodes closed) total 1800.8
+split: cg iters 272; pricing setup 0.0 pool 0.0/271 s0 21.0/262 s1 44.0/51 exact 0.0/0 scan 0.0/0; cuts rccsep 0.0/0 (0 with cuts) src 0.0 rows 0.0
+probes: 0  solve 0.0 (0 iters avg)  purged 2415 repriced 15 lp cols 6727 pool 9126
+RESULT X-n336-k84 status time_limit lb 0 ub -1 published 139111 nodes 1 depth 0 cols 9126 rows 0 rootlp 0.000 rootlb 0.000 kmin 84 kmax 85 fleetcap 0 time 1800.79s root 0.00s 

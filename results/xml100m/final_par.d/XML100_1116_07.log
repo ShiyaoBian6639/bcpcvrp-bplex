@@ -1,0 +1,3 @@
+* incumbent 8974 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/xml100/medium/XML100_1116_07.sol cost 8423
+node     0 d0   lb   8310.781 lp   8310.781 glb      0.000 ub 8974 open 0 lp 4112/86697 rows 211 it 4557 126.2s
