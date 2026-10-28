@@ -1,3 +1,11 @@
 * incumbent 8974 from Clarke-Wright savings (0.0s)
 debug: loaded solution instances/xml100/medium/XML100_1116_07.sol cost 8423
 node     0 d0   lb   8310.781 lp   8310.781 glb      0.000 ub 8974 open 0 lp 4112/86697 rows 211 it 4557 126.2s
+times: pricing 114.1 master 68.6 cuts 0.3 rmip 5.0 dive 103.1 branch 0.0 switch 0.0 enum 2.4 (label 2.4 in 1 tries, mip 0.0 in 0 solves, 0 nodes closed) total 300.1
+split: cg iters 5077; pricing setup 0.0 pool 30.5/5077/2784 s0 5.1/2293/1225 s1 5.9/1068/518 exact 70.5/550/544 scan 0.0/0/0 (time/calls/with cols); cuts rccsep 0.0/15 (8 with cuts) src 0.1 rows 0.2
+probes: 0  solve 0.0 (0 iters avg)  purged 159638 repriced 43518 lp cols 4012 pool 120107
+RESULT XML100_1116_07 status time_limit lb 8311 ub 8974 published 8423 nodes 3 depth 2 cols 120107 rows 217 rootlp 8310.781 rootlb 8310.781 kmin 3 kmax 6 fleetcap 0 time 300.14s root 126.24s 
+Route #1: 15 51 36 9 87 98 72 81 99 1 16 23 27 17 65 92 30 44 50 64 10 71 6 35 2 28 4 76 77 29 58 62 34 86 88 90 18 66 97 96 69 73
+Route #2: 60 83 61 41 52 56 49 24 91 5 33 93 3 78 38 11
+Route #3: 19 25 95 57 43 75 89 14 80 37 54 63 20 32 67 48 79 82 22 85 39 84 55 7 94 8 13 74 21 45 40 100 31 12 26 46 47 42 53 70 59 68
+Cost 8974

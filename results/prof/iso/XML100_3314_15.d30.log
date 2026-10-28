@@ -1,0 +1,25 @@
+* incumbent 18237 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/xml100/medium/XML100_3314_15.sol cost 16728
+node     0 d0   lb  16700.617 lp  16700.617 glb      0.000 ub 18237 open 0 lp 2000/13106 rows 337 it 810 8.8s
+  LP stall: warm solve cut after 2.0s (average 0.008s, 2386 cols, 438 rows); restarting from the slack basis
+node    18 d9   lb  16791.253 lp  16791.344 glb  16700.617 ub 18237 open 9 lp 2157/20259 rows 200 it 9 64.1s
+* incumbent 16792 from node LP (64.9s)
+node    36 d9   lb  16791.001 lp  16791.001 glb  16707.142 ub 16792 open 17 lp 2023/25000 rows 226 it 86 81.0s
+node    52 d6   lb  16777.537 lp  16777.537 glb  16718.799 ub 16792 open 23 lp 2061/29747 rows 302 it 34 95.5s
+* incumbent 16775 from node LP (104.2s)
+node    68 d6   lb  16777.840 lp  16777.840 glb  16725.247 ub 16775 open 29 lp 2010/33416 rows 299 it 33 109.4s
+* incumbent 16757 from node LP (114.0s)
+* incumbent 16728 from node LP (115.9s)
+times: pricing 29.6 master 36.4 cuts 1.8 rmip 5.0 dive 37.1 branch 0.1 switch 0.0 enum 4.9 (label 4.9 in 4 tries, mip 0.0 in 0 solves, 0 nodes closed) total 116.9
+split: cg iters 3317; pricing setup 0.0 pool 15.1/3317/1653 s0 0.8/1664/386 s1 1.9/1278/623 exact 10.3/655/519 scan 0.0/0/0 (time/calls/with cols); cuts rccsep 1.3/174 (111 with cuts) src 0.0 rows 0.5
+probes: 0  solve 0.0 (0 iters avg)  purged 76114 repriced 42755 lp cols 2004 pool 35282
+RESULT XML100_3314_15 status optimal lb 16728 ub 16728 published 16728 nodes 47 depth 10 cols 35282 rows 233 rootlp 16700.617 rootlb 16700.617 kmin 8 kmax 10 fleetcap 0 time 116.93s root 8.84s MATCHES published optimum
+Route #1: 87 13 10 56 14 53 80 62 41 89 99 32 1
+Route #2: 67 58 75 84 15 50 72 7 22 3 2 9 82
+Route #3: 60 77 23 44 59 26 24 78 93 8 86 36 71
+Route #4: 31 33 96 52 39 69 74 100 63 94 48 42 38
+Route #5: 92 54 5 73 17 35 55 29 70
+Route #6: 4 97 65 30 81 28 18 49 11 66 91 79 85
+Route #7: 16 43 88 12 90 6 20 61 46 45 21 40 19
+Route #8: 27 76 98 83 95 57 37 25 51 34 47 64 68
+Cost 16728

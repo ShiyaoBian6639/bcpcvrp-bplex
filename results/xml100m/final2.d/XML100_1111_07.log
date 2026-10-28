@@ -1,0 +1,43 @@
+* incumbent 43734 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/xml100/medium/XML100_1111_07.sol cost 43143
+node     0 d0   lb  43133.034 lp  43133.034 glb      0.000 ub 43734 open 0 lp 679/679 rows 272 it 55 0.3s
+* incumbent 43143 from dive (0.3s)
+times: pricing 0.0 master 0.1 cuts 0.2 rmip 5.0 dive 0.0 branch 0.0 switch 0.0 enum 1.0 (label 0.0 in 1 tries, mip 1.0 in 1 solves, 1 nodes closed) total 6.4
+split: cg iters 56; pricing setup 0.0 pool 0.0/56/0 s0 0.0/56/24 s1 0.0/32/12 exact 0.0/20/0 scan 0.0/0/0 (time/calls/with cols); cuts rccsep 0.1/20 (16 with cuts) src 0.0 rows 0.0
+probes: 0  solve 0.0 (0 iters avg)  purged 0 repriced 0 lp cols 690 pool 690
+RESULT XML100_1111_07 status optimal lb 43143 ub 43143 published 43143 nodes 1 depth 0 cols 690 rows 272 rootlp 43133.034 rootlb 43133.034 kmin 34 kmax 36 fleetcap 0 time 6.37s root 0.27s MATCHES published optimum
+Route #1: 68
+Route #2: 2 47 98
+Route #3: 3 28 61
+Route #4: 73 5 29
+Route #5: 7 79 18
+Route #6: 15 16 94
+Route #7: 31 43 76
+Route #8: 40 55 90
+Route #9: 41 72 87
+Route #10: 64 66 60
+Route #11: 74 67 85
+Route #12: 96 56 22
+Route #13: 11 36 75
+Route #14: 13 97 39
+Route #15: 17 82 62
+Route #16: 38 80 12
+Route #17: 53 27 58
+Route #18: 20 54 34
+Route #19: 71 89 1
+Route #20: 50 84 33
+Route #21: 63 35 69
+Route #22: 88 93 4
+Route #23: 6 14 37
+Route #24: 45 51 86
+Route #25: 81 32 44
+Route #26: 49 30 92
+Route #27: 26 42 70
+Route #28: 77 52 95
+Route #29: 19 59 21
+Route #30: 83 100 46
+Route #31: 24 99 48
+Route #32: 23 65 10
+Route #33: 25 9 57
+Route #34: 8 91 78
+Cost 43143

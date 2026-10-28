@@ -1,0 +1,26 @@
+* incumbent 18237 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/xml100/medium/XML100_3314_15.sol cost 16728
+node     0 d0   lb  16700.617 lp  16700.617 glb      0.000 ub 18237 open 0 lp 2000/13106 rows 337 it 810 14.0s
+  LP stall: warm solve cut after 2.0s (average 0.013s, 2386 cols, 438 rows); restarting from the slack basis
+node    18 d9   lb  16795.451 lp  16796.000 glb  16700.617 ub 18237 open 9 lp 2014/19990 rows 190 it 2 164.6s
+* incumbent 16796 from node LP (164.6s)
+* incumbent 16784 from node LP (184.4s)
+node    34 d3   lb  16750.955 lp  16750.955 glb  16718.248 ub 16784 open 15 lp 2149/28173 rows 251 it 39 187.9s
+* incumbent 16764 from node LP (198.7s)
+node    50 d4   lb  16748.571 lp  16748.923 glb  16719.702 ub 16764 open 21 lp 2087/32682 rows 242 it 18 202.9s
+node    66 d6   lb  16745.658 lp  16745.658 glb  16725.239 ub 16764 open 27 lp 2007/34765 rows 278 it 23 216.4s
+* incumbent 16752 from node LP (224.1s)
+* incumbent 16728 from node LP (227.9s)
+times: pricing 35.1 master 43.7 cuts 1.7 rmip 5.0 dive 130.5 branch 0.1 switch 0.0 enum 9.2 (label 9.2 in 7 tries, mip 0.0 in 0 solves, 0 nodes closed) total 227.9
+split: cg iters 3385; pricing setup 0.0 pool 18.4/3379/1697 s0 1.0/1682/448 s1 2.3/1234/632 exact 11.7/602/487 scan 0.0/6/5 (time/calls/with cols); cuts rccsep 1.2/145 (85 with cuts) src 0.0 rows 0.5
+probes: 0  solve 0.0 (0 iters avg)  purged 78733 repriced 43253 lp cols 2075 pool 37470
+RESULT XML100_3314_15 status optimal lb 16728 ub 16728 published 16728 nodes 47 depth 9 cols 37470 rows 226 rootlp 16700.617 rootlb 16700.617 kmin 8 kmax 11 fleetcap 0 time 227.92s root 13.99s MATCHES published optimum
+Route #1: 87 13 10 56 14 53 80 62 41 89 99 32 1
+Route #2: 60 77 23 44 59 26 24 78 93 8 86 36 71
+Route #3: 31 33 96 52 39 69 74 100 63 94 48 42 38
+Route #4: 82 9 2 3 22 7 72 50 15 84 75 58 67
+Route #5: 92 54 5 73 17 35 55 29 70
+Route #6: 4 97 65 30 81 28 18 49 11 66 91 79 85
+Route #7: 19 40 21 45 46 61 20 6 90 12 88 43 16
+Route #8: 68 64 47 34 51 25 37 57 95 83 98 76 27
+Cost 16728

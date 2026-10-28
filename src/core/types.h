@@ -20,7 +20,7 @@ struct Params {
     int heur_knn = 5;             // successors per vertex in heuristic pricing (5: best root time at n=150)
     int heur_label_cap = 40;      // alive labels per vertex in the sparse heuristic stage (0: none)
     int heur_label_cap1 = 0;      // alive labels per vertex in the full-graph heuristic stage (0: none)
-    int fleet_slack = 3;          // free fleet: kmax = max(ffd, kmin) + this (X-n172-k51's optimum uses ffd + 2 vehicles)
+    int fleet_slack = 2;          // free fleet: kmax = max(ffd, kmin) + this (X-n172-k51's optimum uses ffd + 2 vehicles)
     double lp_stall_factor = 50;  // a warm LP solve longer than this times the running average is cut and retried with the primal simplex (0: off)
     double lp_stall_min = 2.0;    // ... but never cut before this many seconds
     int scan_threads = 1;         // OpenMP threads for the column-pool scan

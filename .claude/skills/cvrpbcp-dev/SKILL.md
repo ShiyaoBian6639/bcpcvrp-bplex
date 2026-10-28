@@ -50,7 +50,7 @@ Options: `--K k --ng s --knn k --cols c --alpha a --no-rcc --no-src --no-early
 --purge-every n --purge-len r --stage-skip n --heur-relax 0|1 --heur-cap1 c
 --buckets b --scan-threads t --fleet-slack k --lp-stall f --out f.sol`.
 `--qbound -1` (default) uses the q-route bound from stage 0 when (Q+1) n^2 <= 5e6,
-else from stage 1; `--fleet-slack 3` is the free-fleet cap above max(ffd, kmin)
+else from stage 1; `--fleet-slack 2` is the free-fleet cap above max(ffd, kmin)
 (X-n172-k51's optimum needs ffd + 2: a result with `fleetcap 1` is not proven).
 pbench: `UBSOL=1` passes the .sol cost as `--ub` (prove-optimality protocol).
 Defaults tuned 2026-10-27 at n=150: knn 5, 75 cols/iteration, purge every 10 CG

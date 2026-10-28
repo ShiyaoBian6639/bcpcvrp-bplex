@@ -1,0 +1,11 @@
+ok   instances/cvrplib/E/E-n13-k4.vrp                   247     0.01s
+ok   instances/cvrplib/P/P-n16-k8.vrp                   450     0.01s
+ok   instances/cvrplib/E/E-n22-k4.vrp                   375     0.09s
+ok   instances/cvrplib/A/A-n32-k5.vrp                   784     0.07s
+ok   instances/cvrplib/E/E-n30-k3.vrp                   534   131.15s
+ok   instances/cvrplib/E/E-n31-k7.vrp                   379     0.04s
+ok   instances/cvrplib/A/A-n37-k6.vrp                   949     8.34s
+ok   instances/cvrplib/P/P-n50-k8.vrp                   631    20.17s
+ok   instances/cvrplib/P/P-n55-k7.vrp                   568    20.35s
+ok   ../xltw/benchmarks/CVRP/X-n101-k25.vrp           27591     9.69s
+regression: all passed

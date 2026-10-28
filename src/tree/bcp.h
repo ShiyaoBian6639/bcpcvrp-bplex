@@ -31,7 +31,7 @@ struct BcpParams : Params {
     // column-fixing dive heuristic: at the root, and every dive_every nodes while no incumbent exists
     bool dive = true;
     int dive_every = 20;
-    double dive_time = 120;       // seconds per dive
+    double dive_time = 30;        // seconds per dive (120 let a failing root dive eat 130 s of a 300 s run)
     // route enumeration + set-partitioning MIP once an incumbent exists
     bool enumerate = true;
     size_t enum_max_labels = 1000000;

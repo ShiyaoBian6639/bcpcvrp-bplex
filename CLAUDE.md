@@ -44,7 +44,7 @@ right PATH and path-conversion settings; pass a script or a command line.
 - Master rows: customers, fleet `[klo,khi]`, then robust rows (RCC and
   edge-branching rows, inactive = free bounds). Pricing uses the symmetric
   dual split; route reduced cost = `c_r - sum pi - pi_0 - row terms`.
-- Fleet cap `kmax = max(ffd, kmin) + 3` by default (`--fleet-slack`); a result
+- Fleet cap `kmax = max(ffd, kmin) + 2` by default (`--fleet-slack`); a result
   with the cap binding (`fleetcap 1`) must be re-run with a larger `--K` before
   it is called proven (X-n172-k51's optimum uses ffd + 2 vehicles).
 - `CVRPBCP_LPTRACE=<file>` records every master LP operation; `lpreplay`

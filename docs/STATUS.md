@@ -3,6 +3,135 @@
 Newest first. Numbers are from WSL Ubuntu 22.04, gcc 11 -O3, single thread,
 bplex built with MKL off.
 
+## 2026-10-28 (evening): proving ladder on X, heuristic-stage audit, SIMD/threads, LP trace
+
+Question of the day: which already-proven instances can we prove, how long
+does it take, where does the time go, do the heuristic pricing stages work,
+and what do concurrency/SIMD buy. All runs with the published solution loaded
+(zero DEBUG reports throughout) and free fleet.
+
+* **Proving ladder** (`results/xprove`, build 46f3a3a, 3 runs in parallel,
+  900 s for n = 106..200, 1800 s for n = 303..384, machine shared with the
+  experiments below):
+  | instance | result | time |
+  |---|---|---|
+  | X-n110-k13, X-n148-k46, X-n157-k13 | proven = published | 144 s, 79 s, 146 s |
+  | X-n317-k53 (316 customers) | proven = published 78355, 1156 nodes | 1767 s |
+  | X-n106, X-n115, X-n125, X-n129, X-n153, X-n172 | open, gap 0.2-0.3 % | 900 s |
+  | X-n120-k6, X-n134-k13, X-n139-k10, X-n162-k11, X-n167-k10 | open, poor ub, long routes | 900 s |
+  | X-n143-k7 | root not finished | 900 s |
+  | X-n303-k21 | open, lb 21448 ub 23714 (published 21736) | 1800 s |
+  | X-n313-k71 | lb 93666, no solution found (1105 s in failed dives) | 1800 s |
+  | X-n336-k84 | root not finished: 1735 s in 272 master LP solves (6.4 s each) | 1800 s |
+  | X-n176-k26, X-n181-k23, X-n195-k51, X-n200-k36 | open, gap 0.15-0.8 %, 370-820 nodes | 900 s |
+  | X-n186-k15, X-n190-k8 | open / root not finished (long routes) | 900 s |
+  | X-n376-k94 (375 customers) | open, lb 147648 ub 147797 (published 147713), 518 nodes | 1800 s |
+  | X-n384-k52 | open, lb 65427 ub 69526 (published 65940) | 1800 s |
+  Zero DEBUG reports in all 27 runs.
+  X-n172-k51 ended with lb 45636 above the published 45607 because its
+  optimum uses 53 vehicles and the cap was ffd + 1 = 52 (`fleetcap 1`):
+  the free-fleet cap is now max(ffd, kmin) + 2 (`--fleet-slack`).
+
+  Pattern: short-route instances (k large) close fast, long-route ones do not
+  finish the root; at n >= 300 no primal solution is found at all within the
+  limit (X-n313-k71 ub none), so the prove-optimality protocol of the
+  literature (start from the published value, `UBSOL=1` in pbench) is the
+  right setting for the next ladder.
+* **Heuristic-stage audit** (new `time/calls/with cols` triplets in the
+  `split:` line). X-n153-k22, 300 s, old defaults: pool scan returned
+  columns in 1750 of 3997 calls, the sparse stage (5-NN, cap 40) in 419 of
+  2247, the capped full-graph stage in 1112 of 1828, and the exact stage in
+  335 of 716. So the exact stage, which is only meant to certify
+  convergence, produced columns in half of its calls: the heuristics miss a
+  lot. X-n143-k7 (20 customers per route, Q 1190) is worse: the root never
+  reached an exact call in 150 s (1428 CG iterations, 1 to 16 columns per
+  iteration).
+* **Profile of the long-route case** (perf, X-n143-k7 root): dominance
+  `insert` 49 %, the q-route bound DP 24 % (O(Q n^2) = 24M cells per set
+  of duals at Q 1190, ~70 ms), the rest of labeling 5 %, simplex 2 %.
+* **Changes** (all defaults, old behaviour reachable by option):
+  - heuristic stages dominate on (load, time, rc) only, ignoring the ng
+    memory and the SRC states (VRPSolver's "light/heavy" pricing;
+    `--heur-relax 0` restores); the full-graph stage has no label cap
+    (`--heur-cap1`). X-n153 tree: stage-1 call 31 -> 10 ms.
+  - per-vertex label lists split into 25 load buckets, each sorted by rc
+    (`--buckets`): a label is tested only against lower-or-equal buckets
+    with rc <= its own and can only kill higher buckets with rc >= its own.
+    Exact call on X-n153: 66 -> 41 ms; root pricing 13.9 -> 7.5 s back to
+    back with the old binary.
+  - q-route bound DP in pull form (one contiguous row per target, the
+    inner loop vectorizes) and `-march=native` (AVX-512 here,
+    `-DCVRPBCP_NATIVE=OFF` for a portable binary); the bound is used from
+    stage 0 only when (Q+1) n^2 <= 5e6, otherwise from stage 1
+    (`--qbound -1` auto, X-n143: stage-0 call 67 -> 7 ms).
+  - column pool kept as a flat CSR copy and scanned with OpenMP
+    (`--scan-threads t`): 6.4 -> 3.4 ms per scan with 8 threads on a busy
+    machine; single-thread is the default so that benchmarks stay
+    comparable.
+  - purge floor scales with the route length (`--purge-len 7`: floor =
+    20 n x round(avg route length / 7), 1..5): X-n143-k7 at the 20 n floor
+    cycled columns through the pool (half of all iterations were pool-only,
+    z 16353 after 650 iterations); without the purge z 15659 after 660 and a
+    first exact bound; X-n153-k22 (factor 1) unchanged, a flat 100 n floor
+    there cost 15.5 vs 10.8 s on the root.
+  - an unfinished root reports its Lagrangian bound (X-n143-k7 100 s:
+    lb 15113 instead of 0).
+  - stability-centre bookkeeping for Wentges smoothing before the first
+    exact pricing (best heuristic Lagrangian estimate). Smoothing stays
+    off: with `--alpha 0.5` the pool returned columns negative under the
+    smoothed duals but useless for the LP, the purge dropped them again,
+    43k iterations in 150 s. Needs misprice handling for pool columns
+    before it can be on.
+* **Where X-n143-k7 stands after this**: 600 s, root CG converges (first
+  exact bound at ~200 s), then cut rounds; lb 15567 at 530 s (published
+  15700), exact calls 6 to 25 s each with 160k labels. Pricing 548 s of
+  600. The next lever for this class is the exact stage itself (bucket
+  graph with completion bounds across buckets, reduced-cost arc fixing
+  after the root, then DSSR), not the LP (50 s).
+* **LP solver share and the CPLEX question** (user request: compare
+  bcpcvrp-bplex with bcpcvrp-cplex). New LP trace: `CVRPBCP_LPTRACE=<file>`
+  records every operation the master performs (src/master/lptrace.h);
+  `lpreplay <trace>` replays the identical sequence, warm starts included,
+  and reports recorded vs replayed time per solve kind. On bplex the replay
+  reproduces the run exactly (P-n55-k7: 1099 LP solves, same 62748
+  iterations, same objectives; X-n153-k22 300 s: 5458 solves, 364735
+  iterations, 76 s recorded). The CPLEX backend of the same program
+  (`-DLPREPLAY_CPLEX`, loads cplex2210.dll at run time, no import library)
+  is written but not compiled: CPLEX 22.1 is installed on the Windows side
+  only and no C compiler is available there (no cl.exe/MinGW; installing
+  `ziglang` through pip was blocked in this session). Build line in the
+  skill. Measured LP shares: X-n153 24 % (71 of 300 s), XML200 27 %,
+  X-n143-k7 8 %: the LP is not the first bottleneck on CVRP, pricing is.
+* **Two more things the ladder exposed, both fixed**:
+  - XML100_1113_07 (medium set, new build): one warm dual-simplex solve of a
+    2100 x 254 LP ran from 140 s to the time limit; the LP trace replays it
+    (`results/traces/xml1113.trace`, solve 2854: 99 s, 51k iterations on
+    both the original and the replay; the model itself,
+    `results/traces/xml1113_stall.mps`, solves cold instantly). Reported in
+    `docs/BPLEX_API_REQUESTS.md`. The master now has a stall guard: a warm
+    solve longer than 50x the running average (and 2 s) is cut and restarted
+    from the all-slack basis (`--lp-stall`); a first version retried with
+    the primal simplex, which ran 12 minutes past its time limit (also
+    reported). With the guard the instance is proven in 45 s.
+  - the dive heuristic ran every 20 nodes for up to 120 s while no incumbent
+    existed; X-n313-k71 spent 1105 of 1800 s in dives that found nothing.
+    Each failed dive now doubles the wait (up to 16x), and a dive gets 30 s
+    instead of 120 s: on XML100_3314_15 the root dive with the relaxed
+    heuristics and a wider fleet cap ran into the 120 s cap (dive 130 s of a
+    281 s run; 18 s with `--heur-relax 0`, 23 s with `--fleet-slack 1`).
+    With 30 s: 3314 in 110 s, 1115 in 75 s, 1114 in 54 s (old build under
+    the same load: 164, 109, 113 s).
+  - X-n336-k84 with the new build: root CG converged in 9.5 s / 45
+    iterations (the old build needed 272 iterations and 6.4 s per LP solve
+    there); the LP trace of that run is `results/traces/x336_root.trace`.
+* **Medium set, old vs new build side by side** (2+2 parallel while the
+  ladders ran): old build 9/12 in 1454 s, first new build 8/12 in 1685 s (the
+  XML100_1113_07 stall), final defaults 9/12 in 1597 s under the same load
+  and 9/12 in 1314 s four at a time on a quieter machine (`results/xml100m/final2`,
+  reference `noskip` 1229 s this morning); the three open class-6 instances
+  now report bounds (3316: lb 9062 instead of 0). Zero DEBUG reports;
+  regression passes.
+
 ## 2026-10-28: duplicate-column bug, node-level tuning on a medium set
 
 * **Bug (ours): a route listed twice in one `Master::add_routes` batch got

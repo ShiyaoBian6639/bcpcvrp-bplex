@@ -1,0 +1,21 @@
+* incumbent 15641 from Clarke-Wright savings (0.0s)
+debug: loaded solution instances/xml100/medium/XML100_3315_16.sol cost 13864
+node     0 d0   lb  13812.767 lp  13812.767 glb      0.000 ub 15641 open 0 lp 4014/18789 rows 218 it 1024 18.5s
+* incumbent 14002 from dive (73.2s)
+* incumbent 13875 from node LP (106.3s)
+node    16 d4   lb  13861.226 lp  13861.226 glb  13822.273 ub 13875 open 7 lp 4063/39164 rows 194 it 24 121.9s
+* incumbent 13872 from node LP (125.7s)
+node    32 d5   lb  13850.340 lp  13850.485 glb  13828.824 ub 13872 open 13 lp 4032/44367 rows 175 it 42 154.5s
+node    46 d6   lb  13877.412 lp  13881.629 glb  13839.118 ub 13872 open 17 lp 4073/50066 rows 192 it 44 196.9s
+node    35 d3   lb  13844.482 lp  13844.482 glb  13842.024 ub 13872 open 19 lp 4154/58842 rows 255 it 59 277.8s
+times: pricing 102.4 master 117.0 cuts 2.1 rmip 5.0 dive 54.7 branch 0.3 switch 0.0 enum 11.6 (label 11.4 in 6 tries, mip 0.2 in 1 solves, 1 nodes closed) total 300.2
+split: cg iters 3925; pricing setup 0.0 pool 57.6/3921/1560 s0 2.6/2361/596 s1 4.7/1765/1083 exact 34.9/682/595 scan 0.0/4/3 (time/calls/with cols); cuts rccsep 1.2/118 (68 with cuts) src 0.1 rows 0.8
+probes: 0  solve 0.0 (0 iters avg)  purged 98344 repriced 41237 lp cols 4075 pool 61147
+RESULT XML100_3315_16 status time_limit lb 13845 ub 13872 published 13864 nodes 46 depth 8 cols 61147 rows 149 rootlp 13812.767 rootlb 13812.767 kmin 6 kmax 9 fleetcap 0 time 300.18s root 18.53s 
+Route #1: 12 1 50 63 49 9 97 8 94 83 61 86 41 33 37 55 17 36 42
+Route #2: 59 66 93 5 65 29 71 89 87 15 64 100 7 31 24 40 85 35 34
+Route #3: 39 90 3 25 82
+Route #4: 72 10 47 43 67 98 62 99 11 44 75 88 74 18 26 51 14 52 20
+Route #5: 30 84 80 22 46 81 45 70 32 56 79 76 27 38 54 95 58 2 68
+Route #6: 91 21 77 53 48 6 92 28 73 78 19 57 4 13 16 69 60 96 23
+Cost 13872
